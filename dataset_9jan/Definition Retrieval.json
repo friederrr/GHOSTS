@@ -1,0 +1,463 @@
+[
+    {
+        "prompt": "Please give a formal definition of a continuous function ",
+        "output": "A continuous function is a function for which, given any two input values, the output values can be made arbitrarily close by restricting the input values to be sufficiently close to each other. In other words, for any two input values x and y, and for any positive number ε, there exists a positive number δ such that if the distance between x and y is less than δ, then the distance between f(x) and f(y) is less than ε. This definition uses the concept of a metric space, which defines a notion of distance between elements of a set.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "26B05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a Banach space",
+        "output": "In mathematics, a Banach space is a complete normed vector space. This means that it is a vector space that is both complete with respect to a certain metric (i.e. a Cauchy sequence converges to a point in the space) and equipped with a norm (i.e. a function that assigns a non-negative real number to each vector in the space, such that certain properties hold).",
+        "rating": "4",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "The metric should be induced by the norm. This is not explicitly stated.",
+        "msc": [
+            "46B99"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a Sobolev space",
+        "output": "A Sobolev space is a function space that is a generalization of the concept of square-integrable functions. It is defined as the set of functions whose derivatives up to a certain order (determined by the specific Sobolev space) are square-integrable. The formal definition of a Sobolev space is as follows:\nLet $U$ be an open subset of $mathbb{R}^n$, and let $k$ be a non-negative integer. The Sobolev space $W^{k,p}(U)$ is the set of all functions $u$ defined on $U$ such that the weak derivatives of order up to $k$, denoted by $D^{alpha}u$, exist and are $p$-integrable, where $alpha$ is a multi-index with $|alpha|leq k$, $pgeq 1$. The Sobolev space $W^{k,p}(U)$ is a Banach space with respect to the norm\n$|u|{W^{k,p}(U)} = \\left( sum{|alpha| leq k} |D^{alpha}u|_{L^p(U)}^p \\right)^{\\frac{1}{p}}$",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "46E35"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a weak derivative",
+        "output": "A weak derivative of a function u(x) with respect to x is a linear functional v(x) such that for any smooth test function φ(x), the following equality holds:\n\n∫ u(x) * dφ(x)/dx dx = ∫ v(x) * φ(x) dx\n\nIn other words, a weak derivative is a distribution (or a linear functional) that satisfies the same integration by parts formula as a classical derivative. In practice, weak derivatives are often used to deal with functions that are not smooth or that have singularities, such as the Dirac delta function.",
+        "rating": "3",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "The weak derivative is defined as a linear functional. It could technically be defined as a linear functional on the test functions, but here v is clearly assumed to be a function on the same domain as u. also the integration by parts formula misses a minus sign. ",
+        "msc": [
+            "46E35"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a reflexive space",
+        "output": "In mathematics, a reflexive space is a topological vector space X that is reflexive as a Banach space, meaning that the natural map from X to its bidual space (the space of continuous linear functionals on X) is an isomorphism. This map is often denoted by J: X → X**, and the property of reflexivity is often denoted by X = X**.",
+        "rating": "4",
+        "errorcodes": [
+            "e6"
+        ],
+        "warningcodes": [],
+        "comment": "The definition is correct. However, I do not think reflexivity is often denoted as X = X**, since X being isomorphic to its bidual is not the same as reflexivity.",
+        "msc": [
+            "46A25"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a dual space",
+        "output": "In linear algebra and functional analysis, the dual space of a vector space V is the set of all linear functionals on V, where a linear functional is a linear map from V to its field of scalars (such as the real numbers or complex numbers). The dual space is often denoted as V* or V' and is equipped with a natural pairing called the dual pairing, which allows one to take the value of a functional on a given vector. The dual space can also be thought of as the space of all possible linear combinations of the basis vectors of V with coefficients in the field of scalars.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "ChatGPT chose not define the algebraic dual space. This is not wrong though.",
+        "msc": [
+            "46A20"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of an orthonormal basis",
+        "output": "An orthonormal basis is a set of mutually orthogonal and normalized vectors that span a vector space. In other words, an orthonormal basis is a set of linearly independent vectors that are all of unit length and are at right angles (orthogonal) to each other. These vectors can be used to represent any vector in the space as a unique linear combination of the basis vectors.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of the spectrum of a linear operator",
+        "output": "The spectrum of a linear operator T on a vector space V is a subset of the complex numbers, denoted by $sigma(T)$, that contains all the scalars $lambda$ such that T - $lambda$I is not invertible, where I is the identity operator on V. In other words, it consists of all the eigenvalues of T, as well as any other scalars that cause T - $lambda$I to be singular (i.e. not invertible).",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "47A10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of an unbounded operator",
+        "output": "An unbounded operator is a linear operator that is defined on an infinite-dimensional vector space and does not have a bounded inverse. In other words, it maps elements of a vector space to elements of the same space, but its action is not limited to a particular subset of that space. Examples of unbounded operators include the derivative and the differential operator in calculus, as well as the position and momentum operators in quantum mechanics.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "ChatGPT says an unbounded operator is an operator without bounded inverse. This is wrong.",
+        "msc": [
+            "47B01"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of the adjoint of an unbounded operator",
+        "output": "In functional analysis, the adjoint of an unbounded operator T on a Hilbert space H is a unique unbounded operator T* on H such that for all x, y in the domain of T* and T respectively, the inner product of Tx and y is equal to the inner product of x and Ty. In other words, <Tx,y> = <x,Ty> for all x in the domain of T, y in the domain of T*. The operator T* is said to be the adjoint of T.",
+        "rating": "3",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "This is not wrong, (except <Tx,y> = <x,Ty>) but it is of course important to define the domain of T*, which was omitted here",
+        "msc": [
+            "47A05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a locally convex space",
+        "output": "A locally convex space (LCS) is a vector space that is topologically equipped with a specific kind of vector space topology, called a locally convex topology. This topology is generated by a family of seminorms, which are a generalization of norms, and satisfy the following properties:\n\nThey are non-negative, i.e. p(x) >= 0 for all x in the vector space and p(x) = 0 iff x = 0\nThey are homogeneous, i.e. p(ax) = |a|p(x) for all scalars a and vectors x\nThey are subadditive, i.e. p(x+y) <= p(x) + p(y) for all vectors x, y.\nA subset of the LCS is said to be convex if, given any two points x and y in the subset, and any scalar t in the interval [0,1], the point tx+(1-t)y is also in the subset.\n\nA subset of the LCS is said to be absorbing if, given any point x in the subset and any scalar t, the point tx is also in the subset.\n\nThe family of seminorms generate the topology of the space, and the topology is characterized by the collection of all convex absorbing sets.",
+        "rating": "3",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "The statement: p(x) = 0 iff x = 0 is wrong",
+        "msc": [
+            "46A03"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of the weak* topology",
+        "output": "The weak* topology on a dual vector space is the weakest topology that makes all the functionals in the dual space continuous. It is defined as the coarsest topology on a dual vector space such that all functionals in the dual space are continuous with respect to it. In other words, a net in the dual space converges to a point in the weak* topology if and only if the value of the functional evaluated at the net converges to the value of the functional evaluated at the point for every functional in the dual space.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "46A03"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a weak solution of a differential equation",
+        "output": "A weak solution of a differential equation is a solution that is defined in a weak sense, rather than in the traditional sense of pointwise equality. Specifically, a weak solution is a function that satisfies the equation in a distributional sense, meaning that the equation holds when integrated against a test function, rather than at every point in the domain. This approach is often used to study equations that are not well-posed in the classical sense, such as those with singularities or discontinuities.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "could have more details, but not wrong",
+        "msc": [
+            "35D30"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a Schwartz function",
+        "output": "A Schwartz function is a smooth function on $mathbb{R}^n$ that decays faster than any polynomial at infinity. More formally, a function $f:mathbb{R}^n \\to mathbb{R}$ is a Schwartz function if it satisfies the following conditions:\n\n$f$ and all its derivatives of any order are infinitely differentiable\nFor any non-negative integers $m$ and $n$, there exists a constant $C_{m,n}$ such that for all $x in mathbb{R}^n$, $|x^{alpha} \\frac{partial^{\\beta} f}{partial x^{\\beta}}(x)| leq C_{m,n}(1+|x|)^{m-n}$ where $alpha$ and $\\beta$ are multi-indices.\nThe space of all Schwartz functions on $mathbb{R}^n$ is denoted by $mathcal{S}(mathbb{R}^n)$ and it is a Fréchet space, which means it is a complete metrizable locally convex topological vector space.",
+        "rating": "4",
+        "errorcodes": [
+            "e6"
+        ],
+        "warningcodes": [
+            "w5"
+        ],
+        "comment": "This is a bit of a weird way of writing it, since m = n = 0 would yield the standard definition. ",
+        "msc": [
+            "46A11"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a wavelet",
+        "output": "A wavelet is a mathematical function that is localized in both time and frequency, and is used to decompose a signal into different frequency components. It is generally defined as a function that is nonzero over a limited interval of time, and that satisfies certain mathematical properties. Wavelets can be used in a variety of applications, such as image compression, signal processing, and data analysis.",
+        "rating": "3",
+        "errorcodes": [
+            "e1"
+        ],
+        "warningcodes": [],
+        "comment": "Of course the mathematical properties should have been stated.",
+        "msc": [
+            "42C40"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a separable space",
+        "output": "In topology, a topological space is said to be separable if it contains a countable dense subset. In other words, there exists a countable set of points such that every non-empty open set in the space contains at least one point from this set. The set of points is called a countable dense subset or a separable set of the space.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "54D65"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a second countable space",
+        "output": "A topological space is said to be second countable if it has a countable basis, i.e. a collection of open sets that can be used to generate the topology on the space and such that every open set in the space can be represented as a union of elements of the basis. In other words, a topological space is second countable if it has a countable collection of open sets that are sufficient to determine the topology of the space.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "54D10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a Schauder basis",
+        "output": "A Schauder basis for a Banach space X is a sequence (e_n) of elements of X such that every element x in X can be written as a convergent series of the form x = ∑ n=1 ∞ c_n e_n, where c_n are scalars and the convergence is with respect to the norm of X. In other words, a Schauder basis is a basis for the space that is also a convergent sequence in the space.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "The main point is that the sequence c_n is unique. This is missing.",
+        "msc": [
+            "46B15"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a weak convergence",
+        "output": "In probability theory and functional analysis, weak convergence is a type of convergence used to define convergence in distribution of a sequence of random variables to a random variable. Given a metric space (X, d) and a set of probability measures P(X), the sequence {Xn} converges weakly to X if for any continuous and bounded function f:X->R,\n∫ f(x) dPn(x) → ∫ f(x) dP(x) as n → ∞.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w5"
+        ],
+        "comment": "The notation is messes up, but the result is OK",
+        "msc": [
+            "60B10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a compact operator",
+        "output": "A compact operator is a linear operator between two normed vector spaces that maps bounded sets to relatively compact sets. In other words, a compact operator is a linear operator whose image of any bounded subset of the domain space is a relatively compact subset of the range space. In functional analysis, compact operators are important because they have many desirable properties, such as being closed, having compact inverses, and being approximable by finite-dimensional operators.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "47A05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of a the Dirac delta distribution",
+        "output": "In mathematics, the Dirac delta function (also known as the 'impulse function') is a generalized function that is used to represent a point source in a continuous system. It is defined as a function that is zero everywhere except at a single point, where it is infinitely large and the integral of the function over the entire domain is equal to one. Formally, the Dirac delta function is defined as:\n\nδ(x) = {\n0 for x ≠ 0\n∞ for x = 0\n}\n\nand its properties:\n\n∫δ(x)dx = 1\n\nδ(x-a) = δ(a-x)\n\nf(x)δ(x-a) = f(a)δ(x-a)\n\n∫f(x)δ(x-a)dx = f(a)\n\nThe Dirac delta function is not a function in the usual sense, but rather a distribution that can be used to represent certain types of singularities in a smooth function. It is often used in physics and engineering to model point sources and point measurements in continuous systems.",
+        "rating": "3",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "This is not too bad. However, the definition as a function is certainly not rigorous.",
+        "msc": [
+            "46F10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-25"
+    },
+    {
+        "prompt": "Please give a formal definition of convergence in probability",
+        "output": "Convergence in probability refers to a concept in probability theory where a sequence of random variables, Xn, converges to a random variable X as n approaches infinity, such that for any given positive real number ε, the probability that the absolute value of the difference between Xn and X is greater than ε approaches zero as n approaches infinity. Mathematically, this can be written as:\n\nP(|Xn - X| > ε) → 0 as n → ∞\n\nThis definition implies that, as the sample size increases, the values of Xn will become increasingly close to the true value X, with high probability.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "The last sentence comes out of nowhere.",
+        "msc": [
+            "60B10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-26"
+    },
+    {
+        "prompt": "Please give a formal definition of pointwise convergence",
+        "output": "Pointwise convergence refers to the concept of a sequence of functions converging to a specific function at each individual point in their domain. Formally, let X be a metric space and let {fn} be a sequence of functions from X to a metric space Y. We say that the sequence {fn} converges pointwise to a function f if, for every x in X, the sequence {fn(x)} converges to f(x) in Y as n approaches infinity.",
+        "rating": "4",
+        "errorcodes": [
+            "e1"
+        ],
+        "warningcodes": [],
+        "comment": "Not sure why X is assumed to be a metric space. That property is not necessary.",
+        "msc": [
+            "40A30"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-26"
+    },
+    {
+        "prompt": "Please give a formal definition of uniform convergence",
+        "output": "Uniform convergence is a type of convergence used in analysis and is a stronger form of pointwise convergence. A sequence of functions {f_n} converges uniformly to a function f on a set S if, given any ε > 0, there exists a natural number N such that for all n > N and all x in S, the absolute value of f_n(x) - f(x) is less than ε. In other words, the convergence is uniform if the error between the approximating function and the target function is less than a given ε for all x in S, and this is true for all ε > 0.",
+        "rating": "4",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "All is good until the last sentence. There it seems like every approximating function has a distance to the limit of epsilon, for all epsilon.",
+        "msc": [
+            "40A30"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-26"
+    },
+    {
+        "prompt": "Please give a formal definition of compact convergence or uniform convergence on compact sets",
+        "output": "Compact convergence (also called uniform convergence on compact sets) refers to the convergence of a sequence of functions on compact sets. Formally, let X be a metric space, and let {f_n} be a sequence of functions from X to another metric space Y. Then, {f_n} converges uniformly on compact sets to a function f if for every compact set K in X, and every ε > 0, there exists an N such that for all n ≥ N and all x in K, d(f_n(x), f(x)) < ε, where d is the metric on Y.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "40A30"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-26"
+    },
+    {
+        "prompt": "Please give a formal definition of a band limited function",
+        "output": "A band-limited function is a function whose Fourier transform has all of its energy confined to a certain frequency band. Specifically, a function f(t) is said to be band-limited if its Fourier transform F(ω) is zero for all |ω| > B, where B is a positive constant called the bandwidth. In other words, a band-limited function is a function whose frequency content is restricted to a certain range.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "42B10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-26"
+    },
+    {
+        "prompt": "Please give a formal definition of a partition of unity",
+        "output": "A partition of unity is a collection of smooth functions, called 'partition of unity functions,' on a topological space such that each function has compact support and the sum of the functions is equal to 1. The concept is used in differential geometry, where it is used to locally approximate a given smooth function by smooth functions with compact support. This allows for the use of local coordinates, which simplifies the calculation of integrals and derivatives of smooth functions. In general, a partition of unity is a collection of smooth functions {phi_i} on a topological space X that satisfies:\nEach phi_i is supported on a compact subset of X, called the support of phi_i.\nThe support of phi_i is contained in an open set U_i in X.\nThe sum of phi_i(x) over all i is 1 for all x in X.",
+        "rating": "3",
+        "errorcodes": [
+            "e1",
+            "e5_3"
+        ],
+        "warningcodes": [],
+        "comment": "This is not too bad, but I think it is important to assume that the phi_i are non-negative. Also I am not sure if the compact support is necessarily part of the definition.",
+        "msc": [
+            "26B40"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-26"
+    },
+    {
+        "prompt": "Please give a formal definition of a tempered distribution",
+        "output": "A tempered distribution is a type of distribution that is a generalization of the notion of a distribution (also known as a generalized function or linear functional). A tempered distribution is a continuous linear functional on the space of test functions, which are smooth and rapidly decreasing functions. This means that a tempered distribution can be evaluated on test functions, and the result is a complex number. The space of tempered distributions is often denoted by the symbol S'.",
+        "rating": "4",
+        "errorcodes": [
+            "e1"
+        ],
+        "warningcodes": [],
+        "comment": "This is not wrong, but of course we need to specify the topology with respect to which the functional is continuous",
+        "msc": [
+            "46F05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-26"
+    },
+    {
+        "prompt": "Please give a formal definition of the singular support of a distribution",
+        "output": "The singular support of a distribution is the set of points where the density of the distribution is zero, but its derivative is non-zero. In other words, it is the set of points where the distribution is 'supported' in a singular (i.e. non-smooth) way. The singular support is often used to describe distributions that are not absolutely continuous with respect to Lebesgue measure, such as the Dirac delta function.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "ChatGPT interprets the question in the context of measure theory instead of for distributions in the sense of elements of the dual space of test functions. However, this is a very non-standard interpretation. What is more is that it is later acknowledged that singular refers to non-smooth. ",
+        "msc": [
+            "46F05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-26"
+    },
+    {
+        "prompt": "Please give a formal definition of the wavefront set of a distribution",
+        "output": "The wavefront set of a distribution is a mathematical object that describes the singularities of the distribution in terms of its behavior in the frequency domain. It is defined as the set of all points in the cotangent bundle of the underlying space where the distribution does not have rapid decay in the Fourier transform. Formally, given a distribution T on a smooth manifold M, the wavefront set of T is a subset of the cotangent bundle T*M, denoted by WF(T), such that for each (x, ξ) in WF(T), there exists a test function f in C_c^∞(M) (the space of smooth functions with compact support on M) such that the Fourier transform of f(x) T(x) does not decrease faster than |ξ|^{-N} as |ξ| goes to infinity, for any N.",
+        "rating": "3",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "Some parts are correct. However, for $x, theta$ to be in the wavefront set the Fourier transform needs to only decay non-rapidly in the direction associated to theta. ChatGPT also calls the argument of the Fourier transform and the direction in the definition of the wavefront set xi, which is confusing.",
+        "msc": [
+            "46F05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-26"
+    }
+]

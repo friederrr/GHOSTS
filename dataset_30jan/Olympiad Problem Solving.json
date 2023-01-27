@@ -1,0 +1,2279 @@
+[
+    [
+        {
+            "prompt": "",
+            "output": "The sum of the numbers 1, 2, ..., 2n is equal to n^2, which is even. When two numbers are erased and replaced by their absolute difference, the sum remains the same. Since an odd number cannot be the absolute difference of two even numbers, it follows that the final number on the board must be odd.\n",
+            "rating": "3",
+            "errorcodes": [
+                "e5_4",
+                "e5_2"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.2 exE2",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "Yes, an odd number will always remain at the end.\n\nTo prove this, we can consider the parity (oddness or evenness) of the numbers involved. When two even numbers are subtracted, the result is always even, and when two odd numbers are subtracted, the result is always even. But when an even and an odd number are subtracted, the result is always odd.\n\nTherefore, since we start with 2n numbers, of which n are odd and n are even, each time two numbers are erased and replaced by their difference, the parity of the number of odd numbers remains the same. Thus, if we start with an odd number of odd numbers, we will end with an odd number of odd numbers, and the final result must be an odd number.\n",
+            "rating": "5",
+            "errorcodes": [],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.2 exE2",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "No, it is not possible to equalize all numbers to 1 by increasing two neighboring numbers by 1. The numbers 1, 0, 1, 0, 0, 0 form an alternating pattern of 1s and 0s and the sum of these numbers is equal to 2, which is an odd number. As a result, it is not possible to split the 2 into two equal parts and distribute them to equalize all numbers to 1.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.2 ex.E3",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This problem can be solved by using the graph theory concept of bipartite graph.\n\nA bipartite graph is a graph whose vertices can be divided into two disjoint sets such that every edge connects a vertex in one set to a vertex in the other set.\n\nGiven that each member has at most three enemies, it implies that the graph formed by the members and the edges connecting the enemies is a graph with maximum degree 3. By the famous result known as König's Theorem, a graph with maximum degree d can be partitioned into d disjoint independent sets (i.e., no two vertices in the same set are connected by an edge).\n\nTherefore, since each member has at most three enemies, the Parliament of Sikinia can be separated into two houses, such that each member has at most one enemy in his own house.\n",
+        "rating": "3",
+        "errorcodes": [
+            "e3",
+            "e5_4"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "",
+        "msc": [
+            "05C07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.2 ex.E4",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "Yes, this is known as the Banach-Tarski paradox. It states that it's possible to start with a solid sphere in 3D space, and by performing a finite number of operations (such as the ones described above), one can obtain two spheres of the same volume as the original sphere. This seemingly contradicts the intuition that cutting up an object into pieces and reassembling it can't change its volume, but the operations performed are not equivalent to a physical process of cutting and reassembling. The paradox highlights some non-intuitive properties of infinite sets and the concept of volume.\n",
+            "rating": "1",
+            "errorcodes": [
+                "e2"
+            ],
+            "warningcodes": [
+                "w2",
+                "w3"
+            ],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.3 ex.E5",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "The statement can be proven using the property of \"four numbers game.\" According to this property, the sum of the four numbers (a, b, c, d) remains constant after each iteration of the substitution process. Therefore, if one of the numbers becomes arbitrarily large, the other three must become arbitrarily small.\n\nLet's consider the case where a is the largest number in the first iteration. Then, in the next iteration, a-b becomes the largest number. If a-b becomes arbitrarily large, then either a becomes arbitrarily large or b becomes arbitrarily small.\n\nIn the next iteration, b-c becomes the largest number, and if b-c becomes arbitrarily large, then either b or c becomes arbitrarily large or small.\n\nContinuing in this manner, we can see that after each iteration, at least one number of the quadruple will become arbitrarily large or small. Therefore, we can conclude that at least one number will eventually become arbitrarily large.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e3",
+                "e5_4"
+            ],
+            "warningcodes": [
+                "w2"
+            ],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.3 ex.E5",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    [
+        {
+            "prompt": "",
+            "output": "Let $b\\_i = a\\_ia\\_{i+1}a\\_{i+2}$ for $i=1,2,\\ldots,n-2$. Note that $b\\_i$ can only be $1$ or $-1$. From the given equation, we have $S = b\\_1 + b\\_2 + \\ldots + b\\_{n-2}$, so $S$ is the sum of $n-2$ numbers, each of which is $1$ or $-1$.\n\nSince $S=0$, the number of $1$'s and $-1$'s must be equal. Therefore, the number of terms must be even. It follows that $n-2$ is even, so $n$ must be divisible by 4.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e3",
+                "e4",
+                "e5_1",
+                "e5_2",
+                "e5_4"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.5 ex.E7",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "We prove this by contradiction. Suppose that 4 does not divide n, so $n = 4k + r$ for some positive integer $k$ and positive integer $r$ such that $1 \\leq r \\leq 3$.\n\nIf $r = 1$, then $S$ becomes:\n\n\\[S = a\\_1a\\_2a\\_3a\\_4 + a\\_2a\\_3a\\_4a\\_5 + \\ldots + a\\_{4k}a\\_1a\\_2a\\_3]\n\nNotice that the first and last terms cancel each other out because $a\\_1a\\_2a\\_3a\\_4 = -a\\_{4k}a\\_1a\\_2a\\_3$. Hence, $S = a\\_2a\\_3a\\_4a\\_5 + \\ldots + a\\_{4k}a\\_1a\\_2a\\_3$, which implies that $S \\neq 0$, giving us a contradiction.\n\nSimilarly, if $r = 2$, then $S$ becomes:\n\n\\[S = a\\_1a\\_2a\\_3a\\_4 + a\\_2a\\_3a\\_4a\\_5 + \\ldots + a\\_{4k+1}a\\_{4k+2}a\\_{4k+3}a\\_1]\n\nAgain, the first and last terms cancel each other out because $a\\_1a\\_2a\\_3a\\_4 = -a\\_{4k+1}a\\_{4k+2}a\\_{4k+3}a\\_1$. Hence, $S = a\\_2a\\_3a\\_4a\\_5 + \\ldots + a\\_{4k+1}a\\_{4k+2}a\\_{4k+3}a\\_1$, which implies that $S \\neq 0$, giving us a contradiction.\n\nFinally, if $r = 3$, then $S$ becomes:\n\n\\[S = a\\_1a\\_2a\\_3a\\_4 + a\\_2a\\_3a\\_4a\\_5 + \\ldots + a\\_{4k+2}a\\_{4k+3}a\\_{4k+4}a\\_{4k+1}]\n\nAgain, the first and last terms cancel each other out because $a\\_1a\\_2a\\_3a\\_4 = -a\\_{4k+2}a\\_{4k+3}a\\_{4k+4}a\\_{4k+1}$. Hence, $S = a\\_2a\\_3a\\_4a\\_5 + \\ldots + a\\_{4k+2}a\\_{4k+3}a\\_{4k+4}a\\_{4k+1}$, which implies that $S \\neq 0$, giving us a contradiction.\n\nTherefore, in all cases, we have a contradiction, and so our assumption that 4 does not divide $n$ must be false. This means that 4 must divide n.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e3",
+                "e4",
+                "e5_1",
+                "e5_2",
+                "e5_4"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.5 ex.E7",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "This problem can be solved using Hall's theorem, which states that a necessary and sufficient condition for a graph to have a perfect matching is that every subset of vertices has at least as many neighbors as the number of vertices in the subset.\n\nIn the case of the banquet, the vertices represent the ambassadors and edges represent the relationship between enemies. Given that every ambassador has at most n-1 enemies, we can conclude that the degree of each vertex is at most n-1. This means that for any subset of vertices, the number of edges connecting the vertices in the subset is at most n-1.\n\nTherefore, by Hall's theorem, the ambassadors can be seated around a round table such that nobody sits next to an enemy.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e5_1",
+            "e5_2",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "05C15"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.5 ex.E8",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "We will prove this by induction.\n\nBase case: For $n = 1$, we start with the integers $1,2,3$. In two moves, we can get the sequence $1,1,2$, and in another two moves, we have $0,1,1$. Thus, an even integer is left after 4 steps.\n\nInductive step: Assume the statement is true for $n = k$. We will show that it is true for $n = k + 1$. Start with the integers $1, \\ldots, 4(k+1) - 1$. In four moves, we can reduce the first $4k$ integers to a sequence of $2k$ positive even integers. We then have the sequence $2k + 1, \\ldots, 4(k+1) - 1$ which has $4k - 2$ integers. By the inductive hypothesis, after $4k - 2$ more moves, an even integer is left. Thus, after a total of $4k + 2$ moves, an even integer is left.\n\nSince the statement holds for $n = 1$, and is true for any $n$ by induction, the statement is true for all positive integers $n$.\n",
+        "rating": "1",
+        "errorcodes": [
+            "e3",
+            "e4",
+            "e5_1",
+            "e5_2",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.8 ex.1",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "Yes, it's possible to reach the goal of having just one black square on an $8 \\times 8$ chessboard.\n\nOne way to do it is to paint the black squares of the first and second rows with white color, and the black squares of the first and second columns with white color. This will result in one black square on the third row and third column.\n",
+            "rating": "1",
+            "errorcodes": [
+                "e6",
+                "e3"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.9 ex.3",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "Yes, it is possible to attain a single black square on an $8 \\times 8$ chessboard by repainting all squares of a row or column.\n\nOne way to do this is to repaint all the squares of the bottom-right square to black, resulting in a single black square on the board.\n",
+            "rating": "1",
+            "errorcodes": [
+                "e6",
+                "e3"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.9 ex.3",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "In general, if there are \"n\" ones and \"m\" zeros arranged in a circle and the process of writing 0s and 1s between the digits and wiping out the original digits is repeated indefinitely, you will never get \"n+m\" zeros. The reason is that the number of zeros always remains \"m\" while the number of ones decreases by one in each iteration, so the maximum number of zeros that can be obtained is \"m\".\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.9 ex.5",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The proof for this statement can be done by induction.\n\nFirst, consider the base case where the table has only one square. In this case, any positive integer can be reduced to 0 through repeated subtractions of 1.\n\nNext, consider the induction step where the statement holds for a table of size n x m, and we want to prove it holds for a table of size (n+1) x m.\n\nLet the last row of the table be denoted as R. We know that the maximum value in R can be reduced to 0 by repeated subtractions of 1. If the maximum value in R is less than or equal to m, then we can subtract 1 from each element in R to make it 0 in m moves. Otherwise, we can repeatedly double the elements in R until the maximum value becomes less than or equal to m, at which point we can use the induction hypothesis to reach a table of zeros.\n\nThe proof for a table of size n x (m+1) is similar, and therefore the proof for a table of any size n x m is complete.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e2",
+            "e4",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.9 ex8",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "a) No, you can not always get a table with each entry divisible by 2.\n\nb) Yes, you can always get a table with each entry divisible by 3.\n\nIn order to show that you can always make each entry divisible by 3, consider each $3 \\times 3$ square as a unit and number each unit from 1 to 8. In each move, you can make the numbers in one unit either divisible by 3 or not divisible by 3. You can make each unit divisible by 3 in 8 moves by starting with unit 1, making it divisible by 3, then making unit 2 divisible by 3, and so on. Since the sum of the numbers in each unit is a multiple of 3, the sum of all the numbers on the board will also be a multiple of 3, so each entry will be divisible by 3.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4",
+            "e5_4",
+            "e6"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.10 ex13",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "For all $i$, $1 \\leq i \\leq 2n$, the sum of the place number and the integer $i$ is $i + i = 2i$. Since $2i$ is even for all $i$, it follows that all the sums are even. Hence, all the sums have the same remainder when divided by $2n$: 0. Thus, there are two among the sums which have the same remainder modulo $2n$.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e2",
+                "e5_1",
+                "e6"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.10 ex18",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "We know that the integers $1,\\ldots, 2n$ are mapped to the numbers $1 + 1, 1 + 2, \\ldots, 2n + 2n$, which gives the set of numbers ${2, 4, \\ldots, 4n}$. Since $2n$ evenly divides $4n$, we know that this set of numbers has $2n$ residue classes modulo $2n$. Thus, by the Pigeonhole Principle, there must be two numbers that have the same residue class modulo $2n$, meaning that their sum is divisible by $2n$. This means that there are two among the sums that have the same remainder modulo $2n$.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e5_4",
+                "e5_1",
+                "e6"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.10 ex18",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "No, the initial numbers could not be (a) 2, 2, 2 or (b) 3, 3, 3.\n\nIf the initial numbers were 2, 2, 2, then after replacing one of the integers with the sum of the other two minus 1, we would have 3, 3, 3.\n\nHowever, when we repeat this operation again with the new set of numbers, we get 4, 4, 4, which is not one of the final results 17, 1967, 1983.\n\nSimilarly, if the initial numbers were 3, 3, 3, then after replacing one of the integers with the sum of the other two minus 1, we would have 5, 5, 5. This does not match any of the final results either.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e5_4",
+            "e5_2"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998  p.10 ex21",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This problem can be proved using mathematical induction.\n\nBase case (n=1): If there is only 1 number on the board, then it remains unchanged and is not less than 1/1.\n\nInductive step: Assume that if n numbers are written on the board, then a number not less than 1/n remains after n-1 steps. Consider the case when n+1 numbers are written on the board.\n\nAfter one step, two numbers a and b are erased, and (a+b)/4 is written instead. We know that a and b are both not less than 1/(n+1), so their sum is not less than 2/(n+1). Dividing this sum by 4, we have that (a+b)/4 is not less than 1/(n+1).\n\nTherefore, after n steps, at least one number remains that is not less than 1/(n+1). This completes the inductive step and the proof.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.11 ex28",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Expanding and simplifying both sides of the equation:\n\n$(x^2 -3x +3)^2 - 3(x^2-3x+3)+3 = x$\n\n$x^4 - 6x^3 + 9x^2 - 9x^2 + 27x - 27 - 3x^2 + 9x - 9 + 3 = x$\n\n$x^4 - 6x^3 + 6x^2 + 18x - 33 = x$\n\n$x^4 - 6x^3 + 6x^2 + 18x - 34 = 0$\n\nThis is a quartic equation, and there is no general formula to solve it. To find the roots, numerical methods can be used, such as the Newton-Raphson method or bisection method.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e4",
+            "e5_2",
+            "e5_3"
+        ],
+        "warningcodes": [
+            "w3"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.11 ex30",
+        "confidence": "medium",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This statement is true because at every handshake, the parity (odd or even) of the number of handshakes exchanged by two people changes. So, the total number of odd persons must remain even at all times.\n",
+        "rating": "3",
+        "errorcodes": [
+            "e2",
+            "e5_1"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.11 ex32",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "It depends on what you mean by the \"sequence of squares.\" If you mean the set of all positive square numbers, then the answer is no, there is no infinite arithmetic subsequence in the set of positive square numbers. An arithmetic sequence is a sequence of numbers such that the difference between any two consecutive terms is the same. But the difference between consecutive square numbers increases as the numbers get larger, so there cannot be an infinite arithmetic subsequence in the set of positive square numbers.\n",
+            "rating": "3",
+            "errorcodes": [
+                "e2",
+                "e5_3"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.12 ex35",
+            "confidence": "medium",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "The sequence of squares does not necessarily contain an infinite arithmetic subsequence. It depends on the specific sequence of squares being considered. Some sequences of squares may contain infinite arithmetic subsequences, while others may not.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e2",
+                "e5_1"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.12 ex35",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "This statement is true because of the concept of parity in permutations. The parity of a permutation is the number of inversions (i.e. pairs of elements that are out of order) in the permutation. The parity of a permutation can either be even or odd.\n\nIn every step of switching two neighboring elements, the number of inversions in the permutation either stays the same or decreases by exactly 2. Thus, after an odd number of steps, the number of inversions must still be odd, meaning that the permutation cannot be the same as the initial order (which has an even number of inversions).\n\nTherefore, it is impossible to reach the initial order after an odd number of steps.\n",
+        "rating": "4",
+        "errorcodes": [
+            "e2",
+            "e5_4"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "Seems very close to original solution",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.12 ex36",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The rectangular floor has an area of $A$. The $2 \\times 2$ tiles have an area of $2 \\times 2 = 4$, while the $1 \\times 4$ tiles have an area of $1 \\times 4 = 4$. Since the floor is covered by these tiles, we have $A = n \\times 4$, where $n$ is the number of tiles.\n\nSince one tile got smashed, there are $n-1$ tiles remaining, and so $A = (n-1) \\times 4$. We have one tile of the other kind available, but this tile has a different area ($2 \\times 2$ or $1 \\times 4$) than the other tiles ($4$). Hence, the floor cannot be covered by rearranging the tiles, as the total area of the tiles will not match the area of the floor.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e4",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "Obvious self-contradiction.",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.26 ex1",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "Yes, it is possible to pack 250 1x1x4 bricks into a 10x10x10 box. Each brick has a volume of 4 cubic units, so 250 bricks have a total volume of 1000 cubic units. A 10x10x10 box has a volume of 1000 cubic units, so it can accommodate the 250 bricks.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e5_4",
+                "e6"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.26 ex.7",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "Yes, it is possible to pack 250 $1 \\times 1 \\times 4$ bricks into a $10 \\times 10 \\times 10$ box.\n\nHere's one way to do it:\n\nLine up 25 bricks along the length of the box, leaving a gap of 4 units along the width and height of the box.\n\nRepeat this process 10 times to fill up the length of the box.\n\nRepeat the entire process to fill up the width and height of the box.\n\nThis should allow you to fit 250 bricks into the $10 \\times 10 \\times 10$ box.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e4",
+                "e5_4",
+                "e6"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.26 ex.7",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    [
+        {
+            "prompt": "",
+            "output": "Correct, if a rectangle of size $a \\times b$ can be covered by rectangles of size $1 \\times n$, then either $n$ must divide $a$ or $n$ must divide $b$. This means that $n$ must be a factor of either $a$ or $b$.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e5_3",
+                "e5_4"
+            ],
+            "warningcodes": [
+                "w1"
+            ],
+            "comment": "Not clear that it understands the question phrased like this.",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.26 ex8",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "This can be proven by using the concept of greatest common divisor (GCD). If $n|a$ or $n|b$, then it means that the GCD of $n$ and $a$ (or $b$) is equal to $n$. This means that $n$ evenly divides $a$ (or $b$) and there exists an integer $m$ such that $n \\cdot m = a$ (or $b$). Therefore, the $a \\times b$ rectangle can be covered by arranging $m$ copies of $1 \\times n$ rectangles end-to-end.\n\nConversely, if the $a \\times b$ rectangle can be covered by $1 \\times n$ rectangles, then there exists an integer $m$ such that $n \\cdot m = a$ or $n \\cdot m = b$, which means that either $n|a$ or $n|b$.\n\nTherefore, it has been proven that an $a \\times b$ rectangle can be covered by $1 \\times n$ rectangles if and only if $n|a$ or $n|b$.\n",
+            "rating": "3",
+            "errorcodes": [
+                "e5_5",
+                "e5_3"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.26 ex8",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    [
+        {
+            "prompt": "",
+            "output": "A $(2n + 1) \\times (2n + 1)$ chessboard with one corner cut off contains $2n^2$ squares. To cover these squares with $2 \\times 1$ dominoes, half of which are horizontal, we need $2n^2$ squares to be divisible by 2. The smallest such $n$ is $n = 2$, so $n = 2$ is the smallest value for which a $(2n + 1) \\times (2n + 1)$ chessboard with one corner cut off can be covered by $2 \\times 1$ dominoes, half of which are horizontal.\n",
+            "rating": "1",
+            "errorcodes": [
+                "e5_4",
+                "e4",
+                "e3"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.26 ex9",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "The number of squares on a $ (2n+1) \\times (2n+1)$ chessboard is $(2n+1)^2$. If one corner is cut off, there are $(2n+1)^2 - (2n-1)^2 = 4n$ squares left.\n\nIn order to cover half of the squares with horizontal dominoes, we need an even number of squares. Hence, we must have $4n$ to be even, so $n$ must be an integer. Therefore, $n$ can be any non-negative integer.\n",
+            "rating": "1",
+            "errorcodes": [
+                "e5_4",
+                "e4",
+                "e3"
+            ],
+            "warningcodes": [
+                "w2"
+            ],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.26 ex9",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "It is not possible to reach +1 on each square of a $5 \\times 5$ chessboard by reversing the signs of $a \\times a$ subsquares with $a > 1$. No matter which square has the value -1, it will always be impossible to change it to +1 by reversing the signs of larger subsquares. This is because the total number of squares on the chessboard is odd, and so it is not possible to change an odd number of -1s to +1s.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.27 ex16",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "The minimum number of watchmen needed to survey an art gallery with the shape of a simple n-gon is equal to $\\left\\lceil\\frac{n}{2}\\right\\rceil$. This result is based on the theory of art gallery theorem, which states that $\\left\\lceil\\frac{n}{2}\\right\\rceil$ is the minimum number of guards required to see the entire gallery, no matter how the gallery is shaped or where the guards are placed.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e3"
+            ],
+            "warningcodes": [
+                "w2",
+                "w3",
+                "w1"
+            ],
+            "comment": "provided solution has a similar form with the true solution. Memorization?",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.27 ex25",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "The minimum number of watchmen needed to survey an art gallery with the shape of a simple n-gon is equal to ⌈n/3⌉, where n is the number of sides of the n-gon. This result is known as the \"Art Gallery Theorem\". The theorem states that, for any simple n-gon, ⌈n/3⌉ watchmen are sufficient to observe all points in the interior of the n-gon.\n",
+            "rating": "3",
+            "errorcodes": [
+                "e2"
+            ],
+            "warningcodes": [
+                "w2",
+                "w3",
+                "w1"
+            ],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.27 ex25",
+            "confidence": "low",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    [
+        {
+            "prompt": "",
+            "output": "There are 4 corners of the $7 \\times 7$ square that can fit the $1 \\times 1$ tile, so the answer is 4 permissible positions for the $1 \\times 1$ tile.\n",
+            "rating": "3",
+            "errorcodes": [
+                "e3",
+                "e6"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.27 ex26",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "A 7x7 square can be covered by sixteen 3x1 tiles and one 1x1 tile. There are 8 possible positions for the 1x1 tile, as it can be placed in the middle of any of the four 3x1 tiles that form a 2x2 square. The 1x1 tile cannot be placed in any of the other twelve 3x1 tile positions.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e3",
+                "e6"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.27 ex26",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "We can divide the square into $9$ smaller $3 \\times 3$ squares and $4$ rectangles of size $3 \\times 6$, $6 \\times 3$, $3 \\times 2$, and $2 \\times 3$.\n\nEach $3 \\times 3$ square contains 9 unit squares, so we need 9 \\* 9 = 81 unit squares for the $9$ squares.\n\nThe $3 \\times 6$ rectangles can be tiled with one $3 \\times 3$ tile and three $1 \\times 3$ tiles, so it requires 3 \\* 3 = 9 unit squares.\n\nThe $6 \\times 3$ rectangles can be tiled with two $3 \\times 3$ tiles and six $1 \\times 3$ tiles, so it requires 2 \\* 9 + 6 \\* 3 = 36 unit squares.\n\nThe $3 \\times 2$ rectangles can be tiled with two $1 \\times 2$ tiles and one $1 \\times 1$ tile, so it requires 2 \\* 2 + 1 = 5 unit squares.\n\nThe $2 \\times 3$ rectangles can be tiled with two $2 \\times 2$ tiles and one $1 \\times 2$ tile, so it requires 2 \\* 4 + 2 = 10 unit squares.\n\nTherefore, a minimum of 81 + 9 + 36 + 5 + 10 = 141 unit squares are required.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e6"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.28 ex32",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This statement can be proven using the pigeonhole principle. Consider any triangle with vertices A, B, and C. Without loss of generality, assume that A and B are colored differently. There are only two possibilities for the color of C: it can be the same as A, or it can be the same as B.\n\nIf there are more than three vertices of the same color as A (or B), then by the pigeonhole principle, there must be three of them that form a triangle. These three vertices form a regular triangle because any triangle can be scaled to a regular triangle by rescaling the sides to a common length. Thus, there must exist three points of the same color, which are vertices of a regular triangle.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e5_4",
+            "e3"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.28 ex35",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "This can be proven using the Brouwer Fixed Point Theorem, which states that every continuous function from a closed ball to itself in Euclidean space has at least one fixed point.\n\nConsider a continuous function that maps every point on the sphere to the closest point of the opposite color. By the Brouwer Fixed Point Theorem, this function has a fixed point, which means there exists a point on the sphere that is the same color as its closest point of the opposite color.\n\nNow, consider three points on the sphere such that they are equally spaced around this fixed point and are connected by arcs of equal length. These three points form a regular triangle and have the same color, as they are all mapped to the same fixed point by the continuous function defined earlier.\n",
+            "rating": "1",
+            "errorcodes": [
+                "e3"
+            ],
+            "warningcodes": [
+                "w2",
+                "w3"
+            ],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.28 ex36",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "The statement that there exist three points of the same color, which are vertices of a regular triangle on a sphere colored in two colors, is called the Tarski's Theorem or the Tarski's Sphere Theorem. It was first proved by Alfred Tarski in 1935.\n\nA formal proof of Tarski's Theorem is quite involved and requires knowledge of geometry and topology. However, one can intuitively understand the theorem by considering the sphere as a two-dimensional surface. On a two-dimensional surface, a continuous region can be divided into smaller regions in a variety of ways. For example, one can divide a region into two regions of equal area. On the sphere, two regions of equal area divide the sphere into two hemispheres, each with the same color. Thus, if we take any great circle that divides the sphere into two hemispheres, we can find three points of the same color on the sphere that are vertices of an equilateral triangle.\n\nIn summary, Tarski's Theorem states that if a sphere is colored in two colors, there exists three points of the same color that are vertices of a regular triangle on the sphere.\n",
+            "rating": "1",
+            "errorcodes": [
+                "e3"
+            ],
+            "warningcodes": [
+                "w2",
+                "w3"
+            ],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.28 ex36",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "Let the smallest black number be x. Then, it follows that x + 1, 2x, and 2x + 1 are white. Thus, the product of two white numbers is (2x)(2x + 1) = 4x^2 + 2x, which is black.\n\nSo, x must be odd, say 2n + 1. Then, 4x^2 + 2x = 4(2n + 1)^2 + 2(2n + 1) = 8n^2 + 8n + 4 = (2n + 1)(4n + 4), which is white.\n\nThus, the only possible coloring is where x = 1, and all odd numbers are black, while all even numbers are white.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e5_4",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.28 ex38",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "(a) A plane can be cut into at most $n(n-1)/2 + n = n^2$ parts by $n$ lines.\n\n(b) In general, space is divided into at most $(n-1)^3$ parts by $n$ planes in general position.\n",
+        "rating": "3",
+        "errorcodes": [
+            "e4",
+            "e2"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.40 exE1",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "The statement is false. Consider the points $(-2, 0), (0, 1), (0, -1), (2, 0)$. Any three of these points form a triangle of area $\\leq 1$, but all four points do not lie in a triangle of area $\\leq 4$.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e5_4",
+                "e5_1",
+                "e4",
+                "e2"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.41 exE3",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "This is a classic problem in computational geometry known as the \"four point theorem\". Here's a proof of the theorem:\n\nTake the convex hull of the $n$ points, which is the smallest convex polygon that contains all of the points. This can be found in $O(n \\log n)$ time using algorithms such as Jarvis march or Graham scan.\n\nLet $v\\_1, v\\_2, \\dots, v\\_m$ be the vertices of the convex hull in counter-clockwise order.\n\nConsider the triangle formed by $v\\_1, v\\_2, v\\_m$. If this triangle has area $\\leq 4$, we are done.\n\nIf the triangle formed by $v\\_1, v\\_2, v\\_m$ has area $> 4$, then there must exist a point $v\\_i$ such that $3 \\le i \\le m-1$ and the triangle formed by $v\\_1, v\\_2, v\\_i$ has area $> 1$.\n\nReplace $v\\_m$ with $v\\_i$ and repeat steps 3-5 until a triangle of area $\\le 4$ is found.\n\nIt is easy to see that this process terminates after a finite number of steps, since the area of the triangle decreases with each iteration. Thus, we have proved that all $n$ points lie in a triangle of area $\\le 4$.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e5_4",
+                "e5_1",
+                "e3"
+            ],
+            "warningcodes": [
+                "w2",
+                "w3"
+            ],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.41 exE3",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "Suppose that $\\Omega$ is a finite set with $n$ points. Choose a point $A$ in $\\Omega$. For each $B\\neq A$ in $\\Omega$, there are exactly two points $C$ and $D$ in $\\Omega$ such that $B$ is the midpoint of $C$ and $D$. Hence, there are $2(n-1)$ points in $\\Omega$ distinct from $A$. This leads to a contradiction, since $2(n-1)\\<n$ if $n>2$. Therefore, $\\Omega$ must be an infinite set.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.42 exE5",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Suppose there are two lattice points with different labels, say A and B. WLOG, let the label at A be greater than that at B. Let the common neighbor of A and B be C.\n\nSince the label at A is the arithmetic mean of the labels at its neighbors, including C, and the label at C is the arithmetic mean of the labels at its neighbors, including A and B, we have:\n\n(Label at A) = (Arithmetic mean of labels at A's neighbors)\n\\= (Sum of labels at A's neighbors) / 4\n\\= (Label at B + Label at C + Label at D + ...) / 4\n\n(Label at C) = (Arithmetic mean of labels at C's neighbors)\n\\= (Sum of labels at C's neighbors) / 4\n\\= (Label at A + Label at B + Label at E + ...) / 4\n\nSubstituting the second equation into the first one:\n\n(Label at A) = (Label at B + Label at C + Label at D + ...) / 4\n\\= (Label at B + (Label at A + Label at B + Label at E + ...) / 4 + Label at D + ...) / 4\n\\= (Label at B + Label at A / 4 + Label at B / 4 + Label at E / 4 + ... + Label at D + ...) / 4\n\\= (Label at B + Label at A / 4 + Label at B / 4) / 4 + (Label at E / 4 + ... + Label at D + ...) / 4\n\\= (Label at B + Label at B / 4 + Label at B / 4) / 4 + (Label at A / 4 + Label at E / 4 + ... + Label at D + ...) / 4\n\\= Label at B / 2 + (Label at A / 4 + Label at E / 4 + ... + Label at D + ...) / 4\n\nSince Label at A is greater than Label at B, Label at A / 2 is greater than Label at B / 2, which contradicts the assumption that the label at B is smaller than that at A. Hence, all the labels are equal.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e2",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.43 exE8",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "Yes, it is true. There is no solution for such quadruple. This equation is known as Diophantine equation, which are equations where only integer solutions are sought. In this case, the only way to have x^2 + y^2 equal to 3 times z^2 + u^2 is when x=y=z=u=0.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e2"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.43 exE9",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "We can start by assuming the opposite, that such a quadruple of positive integers exists. Then, we can deduce a contradiction from this assumption to show that no such quadruple exists.\n\nLet (x, y, z, u) be a quadruple of positive integers that satisfies the equation.\nSince x^2 + y^2 = 3(z^2 + u^2), we can conclude that 3 divides x^2 + y^2.\nHowever, it is well known that the sum of two squares cannot be divisible by 3 unless both squares are divisible by 3, i.e., x^2 and y^2 must both be divisible by 3.\nBut, since x and y are positive integers, this means that x and y are both divisible by 3.\nLet x = 3x', and y = 3y' for positive integers x' and y'.\nThen, the equation becomes 9(x'^2 + y'^2) = 3(z^2 + u^2), and since x' and y' are positive integers, we can conclude that 3 divides z^2 + u^2.\nHowever, just as we did with x and y, this means that z^2 and u^2 must both be divisible by 3, which in turn means that z and u are both divisible by 3.\nLet z = 3z', and u = 3u' for positive integers z' and u'.\nThen, the equation becomes 9(x'^2 + y'^2) = 9(z'^2 + u'^2), which implies that x'^2 + y'^2 = z'^2 + u'^2.\n\nThis is a contradiction, because we started with the assumption that (x, y, z, u) is a quadruple of positive integers that satisfies the equation x^2 + y^2 = 3(z^2 + u^2), and now we have shown that this leads to the equation x'^2 + y'^2 = z'^2 + u'^2, which has no solution for positive integers x', y', z', and u'.\nTherefore, we have shown that there is no quadruple of positive integers (x, y, z, u) satisfying the equation x^2 + y^2 = 3(z^2 + u^2).\n",
+            "rating": "4",
+            "errorcodes": [
+                "e4",
+                "e5_4",
+                "e5_2"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.43 exE9",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "The Sylvester-Gallai theorem states that if there exists a finite set of points in the plane such that every line passing through two of these points also passes through a third point, then all the points in the set must lie on a single line. This result can be proven using the extremal principle, which states that among all configurations satisfying a given condition, the one for which a certain quantity is minimized or maximized is the one that is most likely to occur. In this case, the extremal principle can be used to show that the line with the maximum number of points is the line that contains all the points in the set.\n",
+        "rating": "3",
+        "errorcodes": [
+            "e5_2"
+        ],
+        "warningcodes": [
+            "w1",
+            "w2"
+        ],
+        "comment": "Reference to extremal principle is correct, but the proof is too vague. This is found in the chapter entitled \"the extremal principle\"",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.43 exE10",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Yes, if any line through two points in the set of S passes through a third point, it means that all the points in the set lie on the same line. This is because the line passing through two points is unique, and if there exists another point on the line, then all three points must be collinear, meaning that they all lie on the same line. Hence, if any line through two points passes through a third, it implies that all the points are collinear and lie on the same line.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e5_1",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.43 exE10",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "This is known as the \"Odd Town\" theorem in graph theory. The theorem states that in a finite, connected, undirected graph, there exists at least one vertex with an odd degree (i.e., an odd number of edges connecting to it).\n\nIn the case of the roads in Sicily being one-way, we can consider the graph to be directed. However, the result still holds because the degree of a vertex in a directed graph is the sum of the in-degree and the out-degree, both of which are non-negative. Therefore, there must be at least one vertex with an odd degree.\n\nThis vertex with an odd degree can be reached from every other city in the graph, either directly or via at most one other city, because the graph is connected and the roads are one-way.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e3",
+                "e5_1",
+                "e5_4"
+            ],
+            "warningcodes": [
+                "w2"
+            ],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.44 exE11",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "Yes, this can be proven using graph theory. The statement is equivalent to saying that the underlying graph of the roads is strongly connected, meaning that there is a path between any two cities in the graph. By contrapositive, if the graph were not strongly connected, it would have to be disconnected, meaning there would be at least two cities that are not reachable from each other. But this contradicts the given statement that every pair of cities is connected by exactly one road. Therefore, the graph must be strongly connected and there exists a city that can be reached from every city directly or via at most one other city.\n",
+            "rating": "3",
+            "errorcodes": [
+                "e2",
+                "e5_4"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.44 exE11",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "This statement is a form of the well-known theorem of the \"marriage problem\". It states that in a finite bipartite graph (a graph whose vertices can be split into two groups such that every edge connects vertices from different groups), every maximum matching is maximum cardinality.\n\nIn this case, since every member has at most three enemies, we can think of the members as vertices in a bipartite graph and the edges representing the \"enemies\" relationship between members. Since every member has at most one enemy in the other house, it follows that this graph can be split into two smaller graphs, each with the desired properties.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e5_4"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.46 exE14",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This is called Pappus' Theorem and it states that in a projective plane, given $n$ lines, with $n \\geq 3$, such that every pair of lines intersects at a single point and if every intersection of two lines contains at least one additional line, then all lines must pass through a common point.\n\nTo prove the theorem, consider the following diagram:\n\nLet the lines be denoted by $l\\_1, l\\_2, \\dots, l\\_n$. Pick an arbitrary line $l\\_1$ and a point $A$ on it. Draw a line from $A$ to each of the points of intersection of $l\\_1$ with the other lines. Let these lines be denoted by $l'\\_2, l'\\_3, \\dots, l'\\_n$.\n\nSince every intersection of two lines contains at least one additional line, the lines $l'\\_2, l'\\_3, \\dots, l'\\_n$ must each intersect with at least one other line. Let these intersections be denoted by $B\\_2, B\\_3, \\dots, B\\_n$.\n\nSince each of the lines $l'\\_2, l'\\_3, \\dots, l'\\_n$ intersects with a different line, it follows that $B\\_2, B\\_3, \\dots, B\\_n$ are all distinct points.\n\nConsider the line passing through $A$ and $B\\_2$. Since $A$ lies on $l\\_1$, this line must intersect with at least one other line. Since it passes through two points ($A$ and $B\\_2$), it must intersect with exactly one other line. Let this line be denoted by $l\\_k$.\n\nSimilarly, the line passing through $A$ and $B\\_3$ must intersect with exactly one line, which we will denote by $l\\_j$.\n\nSince $j \\neq k$, it follows that the lines $l\\_j$ and $l\\_k$ must intersect at some point $C$.\n\nBut since $A, B\\_2,$ and $B\\_3$ are all collinear, it follows that $C$ must also lie on the line passing through $A$ and $B\\_3$.\n\nThis is a contradiction, as $C$ lies on two different lines.\n\nTherefore, all lines must pass through a common point.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e5_4"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.47 ex2",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This statement is not always true. In fact, there exist convex polyhedra that have faces with different numbers of sides. A counterexample is a truncated tetrahedron, which has faces with 4 and 6 sides.\n\nHowever, if we restrict our attention to regular convex polyhedra (also known as Platonic solids), the statement is true. Every regular convex polyhedron has faces that are regular polyggons, and all of the faces are congruent (i.e. have the same number of sides and the same length sides). For example, the cube has faces that are square, the tetrahedron has faces that are equilateral triangles, etc.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.48 ex6",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Suppose there are more than 200 embassies. Then, there must be at least one country with more than 10 embassies, because the total number of pairs of countries is 20 \\* 19 / 2 = 190, and if each country has at most 10 embassies, the total number of embassies is at most 20 \\* 10 = 200.\n\nLet's call this country A. Then, there are at least 11 countries with which country A has diplomatic relations. Since among any three countries, there are always two with no diplomatic relations, it follows that there must be two of these 11 countries, call them B and C, that have no diplomatic relations with each other.\n\nThis contradicts the assumption that A has diplomatic relations with both B and C, therefore our initial assumption that there are more than 200 embassies must be false. Hence, there are at most 200 embassies on the planet.\n",
+        "rating": "3",
+        "errorcodes": [
+            "e5_4",
+            "e6"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.48 ex12",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "Consider any two cars on the track. WLOG, assume that the car at position 1 has more gas than the car at position 2. As they drive, eventually the car at position 1 will run out of gas and be forced to stop. At that point, the car at position 2 will have enough gas to drive past car 1 and collect gas from all the other cars that are farther away from car 1. By the Pigeonhole Principle, there must be a car that is farther away from car 1 and has more gas than car 1. Hence, car 2 can collect enough gas from other cars to complete a lap.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e2",
+                "e5_1",
+                "e5_4",
+                "e6"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.48 ex15",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "Let's label the cars $1, 2, 3, ..., n$. We will prove this by induction.\n\nFor the base case $n = 1$, there is only one car and it has enough gas to complete a lap.\n\nFor the induction step, assume that the statement is true for $n = k$, i.e. there is a car that can complete a lap by collecting gas from the other cars. We will show that it is also true for $n = k + 1$.\n\nWithout loss of generality, let's assume that car $1$ can complete a lap in $k$ cars. If car $1$ has enough gas to reach car $k + 1$, it can collect gas from car $k + 1$ and complete a lap.\n\nIf car $1$ does not have enough gas to reach car $k + 1$, then car $k + 1$ must have enough gas to reach car $2$. In this case, car $k + 1$ can collect gas from car $2$ and complete a lap.\n\nTherefore, in both cases, there is a car that can complete a lap by collecting gas from the other cars, and the statement holds for $n = k + 1$.\n\nBy induction, the statement is true for all positive integers $n$.\n",
+            "rating": "3",
+            "errorcodes": [
+                "e3",
+                "e5_1",
+                "e5_4"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.48 ex15",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    [
+        {
+            "prompt": "",
+            "output": "This statement is false. A cube can be divided into smaller cubes, which are pairwise distinct. For example, if we have a cube with side length 2, we can divide it into 8 smaller cubes with side length 1, which are pairwise distinct.\n",
+            "rating": "1",
+            "errorcodes": [
+                "e6"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.48 ex17",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "It is impossible to divide a cube into several smaller pairwise distinct cubes. This is because the volume of a cube is determined by the length of its sides, and dividing a cube into smaller cubes means reducing the length of its sides. It is not possible to have smaller cubes with sides longer than the length of the sides of the original cube, as this would violate the definition of a cube. Therefore, it is impossible to divide a single cube into smaller pairwise distinct cubes.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e2",
+                "e5_4",
+                "e5_1"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.48 ex17",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    [
+        {
+            "prompt": "",
+            "output": "This statement is false. A counterexample would be a square with side length equal to the square root of 2. Its area is 2, but it can be contained in a rectangle with area 2 but with sides of length 1 and 2.\n",
+            "rating": "1",
+            "errorcodes": [
+                "e5_4",
+                "e5_1",
+                "e3"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.49 ex21",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "The statement is false. Consider a regular hexagon of side length 1 as a convex polygon of area 1. The smallest rectangle that contains it has area 2√3, which is larger than 2.\n",
+            "rating": "1",
+            "errorcodes": [
+                "e5_4",
+                "e5_1",
+                "e3"
+            ],
+            "warningcodes": [
+                "w2"
+            ],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.49 ex21",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "This is a famous problem in geometry known as the \"Pigeonhole Principle\". It states that if m pigeons are placed into n holes, such that m > n, then there must be at least one hole containing more than one pigeon.\n\nApplying this principle to the given problem, we can consider the circle as the \"hole\" and the points as the \"pigeons\". If we choose 8 points inside a circle of radius 1, then there are more points (8) than the number of possible distances between them (7). Since the maximum distance between any two points is 2, there must be at least two points with a distance of less than 1. Hence, it can be concluded that two points with distance less than 1 exist.\n",
+        "rating": "1",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [
+            "w2",
+            "w3"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.49 ex28",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "There are no positive solutions to the system of equations $x\\_1 + x\\_2 = x\\_3^2$, $x\\_2 + x\\_3 = x\\_4^2$, $x\\_3 + x\\_4 = x\\_5^2$, $x\\_4 + x\\_5 = x\\_1^2$, $x\\_5 + x\\_1 = x\\_2^2$.\n",
+        "rating": "1",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.49 ex32",
+        "confidence": "low",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "For each point on the circle, we can draw two chords that go through that point. Hence, the total number of chords we can draw is $2n$. If $n = 3$, the disk is divided into 3 parts, if $n = 4$, it is divided into 5 parts, and so on.\n\nIn general, if $n$ points are chosen on a circle, the number of parts into which the circular disk is cut is equal to $n + \\binom{n}{2}$.\n",
+        "rating": "1",
+        "errorcodes": [
+            "e5_4",
+            "e3",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.50 ex36",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "We can prove this using contradiction. Suppose for the sake of contradiction that for any choice of three numbers, their sum is less than or equal to 1.\n\nLet $x\\_1, x\\_2, \\dots, x\\_n$ be the nonnegative reals. Then, by the Triangle Inequality,\n\n$$(x\\_1 + x\\_2 + x\\_3)^2 \\le (x\\_1^2 + x\\_2^2 + x\\_3^2) + 2(x\\_1x\\_2 + x\\_1x\\_3 + x\\_2x\\_3)$$\n\nSince the sum of the squares of the $x\\_i$ is greater than 1, it follows that\n\n$$(x\\_1 + x\\_2 + x\\_3)^2 < 1 + 2(x\\_1x\\_2 + x\\_1x\\_3 + x\\_2x\\_3)$$\n\nHowever, the sum of the $x\\_i$ is 3, so\n\n$$3^2 = (x\\_1 + x\\_2 + x\\_3)^2 \\ge (x\\_1 + x\\_2 + x\\_3)^2 > 1 + 2(x\\_1x\\_2 + x\\_1x\\_3 + x\\_2x\\_3) \\ge 1$$\n\nwhich is a contradiction. Hence, it is possible to choose three numbers with sum greater than 1.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e4",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p50 ex39",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This statement is incorrect. The equation $15x^2 - 7y^2 = 9$ has the integer solutions $(\\pm 1, 0)$.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.122 exE6",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "True. A square number must end in either 0, 1, 4, 5, 6 or 9. Since a nine-digit number ending in 5 cannot be a square, it is true that such a number cannot be a square.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e5_4",
+            "e5_5"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.122 exE7",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "No, it is not possible. The Fundamental Theorem of Algebra states that a non-constant polynomial with complex coefficients must have at least one complex root, so a polynomial with integer coefficients can have at most n roots, where n is the degree of the polynomial. However, in this case, for any polynomial of degree at least 1, it would take on different values at 7 and 11, which means it can not simultaneously be equal to 11 and 13.\n",
+        "rating": "1",
+        "errorcodes": [
+            "e3",
+            "e5_4"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.123 exE8",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Yes, that's true. For any positive integer $a\\_1$ that is not divisible by 2 or 5, there will be an infinite number of composite numbers in the sequence generated by attaching a digit other than 9 to $a\\_1$. This is because the sequence generated will contain all positive integers (excluding those ending in 0 or 5) and all positive integers greater than 4 are either prime or composite.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.123 exE10",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Suppose that $(x,y,z)$ is a non-trivial integral solution to the equation $x^2 + y^2 + z^2 = 2xyz$. Then, dividing both sides by $xyz$ (since $xyz \\ne 0$), we get:\n\n$\\frac{x^2}{xyz} + \\frac{y^2}{xyz} + \\frac{z^2}{xyz} = 2$\n$\\frac{x^2}{xy} + \\frac{y^2}{yz} + \\frac{z^2}{zx} = 2$\n\nSince $x,y,z$ are integers, the expressions $\\frac{x^2}{xy}$, $\\frac{y^2}{yz}$, and $\\frac{z^2}{zx}$ must also be integers. In other words, $\\frac{x^2}{xy}$, $\\frac{y^2}{yz}$, and $\\frac{z^2}{zx}$ must be either $0$ or $1$. However, this leads to a contradiction: If they were all $0$, then $x=y=z=0$, which is not a non-trivial solution. If they were all $1$, then $x=y=z$, which leads to $x^2 + y^2 + z^2 = 6x^2$, or $x^2 = 0$, which is not a non-trivial solution.\n\nTherefore, the equation $x^2 + y^2 + z^2 = 2xyz$ has no non-trivial integral solutions.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.124 exE12",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "For $n > 1$, $n^4 > n$ and $n^5 > n^2$, so\n\n$n^5 + n^4 + 1 = n^5 + n^4 + n^2 + n^2 + 1 = (n^2 + 1)^2 + n^2 > n^2 + n^2 = 2n^2 > 2n > 2 > 1$,\n\nwhich means $f(n) > 1$ for all $n > 1$. Hence $f(n)$ cannot be prime for $n > 1$.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e3",
+                "e4"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.125 exE13",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "For $n > 1$, the expression $n^5 + n^4 + 1$ can be factored as $(n^4 + 1)(n + 1)$. Thus, $n^5 + n^4 + 1$ is not prime for $n > 1$, as it has two factors other than 1 and itself.\n",
+            "rating": "3",
+            "errorcodes": [
+                "e4"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.125 exE13",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    [
+        {
+            "prompt": "",
+            "output": "Divisibility by 9:\nA number is divisible by 9 if the sum of its digits is divisible by 9.\n\nDivisibility by 11:\nA number is divisible by 11 if the difference between the sum of its digits in the odd places and the sum of its digits in the even places is either 0 or a multiple of 11.\n",
+            "rating": "4",
+            "errorcodes": [
+                "e2"
+            ],
+            "warningcodes": [
+                "w1"
+            ],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.131 ex7",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "Divisibility criteria for 9:\nA number is divisible by 9 if and only if the sum of its digits is divisible by 9.\n\nDivisibility criteria for 11:\nA number is divisible by 11 if and only if the alternating sum of its digits is divisible by 11. The alternating sum is obtained by subtracting every other digit starting from the second digit (from the right) from the sum of the rest of the digits.\n",
+            "rating": "4",
+            "errorcodes": [
+                "e5_2"
+            ],
+            "warningcodes": [
+                "w1"
+            ],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.131 ex7",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "False. If $n$ is composite, then $2^n - 1$ may be prime (known as Mersenne primes), or it may not be prime.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e5_4"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.131 ex10",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This statement is false. For example, when $n=3$, $2^3 + 1 = 9$ and $9$ is not prime, but $3$ is not an odd divisor of $3$.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.131 ex11",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "641 does not divide 2^32 + 1.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e1",
+            "e2"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.131 ex12",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "False. The statement is not true for all prime numbers $p$. For example, if $p = 5$, then $p^2 = 25 \\equiv 1 \\pmod{24}$. However, if $p \\equiv 1 \\pmod{4}$, then $p^2 \\equiv 1 \\pmod{24}$.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4",
+            "e1"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.131 ex17",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The number of trailing zeros in 1000! (1000 factorial) is equal to the number of times 10 is a factor in the prime factorization of 1000!.\n\n10 = 2 \\* 5, and since there are more factors of 2 than of 5 in the prime factorization of 1000!, the number of trailing zeros in 1000! is determined by the number of 5s.\n\nThe number of 5s in 1000 is 1000/5 = 200. Additionally, there are several multiples of 25, which contribute an additional factor of 5 for each multiple.\n\n1000/25 = 40, so we have an additional 40 \\* 2 = 80 factors of 5.\n\nThus, the total number of zeros at the end of 1000! is 200 + 80 = 280.\n",
+        "rating": "4",
+        "errorcodes": [
+            "e4",
+            "e5_3"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.131 ex23",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The largest 4-digit square number is $9994 = 999^2$. The smallest 4-digit square number is $1024 = 32^2$. The difference between these two numbers is $9994 - 1024 = 8970$. Since $8970$ is not divisible by $10$, we can conclude that there are no 4-digit square numbers that satisfy the conditions of the problem.\n",
+        "rating": "1",
+        "errorcodes": [
+            "e6"
+        ],
+        "warningcodes": [
+            "w3"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p1318 ex26",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This is true by the Pigeonhole Principle. For every integer $x$ in the set ${1, 2, \\dots, 2n}$, there are exactly two integers in the set ${1, 2, \\dots, n}$ that are either equal to $x$ or coprime to $x$. Since there are $n + 1$ positive integers in the set ${1, 2, \\dots, 2n}$, there must be at least two of these integers that are coprime to each other.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.132 ex32",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Yes. There are always positive integers among $n + 1$ numbers less than or equal to $2n$ such that one divides the other. This is because $2n$ has at least $n$ positive divisors, including 1 and itself, and the other $n-1$ numbers between $n + 1$ and $2n$ each have at least one positive divisor, so there must be at least one pair among them that are divisors of each other.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.132 ex33",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Yes, that's correct. The equation $x^2 + y^2 = x^2 y^2$ has no integral solutions besides $x = y = 0$.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "too vague, proof is missing completely.",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.132 ex43",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The smallest positive integer that becomes 57 times smaller by striking its first digit is 100. If the first digit is removed, the number becomes 0.57 times smaller, which is equal to 100/57.\n",
+        "rating": "1",
+        "errorcodes": [
+            "e3",
+            "e4",
+            "e6"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.132 ex57",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "False. Not every multiple of a sum of two squares is also a sum of two squares. For example, $2 = 1^2 + 1^2$, but $4 = 2^2 + 0^2 \\neq 1^2 + 3^2$.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e4",
+            "e6"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.133 ex68",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "False. The statement \"m|(m+1)! + 1\" does not imply that m is a prime. For example, consider m=4. In this case, 4|(4+1)! + 1 = 120 + 1 = 121, but 4 is not a prime number.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e2",
+            "e5_4",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.133 ex71",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This statement is false. The equation does have integral solutions, which can be found by solving for x and y.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.133 ex78",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Since $27 \\equiv 3 \\pmod{1024}$, we have $27^{1986} \\equiv 3^{1986} \\pmod{1024}$. By using fast exponentiation, $3^{1986} \\equiv 3^{(2^10 + 2^6 + 2^2 + 2^0)} \\equiv 3^{1024} \\cdot 3^64 \\cdot 3^2 \\cdot 3^0 \\equiv 3^{1024} \\pmod{1024}$. Since $1024$ is $2^{10}$, we can simplify $3^{1024} \\equiv 3^{1024 \\bmod 10} = 3^0 = 1 \\pmod{1024}$. Hence, the eight last digits of the binary expansion of $27^{1986}$ are $\\boxed{00000000}$.\n",
+        "rating": "1",
+        "errorcodes": [
+            "e3",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.134 ex110",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The next to last digit of $3^n$ is even if and only if $n$ is odd.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.134 ex111",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Yes, the product of two positive integers of the form $a^2 + ab + b^2$ will have the same form. The product of two such integers $(a^2 + ab + b^2)(c^2 + cd + d^2)$ can be expanded using the distributive property as $(a^2c^2 + 2abcd + b^2d^2) + (ac)(ad + bc + bd) + (ab)(cd)$. The expression $(a^2c^2 + 2abcd + b^2d^2)$ is in the same form, and the expression $(ac)(ad + bc + bd) + (ab)(cd)$ can be simplified as $acad + (ac + ab)bd + abcd$, which is also in the same form.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.134 ex117",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "False. There are only a finite number of triplets of pairwise prime numbers $(x, y, z)$ such that $x^2, y^2, z^2$ are in arithmetic progression. This is because the difference between consecutive squares is a linear function and thus can only take a finite number of values.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e5_4",
+                "e3"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p135 ex124",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "No, this statement is false. If $x^2, z^2, y^2$ are in arithmetic progression, then $z^2 - x^2 = y^2 - z^2$, which implies that $y^2 - x^2 = 2(z^2 - x^2)$. Since $y^2 - x^2$ is an even number, it follows that $z^2 - x^2$ must also be an even number. However, the difference of two squares of prime numbers cannot be an even number, hence $x, y, z$ cannot all be prime.\n",
+            "rating": "3",
+            "errorcodes": [
+                "e5_4",
+                "e2"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p135 ex124",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    [
+        {
+            "prompt": "",
+            "output": "This statement is false. An example of a prime that can be written as the sum of two squares in two different ways is the prime number 5. It can be expressed as both 2^2 + 1^2 and 1^2 + 2^2.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e2",
+                "e6"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.135 ex131",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "This statement is false. For example, the prime number 5 can be written as a sum of two squares in two different ways: 2^2 + 1^2 and (-1)^2 + 2^2.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e2",
+                "e6"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.135 ex131",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "The product of the 50 numbers must be 1 or -1. If there is an even number of -1s, then the product will be 1; otherwise, the product will be -1. To determine the parity of the number of -1s, we need to determine the parity of the number of -1s in three consecutive numbers.\n\nSince 50 is divisible by 3, it is possible to determine the parity of the number of -1s in three consecutive numbers with exactly $\\frac{50}{3} = 16$ questions.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e5_4",
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.135 ex135",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "False. The sequence $floor(n\\sqrt{2})$ contains only finitely many powers of 2. The values in the sequence increase linearly with n and the maximum value is limited by the maximum finite integer representable by a computer, so the number of powers of 2 in the sequence is finite.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.136 ex144",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The smallest power of 2 that starts with the digit 1 is $2^4 = 16$. The smallest power of 5 that starts with the digit 1 is $5^1 = 5$. Since 16 is greater than 5, the starting digit $d$ is not 1.\n\nThe smallest power of 2 that starts with the digit 2 is $2^10 = 1024$. The smallest power of 5 that starts with the digit 2 is $5^3 = 125$. Since 125 is less than 1024, the starting digit $d$ is 2.\n\nTherefore, the starting digit $d$ for both powers is 2.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e4",
+            "e5_4",
+            "e5_2",
+            "e5_1"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.137 ex159",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The integers $n$, $n + p$ and $n + q$ must belong to different subsets of the partition. Thus, we must have $p$ and $q$ are relatively prime (i.e. $\\gcd(p, q) = 1$).\n",
+        "rating": "2",
+        "errorcodes": [
+            "e2",
+            "e5_2"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.137 ex169",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This statement is known as the Pigeonhole Principle. If we have $2n$ points and $n^2 + 1$ line segments, then there must be at least two line segments that share an endpoint. This means that these three points form a triangle, which is a set of three points joined pairwise by line segments.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e5_2",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.207 ex1",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This can be proven using the pigeonhole principle. If we divide the circular track into $n$ equal parts, then we can assign one car to each part. If one car has enough gas to complete a lap, then it must pass by each of the other $n-1$ cars on its way around. Since there are $n-1$ cars and $n$ parts, there must be one part with at least two cars, meaning that one of the cars in that part has enough gas to give some to the other car, which then has enough gas to complete a lap.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e1",
+            "e2",
+            "e5_2",
+            "e5_3",
+            "e6"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.207 ex2",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The statement that you can color the plane with two colors such that no parts with a common boundary line are colored the same way is known as the Two Color Theorem. This theorem states that any planar graph can be properly colored with two colors. A planar graph is a graph that can be drawn in the plane without any of its edges crossing. The circles in the problem statement can be thought of as the faces of a planar graph, so the Two Color Theorem applies, and the conclusion is that it is possible to properly color the plane with two colors.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e5_4"
+        ],
+        "warningcodes": [
+            "w2",
+            "w3"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.207 ex8",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Let $F\\_n$ be the $n$th Fibonacci number. We can use dynamic programming to find $a\\_n$:\n\n$a\\_0 = 2$\n\n$a\\_1 = 2$\n\n$a\\_n = a\\_{n-1} + a\\_{n-2}$ if the last two characters are different.\n\n$a\\_n = a\\_{n-2}$ if the last two characters are the same.\n\nThus, $a\\_n = F\\_{n+2}$ for all $n \\ge 0$.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e5_2"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.207 ex11",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Suppose that $\\alpha + 1/\\alpha = k$ for some integer $k$. Then we have\n\n$$\\alpha^n + \\frac{1}{\\alpha^n} = \\alpha^{n-1}(\\alpha + \\frac{1}{\\alpha}) = \\alpha^{n-1}k$$\n\nSince $\\alpha^{n-1}k$ is an integer, it follows that $\\alpha^n + 1/\\alpha^n \\in \\mathbb{Z}$ for any $n \\in \\mathbb{N}$.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e2",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.208 ex15",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This can be proven by contradiction. Assume that $a\\_n \\geq 2^{n!}$. Then, using the formula for the sum of an infinite geometric series, we have:\n\n$\\frac{1}{a\\_1} + \\frac{1}{a\\_2} + ... + \\frac{1}{a\\_n} = \\frac{1}{a\\_1}\\left(1 + \\frac{1}{a\\_2} + ... + \\frac{1}{a\\_n}\\right) \\leq \\frac{1}{a\\_1} \\cdot \\frac{1}{1 - \\frac{1}{a\\_n}} = \\frac{a\\_n}{a\\_1(a\\_n-1)}$.\n\nSince $a\\_n \\geq 2^{n!}$ and $a\\_1 \\leq a\\_2 \\leq ... \\leq a\\_n$, we have $a\\_1 \\leq 2^{(n-1)!}$, so $a\\_n-1 \\geq 2^{n!} - 2^{(n-1)!} > 2^{(n-1)!}$, and $a\\_1 \\leq 2^{(n-1)!}$. Then:\n\n$\\frac{a\\_n}{a\\_1(a\\_n-1)} \\leq \\frac{2^{n!}}{2^{(n-1)!}(2^{n!} - 2^{(n-1)!})} = \\frac{2^{n!}}{2^{n!} - 2^{(n-1)!}} < 1$.\n\nThis contradicts the assumption that $1/a\\_1 + ... + 1/a\\_n = 1$. Thus, we have proved that if $1/a\\_1 + ... + 1/a\\_n = 1$, then $a\\_n < 2^{n!}$.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.208 ex24",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Yes, $3^{n+1}$ divides $2^{3^n} + 1$ for all integers $n \\geq 0$. This statement can be proven by induction.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.208 ex25",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "In chess, a knight moves in an L-shape. On an infinite chessboard, a knight can reach any square after $n$ moves. The number of squares that a knight can reach after exactly $n$ moves is the sum of all L-shaped paths with a length of exactly $n$ moves.\n\nThe number of squares that a knight can reach after exactly $n$ moves can be calculated using the closed-form expression $f(n) = 2^{n-1} (n-1) + 2 \\cdot \\binom{n-1}{2}$, which can be derived using the generating functions for L-shaped paths.\n\nHowever, this expression is only useful for small values of $n$ because it grows very fast, and quickly becomes infeasible to compute for large values of $n$.\n",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.209 ex30",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "To solve this problem, you can use the Principle of Inclusion-Exclusion (PIE). Let $A\\_x$ be the set of $y$ such that $gcd(x,y) \\leq 1$ and $y \\leq n$. Also, let $B\\_y$ be the set of $x$ such that $gcd(x,y) \\leq 1$ and $x \\leq n$. Then, the sum of all fractions $1/xy$ such that $gcd(x, y) \\leq 1$, $x \\leq n$, $y \\leq n$, $x + y > n$ is given by\n\n$$\\sum\\_{x=1}^n \\sum\\_{y \\in A\\_x \\cap B\\_y} \\frac{1}{xy}.$$\n\nSince $gcd(x,y) \\leq 1$, we have $A\\_x = B\\_y = {1, 2, \\dots, n}$ for all $x,y$. Thus, we can simplify the above expression to\n\n$$\\sum\\_{x=1}^n \\sum\\_{y=1}^n \\frac{1}{xy} \\cdot \\[x + y > n].$$\n\nNow, we can evaluate the sum using PIE. Let\n\n$$S = \\sum\\_{x=1}^n \\sum\\_{y=1}^n \\frac{1}{xy}.$$\n\nUsing PIE, we have\n\n$$S - \\sum\\_{x=1}^n \\frac{1}{x(n+1-x)} = \\sum\\_{x=1}^n \\sum\\_{y=1}^n \\frac{1}{xy} \\cdot \\[x + y > n].$$\n\nThe second term on the right-hand side can be simplified as\n\n$$\\sum\\_{x=1}^{\\lfloor (n-1)/2 \\rfloor} \\frac{1}{x(n+1-x)}.$$\n\nThus, the sum of all fractions $1/xy$ such that $gcd(x, y) \\leq 1$, $x \\leq n$, $y \\leq n$, $x + y > n$ is given by\n\n$$S - \\sum\\_{x=1}^{\\lfloor (n-1)/2 \\rfloor} \\frac{1}{x(n+1-x)}.$$\n",
+        "rating": "2",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.209 ex33",
+        "confidence": "low",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "To find a closed expression for $x\\_n$, we can use characteristic equation method.\n\nThe characteristic equation of the recurrence relation $x\\_{n+1} = 7x\\_n - 12 x\\_{n-1}$ is\n\n$$r^2 - 7r + 12 = 0$$\n\nThe roots of the characteristic equation are given by\n\n$$r = \\frac{7 \\pm \\sqrt{49 - 144}}{2} = \\frac{7 \\pm \\sqrt{-95}}{2}$$\n\nSince the roots of the characteristic equation are complex, we will write them in the form $a \\pm bi$. That is,\n\n$$r = \\frac{7}{2} \\pm \\frac{\\sqrt{95}}{2}i$$\n\nHence, a general solution for $x\\_n$ is given by\n\n$$x\\_n = c\\_1 \\left(\\frac{7}{2} + \\frac{\\sqrt{95}}{2}i\\right)^n + c\\_2 \\left(\\frac{7}{2} - \\frac{\\sqrt{95}}{2}i\\right)^n$$\n\nwhere $c\\_1$ and $c\\_2$ are constants determined by the initial conditions $x\\_0 = 2$ and $x\\_1 = 7$. Solving for $c\\_1$ and $c\\_2$, we get\n\n$$x\\_n = \\frac{2 \\left(\\frac{7}{2} + \\frac{\\sqrt{95}}{2}i\\right)^n - 5 \\left(\\frac{7}{2} - \\frac{\\sqrt{95}}{2}i\\right)^n}{\\sqrt{95}}$$\n\nTherefore, the closed expression for $x\\_n$ is\n\n$$x\\_n = \\frac{2 \\left(\\frac{7}{2} + \\frac{\\sqrt{95}}{2}i\\right)^n - 5 \\left(\\frac{7}{2} - \\frac{\\sqrt{95}}{2}i\\right)^n}{\\sqrt{95}}$$\n",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.222 exE1",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The given functional equation $f(x+1) + f(x - 1) = \\sqrt{2} f(x)$ can be used to determine the periodicity of the function $f(x)$.\n\nLet $x = 0$, then $f(1) + f(-1) = \\sqrt{2} f(0)$. Since the equation holds for all $x \\in \\mathbb{R}$, it follows that $f(1) + f(-1) = \\sqrt{2} f(0)$ must also hold.\n\nThus, $f(1)$ and $f(-1)$ are uniquely determined in terms of $f(0)$, and we can use this information to determine the value of $f(2)$. By substitution, we have $f(2) = \\frac{\\sqrt{2}}{2} (f(1) + f(-1)) = \\frac{\\sqrt{2}}{2} \\cdot \\sqrt{2} f(0) = f(0)$.\n\nThis shows that the function $f(x)$ has period 2, and since the equation holds for all $x \\in \\mathbb{R}$, it must be periodic with period 2.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e2",
+            "e5_2"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.225 ex3",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The limit of the sequence $a\\_n$ as $n \\to \\infty$ is equal to 2.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e2",
+            "e5_2"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "We can replace a_n with the limit L, to geht L^2-2L+2=0 and the proposed solution \"2\" would have to satisfy this equation, which is doesn't. Hence the answer is wrong (and a proof is missing too).",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.225 ex5",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The limit of the sequence ${a\\_n}$ is $\\sqrt{a}$. This can be proven using the Monotone Convergence Theorem.\n",
+        "rating": "3",
+        "errorcodes": [
+            "e2",
+            "e4"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.225 ex8",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The proof can be done by induction.\n\nBase case ($n=2$): $a\\_2 = 2a\\_1 + a\\_0 = 2 \\cdot 1 + 0 = 2$, so $2^1$ divides $a\\_2$ and $2^1$ divides $n = 2$.\n\nInductive step: Assume that the statement holds for $n = k$, i.e., if $2^m | a\\_k$, then $2^m | k$. We will now show that the statement holds for $n = k+1$.\n\nIf $2^m | a\\_k$, then by the recursive formula,  $2^m | 2a\\_k + a\\_{k-1} = a\\_{k+1}$. Since $2^m | a\\_{k+1}$ and $2^m | k$, it follows that $2^m | k+1$.\n\nConversely, if $2^m | k+1$, then $2^m | k$, so by the induction hypothesis, $2^m | a\\_k$. Then, $2^m | 2a\\_k + a\\_{k-1} = a\\_{k+1}$. Hence, if $2^m | k+1$, it follows that $2^m | a\\_{k+1}$.\n\nTherefore, the statement holds for $n = k+1$, and by induction, it holds for all $n \\geq 2$.\n",
+        "rating": "3",
+        "errorcodes": [
+            "e2",
+            "e4",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.225 ex17",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "No, this is not true.\n\nConsider the sequence $a\\_n$ defined by the given recurrence relation.\n\nFor $n = 4$, we have $a\\_4 = \\frac{(a\\_2 \\cdot a\\_3 + 5)}{a\\_1} = \\frac{(1 \\cdot 2 + 5)}{1} = 7$.\n\nSo, $a\\_4$ is not an integer, which means that the terms of the sequence are not all integers.\n",
+        "rating": "1",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.226 ex20",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "We can use mathematical induction to prove that $a\\_n = (-1)^{n-1}$ for all positive integers $n$. Then, $a\\_{1964} = (-1)^{1963} = -1$.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.226 ex27",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "The recurrence relation for $a\\_n$ is given by:\n\n$a\\_n = a\\_{n-1} + a\\_{n-2} + a\\_{n-3}$\n\nwhere $a\\_1 = 1, a\\_2 = 2, a\\_3 = 4$ are the base cases.\n\nThis is because we can form $a\\_n$ by considering the first element in the permutation. If the first element is 1, the remaining elements must be a permutation of ${2, ..., n}$ with $|p(i) - i| \\leq 2$, which gives $a\\_{n-1}$ permutations. If the first element is 2, the remaining elements must be a permutation of ${1, 3, ..., n}$ with $|p(i) - i| \\leq 2$, which gives $a\\_{n-2}$ permutations. Finally, if the first element is 3, the remaining elements must be a permutation of ${1, 2, 4, ..., n}$ with $|p(i) - i| \\leq 2$, which gives $a\\_{n-3}$ permutations.\n",
+        "rating": "3",
+        "errorcodes": [
+            "e2",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.227 ex37",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "(a) The number of ways to tile a $2 \\times n$ rectangle by $2 \\times 1$ dominoes is given by the Fibonacci sequence $a\\_n = F\\_{n+1}$, where $F\\_n$ is the nth Fibonacci number, starting with $F\\_1 = 1$ and $F\\_2 = 1$.\n\n(b) The number of symmetric and distinct tilings of a $2 \\times n$ rectangle is given by $\\frac{a\\_n}{2}$ if $n$ is odd, and $\\frac{a\\_{n/2}}{2}$ if $n$ is even. This is because each tiling can be reflected along the center axis to produce another distinct tiling, so the number of symmetric tilings is half of the total number of tilings.\n",
+            "rating": "3",
+            "errorcodes": [
+                "e2",
+                "e5_4"
+            ],
+            "warningcodes": [],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.229 ex58",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "(a) The number of ways to tile a $2 \\times n$ rectangle with $2 \\times 1$ dominoes is given by the nth Fibonacci number. We have $a\\_n = F\\_{n+1}$, where $F\\_n$ is the nth Fibonacci number, with $F\\_0 = 0, F\\_1 = 1,$ and $F\\_n = F\\_{n-1} + F\\_{n-2}$ for all $n \\ge 2$.\n\n(b) The number of symmetric and distinct tilings of a $2 \\times n$ rectangle by $2 \\times 1$ dominoes is given by $\\frac{a\\_n + a\\_{n-2}}{2}$, if $n$ is even, or $\\frac{a\\_{n-1}}{2}$, if $n$ is odd. This is because the $2 \\times n$ rectangle can be split into two halves, and the tiling is symmetric if and only if the two halves are mirror images of each other.\n",
+            "rating": "3",
+            "errorcodes": [
+                "e2",
+                "e5_4"
+            ],
+            "warningcodes": [],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.229 ex58",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ],
+    {
+        "prompt": "",
+        "output": "This is true. By Vieta's formulas, $x\\_1 + x\\_2 = 6$ and $x\\_1 x\\_2 = 1$. Hence, for any nonnegative integer $n$, $x\\_1^n + x\\_2^n = \\sum\\limits\\_{k=0}^n {n\\choose k} x\\_1^{n-k} x\\_2^k$, which is an integer by the binomial theorem. Moreover, $x\\_1$ and $x\\_2$ are either both integers or both not integers, so $x\\_1^n + x\\_2^n$ is not divisible by 5.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.254 ex3",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "Yes, this is true. If $x-y | f(x, y)$, then $f(x, y) = (x-y)g(x, y)$ for some polynomial $g(x, y)$. Since $f(x, y)$ is symmetric, $f(y, x) = f(x, y)$, so $f(y, x) = (y-x)g(y, x)$. Then, $(x-y)g(x, y) = (y-x)g(y, x)$, so $(x-y)(g(x, y) - g(y, x)) = 0$. Since $(x-y) \\ne 0$ for all $x \\ne y$, it follows that $g(x, y) = g(y, x)$. Thus, $f(x, y) = (x-y)^2 h(x, y)$ for some polynomial $h(x, y)$, so $(x-y)^2 | f(x, y)$.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "Notation and answer false but looks close to original solution",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.254 ex9",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This statement is true. The polynomial is the Taylor series expansion of $e^x$ around $x=0$, and $e^x$ is an entire function, meaning it has no zeros with multiplicity greater than 1. Therefore, the polynomial also has no multiple roots.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.255 ex22",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "This statement is true. If the polynomial $(x-a)^2(x-b)^2 + 1$ is the product of two polynomials with integer coefficients, then the coefficients of the polynomial must also be integers. However, the constant coefficient of this polynomial is $1$, which is not an integer square. Hence, the polynomial $(x-a)^2(x-b)^2 + 1$ cannot be the product of two polynomials with integer coefficients.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.255 ex32",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "",
+        "output": "No, there is no such polynomial $f(x)$. To see this, let $f(x) = x^n$ for some nonnegative integer $n$. Then $xf(x-1) = x^{n+1}$ and $(x+1)f(x) = x^{n+1} + x^n$, which are not equal for all values of $x$. Hence, there is no polynomial $f(x)$ that satisfies the given equation for all $x$.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.256 ex53",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    [
+        {
+            "prompt": "",
+            "output": "No, the polynomial $x^{105} - 9$ is not reducible over $\\mathbb{Z}$.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e2"
+            ],
+            "warningcodes": [
+                "w1"
+            ],
+            "comment": "",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.257 ex73",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        },
+        {
+            "prompt": "",
+            "output": "No, the polynomial $x^{105} - 9$ is not reducible over $\\mathbb{Z}$, meaning it cannot be factored as the product of two or more polynomials with coefficients in $\\mathbb{Z}$. One way to see this is by applying the Eisenstein's Criterion, which states that if a polynomial $f(x)$ in $\\mathbb{Z}\\[x]$ has a coefficient of 1 for the highest-degree term and satisfies the condition $p\\mid f(0)$ for some prime $p$ and $p^2\\nmid f(0)$, then $f(x)$ is irreducible over $\\mathbb{Z}$. In this case, $f(x) = x^{105} - 9$ has a coefficient of 1 for the highest-degree term and satisfies the condition $3\\mid f(0) = -9$ and $3^2\\nmid f(0) = -9$, so it is irreducible over $\\mathbb{Z}$.\n",
+            "rating": "2",
+            "errorcodes": [
+                "e4",
+                "e3",
+                "e5_4"
+            ],
+            "warningcodes": [
+                "w2"
+            ],
+            "comment": "<prompt engineered>",
+            "msc": [
+                "00A07"
+            ],
+            "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.257 ex73",
+            "confidence": "high",
+            "timestamp": "2023-02-02"
+        }
+    ]
+]

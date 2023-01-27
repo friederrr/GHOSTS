@@ -1,0 +1,155 @@
+[
+    {
+        "prompt": "For $\\bold{v} = \\begin{pmatrix} 0 \\\\ -4 \\\\ 1 \\end{pmatrix}$ and $\\bold{w} = \\begin{pmatrix} 2 \\\\ 2 \\\\ -1 \\end{pmatrix},$ compute $\\text{proj}_{\\bold{w}} \\bold{v}$.\n Solution: We have that\n\\begin{align*}\n\\text{proj}_{\\bold{w}} \\bold{v} &= \\frac{\\bold{v} \\cdot \\bold{w}}{\\bold{w} \\cdot \\bold{w}} \\bold{w} \\\\\n&= <MISSING> \n Fill in the missing steps.",
+        "output": "To find the projection of vector $\\bold{v}$ onto vector $\\bold{w}$, we can follow these steps:\n\nCompute the dot product of $\\bold{v}$ and $\\bold{w}$: $\\bold{v} \\cdot \\bold{w}$\nCompute the dot product of $\\bold{w}$ with itself: $\\bold{w} \\cdot \\bold{w}$\nDivide the dot product of $\\bold{v}$ and $\\bold{w}$ by the dot product of $\\bold{w}$ and itself: $\\frac{\\bold{v} \\cdot \\bold{w}}{\\bold{w} \\cdot \\bold{w}}$\nMultiply the result from step 3 by the vector $\\bold{w}$.\nNow let's compute the missing steps:\n\n$\\bold{v} \\cdot \\bold{w} = (0)(2) + (-4)(2) + (1)(-1) = -8 -1 = -9$\n$\\bold{w} \\cdot \\bold{w} = (2)(2) + (2)(2) + (-1)(-1) = 4 + 4 + 1 = 9$\n$\\frac{\\bold{v} \\cdot \\bold{w}}{\\bold{w} \\cdot \\bold{w}} = \\frac{-9}{9} = -1$\nMultiply the result from step 3 by the vector $\\bold{w}$: $-1 \\cdot \\begin{pmatrix} 2 \\ 2 \\ -1 \\end{pmatrix} = \\begin{pmatrix} -2 \\ -2 \\ 1 \\end{pmatrix}$\nThus, the projection of vector $\\bold{v}$ onto vector $\\bold{w}$ is:\n\n$$\n\\operatorname{proj}_w \\bold{v} = \\begin{pmatrix} -2 \\\\ -2 \\\\ 1 \\end{pmatrix}\n$$",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_3 \nCompletion type: proof and solution \n Official solution: We have that\n\\begin{align*}\n\\text{proj}_{\\bold{w}} \\bold{v} &= \\frac{\\bold{v} \\cdot \\bold{w}}{\\bold{w} \\cdot \\bold{w}} \\bold{w} \\\\\n&= \\frac{\\begin{pmatrix} 0 \\\\ -4 \\\\ 1 \\end{pmatrix} \\cdot \\begin{pmatrix} 2 \\\\ 2 \\\\ -1 \\end{pmatrix}}{\\begin{pmatrix} 2 \\\\ 2 \\\\ -1 \\end{pmatrix} \\cdot \\begin{pmatrix} 2 \\\\ 2 \\\\ -1 \\end{pmatrix}} \\begin{pmatrix} 2 \\\\ 2 \\\\ -1 \\end{pmatrix} \\\\\n&= \\frac{-9}{9} \\begin{pmatrix} 2 \\\\ 2 \\\\ -1 \\end{pmatrix} \\\\\n&= \\boxed{\\begin{pmatrix} -2 \\\\ -2 \\\\ 1 \\end{pmatrix}}.\n\\end{align*}\nAdditional comments: parts of the output rendered (model did not output tex)",
+        "msc": [
+            "51N20"
+        ],
+        "ref": "MATH_dataset precalculus ex55 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-03-24"
+    },
+    {
+        "prompt": "Let $\\mathbf{a},$ $\\mathbf{b},$ $\\mathbf{c}$ be three vectors such that $\\|\\mathbf{a}\\| = \\frac{1}{\\sqrt{2}},$ $\\|\\mathbf{b}\\| = \\frac{1}{\\sqrt{3}},$ $\\|\\mathbf{c}\\| = \\frac{1}{\\sqrt{6}},$ $\\|\\mathbf{a} + \\mathbf{b} + \\mathbf{c}\\| = 1,$ and\n\\[\\mathbf{a} = k (\\mathbf{b} \\times \\mathbf{c})\\]for some scalar $k.$  Find the angle between $\\mathbf{b}$ and $\\mathbf{c},$ in degrees.\n Solution: Since $\\mathbf{b} \\times \\mathbf{c}$ is orthogonal to both $\\mathbf{b}$ and $\\mathbf{c},$ $\\mathbf{a} \\cdot \\mathbf{b} = 0$ and $\\mathbf{a} \\cdot \\mathbf{c} = 0.$\n\nSince $\\|\\mathbf{a} + \\mathbf{b} + \\mathbf{c}\\| = 1,$\n\\[(\\mathbf{a} + \\mathbf{b} + \\mathbf{c}) \\cdot (\\mathbf{a} + \\mathbf{b} + \\mathbf{c}) = 1.\\] <MISSING> \n Fill in the missing steps.",
+        "output": "Expanding the dot product, we have:\n\n$$(a+b+c)⋅(a+b+c)=a⋅a+a⋅b+a⋅c+b⋅a+b⋅b+b⋅c+c⋅a+c⋅b+c⋅c=1.$$\n\nWe know that $\\mathbf{a} \\cdot \\mathbf{b} = 0$ and $\\mathbf{a} \\cdot \\mathbf{c} = 0$, and dot product is commutative, so $\\mathbf{b} \\cdot \\mathbf{a} = 0$ and $\\mathbf{c} \\cdot \\mathbf{a} = 0$. Thus, the equation simplifies to:\n\n$$a⋅a+b⋅b+c⋅c+b⋅c+c⋅b=1.$$\n\nNow, we use the fact that $|\\mathbf{a}|^2 = \\mathbf{a} \\cdot \\mathbf{a}$, and similarly for $\\mathbf{b}$ and $\\mathbf{c}$, to substitute the given magnitudes:\n\n\n$$\\left(\\frac{1}{\\sqrt{2}}\\right)^2 + \\left(\\frac{1}{\\sqrt{3}}\\right)^2 + \\left(\\frac{1}{\\sqrt{6}}\\right)^2 +b⋅c+c⋅b=1.$$\n\nSimplifying the equation:\n\n$$\\frac{1}{2} + \\frac{1}{3} + \\frac{1}{6} +2(b⋅c)=1.$$\n\nThe left-hand side becomes:\n\n$$1+2(b⋅c)=1.$$\n\nSubtracting 1 from both sides, we get:\n$$\n2(b⋅c)=0,\n$$\nwhich implies:\n$$\nb⋅c=0.\n$$\n\nSince the dot product of $\\mathbf{b}$ and $\\mathbf{c}$ is zero, the vectors are orthogonal. The angle between orthogonal vectors is 90 degrees, so the angle between $\\mathbf{b}$ and $\\mathbf{c}$ is $\\boxed{90^\\circ}$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_4 \nCompletion type: proof and solution \n Official solution: Since $\\mathbf{b} \\times \\mathbf{c}$ is orthogonal to both $\\mathbf{b}$ and $\\mathbf{c},$ $\\mathbf{a} \\cdot \\mathbf{b} = 0$ and $\\mathbf{a} \\cdot \\mathbf{c} = 0.$\n\nSince $\\|\\mathbf{a} + \\mathbf{b} + \\mathbf{c}\\| = 1,$\n\\[(\\mathbf{a} + \\mathbf{b} + \\mathbf{c}) \\cdot (\\mathbf{a} + \\mathbf{b} + \\mathbf{c}) = 1.\\]Expanding, we get\n\\[\\mathbf{a} \\cdot \\mathbf{a} + \\mathbf{b} \\cdot \\mathbf{b} + \\mathbf{c} \\cdot \\mathbf{c} + 2 \\mathbf{a} \\cdot \\mathbf{b} + 2 \\mathbf{a} \\cdot \\mathbf{c} + 2 \\mathbf{b} \\cdot \\mathbf{c} = 1.\\]From what we know, this becomes\n\\[\\frac{1}{2} + \\frac{1}{3} + \\frac{1}{6} + 0 + 0 + 2 \\mathbf{b} \\cdot \\mathbf{c} = 1.\\]Hence, $\\mathbf{b} \\cdot \\mathbf{c} = 0.$  This means the angle between $\\mathbf{b}$ and $\\mathbf{c}$ is $\\boxed{90^\\circ}.$\nAdditional comments: parts of the output rendered (model did not output tex)",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex91 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-03-24"
+    },
+    {
+        "prompt": "Let $\\mathbf{a} = \\begin{pmatrix} 7 \\\\ - 1 \\\\ 4 \\end{pmatrix}$ and $\\mathbf{b} = \\begin{pmatrix} 3 \\\\ 1 \\\\ 2 \\end{pmatrix}.$  Find the vector $\\mathbf{c}$ so that $\\mathbf{a},$ $\\mathbf{b},$ and $\\mathbf{c}$ are collinear, and $\\mathbf{b}$ bisects the angle between $\\mathbf{a}$ and $\\mathbf{c}.$\n\n[asy]\nunitsize(0.5 cm);\n\npair A, B, C, O;\n\nA = (-2,5);\nB = (1,3);\nO = (0,0);\nC = extension(O, reflect(O,B)*(A), A, B);\n\ndraw(O--A,Arrow(6));\ndraw(O--B,Arrow(6));\ndraw(O--C,Arrow(6));\ndraw(interp(A,C,-0.1)--interp(A,C,1.1),dashed);\n\nlabel(\"$\\mathbf{a}$\", A, NE);\nlabel(\"$\\mathbf{b}$\", B, NE);\nlabel(\"$\\mathbf{c}$\", C, NE);\n[/asy]\n Solution: The line containing $\\mathbf{a}$ and $\\mathbf{b}$ can be parameterized by\n\\[\\mathbf{c} = \\mathbf{a} + t (\\mathbf{b} - \\mathbf{a}) = \\begin{pmatrix} 7 - 4t \\\\ -1 + 2t \\\\ 4 - 2t \\end{pmatrix}.\\]Since $\\mathbf{b}$ bisects the angle between $\\mathbf{a}$ and $\\mathbf{c},$ the angle between $\\mathbf{a}$ and $\\mathbf{b}$ must be equal to the angle between $\\mathbf{b}$ and $\\mathbf{c}.$   <MISSING> \n Fill in the missing steps.",
+        "output": "Since the angle between $\\mathbf{a}$ and $\\mathbf{b}$ is equal to the angle between $\\mathbf{b}$ and $\\mathbf{c}$, we can use the fact that the cosine of the angle between two vectors is given by their dot product divided by the product of their magnitudes. Therefore, we have:\n\n$$ \\cos \\theta = \\frac{a⋅b}{∣∣a∣∣⋅∣∣b∣∣}=\\frac{b⋅c}{∣∣b∣∣⋅∣∣c∣∣}$$\n\nSubstitute $\\mathbf{c} = \\begin{pmatrix} 7 - 4t \\ -1 + 2t \\ 4 - 2t \\end{pmatrix}$ and simplify:\n\n$$\\frac{(7)(3)+(−1)(1)+(4)(2)}{\\sqrt{(7^2+(−1)^2+4^2)(3^2+1^2+2^2)}}=\\frac{(7−4t)(3)+(−1+2t)(1)+(4−2t)(2)}{\\sqrt{(3^2+1^2+2^2)((7−4t)^2+(−1+2t)^2+(4−2t)^2)}}$$\n\nNow, cross-multiply and simplify:\n\n$$(7)(3)+(−1)(1)+(4)(2)=(7−4t)(3)+(−1+2t)(1)+(4−2t)(2)$$\n$$21−12t−1+2t+8−4t=28−14t$$\n\nSolve for $t$:\n\n$$t=\\frac{28−21+1−8}{14−12−2}=\\frac{−1}{0}$$\n\nThe denominator is zero, which means there is no solution for $t$. This indicates that it is not possible to find a vector $\\mathbf{c}$ so that $\\mathbf{a},$ $\\mathbf{b},$ and $\\mathbf{c}$ are collinear, and $\\mathbf{b}$ bisects the angle between $\\mathbf{a}$ and $\\mathbf{c}$.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_5 \nCompletion type: proof and solution \n Official solution: The line containing $\\mathbf{a}$ and $\\mathbf{b}$ can be parameterized by\n\\[\\mathbf{c} = \\mathbf{a} + t (\\mathbf{b} - \\mathbf{a}) = \\begin{pmatrix} 7 - 4t \\\\ -1 + 2t \\\\ 4 - 2t \\end{pmatrix}.\\]Since $\\mathbf{b}$ bisects the angle between $\\mathbf{a}$ and $\\mathbf{c},$ the angle between $\\mathbf{a}$ and $\\mathbf{b}$ must be equal to the angle between $\\mathbf{b}$ and $\\mathbf{c}.$  Thus,\n\\[\\frac{\\mathbf{a} \\cdot \\mathbf{b}}{\\|\\mathbf{a}\\| \\|\\mathbf{b}\\|} = \\frac{\\mathbf{b} \\cdot \\mathbf{c}}{\\|\\mathbf{b}\\| \\|\\mathbf{c}\\|}.\\]Then $\\frac{\\mathbf{a} \\cdot \\mathbf{b}}{\\|\\mathbf{a}\\|} = \\frac{\\mathbf{b} \\cdot \\mathbf{c}}{\\|\\mathbf{c}\\|},$ so\n\\[\\frac{\\begin{pmatrix} 7 \\\\ -1 \\\\ 4 \\end{pmatrix} \\cdot \\begin{pmatrix} 3 \\\\ 1 \\\\ 2 \\end{pmatrix}}{\\left\\| \\begin{pmatrix} 7 \\\\ -1 \\\\ 4 \\end{pmatrix} \\right\\|} = \\frac{\\begin{pmatrix} 3 \\\\ 1 \\\\ 2 \\end{pmatrix} \\cdot \\begin{pmatrix} 7 - 4t \\\\ -1 + 2t \\\\ 4 - 2t \\end{pmatrix}}{\\left\\| \\begin{pmatrix} 7 - 4t \\\\ -1 + 2t \\\\ 4 - 2t \\end{pmatrix} \\right\\|}.\\]Hence,\n\\[\\frac{28}{\\sqrt{66}} = \\frac{28 - 14t}{\\sqrt{(7 - 4t)^2 + (-1 + 2t)^2 + (4 - 2t)^2}}.\\]Then $28 \\sqrt{24t^2 - 76t + 66} = (28 - 14t) \\sqrt{66}.$  We can divide both sides by 14, to get $2 \\sqrt{24t^2 - 76t + 66} = (2 - t) \\sqrt{66}.$\nSquaring both sides, we get\n\\[4(24t^2 - 76t + 66) = (4 - 4t + t^2) 66.\\]This simplifies to $30t^2 - 40t = 0,$ which factors as $10t(3t - 4) = 0.$  The root $t = 0$ corresponds to the vector $\\mathbf{a},$ so $t = \\frac{4}{3},$ and\n\\[\\mathbf{c} = \\begin{pmatrix} 7 - 4 \\cdot \\frac{4}{3} \\\\ -1 + 2 \\cdot \\frac{4}{3} \\\\ 4 - 2 \\cdot \\frac{4}{3} \\end{pmatrix} = \\boxed{\\begin{pmatrix} 5/3 \\\\ 5/3 \\\\ 4/3 \\end{pmatrix}}.\\]\nAdditional comments: parts of the output rendered (model did not output tex); did not consider the denominator; wrong computations when simplifying and solving for $t$",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex26 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-03-24"
+    },
+    {
+        "prompt": "Find the angle between the vectors $\\begin{pmatrix} 4 \\\\ 4 \\\\ 7 \\end{pmatrix}$ and $\\begin{pmatrix} 1 \\\\ 4 \\\\ 1 \\end{pmatrix},$ in degrees.\n Solution: <MISSING> Hence, $\\theta = \\boxed{45^\\circ}.$\n Fill in the missing steps.",
+        "output": "To find the angle between two vectors, we can use the formula:\n\n$$\\cos(\\theta) = \\frac{\\vec{a}\\cdot\\vec{b}}{||\\vec{a}||\\ ||\\vec{b}||}$$\n\nwhere $\\vec{a}$ and $\\vec{b}$ are the given vectors, $\\vec{a} \\cdot \\vec{b}$ is the dot product of the vectors, and $||\\vec{a}||$ and $||\\vec{b}||$ are the magnitudes of the vectors.\n\nFirst, we find the dot product of the given vectors:\n\n$$ a⃗⋅b⃗=(4)(1)+(4)(4)+(7)(1)=4+16+7=27$$\n\nNext, we find the magnitudes of the vectors:\n\n$$ ||\\vec{a}|| =\\sqrt{(4)^2+(4)^2+(7)^2}=\\sqrt{16+16+49}=\\sqrt{81}=9$$\n\n$$ ∣∣\\vec{b}∣∣=\\sqrt{(1)^2+(4)^2+(1)^2}=\\sqrt{1+16+1}=\\sqrt{18}$$\n\nNow we can plug these values into the formula to find the cosine of the angle:\n\n$$\\cos(\\theta) = \\frac{27}{9×\\sqrt{18}}=\\frac{27}{9×3\\sqrt{2}}=\\frac{1}{\\sqrt{2}}$$\n\nFinally, we find the angle $\\theta$ by taking the inverse cosine:\n\n$$\\theta = \\cos^{⁡−1}\\left(\\frac{1}{\\sqrt{2}}\\right)=45^\\circ$$\n\nHence, the angle between the vectors is $\\boxed{45^\\circ}$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_2 \nCompletion type: proof only \n Official solution: If $\\theta$ is the angle between the vectors, then\n\\[\\cos \\theta = \\frac{\\begin{pmatrix} 4 \\\\ 4 \\\\ 7 \\end{pmatrix} \\cdot \\begin{pmatrix} 1 \\\\ 4 \\\\ 1 \\end{pmatrix}}{\\left\\| \\begin{pmatrix} 4 \\\\ 4 \\\\ 7 \\end{pmatrix} \\right\\| \\left\\| \\begin{pmatrix} 1 \\\\ 4 \\\\ 1 \\end{pmatrix} \\right\\|} = \\frac{(4)(1) + (4)(4) + (7)(1)}{9 \\cdot \\sqrt{18}} = \\frac{27}{27 \\sqrt{2}} = \\frac{1}{\\sqrt{2}}.\\]Hence, $\\theta = \\boxed{45^\\circ}.$\nAdditional comments: parts of the output rendered (model did not output tex)",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex80 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-03-24"
+    },
+    {
+        "prompt": "The following line is parameterized, so that its direction vector is of the form $\\begin{pmatrix} -7 \\\\ b \\end{pmatrix}.$  Find $b.$\n\n[asy]\nunitsize(0.4 cm);\n\npair A, B, L, R;\nint i, n;\n\nfor (i = -8; i <= 8; ++i) {\n  draw((i,-8)--(i,8),gray(0.7));\n  draw((-8,i)--(8,i),gray(0.7));\n}\n\ndraw((-8,0)--(8,0),Arrows(6));\ndraw((0,-8)--(0,8),Arrows(6));\n\nA = (-5,4);\nB = (-1,3);\nL = extension(A, B, (-8,0), (-8,1));\nR = extension(A, B, (8,0), (8,1));\n\ndraw(L--R, red);\n\nlabel(\"$x$\", (8,0), E);\nlabel(\"$y$\", (0,8), N);\n[/asy]\n Solution: The line passes through $\\begin{pmatrix} -5 \\\\ 4 \\end{pmatrix}$ and $\\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix},$ so its direction vector is proportional to\n\\[\\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix} - \\begin{pmatrix} -5 \\\\ 4 \\end{pmatrix} =  <MISSING> \n Fill in the missing steps.",
+        "output": "To find the missing steps, we need to subtract the two given position vectors:\n$$\\begin{pmatrix}−1 \\\\ 3 \\end{pmatrix}−\\begin{pmatrix}−5 \\\\ 4 \\end{pmatrix}. $$\nNow, we can perform the subtraction for each element:\n$$\\begin{pmatrix}−1 − (− 5)\\\\ 3 − 4 \\end{pmatrix} = \\begin{pmatrix}−1 + 5 \\\\ 3−4 \\end{pmatrix} .$$\nNext, we can simplify the result:\n$$\\begin{pmatrix}4 \\\\ −1 \\end{pmatrix}.$$\n\nThus, the direction vector of the line is $\\begin{pmatrix} 4 \\ -1 \\end{pmatrix}$. We are given that the direction vector is of the form $\\begin{pmatrix} -7 \\ b \\end{pmatrix}$. Since the direction vectors are proportional, we can find the constant of proportionality:\n$$ \\frac{−7}{4} = \\frac{b}{−1}. $$\nNow, we can solve $b$:\n$$ b=−1⋅\\frac{−7}{4}=\\frac{7}{4}. $$\n\nTherefore, $b = \\frac{7}{4}$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_3 \nCompletion type: proof and solution \n Official solution: The line passes through $\\begin{pmatrix} -5 \\\\ 4 \\end{pmatrix}$ and $\\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix},$ so its direction vector is proportional to\n\\[\\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix} - \\begin{pmatrix} -5 \\\\ 4 \\end{pmatrix} = \\begin{pmatrix} 4 \\\\ -1 \\end{pmatrix}.\\]To get an $x$-coordinate of $-7,$ we can multiply this vector by the scalar $-\\frac{7}{4}.$  This gives us\n\\[-\\frac{7}{4} \\begin{pmatrix} 4 \\\\ -1 \\end{pmatrix} = \\begin{pmatrix} -7 \\\\ 7/4 \\end{pmatrix}.\\]Therefore, $b = \\boxed{\\frac{7}{4}}.$\nAdditional comments: parts of the output rendered (model did not output tex)",
+        "msc": [
+            "51N20"
+        ],
+        "ref": "MATH_dataset precalculus ex96 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-03-24"
+    },
+    {
+        "prompt": "Let $a,$ $b,$ $c,$ $p,$ $q,$ and $r$ be real numbers such that\n\\[\\begin{vmatrix} p & b & c \\\\ a & q & c \\\\ a & b & r \\end{vmatrix} = 0.\\]Assuming that $a \\neq p,$ $b \\neq q,$ and $c \\neq r,$ find the value of $\\frac{p}{p - a} + \\frac{q}{q - b} + \\frac{r}{r - c}.$\n Solution: Expanding the determinant, we get\n\\begin{align*}\n\\begin{vmatrix} p & b & c \\\\ a & q & c \\\\ a & b & r \\end{vmatrix} &= p \\begin{vmatrix} q & c \\\\ b & r \\end{vmatrix} - b \\begin{vmatrix} a & c \\\\ a & r \\end{vmatrix} + c \\begin{vmatrix} a & q \\\\ a & b \\end{vmatrix} \\\\\n&= p(qr - bc) - b(ar - ac) + c(ab - aq) \\\\\n&= pqr - bpc - abr + abc + abc - acq \\\\\n&= 2abc - abr - acq - bcp + pqr.\n\\end{align*}Let $x = p - a,$ $y = q - b,$ and $z = r - c.$ <MISSING> \n Fill in the missing steps.",
+        "output": "Since the determinant is equal to 0, we have\n\n$$2abc−abr−acq−bcp+pqr=0.$$\n\nNow, we substitute $p = a + x,$ $q = b + y,$ and $r = c + z$ into the equation above:\n\\begin{align*}\n2abc - ab(c + z) - a(c + y)(c + z) - b(c + x)(c + z) + (a + x)(b + y)(c + z) &= 0 \\\n2abc - abz - acy - acz - abc - bcz - bcx - abc &= (a + x)(b + y)(c + z) - xyz \\\n\n    abz - acy - acz - bcx - bcz &= xyz - axby - aybz - azcx \\\n    \\end{align*}\n\nNow, we want to find the value of $\\frac{p}{p - a} + \\frac{q}{q - b} + \\frac{r}{r - c} = \\frac{a + x}{x} + \\frac{b + y}{y} + \\frac{c + z}{z}$. To simplify this expression, let's find a common denominator:\n\n\\begin{align*}\n\\frac{a + x}{x} + \\frac{b + y}{y} + \\frac{c + z}{z} &= \\frac{a(xyz) + x(xyz)}{x(yz)} + \\frac{b(xyz) + y(xyz)}{y(xz)} + \\frac{c(xyz) + z(xyz)}{z(xy)} \\\n&= \\frac{ax(yz) + x^2(yz) + by(xz) + y^2(xz) + cz(xy) + z^2(xy)}{xyz} \\\n&= \\frac{axyz + x^2yz + bxyz + y^2xz + cxz^2 + xyz^2}{xyz}.\n\\end{align*}\n\nObserve that the numerator of this fraction is equal to the left-hand side of the equation we derived above:\n\n\\begin{align*}\naxyz + x^2yz + bxyz + y^2xz + cxz^2 + xyz^2 &= - abz - acy - acz - bcx - bcz \\\n\\end{align*}\n\nThus, we have\n\n$$\\frac{p}{p−a}+\\frac{q}{q−b}+\\frac{r}{r−c}=\\frac{−abz−acy−acz−bcx−bcz}{xyz}.$$\nSince the determinant is equal to 0, the numerator of this fraction is also equal to 0:\n\n$$−abz−acy−acz−bcx−bcz=0.$$\n\nTherefore, we have\n\n$$\\frac{p}{p−a}+\\frac{q}{q−b}+\\frac{r}{r−c}=\\frac{0}{xyz}=\\boxed{0}.$$",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "Level_4 \nCompletion type: proof and solution \n Official solution: Expanding the determinant, we get\n\\begin{align*}\n\\begin{vmatrix} p & b & c \\\\ a & q & c \\\\ a & b & r \\end{vmatrix} &= p \\begin{vmatrix} q & c \\\\ b & r \\end{vmatrix} - b \\begin{vmatrix} a & c \\\\ a & r \\end{vmatrix} + c \\begin{vmatrix} a & q \\\\ a & b \\end{vmatrix} \\\\\n&= p(qr - bc) - b(ar - ac) + c(ab - aq) \\\\\n&= pqr - bpc - abr + abc + abc - acq \\\\\n&= 2abc - abr - acq - bcp + pqr.\n\\end{align*}Let $x = p - a,$ $y = q - b,$ and $z = r - c.$  Then $p = a + x,$ $q = b + y,$ and $r = c + z.$  Substituting, we get\n\\[2abc - ab(c + z) - ac(b + y) - bc(a + x) + (a + x)(b + y)(c + z) = 0.\\]This simplifies to $ayz + bxz + cxy + xyz = 0.$\n\nThen\n\\begin{align*}\n\\frac{p}{p - a} + \\frac{q}{q - b} + \\frac{r}{r - c} &= \\frac{a + x}{x} + \\frac{b + y}{y} + \\frac{c + z}{z} \\\\\n&= \\frac{a}{x} + 1 + \\frac{b}{y} + 1 + \\frac{c}{z} + 1 \\\\\n&= \\frac{a}{x} + \\frac{b}{y} + \\frac{c}{z} + 3 \\\\\n&= \\frac{ayz + bxz + cxy}{xyz} +  3 \\\\\n&= \\frac{-xyz}{xyz} + 3 = \\boxed{2}.\n\\end{align*}\nAdditional comments: parts of the output rendered (model did not output tex); weird formatting of the first display; wrong substitution/computation",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex137 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-03-24"
+    },
+    {
+        "prompt": "Compute\n\\[\\begin{pmatrix} 3 & 1 & 0 \\\\ -7 & 4 & 2 \\\\ 0 & 5 & -1 \\end{pmatrix} \\begin{pmatrix} 4 \\\\ -1 \\\\ -2 \\end{pmatrix}.\\]\n Solution: We have that\n\\[\\begin{pmatrix} 3 & 1 & 0 \\\\ -7 & 4 & 2 \\\\ 0 & 5 & -1 \\end{pmatrix} \\begin{pmatrix} 4 \\\\ -1 \\\\ -2 \\end{pmatrix} =<MISSING> \n Fill in the missing steps.",
+        "output": "To compute the product of the given matrices, you need to perform the following steps:\n\n1. Multiply each element of the first row of the first matrix with the corresponding element of the second matrix (which is a column vector), and then sum the results.\n2. Repeat this process for the other rows of the first matrix.\n\nHere's a step-by-step solution:\n\n$$\\begin{pmatrix} 3 & 1 & 0 \\\\ -7 & 4 & 2 \\\\ 0 & 5  & -1 \\end{pmatrix} \\begin{pmatrix} 4 \\\\ -1 \\\\ -2\\end{pmatrix} =\\begin{pmatrix} (3×4)+(1×−1)+(0×−2) \\\\ (−7×4)+(4×−1)+(2×−2) \\\\ (0×4)+(5×−1)+(−1×−2)\\end{pmatrix}$$\n\nNow, perform the arithmetic operations:\n\n$$\\begin{pmatrix} (12)+(−1)+(0) \\\\ (−28)+(−4)+(−4) \\\\ (0)+(−5)+(2) \\end{pmatrix}=\\begin{pmatrix} 11 \\\\ −36\\\\ −3\\end{pmatrix}$$\n\nSo, the product of the given matrices is:\n$$ \\begin{pmatrix} 11 \\\\ -36 \\\\ -3 \\end{pmatrix} $$",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_2 \nCompletion type: proof and solution \n Official solution: We have that\n\\[\\begin{pmatrix} 3 & 1 & 0 \\\\ -7 & 4 & 2 \\\\ 0 & 5 & -1 \\end{pmatrix} \\begin{pmatrix} 4 \\\\ -1 \\\\ -2 \\end{pmatrix} = \\begin{pmatrix} (3)(4) + (1)(-1) + (0)(-2) \\\\ (-7)(4) + (4)(-1) + (2)(-2) \\\\ (0)(4) + (5)(-1) + (-1)(-2) \\end{pmatrix} = \\boxed{\\begin{pmatrix} 11 \\\\ -36 \\\\ -3 \\end{pmatrix}}.\\]\nAdditional comments: parts of the output rendered (model did not output tex)",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex12 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-03-24"
+    },
+    {
+        "prompt": "Let $\\alpha$ and $\\beta$ be angles for which\n\\[\\frac{\\sec^4 \\alpha}{\\tan^2 \\beta} + \\frac{\\sec^4 \\beta}{\\tan^2 \\alpha}\\]is defined.  Find the minimum value of the expression.\n Solution: Let $a = \\tan^2 \\alpha$ and $b = \\tan^2 \\beta.$  Then $\\sec^2 \\alpha = a + 1$ and $\\sec^2 \\beta = b + 1,$ so\n\\[\\frac{\\sec^4 \\alpha}{\\tan^2 \\beta} + \\frac{\\sec^4 \\beta}{\\tan^2 \\alpha} = \\frac{(a + 1)^2}{b} + \\frac{(b + 1)^2}{a}.\\] <MISSING> \n Fill in the missing steps.",
+        "output": "To find the minimum value of the expression, we will use the Cauchy-Schwarz Inequality.\n\nConsider two sets of positive numbers, $(x_1, x_2)$ and $(y_1, y_2)$, where $x_1 = a+1$, $x_2 = b+1$, $y_1 = \\frac{1}{b}$, and $y_2 = \\frac{1}{a}$. The Cauchy-Schwarz Inequality states that:\n\n$$(x_1y_1+x_2y_2)^2 \\ge (x_1^2+x_2^2)(y_1^2+y_2^2).$$\n\nPlugging in the values, we get:\n\n$$\\left((a+1)\\frac{1}{b}+(b+1)\\frac{1}{a}\\right)^2 \\ge ((a+1)^2+(b+1)^2)\\left(\\frac{1}{b^2}+\\frac{1}{a^2}\\right).$$\n\nWe want to find the minimum value of the left-hand side expression:\n\n$$\\frac{(a+1)^2}{b}+\\frac{(b+1)^2}{a}=(a+1)\\frac{1}{b}+(b+1)\\frac{1}{a}.$$\n\nBy the Cauchy-Schwarz Inequality, we know that:\n\n$$\\left((a+1)\\frac{1}{b}+(b+1)\\frac{1}{a}\\right)^2 \\ge ((a+1)^2+(b+1)^2)\\left(\\frac{1}{b^2}+\\frac{1}{a^2}\\right).$$\n\nTaking the square root of both sides, we get:\n\n$$(a+1)\\frac{1}{b}+(b+1)\\frac{1}{a} \\ge \\sqrt{((a+1)^2+(b+1)^2)\\left(\\frac{1}{b^2}+\\frac{1}{a^2}\\right)}.$$\n\n\nNotice that the equality case of the Cauchy-Schwarz Inequality occurs when $\\frac{x_1}{y_1} = \\frac{x_2}{y_2}$ or equivalently when $\\frac{a+1}{\\frac{1}{b}} = \\frac{b+1}{\\frac{1}{a}}$. Cross-multiplying gives:\n\n$$(a+1)a=(b+1)b \\Rightarrow a^2+a=b^2+b.$$\n\nFrom this equation, we can find that $a = b$. Since $\\tan^2(\\alpha) = a$ and $\\tan^2(\\beta) = b$, this means that $\\tan^2(\\alpha) = \\tan^2(\\beta)$ or $\\alpha = \\beta$.\n\nPlugging $a = b$ into the left-hand side expression, we obtain:\n\n$$\\frac{(a+1)^2}{a}+\\frac{(a+1)^2}{a}=2(a+1).$$\n\nThus, the minimum value of the expression is $\\boxed{2(a+1)}$, which occurs when $\\alpha = \\beta$.",
+        "rating": "3",
+        "errorcodes": [
+            "e4",
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "Level_5 \nCompletion type: proof and solution \n Official solution: Let $a = \\tan^2 \\alpha$ and $b = \\tan^2 \\beta.$  Then $\\sec^2 \\alpha = a + 1$ and $\\sec^2 \\beta = b + 1,$ so\n\\[\\frac{\\sec^4 \\alpha}{\\tan^2 \\beta} + \\frac{\\sec^4 \\beta}{\\tan^2 \\alpha} = \\frac{(a + 1)^2}{b} + \\frac{(b + 1)^2}{a}.\\]We know $a \\ge 0$ and $b \\ge 0,$ so by AM-GM, $a + 1 \\ge 2 \\sqrt{a}$ and $b + 1 \\ge 2 \\sqrt{b}.$  Hence,\n\\[\\frac{(a + 1)^2}{b} + \\frac{(b + 1)^2}{a} \\ge \\frac{4b}{a} + \\frac{4a}{b}.\\]Again by AM-GM,\n\\[\\frac{4b}{a} + \\frac{4a}{b} \\ge 2 \\sqrt{\\frac{4b}{a} \\cdot \\frac{4a}{b}} = 8.\\]Equality occurs when $\\alpha = \\beta = \\frac{\\pi}{4},$ so the minimum value is $\\boxed{8}.$\nAdditional comments: parts of the output rendered (model did not output tex); wrong computations in cross-multiplication and evaluation of the left-hand side expression; solution still depends on $a$",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex89 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-03-24"
+    },
+    {
+        "prompt": "In the diagram below, we have $AB = 24$ and $\\angle ADB =90^\\circ$.  If $\\sin A = \\frac23$ and $\\sin C = \\frac34$, then what is $BC$?\n\n\n[asy]\npair A,B,C,D;\nA = (0,0);\nB = (8*sqrt(5),16);\nD = (8*sqrt(5),0);\nC = (8*sqrt(5) + 5.3333*sqrt(7),0);\ndraw(D--B--A--C--B);\nlabel(\"$A$\",A,SW);\nlabel(\"$B$\",B,N);\nlabel(\"$C$\",C,SE);\nlabel(\"$D$\",D,S);\ndraw(rightanglemark(B,D,A,43));\n[/asy]\n Solution: <MISSING> Therefore, we have $3BC = 4\\cdot 16$, and $BC = \\boxed{\\frac{64}{3}}$.\n Fill in the missing steps.",
+        "output": "In the diagram below, we have $AB = 24$ and $\\angle ADB =90^\\circ$. If $\\sin A = \\frac23$ and $\\sin C = \\frac34$, then what is $BC$?\n\n[asy]\npair A,B,C,D;\nA = (0,0);\nB = (8sqrt(5),16);\nD = (8sqrt(5),0);\nC = (8sqrt(5) + 5.3333sqrt(7),0);\ndraw(D--B--A--C--B);\nlabel(\"$A$\",A,SW);\nlabel(\"$B$\",B,N);\nlabel(\"$C$\",C,SE);\nlabel(\"$D$\",D,S);\ndraw(rightanglemark(B,D,A,43));\n[/asy]\n\nSolution:\n\nStep 1: Find $BD$ using $\\sin A$.\n\nSince $\\sin A = \\frac{BD}{AB}$, we can solve for $BD$ as follows:\n\n$\\frac{2}{3} = \\frac{BD}{24} \\Rightarrow BD = \\frac{2}{3} \\cdot 24 = 16$\n\nStep 2: Find $AD$ using the Pythagorean theorem.\n\nSince $\\triangle ABD$ is a right triangle, we have $AD^2 + BD^2 = AB^2$:\n\n$AD^2 + 16^2 = 24^2 \\Rightarrow AD^2 = 576 - 256 = 320 \\Rightarrow AD = 8\\sqrt{5}$\n\nStep 3: Find $CD$ using $\\sin C$.\n\nSince $\\sin C = \\frac{BD}{BC}$, we can solve for $BC$ as follows:\n\n$\\frac{3}{4} = \\frac{16}{BC} \\Rightarrow BC = \\frac{64}{3}$\n\nTherefore, we have $3BC = 4\\cdot 16$, and $BC = \\boxed{\\frac{64}{3}}$.",
+        "rating": "4",
+        "errorcodes": [
+            "e5_1"
+        ],
+        "warningcodes": [],
+        "comment": "Level_1 \nCompletion type: proof only \n Official solution: From right triangle $ABD$, we have $\\sin A = \\frac{BD}{AB} = \\frac{BD}{24}$.  Since $\\sin A = \\frac23$, we have $\\frac23 = \\frac{BD}{24}$, so $BD = \\frac23\\cdot 24 = 16$.\n\nFrom right triangle $BCD$, we have $\\sin C = \\frac{BD}{BC}=\\frac{16}{BC}$.  Since $\\sin C = \\frac34$, we have $\\frac{16}{BC} = \\frac34$.  Therefore, we have $3BC = 4\\cdot 16$, and $BC = \\boxed{\\frac{64}{3}}$.\nAdditional comments: Superfluous computations in Step 2 and wrong label for Step 3",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex244 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-03-24"
+    },
+    {
+        "prompt": "If $e^{i \\alpha} = \\frac{3}{5}  +\\frac{4}{5} i$ and $e^{i \\beta} = -\\frac{12}{13} + \\frac{5}{13} i,$ then find $\\cos (\\alpha - \\beta).$\n Solution: Dividing the given equations, we obtain\n\\begin{align*}\ne^{i (\\alpha - \\beta)} &= \\frac{\\frac{3}{5}  +\\frac{4}{5} i}{-\\frac{12}{13} + \\frac{5}{13} i} \\\\\n&= \\frac{(\\frac{3}{5}  +\\frac{4}{5} i)(-\\frac{12}{13} - \\frac{5}{13} i)}{(-\\frac{12}{13} + \\frac{5}{13} i)(-\\frac{12}{13} - \\frac{5}{13} i)} <MISSING> \n Fill in the missing steps.",
+        "output": "Let's continue the calculation by multiplying the numerators and denominators:\n\n\\begin{align*}\ne^{i (\\alpha - \\beta)} &= \\frac{(\\frac{3}{5} +\\frac{4}{5} i)(-\\frac{12}{13} - \\frac{5}{13} i)}{(-\\frac{12}{13} + \\frac{5}{13} i)(-\\frac{12}{13} - \\frac{5}{13} i)} \\\n&= \\frac{-\\frac{36}{65} -\\frac{60}{65}i -\\frac{20}{65}i -\\frac{48}{65}i^2}{\\frac{144}{169} + \\frac{60}{169}i -\\frac{60}{169}i -\\frac{25}{169}i^2} \\\n\\end{align*}\n\nRecall that $i^2 = -1$. Substitute this into the expression:\n\n\\begin{align*}\ne^{i (\\alpha - \\beta)} &= \\frac{-\\frac{36}{65} -\\frac{60}{65}i -\\frac{20}{65}i +\\frac{48}{65}}{\\frac{144}{169} + \\frac{60}{169}i -\\frac{60}{169}i +\\frac{25}{169}} \\\n&= \\frac{\\frac{12}{65} -\\frac{80}{65}i}{\\frac{169}{169}} \\\n&= \\frac{12}{65} -\\frac{80}{65}i\n\\end{align*}\n\nNow, recall that $e^{i (\\alpha - \\beta)} = \\cos(\\alpha - \\beta) + i\\sin(\\alpha - \\beta)$. Therefore, we can identify the real part of the expression as the desired result:\n\n$$\\cos(\\alpha - \\beta) = \\frac{12}{65}$$",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_3 \nCompletion type: proof and solution \n Official solution: Dividing the given equations, we obtain\n\\begin{align*}\ne^{i (\\alpha - \\beta)} &= \\frac{\\frac{3}{5}  +\\frac{4}{5} i}{-\\frac{12}{13} + \\frac{5}{13} i} \\\\\n&= \\frac{(\\frac{3}{5}  +\\frac{4}{5} i)(-\\frac{12}{13} - \\frac{5}{13} i)}{(-\\frac{12}{13} + \\frac{5}{13} i)(-\\frac{12}{13} - \\frac{5}{13} i)} \\\\\n&= -\\frac{16}{65} - \\frac{63}{65} i.\n\\end{align*}But $e^{i (\\alpha - \\beta)} = \\cos (\\alpha - \\beta) + i \\sin (\\alpha - \\beta),$ so $\\cos (\\alpha - \\beta) = \\boxed{-\\frac{16}{65}}.$\nAdditional comments: parts of the output rendered (model did not output tex); wrong computation in the numerator",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex21 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-03-24"
+    }
+]

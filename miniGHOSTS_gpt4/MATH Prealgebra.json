@@ -1,0 +1,144 @@
+[
+    {
+        "prompt": "Kailin's favorite restaurant has a special offer on a three-course meal. A meal consists of an appetizer, an entree and a dessert. The menu features five appetizers, eight entrees and four desserts. How many different three-course meals can be formed with these choices?",
+        "output": "The number of different three-course meals that can be formed is the product of the number of choices for each course.\n\nIn this case, there are 5 appetizers, 8 entrees, and 4 desserts.\n\nTherefore, the total number of different three-course meals that can be formed is 5 * 8 * 4 = 160 different meals.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: There are 5 choices for an appetizer, 8 choices for an entree, and 4 choices for a dessert.  In total, these three independent decisions can be made in $5\\times8\\times4=\\boxed{160}$ ways.",
+        "msc": [
+            "05A05"
+        ],
+        "ref": "MATH_dataset prealgebra ex271 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "How many triangles are in this figure?\n\n[asy]size(50);\ndraw((0,0)--(1,0)--(0,0)--(0,1));\ndraw((1,1)--(0,1)--(1,0)--(1,1)--(0,0));[/asy]",
+        "output": "I'm sorry for the inconvenience, but as an AI text-based model, I am unable to see or analyze images or figures directly. However, if you could describe the figure, I can help you determine the number of triangles within it. For example, you can tell me about the number of points, how they are connected, etc.]",
+        "rating": "1",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: There are four small triangles and four triangles composed of two smaller ones (comprising two sides and the diagonal of the square). Thus, there are $\\boxed{8}$ triangles.",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset prealgebra ex84 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "In how many ways can the letters of the word ``COPYRIGHT'' be arranged?",
+        "output": "The word COPYRIGHT contains 9 letters. We will have to account for the repeated letters.Here's the breakdown:\n\nC: 1 time\nO: 1 time\nP: 1 time\nY: 1 time\nR: 1 time\nI: 1 time\nG: 1 time\nH: 1 time\nT: 1 time\nIn this case, every letter is unique, so the formula to count the number of arrangements is simply 9 factorial (9!), which means multiplying 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1.\n\nSo there are 362,880 possible ways to arrange the letters of the word \"COPYRIGHT\".]",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: Since there are no repeated letters, we see that there are 9 possible choices for the first letter, 8 possible choices for the second letter, 7 possible choices for the third letter, and so on. Therefore, our answer is $9 \\cdot 8 \\cdot 7 \\cdots 1 = 9! = \\boxed{362,\\!880}.$",
+        "msc": [
+            "05A05"
+        ],
+        "ref": "MATH_dataset prealgebra ex9 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Simplify: $92 - 45 \\div (3 \\times 5) - 5^2$.",
+        "output": "We should follow the order of operations, also known as BIDMAS or PEMDAS:\n\nBrackets/parentheses\nIndices/Exponents\nDivision and Multiplication (from left to right)\nAddition and Subtraction (from left to right)\nApplying these rules to the given expression:\n\nInside the parentheses: $3 \\times 5 = 15$\nSo the expression becomes: $92 - 45 \\div 15 - 5^2$\n\nThen we perform the division: $45 \\div 15 = 3$\nSo the expression becomes: $92 - 3 - 5^2$\n\nThen we calculate the exponent: $5^2 = 25$\nSo the expression becomes: $92 - 3 - 25$\n\nFinally, we perform the subtraction from left to right:\nFirst, $92 - 3 = 89$\n\nThen, $89 - 25 = 64$\n\nSo, $92 - 45 \\div (3 \\times 5) - 5^2 = 64$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: We follow the order of operations:  \\begin{align*}\n92 - 45 \\div (3\\times 5) - 5^2 &= 92 - 45 \\div 15 - 5^2 \\\\\n&= 92 - 45\\div 15 -25 \\\\\n&= 92 - 3 - 25=89-25 = \\boxed{64}.\n\\end{align*}",
+        "msc": [
+            "11A05"
+        ],
+        "ref": "MATH_dataset prealgebra ex252 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "For what value of $x$ is $2^3\\cdot3^x=72$?",
+        "output": "We can simplify the equation to solve for $x$.\nFirst, note that $2^3 = 8$ and $72$ can be factorized as $2^3\\cdot3^2 = 8\\cdot9$. Then we can rewrite the equation as:\n\n$2^3\\cdot3^x = 2^3\\cdot3^2$\n\nSetting the two expressions equal to each other gives us:\n\n$3^x = 3^2$\n\nSince the bases are equal, we can set the exponents equal to each other:\n\n$x = 2$\n\nSo, the value of $x$ for which $2^3\\cdot3^x = 72$ is $x = 2$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: Since the prime factorization of 72 is $72=2^3\\cdot 3^2$, we have $x=\\boxed{2}$.",
+        "msc": [
+            "11A05"
+        ],
+        "ref": "MATH_dataset prealgebra ex192 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Let $N$ be the units digit of the number $21420N$. Which nonzero value of $N$ makes this number divisible by $6$?",
+        "output": "A number is divisible by 6 if it's divisible by both 2 and 3.\n\nFor a number to be divisible by 2, its units digit must be even. So N could be 2, 4, 6, 8, 0. But we want a non-zero value, so the possibilities for N are 2, 4, 6, or 8.\n\nFor a number to be divisible by 3, the sum of its digits must be divisible by 3. The sum of the digits in 21420 is 2 + 1 + 4 + 2 + 0 = 9.\n\nNow, we need to find a digit N such that 9 + N is divisible by 3. The possibilities for N are 2, 4, 6, or 8, but only 6 and 0 will make the sum divisible by 3. However, we are looking for a non-zero digit, so the only possible value for N is 6.\n\nTherefore, the units digit N should be 6.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: The number $21420N$ is divisible by $6$ if and only if it is even and the sum of its digits is divisible by $3$. So $N$ must be even, and $2 + 1 + 4 + 2 + 0 + N = 9 + N$ must be divisible by $3$.  Since $9$ is divisible by $3$, we see that $N$ must also be divisible by $3$. The only digit that works is $N = \\boxed{6}$.",
+        "msc": [
+            "11A05"
+        ],
+        "ref": "MATH_dataset prealgebra ex65 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Find $\\frac{25}{4}$ divided by $\\frac{1}{12}$.",
+        "output": "The division of two fractions is equivalent to the multiplication of the first fraction by the reciprocal of the second. The reciprocal of a fraction is obtained by switching the numerator and the denominator. So, the reciprocal of $\\frac{1}{12}$ is $\\frac{12}{1}$.\n\nTherefore, $\\frac{25}{4}$ divided by $\\frac{1}{12}$ can be calculated as:\n\n$\\frac{25}{4} \\times \\frac{12}{1} = \\frac{25 \\times 12}{4 \\times 1} = \\frac{300}{4} = 75.$\n\nSo, $\\frac{25}{4}$ divided by $\\frac{1}{12}$ equals $75$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: Remember that $\\frac{25}{4}$ divided by $\\frac{1}{12}$ is the same as $\\frac{25}{4} \\cdot \\frac{12}{1}$. We can rewrite $\\frac{25}{4} \\cdot \\frac{12}{1}$ as $25 \\cdot \\frac{1}{4} \\cdot 12$, which can then be expressed as $25 \\cdot \\frac{12}{4}$. Twelve divided by four is three, so $25 \\cdot \\frac{12}{4}$ is the same thing as $25 \\cdot 3$, which equals $\\boxed{75}.$",
+        "msc": [
+            "11A05"
+        ],
+        "ref": "MATH_dataset prealgebra ex92 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "What is the sum of the composite numbers between 10 and 20 (not including 10 and 20)?",
+        "output": "Composite numbers are numbers that have more than two factors. For example, the number 4 is composite because it has three factors: 1, 2, and 4.\n\nThe composite numbers between 10 and 20 (exclusive) are 12, 14, 15, 16, and 18.\n\nThe sum of these numbers is 12 + 14 + 15 + 16 + 18 = 75.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: Between 10 and 20, the prime numbers are 11, 13, 17, and 19, so the composite numbers are 12, 14, 15, 16, and 18.  There are five of them, and their sum is $12+14+15+16+18 = \\boxed{75}$.",
+        "msc": [
+            "11A05"
+        ],
+        "ref": "MATH_dataset prealgebra ex70 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "What is the smallest positive multiple of $6$ that is also a multiple of $8$?",
+        "output": "To find the smallest positive multiple that is both a multiple of 6 and 8, you need to find the least common multiple (LCM) of the two numbers.\n\nThe prime factorization of 6 is 2*3, and the prime factorization of 8 is 2^3. The LCM is then found by taking the highest power of each prime number that appears in either factorization.\n\nSo for 2, the highest power is 3 (from the prime factorization of 8), and for 3, the highest power is 1 (from the prime factorization of 6).\n\nSo, the LCM is 2^3 * 3^1 = 8 * 3 = 24.\n\nTherefore, the smallest positive multiple of 6 that is also a multiple of 8 is 24.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: To find a positive number that is both a multiple of $6$ and a multiple of $8$, we'll list out the multiples of $6$, starting with $6$, and check to see if any of them are also multiples of $8$. $6$ does not divide $8$, so it isn't a multiple of $8$. $12$ and $18$ are also not evenly divisible by $8$, so they do not work, either.  $24$ is evenly divisible by $8$ (as $3 \\cdot 8 = 24$), so $\\boxed{24}$ is the smallest positive multiple of both $6$ and $8$.",
+        "msc": [
+            "11A05"
+        ],
+        "ref": "MATH_dataset prealgebra ex211 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "If $3 \\times 11 \\times 13 \\times 21 = 2005 +b$, what is the value of $b$?",
+        "output": "Firstly, you need to calculate the left side of the equation.\n\n$3 \\times 11 \\times 13 \\times 21 = 9999$\n\nSo, $9999 = 2005 + b$\n\nTo solve for $b$, subtract 2005 from both sides of the equation.\n\n$b = 9999 - 2005$\n\nThus, $b = 7994$.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: To multiply the left-hand side quickly, we note that among the 4 numbers, we have $11 \\times 13 \\times 7 = 11 \\times 91 = 1001$.  Then, we have 9 left over, so the total product is 9009, and subtracting 2005, we get $\\boxed{7004}$.",
+        "msc": [
+            "11A05"
+        ],
+        "ref": "MATH_dataset prealgebra ex113 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    }
+]

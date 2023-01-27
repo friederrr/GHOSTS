@@ -1,0 +1,947 @@
+[
+    {
+        "prompt": "We want to prove that $\\operatorname{rank}A^TA=\\operatorname{rank}A$ for any $A\\in \\mathbb{R}_{m \\times n}$. Let $\\mathbf{x} \\in N(A)$ where $N(A)$ is the null space of $A$. \n\nSo, $$\\begin{align} A\\mathbf{x} &=\\mathbf{0} \\\\\\implies A^TA\\mathbf{x} &=\\mathbf{0}  \\\\\\implies \\mathbf{x} &\\in N(A^TA) \\end{align}$$ Hence $N(A) \\subseteq N(A^TA)$. Can you finish the proof?",
+        "output": "Since $N(A) \\subseteq N(A^TA)$, it follows that $\\operatorname{rank}A^TA \\leq \\operatorname{rank}A$. To prove the equality, we need to show that $\\operatorname{rank}A \\leq \\operatorname{rank}A^TA$. To do this, we can use the fact that $A$ has a full column rank if and only if $A^TA$ is invertible. This means that if $\\operatorname{rank}A = n$, then $\\operatorname{rank}A^TA = n$, so we have equality.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_2"
+        ],
+        "warningcodes": [],
+        "comment": "only the case of full column rank is considered; prompt type: finish the proof",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "https://math.stackexchange.com/questions/349738/prove-operatornamerankata-operatornameranka-for-any-a-in-m-m-times-n",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "We want to proof that the trace of a matrix is the sum of its eigenvalues. By definition, the characteristic polynomial of an $n\\times n$ matrix $A$ is given by \n$$p(t) = \\det(A-tI) = (-1)^n \\big(t^n - (\\text{tr} A) \\,t^{n-1} + \\dots + (-1)^n \\det A\\big)\\,.$$\nCan you finish the proof?",
+        "output": "The characteristic polynomial of an $n\\times n$ matrix $A$ is given by $p(t) = \\det(A-tI) = (-1)^n \\big(t^n - (\\text{tr} A) ,t^{n-1} + \\dots + (-1)^n \\det A\\big)$. By definition, the eigenvalues of a matrix are the roots of its characteristic polynomial. Since the roots of a polynomial are the values that make it equal to zero, we know that $p(t) = 0$ when $t$ is an eigenvalue of $A$.\n\nWe can write the polynomial $p(t)$ as:\n\n$$p(t)=(-1)^n(t-\\lambda_1)...(t-\\lambda_n)$$\n\nWhere $\\lambda_1, \\dots , \\lambda_n$ are the eigenvalues of A.\n\nSo by the Factor Theorem, the sum of all the eigenvalues of A is equal to the coefficient of $t^{n-1}$ in $(-1)^n \\big(t^n - (\\text{tr} A) ,t^{n-1} + \\dots + (-1)^n \\det A\\big)$ which is $(-1)^n \\text{tr} A$\n\nTherefore, $\\text{tr} A = (-1)^n \\text{tr} A = \\sum_{i=1}^n \\lambda_i$\n\nAnd the proof is complete.",
+        "rating": "3",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "equation $p(t)=...$ rendered (not displayed as tex); weird formatting $(\\text{tr} A) \\,t^{n-1}$; wrong treatment of the factor $(-1)^n$; prompt type: finish the proof",
+        "msc": [
+            "15A15"
+        ],
+        "ref": "https://math.stackexchange.com/questions/546155/proof-that-the-trace-of-a-matrix-is-the-sum-of-its-eigenvalues",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "Let $f$ be a real-valued function continuous on $[a,b]$ and differentiable on $(a,b)$. Suppose that $\\lim_{x\\rightarrow a}f'(x)$ exists. Then, we want to prove that $f$ is differentiable at $a$ and $f'(a)=\\lim_{x\\rightarrow a}f'(x)$. Using the definition of derivative, we need to show that\n$$\n\\lim_{h\\rightarrow 0^+} {f(a+h)-f(a)\\over h }\n$$\nexists and is equal to $\\lim\\limits_{x\\rightarrow a^+} f'(x)$.\n\nNote that for $h>0$ the Mean Value Theorem provides a point $c_h$ with $a<c_h<a+h$ such that [MISSING]\n\nFinally, note that $c_h\\rightarrow a^+$ as $h\\rightarrow0^+$. Can you fill in the missing equation?",
+        "output": "The missing equation from the Mean Value Theorem is:\n\n$$f'(c_h)=\\frac{f(a+h)-f(a)}{h}.$$",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "equation rendered (not displayed as tex); prompt type: fill in a missing step",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "https://math.stackexchange.com/questions/257907/prove-that-fa-lim-x-rightarrow-afx",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "We want to compute the following limit:\n\n$$\\lim_{k\\to\\infty}\\sum\\limits_{n=k+1}^{2k}{\\frac{1}{n}}$$\n\nRewriting the sum as\n$$\n\\sum_{n=k+1}^{2k}\\frac1n=\\sum_{n=k+1}^{2k}\\frac1k\\cdot\\frac1{n/k}\n$$\nallows us to identify this as a Riemann sum related to the definite integral \n[MISSING].\nTo see that, divide the interval $[1,2]$ to $k$ equal length subintervals, and evaluate the function $f(x)=1/x$ at the right end of each subinterval. When $k\\to\\infty$, the Riemann sums will then tend to the value of this definite integral. Can you fill in the missing equation?",
+        "output": "The definite integral that the Riemann sum is related to is:\n\n$$\\int_{1}^{2} \\frac{1}{x} dx = \\ln(2) - \\ln(1) = \\ln(2)$$\n\nSo the limit that we want to compute is:\n\n$$\\lim_{k\\to\\infty} \\sum_{n=k+1}^{2k} \\frac{1}{n} = \\lim_{k\\to\\infty} \\frac{1}{k} \\sum_{n=k+1}^{2k} \\frac{1}{n/k} = \\lim_{k\\to\\infty} \\frac{1}{k} (\\int_{1}^{2} \\frac{1}{x} dx) = \\lim_{k\\to\\infty} \\frac{\\ln(2)}{k} = 0$$",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "both equations rendered (not displayed as tex); wrong computation of the limit which was not directly asked; correct answer to the missing equation; prompt type: fill in a missing step",
+        "msc": [
+            "40A05"
+        ],
+        "ref": "https://math.stackexchange.com/questions/73550/the-limit-of-truncated-sums-of-harmonic-series-lim-limits-k-to-infty-sum-n",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "We want to show that any open subset of $\\Bbb R$ is a countable union of disjoint open intervals. Let $U$ be a non-empty open subset of $\\Bbb R$. For $x,y\\in U$ define $x\\sim y$ iff [MISSING]. It’s easily checked that $\\sim$ is an equivalence relation on $U$ whose equivalence classes are pairwise disjoint open intervals in $\\Bbb R$. (The term *interval* here includes unbounded intervals, i.e., rays.) Let $\\mathscr{I}$ be the set of $\\sim$-classes. Clearly $U=\\bigcup_{I \\in \\mathscr{I}} I$. For each $I\\in\\mathscr{I}$ choose a rational $q_I\\in I$; the map $\\mathscr{I}\\to\\Bbb Q:I\\mapsto q_I$ is injective, so $\\mathscr{I}$ is countable. Can you fill in the missing condition?",
+        "output": "The missing condition is \"there exists an open interval containing $x$ and $y$ that is contained in $U$.\" ",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "statement is equivalent to the answer on stackexchange; prompt type: fill in a missing step",
+        "msc": [
+            "26A03",
+            "54F05"
+        ],
+        "ref": "https://math.stackexchange.com/questions/318299/any-open-subset-of-bbb-r-is-a-countable-union-of-disjoint-open-intervals",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "We want to prove the convergence of the p-series \n\n$$\\sum_{n=1}^{\\infty} \\frac1{n^p}$$\n\nfor $p > 1$. We can bound the partial sums by multiples of themselves:\n\n$$\\begin{eqnarray}\nS_{2k+1}\n&=&\n\\sum_{n=1}^{2k+1}\\frac{1}{n^p}\\\\\n&=&\n1+\\sum_{i=1}^k\\left(\\frac{1}{(2i)^p}+\\frac{1}{(2i+1)^p}\\right)\\\\\n&<&1+\\sum_{i=1}^k\\frac{2}{(2i)^p}\\\\\n&=&1+2^{1-p}S_k\\\\\n&<&1+2^{1-p}S_{2k+1}\\;.\n\\end{eqnarray}$$\n\nThen solving for $S_{2k+1}$ yields\n\n$$S_{2k+1}<\\frac{1}{1-2^{1-p}}.$$\n\nCan you complete the proof?",
+        "output": "To complete the proof, we need to show that the limit of the partial sums as $k$ approaches infinity is finite. Since the inequality $S_{2k+1} < \\frac{1}{1-2^{1-p}}$ holds for all $k$, and the right-hand side is a finite constant, we can conclude that the partial sums are bounded above by a constant, which implies that the series converges.\n\nAlternatively, we can also use the Comparison test. We know that for $p > 1$, $\\frac{1}{n^p}$ decreases as $n$ increases, and $\\frac{1}{n^p} < \\frac{1}{n^2}$ for all $n > 1$. Since $\\sum_{n=1}^{\\infty} \\frac{1}{n^2}$ converges, by the Comparison test, $\\sum_{n=1}^{\\infty} \\frac{1}{n^p}$ also converges.\n\nTherefore, the p-series $\\sum_{n=1}^{\\infty} \\frac{1}{n^p}$ converges for $p > 1$.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_2",
+            "e2"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "monotonicity of the sequence of partial sums not mentioned; presents additional proof without being asked; additional proof only holds for $p>2$; instead of the fact that $\\frac{1}{n^p}$ decreases as $n$ increases the comparison test requires $0\\le\\frac{1}{n^p}$; prompt type: finish the proof",
+        "msc": [
+            "40A05"
+        ],
+        "ref": "https://math.stackexchange.com/questions/29450/self-contained-proof-that-sum-limits-n-1-infty-frac1np-converges-for",
+        "confidence": "high",
+        "timestamp": "2023-01-22"
+    },
+    {
+        "prompt": "Let $f$ have a continuous derivative on $[a,b]$. We want to show that $f$ satisfies a Lipschitz condition on $[a,b]$. By [MISSING], \n\n$$f(x) - f(y) = f'(\\xi)(x-y)$$ \n\nfor some $\\xi \\in (y,x)$. But since $f'$ is continuous and $[a,b]$ is compact, then $f'$ is bounded in that interval, say by $C$. Thus taking absolute values yields \n\n$$\\lvert f(x) - f(y)\\rvert \\le C \\lvert x-y\\rvert$$ \n\nCan you name the result used in [MISSING]?",
+        "output": "The result used in [MISSING] is the mean value theorem.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: name well-known result/condition",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "https://math.stackexchange.com/questions/476072/continuous-differentiability-implies-lipschitz-continuity",
+        "confidence": "high",
+        "timestamp": "2023-01-22"
+    },
+    {
+        "prompt": "Let $f\\colon\\mathbb{R}\\to\\mathbb{R}$ and suppose that \n\n$$|f(x)-f(y)|\\le (x-y)^2$$\n\nfor all $x,y\\in\\mathbb{R}$. We want to prove that $f$ is constant. For any $x\\in\\mathbb{R}$,\n$$\n\\begin{align}\n|f'(x)| = \\dots =0.\n\\end{align}\n$$\nTherefore, $f$ is constant. Can you provide the missing steps in the equation above?",
+        "output": "Sure, here are the missing steps:\n\n\\begin{align}\n|f'(x)|&=\\lim_{h\\to 0} \\left|\\frac{f(x+h)-f(x)}{h}\\right| \\\\\n&= \\lim_{h\\to 0} \\left|\\frac{f(x+h)-f(x)}{h}\\right| \\cdot \\frac{|h|}{|h|} \\\\\n&\\le \\lim_{h\\to 0} \\frac{(x+h-x)^2}{|h|} \\\\\n&= \\lim_{h\\to 0} |h| = 0\n\\end{align}\n\nWe used the fact that $|f(x+h) - f(x)|\\le (x+h-x)^2 = h^2$ for the third inequality. Since the limit of $|h|$ is zero and the product of zero and any number is zero, it follows that $|f'(x)| = 0$. Since this is true for any $x$, we can conclude that $f$ is constant.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "equation rendered (not displayed as tex); second steps is unnecessary; the fact \"the product of zero and any number is zero\" is not used; prompt type: fill in a missing step",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "https://math.stackexchange.com/questions/164804/show-f-is-constant-if-fx-fy-leq-x-y2",
+        "confidence": "high",
+        "timestamp": "2023-01-22"
+    },
+    {
+        "prompt": "We want to show that the vector space of $\\mathbb{R}$ over $\\mathbb{Q}$ is infinite-dimensional. We use an explicit example of an infinite $\\, \\mathbb Q$-independent set of reals. Consider the set consisting of the logs of all primes $\\, p_i.\\,$ If $ \\, c_1 \\log p_1 +\\,\\cdots\\, + c_n\\log p_n =\\, 0,\\  c_i\\in\\mathbb Q,\\,$ multiplying by a common denominator we can assume that all $\\ c_i \\in \\mathbb Z\\,$. Can you finish the proof?",
+        "output": "Yes, assuming all $\\ c_i \\in \\mathbb Z,$, we can write the equation as:\n$c_1 \\log p_1 +,\\cdots, + c_n\\log p_n =, 0$\n$c_1 \\log p_1 +,\\cdots, + c_n\\log p_n =, \\log(p_1^{c_1} \\cdot \\cdots \\cdot p_n^{c_n}) =, \\log(1) = 0$\nSince the log of any number except 1 is not equal to 0, we can conclude that $p_1^{c_1} \\cdot \\cdots \\cdot p_n^{c_n} = 1$\nThis equation holds true if and only if all $c_i$ are 0, which means that the set ${\\log p_i}$ is linearly independent over $\\mathbb Q$. Since the set is infinite, it follows that the vector space of $\\mathbb{R}$ over $\\mathbb{Q}$ is infinite-dimensional.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "weird usage of commas; unnecessary appearance of $\\log(1)$; prompt type: finish the proof",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "https://math.stackexchange.com/questions/6244/is-there-a-quick-proof-as-to-why-the-vector-space-of-mathbbr-over-mathbb",
+        "confidence": "high",
+        "timestamp": "2023-01-22"
+    },
+    {
+        "prompt": "$F$ is a finite field of order $q$. We want to compute the size of $\\operatorname{GL}_n(F)$. In order for an $n \\times n$ matrix to be invertible, we need the rows to be linearly independent. We have $q^n - 1$ choices for the first row; now, there are $q$ vectors in the span of the first row, so we have $q^n - q$ choices for the second row. Can you finish the proof?",
+        "output": "Yes, we can continue the proof as follows:\n\n* After choosing the first two rows, we have $q^{2n} - q^n$ choices for the third row, since there are $q^n$ vectors in the span of the first two rows.\n* Similarly, after choosing the first three rows, we have $q^{3n} - q^{2n}$ choices for the fourth row, and so on.\n\nTherefore, the size of $\\operatorname{GL}_n(F)$ is:\n\n$(q^n - 1)(q^n - q)(q^n - q^2) \\dots (q^n - q^{n-1})$\n\nThis is known as the \"generalized Vandermonde determinant\" and it is equal to $(q^n-1)(q^n-q)(q^n-q^2)\\dots(q^n-q^{n-1})$.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_4",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "enumeration was rendered; the computations for the third and fourth row are wrong; the final result is correct; it is unclear how this relates to \"the generalized Vandermonde determinant\" ; prompt type: finish the proof",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "https://math.stackexchange.com/questions/1399406/what-is-the-number-of-invertible-n-times-n-matrices-in-operatornamegl-nf",
+        "confidence": "high",
+        "timestamp": "2023-01-22"
+    },
+    {
+        "prompt": "The $p$-norm on $\\mathbb R^n$ is given by $\\|x\\|_{p}=\\big(\\sum_{k=1}^n\n|x_{k}|^p\\big)^{1/p}$. We want to show show that $\\|x\\|_{p} \\leq C \\|x\\|_{q}$ for arbitrary $1 \\le p < q\\,$. We compute\n$$\n\\Vert x\\Vert_p=\n\\left(\\sum\\limits_{i=1}^n |x_i|^p\\right)^{1/p}\\leq\n\\left(\\left(\\sum\\limits_{i=1}^n |x_i|^q\\right)^{\\frac{p}{q}} n^{1-\\frac{p}{q}}\\right)^{1/p}=\n\\left(\\sum\\limits_{i=1}^n |x_i|^q\\right)^{\\frac{1}{q}} n^{\\frac{1}{p}-\\frac{1}{q}}=\nn^{1/p-1/q}\\Vert x\\Vert_q.\n$$\nWhich result has been used in the inequality above?",
+        "output": "The inequality used in the above calculation is Hölder's inequality. It states that for any $p,q \\geq 1$ such that $\\frac{1}{p}+\\frac{1}{q}=1$, and for any vectors $x\\in\\mathbb{R}^n$, $y\\in\\mathbb{R}^n$,\n$\\left(\\sum\\limits_{i=1}^n |x_i y_i|\\right) \\leq \\left(\\sum\\limits_{i=1}^n |x_i|^p\\right)^{1/p}\\left(\\sum\\limits_{i=1}^n |y_i|^q\\right)^{1/q}$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: name well-known result/condition",
+        "msc": [
+            "26D15"
+        ],
+        "ref": "https://math.stackexchange.com/questions/218046/relations-between-p-norms",
+        "confidence": "high",
+        "timestamp": "2023-01-22"
+    },
+    {
+        "prompt": "Let $A$ and $B$ be real matrices. We want to show that the eigenvalues of $AB$ are equal to the eigenvalues of $BA$. If $v$ is an eigenvector of $AB$ for some nonzero $\\lambda$, then $Bv\\ne0$\nand $$\\lambda Bv=B(ABv)=(BA)Bv,$$ so $Bv$ is an eigenvector for $BA$ with the same eigenvalue. Can you finish the proof?",
+        "output": "Yes, to finish the proof, we need to show that if $v$ is an eigenvector of $BA$ for some nonzero $\\lambda$, then $Av\\ne0$ and $\\lambda Av=A(BAv)=(AB)Av$. This will show that the eigenvectors of $AB$ and $BA$ correspond one-to-one, and therefore have the same eigenvalues.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_3"
+        ],
+        "warningcodes": [],
+        "comment": "the case of a zero eigenvalue is not considered; prompt type: finish the proof",
+        "msc": [
+            "15A18"
+        ],
+        "ref": "https://math.stackexchange.com/questions/124888/are-the-eigenvalues-of-ab-equal-to-the-eigenvalues-of-ba",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "We want to compute\n$$\\sum_{n=1}^\\infty\\frac{2n}{3^{n+1}}.$$\nLet's first find a general formula for the following sum: $$S_{m}=\\sum_{n=1}^{m}nr^{n}.$$\nNotice that\n\\begin{align*}\nS_{m}-rS_{m} & = -mr^{m+1}+\\sum_{n=1}^{m}r^{n}\\\\\n  & = -mr^{m+1}+\\frac{r-r^{m+1}}{1-r} \\\\\n& =\\frac{mr^{m+2}-(m+1)r^{m+1}+r}{1-r}.\n\\end{align*}\nHence\n$$S_m = \\frac{mr^{m+2}-(m+1)r^{m+1}+r}{(1-r)^2}.$$\nCan you finish the calculation?",
+        "output": "Yes, to finish the calculation we can substitute the values of $m=\\infty$, $r=\\frac{2}{3}$ into the formula we found for $S_m$:\n$$S_\\infty=\\frac{\\infty \\left(\\frac{2}{3}\\right)^{\\infty+2}−(\\infty+1)\\left(\\frac{2}{3}\\right)^{\\infty+1} +\\frac{2}{3}}{\\left(1-\\frac{2}{3}\\right)^2}$$\nThis simplifies to\n$$S_\\infty=\\frac{\\frac{2}{9}}{\\frac{1}{9}}=2$$",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "both equations rendered (not displayed as tex); weird notation for the limes $S_\\infty$; wrong computation of $S_\\infty$; $S_\\infty$ is not the considered series; prompt type: finish the proof",
+        "msc": [
+            "40A05"
+        ],
+        "ref": "https://math.stackexchange.com/questions/30732/how-can-i-evaluate-sum-n-0-inftyn1xn",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "Given a set of vectors $v_1 \\cdots v_n$, the $n\\times n$ Gram matrix $G$ is defined as\n$G_{i,j}=v_i \\cdot v_j$. We want to show that $|G|=0$ iff the vectors $v_i$ are not linearly independent.\n\nLet $A$ be the matrix whose columns are the vectors $v_1, v_2, ... v_n$, such that $G=A^TA$. If the vectors $v_i$ are linearly dependent, there exists a vector $u \\neq 0$ such that\n$$\n  A u = 0.\n$$\nIt follows that\n$$\n  0 = A^T A u = G u.\n$$\nSince $u \\neq 0$, $G$ is not invertible. Can you finish the proof?",
+        "output": "Since $G$ is not invertible, its determinant, $|G|$, is equal to zero. Thus, if the vectors $v_i$ are linearly dependent, $|G|=0$.\n\nTo prove the converse, suppose that $|G|=0$ and let $Gu=0$. Since $|G|=0$, we have that $Gu=0$ implies $u \\neq 0$. Then,\n\n$$ A^TAu=0 $$\n\nwhich implies that $Au = 0$. Since $u \\neq 0$, it follows that the vectors $v_i$ are linearly dependent. Therefore, if $|G|=0$, the vectors $v_i$ are not linearly independent.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_2",
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "equation rendered (not displayed as tex); the statement \"Since $|G|=0$, we have that $Gu=0$ implies $u \\neq 0$.\" is wrong; the implication $Au=0$ should be explained; prompt type: finish the proof",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "https://math.stackexchange.com/questions/36580/gram-matrix-invertible-iff-set-of-vectors-linearly-independent",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "We want to prove Lebesgue's dominated convergence theorem. Let $E$ be a measurable set and let $\\{f_n\\}$ be a sequence of measurable functions such that\n$$ f_n(x) \\to f(x) \\quad (x \\in E)$$\nas $ n\\to\\infty$. Further assume there is a function $g\\in\\mathcal{L}(\\mu)$ on $E$, such that\n$$|f_n(x)| \\le g(x) \\quad (n=1,2,3,\\dots, x\\in E).$$\n\nFirst we observe that $f_n\\in\\mathcal{L}(\\mu)$ and $f\\in\\mathcal{L}(\\mu)$ on $E$. Since, $f_n+g \\ge 0$, one can show that\n\n$$ \\int_E (f+g) d\\mu \\le \\liminf_{n\\to \\infty} \\int_E (f_n+g) d\\mu.$$\n\nWhat is the name of the result used in the previous equation?",
+        "output": "The result used in the equation \"$ \\int_E (f+g) d\\mu \\le \\liminf_{n\\to \\infty} \\int_E (f_n+g) d\\mu.$\" is called Fatou's lemma.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "equation rendered (not displayed as tex); prompt type: name well-known result/condition",
+        "msc": [
+            "40A10"
+        ],
+        "ref": "W. Rudin. Principles of Mathematical Analysis. International series in pure and applied mathematics. McGraw-Hill, 1976. Thm. 11.32 (p. 321)",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "Let $f$ be defined on $[a,b]$. We want to proof the following result: if $f$ has a local maximum at a point $x\\in(a,b)$, and if $f'(x)$ exists, then $f'(x)=0$. We choose $\\delta >0$ with\n$$ a < x-\\delta < x < x+\\delta < b $$ such that $f(y) \\le f(x)$ for all $y\\in[a,b]$ with $|x-y| < \\delta$. If $x-\\delta < t <x$, then\n[MISSING].\nLetting $t\\to x$, we see that $f'(x) \\ge 0$. Can you fill in the missing equation?$$",
+        "output": "If $x-\\delta < t <x$, then $\\frac{f(t)-f(x)}{t-x} \\le 0$.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "it should be greater or equal to zero; prompt type: fill in a missing step",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "W. Rudin. Principles of Mathematical Analysis. International series in pure and applied mathematics. McGraw-Hill, 1976. Thm. 5.8 (p. 107)",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "Let $f$ be monotonic on $(a,b)$. Then the set of points of $(a,b)$ at which $f$ is discontinuous is at most countable. Let us proof this result. Suppose, for the sake of definiteness, that $f$ is increasing, and let $E$ be the set of points at which $f$ is discontinuous. With every point $x$ of $E$ we associate a rational number $r(x)$ such that\n$$f(x-) = \\sup_{a < t <x} f(t) < r(x) < \\inf_{x < t <b} f(t) = f(x+).$$\nSince $x_1 < x_2$ implies $f(x_1+) \\le f(x_2-)$, we see that [MISSING].\nWe have thus established a 1-1 correspondence between the set $E$ and a subset of the set of rational numbers. The latter, as we know, is countable. Can you fill in the step in [MISSING] above?",
+        "output": "We see that $r(x_1) \\le r(x_2)$ for $x_1 < x_2$ in $E$, so the function $r(x)$ is monotonic on $E$.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "one needs to show strict monotonicity to ensure a 1-1 correspondence; prompt type: fill in a missing step",
+        "msc": [
+            "26A15"
+        ],
+        "ref": "W. Rudin. Principles of Mathematical Analysis. International series in pure and applied mathematics. McGraw-Hill, 1976. Thm. 4.30 (p. 96)",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "Given the power series $\\sum c_n z^n$, put\n\n$$ \\alpha = \\limsup_{n\\to \\infty} \\sqrt[n]{|c_n|}, \\quad R=\\frac{1}{\\alpha}.$$\n\n(If $\\alpha=0, $R=$+\\infty$; if $\\alpha=+\\infty$, $R=0$.) Then $\\sum c_n z^n$ converges if $|z| < R$, and diverges if $|z| > R$. Let us prove the result. Put $a_n=c_n z^n$. Then it holds that\n$$\\limsup_{n\\to \\infty} \\sqrt[n]{|a_n|} = |z| \\limsup_{n\\to \\infty} \\sqrt[n]{|c_n|} = \\frac{|z|}{R}.$$\nCan you provide the name of the result used to finish the proof?",
+        "output": "The result used to finish the proof is called the Ratio Test or d'Alembert's Ratio Test. It states that if the limit of the absolute value of the ratio of consecutive terms of a series is less than 1, then the series converges absolutely. If the limit is greater than 1, then the series diverges.",
+        "rating": "2",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "the correct answer is \"root test\" ; the description of the ratio test is correct; prompt type: name well-known result/condition",
+        "msc": [
+            "40A05"
+        ],
+        "ref": "W. Rudin. Principles of Mathematical Analysis. International series in pure and applied mathematics. McGraw-Hill, 1976. Thm. 3.39 (p. 69)",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "For $0<x<\\infty$,\n$$ \\Gamma(x) = \\int_{0}^\\infty t^{x-1} e^{-t} dt. $$\n\nThe integral converges for these $x$. One can show the functional equation\n\n$$ \\Gamma(x+1) = x \\Gamma(x).$$\n\nWhat is the name of the result used to prove this equation?",
+        "output": "The functional equation\n$$ \\Gamma(x+1) = x \\Gamma(x)$$\nis known as the \"recursion formula\" or \"recursion relation\" for the Gamma function.",
+        "rating": "1",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "correct statement but the prompt asked for the integration by parts formula\" ; equation rendered (not displayed as tex); prompt type: name well-known result/condition",
+        "msc": [
+            "33B15",
+            "26A42"
+        ],
+        "ref": "W. Rudin. Principles of Mathematical Analysis. International series in pure and applied mathematics. McGraw-Hill, 1976. Thm. 8.18 (p. 192)",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "We want to prove that $$\\lim_{x\\to 0}\\frac{\\sin x}{x}=1.$$\n\nIt is easy to show that $\\lim_{x\\to 0} \\sin x = 0$ and $\\lim_{x\\to 0}  x = 0$. Thus, it holds that \n\n$$\\lim_{x\\to 0}\\frac{\\sin x}{x}=\\lim_{x\\to 0}\\frac{\\cos x}{1}=1.$$\n\nWhich result has been used in the previous equation?",
+        "output": "In the previous equation, the result used is L'Hopital's rule. It states that if $\\lim_{x\\to a}f(x) = \\lim_{x\\to a}g(x) = 0$ or $\\lim_{x\\to a}f(x) = \\lim_{x\\to a}g(x) = \\pm \\infty$ and $\\frac{f'(x)}{g'(x)}$ exists in a neighborhood of $a$, then\n\n$$\n\\lim_{x\\to a}\\frac{f(x)}{g(x)} = \\lim_{x\\to a}\\frac{f'(x)}{g'(x)}\n$$",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "equation rendered (not displayed as tex); prompt type: name well-known result/condition",
+        "msc": [
+            "40A05"
+        ],
+        "ref": "https://math.stackexchange.com/questions/75130/how-to-prove-that-lim-limits-x-to0-frac-sin-xx-1",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "Let $$f_n(x) = \\frac{x^2}{x^2 + (1-nx)^2} \\quad (0\\le x \\le 1, n=1,2,3,\\dots).$$\n\nThen $|f_n(x)|\\le 1$, so that $\\{ f_n \\}$ is uniformly bounded on $[0,1]$. Also \n\n$$\n\\lim_{n\\to \\infty} f_n(x)=0 \\quad (0\\le x\\le 1),\n$$\n\nbut there is a sequence $\\{ x_n \\}$ with\n\n$$\nf_n(x_n) = 1 \\quad (n=1,2,3,\\dots),\n$$\n\nso that no subsequence of $\\{ f_n \\}$ can converge uniformly on $[0,1]$. Can you define a suitable sequence $\\{ x_n \\}$?",
+        "output": "One possible choice for the sequence ${ x_n }$ is $x_n = \\frac{1}{n}$. This can be verified by plugging in $x_n = \\frac{1}{n}$ into the definition of $f_n(x)$ and seeing that $f_n(x_n) = 1$ for all $n$. Since this sequence does not have a limit, it can be shown that no subsequence of ${ f_n }$ can converge uniformly on $[0,1]$.",
+        "rating": "4",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "correct sequence provided; wrong reasoning \"Since this sequence does not have a limit\" ; prompt type: fill in a missing step",
+        "msc": [
+            "40A30"
+        ],
+        "ref": "W. Rudin. Principles of Mathematical Analysis. International series in pure and applied mathematics. McGraw-Hill, 1976. Ex. 7.21 (p. 156)",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be a differentiable function such that $f(0) = 1$ and $f'(x) = f(x)$. Then it must be the case that $f = e^x$. We will prove this statement in the following. \nLet $g(x) = f(x) e^{-x}$. Then $g$ is constant. But $g(0) = 1$, so $g(x) = 1$ identically. Can you show why $g$ is constant?",
+        "output": "We can show that $g(x)$ is constant by finding its derivative. Using the product rule, the derivative of $g(x) = f(x) e^{-x}$ is:\n\n$g'(x) = f'(x) e^{-x} + f(x) (-e^{-x}) = f(x) e^{-x} - f(x) e^{-x} = 0$\n\nSince the derivative of $g(x)$ is 0, this means that $g(x)$ is a constant function.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: fill in a missing step",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "https://math.stackexchange.com/questions/58097/prove-that-c-ex-is-the-only-set-of-functions-for-which-fx-fx",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "We want to compute the value of $$\\zeta(4) = \\sum_{n=1}^{\\infty} \\frac{1}{n^4}.$$\nIf we substitute  $\\pi $ for $ x $ in the Fourier trigonometric series expansion of $f(x)=x^{4}$, with $-\\pi \\leq x\\leq \\pi $, we obtain\n\n$$\n\\pi ^{4} =\\frac{1}{5}\\pi ^{4}+8\\pi ^{2}\\sum_{n=1}^{\\infty }\\frac{1}{n^{2}}\n-48\\sum_{n=1}^{\\infty }\\frac{1}{n^{4}}.\n$$\n\nHence\n\n$$\\sum_{n=1}^{\\infty }\\frac{1}{n^{4}}=\\frac{\\pi ^{4}}{48}\\left( -1+\\frac{1}{5}+\n\\frac{8}{6}\\right) =\\frac{\\pi ^{4}}{48}\\cdot \\frac{8}{15}=\\frac{1}{90}\\pi\n^{4}.$$\n\nCan you provide the Fourier trigonometric series expansion of $f(x)=x^{4}$ used in the proof?",
+        "output": "The Fourier trigonometric series expansion of $f(x) = x^4$ is given by\n$$\nf(x) = \\frac{a_0}{2} + \\sum_{n=1}^\\infty (a_n \\cos(nx) + b_n \\sin(nx)),\n$$\nwhere\n$$\na_n = \\frac{1}{\\pi} \\int_{-\\pi}^\\pi x^4 \\cos(nx)dx, \\quad b_n = \\frac{1}{\\pi} \\int_{-\\pi}^\\pi x^4 \\sin(nx)dx.\n$$\nBy evaluating these integrals, we obtain\n$$\na_n=\\begin{cases} 0, &n\\neq 0 \\\\ \\frac{\\pi^5}{5}, &n=0 \\end{cases}, \\quad b_n=0.\n$$\nThus, the Fourier trigonometric series expansion of $f(x)=x^4$ is \n$$\nx^4 = \\frac{\\pi^5}{5} + \\sum_{n=1}^\\infty 0 \\cos(nx) + 0 \\sin(nx).\n$$",
+        "rating": "3",
+        "errorcodes": [
+            "e1"
+        ],
+        "warningcodes": [],
+        "comment": "equations rendered (not displayed as tex); only the general formula and the coefficients $b_n$ are correct; prompt type: fill in a missing step",
+        "msc": [
+            "42A16"
+        ],
+        "ref": "https://math.stackexchange.com/questions/28329/nice-proofs-of-zeta4-frac-pi490",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "We are given a linear operator $T$ over a finite dimensional vector space $V$. We want to show that $T$ is a scalar multiple of the identity if $\\forall S \\in {\\cal L}(V), TS = ST$. Here, ${\\cal L}(V)$ denotes the set of all linear operators over $V$. We consider $S \\in L(V)$ given by $S x = f(x) v$ for some vector $v$ and some linear functional $f$ on V.\nIn particular, as long as a nontrivial linear functional $f$ on $V$ exists, there is $x$\nsuch that $f(x) \\ne 0$, and then $T v = \\alpha v$ for all $v$, where $\\alpha = f(T x)/f(x)$. Can you explain why it holds that $T v = \\alpha v$ for all $v$?",
+        "output": "Yes, that is correct. To show that $T$ is a scalar multiple of the identity, we need to show that $Tv = \\alpha v$ for some scalar $\\alpha$ and all vectors $v$ in $V$.\n\nWe start by considering a specific vector $x$ such that $f(x) \\ne 0$. Then, we know that $Sx = f(x)v$ for some vector $v$ and linear functional $f$. Now, since $TS = ST$, we have $TSx = STx$, so $T(Sx) = S(Tx)$. Substituting in our expressions for $Sx$ and $Tx$, we get $T(f(x)v) = f(Tx)v$. Since $f(x) \\ne 0$, we can divide both sides by $f(x)$, obtaining $Tv = \\frac{f(Tx)}{f(x)}v$. We define $\\alpha = \\frac{f(Tx)}{f(x)}$, so we have $Tv = \\alpha v$ for this specific vector $v$.\n\nHowever, we want to show that $Tv = \\alpha v$ for all vectors $v$ in $V$. To do this, we can use the fact that the vector space $V$ is finite-dimensional, which means that it has a basis. We can choose a basis for $V$, and express any vector $v$ in terms of the basis vectors. Then, we can use the linearity of $T$ to show that $Tv = \\alpha v$ for all vectors $v$ in $V$, by showing that it holds for each basis vector.\n\nIn other words, we can use the linearity of $T$ and the fact that it holds for a specific vector $v$ to generalize it to all vectors $v$ in $V$. This is why it holds that $Tv = \\alpha v$ for all $v$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "we are not substituting any expression for $Tx$for the first query there was an error generating a response; the use of a basis is not necessary as one can define such a $S$ for any $v$ and $T$ needs to commute with all $S\\in L(V)$; prompt type: fill in a missing step",
+        "msc": [
+            "47A05"
+        ],
+        "ref": "https://math.stackexchange.com/questions/27808/a-linear-operator-commuting-with-all-such-operators-is-a-scalar-multiple-of-the",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "Suppose $V$ is an inner product space and $T\\in\\mathcal{L}(V)$. We want to prove that\n$$ |\\det(T)|=\\det \\sqrt{T^* T}. $$\nBy the Polar Decomposition there is an isometry $S\\in\\mathcal{L}(V)$ such that\n$$ T = S \\sqrt{T^* T}. $$\nCan you finish the proof?",
+        "output": "Yes, once we have that $T = S \\sqrt{T^* T}$, we can take the determinant of both sides to get\n$$\\det(T)=\\det(S)\\det(\\sqrt{T^*T}).$$\nSince $S$ is an isometry, it preserves inner products, so $\\det(S)=\\pm 1$. Therefore,\n$$∣\\det(T)∣=∣\\det(S)∣∣\\det(\\sqrt{T^*T})∣=∣\\det(\\sqrt{T^*T})∣.$$\nSince the determinant of a matrix is always non-negative, we have that $|\\det(T)|=\\det(\\sqrt{T^* T})$",
+        "rating": "3",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "equations rendered (not displayed as tex); the reasoning \"Since the determinant of a matrix is always non-negative\" is wrong; prompt type: finish the proof",
+        "msc": [
+            "15A15"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Thm. 10.47 (p. 323)",
+        "confidence": "high",
+        "timestamp": "2023-01-23"
+    },
+    {
+        "prompt": "Suppose $u, v\\in V$, where $V$ is an inner product space over $\\mathbb{R}$ or $\\mathbb{C}$. We want to proof that\n$$|\\langle u, v\\rangle| \\le \\|u\\| \\|v\\|.$$\nLet us assume that $v\\neq 0 $ and consider the orthogonal decomposition\n$$\nu = \\frac{\\langle u, v\\rangle}{\\|v\\|^2}v + w,\n$$\nwhere $w$ is orthogonal to $v$. Then it holds that\n$$ \\|u\\|^2 =  \\left\\|\\frac{\\langle u, v\\rangle}{\\|v\\|^2}v\\right\\|^2+ \\|w\\|^2. $$\nWhat is the name of the result used in this equality?",
+        "output": "The result used in this equality is the Pythagorean Theorem for inner product spaces.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: name well-known result/condition",
+        "msc": [
+            "46C05",
+            "15A63"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Thm. 6.15 (p. 172)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Suppose $V$ is a finite-dimensional complex vector space and let $T\\in\\mathcal{L}(V)$ be a normal operator. We want to show that $T$ has a diagonal matrix with respect to some orthonormal basis of $V$.\nWe first note that there is an orthonormal basis $e_1,\\dots,e_n$ of $V$ with respect to which $T$ has an upper-triangular matrix. What is the name of this result?\n",
+        "output": "The result that states that for a normal operator $T$ on a finite-dimensional complex vector space $V$, there exists an orthonormal basis $e_1,\\dots,e_n$ of $V$ with respect to which $T$ has an upper-triangular matrix is called the Spectral Theorem for Normal Operators.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_5"
+        ],
+        "warningcodes": [],
+        "comment": "the result follows from the spectral theorem however we want to prove part of it; the result is typically referred to as Schur decomposition/triangulation or Schur's theorem; prompt type: name well-known result/condition",
+        "msc": [
+            "15A20"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Thm. 7.24 (p. 218)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Suppose $T\\in \\mathcal{L}(V,W)$, where $V$ and $W$ denote finite-dimensional inner product spaces over $\\mathbb{R}$ or $\\mathbb{C}$. The adjoint of $T$ is the function\n$T^*\\colon W \\to V$ such that\n$$ \\langle Tv, w\\rangle = \\langle v, T^* w \\rangle$$\nfor every $v\\in V$ and every $w\\in W$. To see why this definition makes sense, fix $w \\in W$. Consider the linear functional on $V$ that maps $v\\in V$ to $\\langle Tv, w\\rangle$; this linear functional depends on $T$ and $w$. There exsists a unique vector in $V$ such that this functional is given by taking the inner product with it. We call this unique vector $T^*w$. In other words,  $T^*w$ is the unique vector in $V$ such that $ \\langle Tv, w\\rangle = \\langle v, T^* w \\rangle$ for every $v\\in V$. What is the name of the result that guarantees existence and uniqueness of this vector $T^*w$?",
+        "output": "The result that guarantees existence and uniqueness of the vector $T^*w$ is called the Riesz Representation Theorem.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: name well-known result/condition",
+        "msc": [
+            "47A05"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Def. 7.2 (p. 204)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "We want to show that very operator on a finite-dimensional, nonzero, complex vector space has an eigenvalue. Suppose $V$ is a complex vector space with dimension $n>0$ and $T\\in\\mathcal{L}$. Choose $v\\in V$ with $v\\neq 0$. Then \n$$v,Tv,T^2v,\\dots,T^nv$$\nis not linearly independent, because $V$ has dimension $n$ and we have $n+1$ vectors. Thus there exist complex numbers $a_0,\\dots,a_n$, not all $0$, such that\n$$\n0 = a_0v + a_1Tv + \\dots + a_nT^nv.\n$$\nNote that $a_1,\\dots,a_n$ cannot alle be $0$, because otherwise the equation above would become $0=a_0v$, which would force $a_0$ to also be $0$.\nMake the $a$'s the coefficients of a polynomial, which by the Fundamental Theorem of Algebra has a factorization\n$$a_0 + a_1z + \\dots + a_nz^n = c(z-\\lambda_1)\\dots(z-\\lambda_m),$$\nwhere $c$ is a nonzero complex number, each $\\lambda_j$ is in $\\mathbb{C}$, and the equations holds for all $z\\in\\mathbb{C}$ (here $m$ is not necessarily equal to $n$, because $a_n$ may equal $0$).\nWe then have \n$$ 0 = c(T-\\lambda_1I) \\dots (T-\\lambda_mI)v.$$\nThus $T-\\lambda_jI$ is not injective for at least one $j$. In other words, $T$ has an eigenvalue. Can you show why the equality\n$0 = c(T-\\lambda_1I) \\dots (T-\\lambda_mI)v$ in the proof above holds?",
+        "output": "The equality $0 = c(T-\\lambda_1I) \\dots (T-\\lambda_mI)v$ holds because we assumed that $a_0v + a_1Tv + \\dots + a_nT^nv = 0$, and each term in the product $c(T-\\lambda_1I) \\dots (T-\\lambda_mI)v$ is a linear combination of the terms in $a_0v + a_1Tv + \\dots + a_nT^nv$.\n\nMore specifically, we can see that\n$c(T-\\lambda_1I) \\dots (T-\\lambda_mI)v=c(T^n-\\lambda_1T^{n-1}+\\lambda_1\\lambda_2T^{n-2}-...+(-1)^m\\lambda_1\\lambda_2...\\lambda_mI)v$\n\nAlso since $a_0v + a_1Tv + \\dots + a_nT^nv = 0$,\n$a_0v + a_1Tv + \\dots + a_nT^nv = c(T^n-\\lambda_1T^{n-1}+\\lambda_1\\lambda_2T^{n-2}-...+(-1)^m\\lambda_1\\lambda_2...\\lambda_mI)v=0$\nHence $c(T-\\lambda_1I) \\dots (T-\\lambda_mI)v=0$",
+        "rating": "3",
+        "errorcodes": [
+            "e5_4",
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "the product expansion is not correct (m is not necessarily equal to n); the last step does not mention the factorization given by the Fundamental Theorem of Algebra; unclear what is meant by \"is a linear combination of the terms\" ; prompt type: fill in a missing step",
+        "msc": [
+            "15A18"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Thm. 5.21 (p. 145)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Let $F$ be $\\mathbb{R}$ or $\\mathbb{C}$. Suppose $a_0,\\dots,a_m\\in F$. If\n$$\na_0 + a_1z + \\dots + a_m z^m = 0\n$$\nfor every $z\\in F$, then $a_0=\\dots=a_m=0.$\n\nWe will prove the contrapositive. If not all the coefficients are $0$, then by changing $m$ we can assume $a_m \\neq 0$. Let\n$$\nz=\\frac{|a_0|+|a_1|+ \\dots + |a_{m-1}|}{|a_m|} + 1.\n$$\nNote that $z\\ge 1$, and thus $z^j \\le z^{m-1}$ for $j=0,1,\\dots,m-1$. Can you finish the proof?",
+        "output": "$$ \n |a_0z^0 + a_1z^1 + \\dots +\\ a_{m-1} z^{m-1} + a_m z^m| \\ge |a_mz^m | - |a_0z^0| - |a_1z^1| - \\dots - |a_{m-1} z^{m-1}|\n$$\n\nSince $a_m \\neq 0$, we have $|a_mz^m| = |a_m|z^m > 0$. Also, we have $|a_0|+|a_1|+ \\dots + |a_{m-1}| < |a_m|z$, which implies $|a_0z^0|+|a_1z^1|+\\dots+|a_{m-1}z^{m-1}|<|a_m|z^m$.\nThus, we get\n\n$$\n |a_0z^0 + a_1z^1 + \\dots + a_{m-1} z^{m-1} + a_m z^m| > 0\n$$\n\nwhich is a contradiction to the assumption that $a_0 + a_1z + \\dots + a_m z^m = 0$ for every $z\\in F$. Thus, we have shown that if $a_0 + a_1z + \\dots + a_m z^m = 0$ for every $z\\in F$, then $a_0=\\dots=a_m=0$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "it is not clear to what \"Therefore\" is referring; unclear where $|a_m|z^m > 0$ is needed, only $|a_m| > 0$ seems to be used; prompt type: finish the proof",
+        "msc": [
+            "12D10"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Thm. 4.7 (p. 120)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "We want to prove that $\\operatorname{rank}A^TA=\\operatorname{rank}A$ for any $A\\in \\mathbb{R}_{m \\times n}$. Let $\\mathbf{x} \\in N(A)$ where $N(A)$ is the null space of $A$. \n\nSo, $$\\begin{align} A\\mathbf{x} &=\\mathbf{0} \\\\\\implies A^TA\\mathbf{x} &=\\mathbf{0}  \\\\\\implies \\mathbf{x} &\\in N(A^TA) \\end{align}$$ Hence $N(A) \\subseteq N(A^TA)$.\n\nAgain let $\\mathbf{x} \\in N(A^TA)$\n\nSo, $$\\begin{align} A^TA\\mathbf{x} \\implies \\mathbf{x} &\\in N(A) \\end{align}$$ Hence $N(A^TA) \\subseteq N(A)$.\n\nTherefore $$\\begin{align} N(A^TA) &= N(A)\\\\ \\implies \\dim(N(A^TA)) &= \\dim(N(A))\\\\ \\implies \\text{rank}(A^TA) &= \\text{rank}(A)\\end{align}$$\n\nCan you provide the details for the step $$\\begin{align} A^TA\\mathbf{x} \\implies \\mathbf{x} &\\in N(A) \\end{align}$$ above?",
+        "output": "Sure, here are the details for the step:\n\nSince $\\mathbf{x} \\in N(A^TA)$, we know that $A^TA\\mathbf{x} = \\mathbf{0}$. But since $A^TA = (A^T)(A)$, we can also write this as $(A^T)(A)\\mathbf{x} = \\mathbf{0}$.\n\nExpanding this further, we have $(A^T)(A\\mathbf{x}) = \\mathbf{0}$. But since $A\\mathbf{x} = \\mathbf{0}$, we can also write this as $(A^T)(\\mathbf{0}) = \\mathbf{0}$.\n\nNow, we know that $A^T$ is a linear transformation and $\\mathbf{0}$ is in the range of any linear transformation, so $(A^T)(\\mathbf{0}) = \\mathbf{0}$.\n\nTherefore, we have $A^T(A\\mathbf{x}) = \\mathbf{0}$ and since $A^T(A\\mathbf{x}) = (A^T)A\\mathbf{x}=\\mathbf{0}$ this implies that $A\\mathbf{x} = \\mathbf{0}$\n\nAs a result, $\\mathbf{x} \\in N(A)$\n\nSo $N(A^TA) \\subseteq N(A)$ and hence $\\text{rank}(A^TA) = \\text{rank}(A)$",
+        "rating": "2",
+        "errorcodes": [
+            "e5_5",
+            "e2"
+        ],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "use of the result $A\\mathbf{x} = \\mathbf{0}$ in the proof; weird paranthesis in $A^TA = (A^T)(A)$; provides no additional details relevant to the proof; prompt type: fill in a missing step",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "https://math.stackexchange.com/questions/349738/prove-operatornamerankata-operatornameranka-for-any-a-in-m-m-times-n",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "We want to proof that the trace of a matrix is the sum of its eigenvalues. For a $n\\times n$ matrix $A$ we define the polynomial\n$$p(t) = \\det(A-tI) = (-1)^n \\big(t^n - (\\text{tr} A) \\,t^{n-1} + \\dots + (-1)^n \\det A\\big)\\,.$$\nOn the other hand, $p(t) = (-1)^n(t-\\lambda_1)\\dots (t-\\lambda_n)$, where the $\\lambda_j$ are the eigenvalues of $A$. So, comparing coefficients,  we have $\\text{tr}A = \\lambda_1 + \\dots + \\lambda_n$.\n\nWhat is the name of the polynomial $p$?",
+        "output": "The polynomial $p(t)$ is known as the characteristic polynomial of the matrix $A$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: name well-known result/condition",
+        "msc": [
+            "15A15"
+        ],
+        "ref": "https://math.stackexchange.com/questions/546155/proof-that-the-trace-of-a-matrix-is-the-sum-of-its-eigenvalues",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Let $f$ be a real-valued function continuous on $[a,b]$ and differentiable on $(a,b)$. Suppose that $\\lim_{x\\rightarrow a}f'(x)$ exists. Then, we want to prove that $f$ is differentiable at $a$ and $f'(a)=\\lim_{x\\rightarrow a}f'(x)$. Using the definition of derivative, we need to show that\n$$\n\\lim_{h\\rightarrow 0^+} {f(a+h)-f(a)\\over h }\n$$\nexists and is equal to $\\lim\\limits_{x\\rightarrow a^+} f'(x)$.\n\nNote that for $h>0$ [MISSING] provides a point $c_h$ with $a<c_h<a+h$ such that\n$$\n{f(a+h)-f(a)\\over h } =f'(c_h).\n$$\n\nFinally, note that $c_h\\rightarrow a^+$ as $h\\rightarrow0^+$. What is the name of the result used in [MISSING]?",
+        "output": "The name of the result used in [MISSING] is the mean value theorem.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: name well-known result/condition",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "https://math.stackexchange.com/questions/257907/prove-that-fa-lim-x-rightarrow-afx",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "We want to compute the following limit:\n\n$$\\lim_{k\\to\\infty}\\sum\\limits_{n=k+1}^{2k}{\\frac{1}{n}}$$\n\nRewriting the sum as\n[MISSING]\nallows us to identify this as a Riemann sum related to the definite integral \n$$\\int_1^2\\frac1x\\,dx=\\ln 2.$$\nTo see that, divide the interval $[1,2]$ to $k$ equal length subintervals, and evaluate the function $f(x)=1/x$ at the right end of each subinterval. When $k\\to\\infty$, the Riemann sums will then tend to the value of this definite integral. Can you fill in the missing equation?",
+        "output": "$$\n\\lim_{k\\to\\infty}\\sum\\limits_{n=k+1}^{2k}{\\frac{1}{n}}=\\lim_{k\\to\\infty}\\left(\\frac{1}{k+1} + \\frac{1}{k+2} + \\dots + \\frac{1}{2k}\\right)\n$$",
+        "rating": "1",
+        "errorcodes": [
+            "e5_2"
+        ],
+        "warningcodes": [],
+        "comment": "equation rendered (not displayed as tex); just expanded the sum but did not rewrite it; prompt type: fill in a missing step",
+        "msc": [
+            "40A05"
+        ],
+        "ref": "https://math.stackexchange.com/questions/73550/the-limit-of-truncated-sums-of-harmonic-series-lim-limits-k-to-infty-sum-n",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "We want to show that any open subset of $\\Bbb R$ is a countable union of disjoint open intervals. Let $U$ be a non-empty open subset of $\\Bbb R$. For $x,y\\in U$ define $x\\sim y$ iff $\\big[\\min\\{x,y\\},\\max\\{x,y\\}\\big]\\subseteq U$. It’s easily checked that $\\sim$ is an equivalence relation on $U$ whose equivalence classes are pairwise disjoint open intervals in $\\Bbb R$. (The term *interval* here includes unbounded intervals, i.e., rays.) Let $\\mathscr{I}$ be the set of $\\sim$-classes. Can you finish the proof?",
+        "output": "Since $\\sim$ is an equivalence relation on $U$, the equivalence classes form a partition of $U$. Since $U$ is open, each equivalence class is also open, and the classes are pairwise disjoint. Therefore, $U$ can be expressed as a countable union of disjoint open intervals, where each interval corresponds to a single equivalence class in $\\mathscr{I}$. This completes the proof that any open subset of $\\Bbb R$ is a countable union of disjoint open intervals.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_2",
+            "e5_4"
+        ],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "missing details on countability; the prompt already stated that the equivalence classes are pairwise disjoint intervals; the definition of $\\sim$ should be mentioned when claiming that the equivalence classes are open; prompt type: finish the proof",
+        "msc": [
+            "26A03",
+            "54F05"
+        ],
+        "ref": "https://math.stackexchange.com/questions/318299/any-open-subset-of-bbb-r-is-a-countable-union-of-disjoint-open-intervals",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "We want to prove the convergence of the p-series \n\n$$\\sum_{n=1}^{\\infty} \\frac1{n^p}$$\n\nfor $p > 1$. We can bound the partial sums by multiples of themselves:\n\n$$\nS_{2k+1}<1+2^{1-p}S_{2k+1}\\;.\n$$\n\nThen solving for $S_{2k+1}$ yields\n\n$$S_{2k+1}<\\frac{1}{1-2^{1-p}}$$\n\nand since the sequence of partial sums is monotonically increasing and bounded from above, it converges.\n\nCan you prove the inequality $$\nS_{2k+1}<1+2^{1-p}S_{2k+1}\n$$ \nabove?\n",
+        "output": "We can prove the inequality by induction. First, we show that it holds for $k=1$:\n\n$$\nS_3 = \\frac{1}{1^p} + \\frac{1}{2^p} + \\frac{1}{3^p} < 1 + 2^{1-p} \\left(\\frac{1}{1^p} + \\frac{1}{2^p}\\right) = 1+2^{1-p}S_{3}\n$$\n\nNow, assuming that it holds for some $k=m$, we can show that it also holds for $k=m+1$:\n\n\\begin{align}\n&S_{2(m+1)+1} = S_{2m+1} + \\frac{1}{(2m+2)^p} + \\frac{1}{(2m+3)^p} \\\\\n&\\le 1 + 2^{1-p}S_{2m+1} + \\frac{1}{(2m+2)^p} + \\frac{1}{(2m+3)^p} \\\\\n&= 1 + 2^{1-p} \\left(S_{2m+1} + \\frac{1}{(2m+2)^p} + \\frac{1}{(2m+3)^p}\\right)\\\\\n&= 1+2^{1-p}S_{2(m+1)+1}\n\\end{align}\n\n\nTherefore, by induction, we have proved that the inequality holds for all $k\\geq 1$.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "both equations contain errors; both equations rendered (not displayed as tex); prompt type: fill in a missing step",
+        "msc": [
+            "40A05"
+        ],
+        "ref": "https://math.stackexchange.com/questions/29450/self-contained-proof-that-sum-limits-n-1-infty-frac1np-converges-for",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Let $f$ have a continuous derivative on $[a,b]$. We want to show that $f$ satisfies a Lipschitz condition on $[a,b]$. By the mean value theorem, \n\n$$f(x) - f(y) = f'(\\xi)(x-y)$$ \nfor some $\\xi \\in (y,x)$. But since [MISSING], then $f'$ is bounded in that interval, say by $C$. Thus taking absolute values yields \n\n$$\\lvert f(x) - f(y)\\rvert \\le C \\lvert x-y\\rvert$$ \n\nCan you state the condition in [MISSING]?",
+        "output": "The condition in [MISSING] is that $f$ has a continuous derivative on the interval $[a,b]$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "one could emphasize that the interval $[a,b]$ is compact; prompt type: fill in a missing step",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "https://math.stackexchange.com/questions/476072/continuous-differentiability-implies-lipschitz-continuity",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Let $f\\colon\\mathbb{R}\\to\\mathbb{R}$ and suppose that\n\n$$|f(x)-f(y)|\\le (x-y)^2$$\n\nfor all $x,y\\in\\mathbb{R}$. We want to prove that $f$ is constant. Let $c=f(0)$, then we have to prove that $f(x)=c$ whenever $x\\neq0$. Supposing that $n$ is an arbitrary positive integer, we have\n$$\\left|f\\left(\\frac{m+1}nx\\right)-f\\left(\\frac mnx\\right)\\right|\\le\\left(\\frac{m+1}nx-\\frac mnx\\right)^2=\\frac{x^2}{n^2}$$\nCan you finish the proof?",
+        "output": "Given that $|f(x)-f(y)|\\le (x-y)^2$ for all $x,y\\in\\mathbb{R}$, we can use the fact that $\\left|f\\left(\\frac{m+1}nx\\right)-f\\left(\\frac mnx\\right)\\right|\\le\\frac{x^2}{n^2}$ to prove that $f$ is constant. To do this, we can use a proof by contradiction.\n\nAssume that $f$ is not constant, so there exists some $x_0 \\neq 0$ such that $f(x_0) \\neq c$. Without loss of generality, let $f(x_0)>c$. Then, we can find a natural number $n$ such that $\\frac{1}{n}x_0 < \\frac{1}{2}x_0$ and $f\\left(\\frac{1}{n}x_0\\right) > c$. By repeatedly applying the inequality $\\left|f\\left(\\frac{m+1}nx\\right)-f\\left(\\frac mnx\\right)\\right|\\le\\frac{x^2}{n^2}$ we can find a sequence of points $x_n = \\frac{1}{n}x_0$ such that $f(x_n) > c$ for all $n$.\n\nHowever, this contradicts the assumption that $f$ is defined on $\\mathbb{R}$, as the sequence of points $x_n$ approaches $0$ as $n$ goes to infinity, and $f(0) = c$. Therefore, our assumption that $f$ is not constant must be false, and $f$ must be constant.",
+        "rating": "2",
+        "errorcodes": [
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "for the contradiction one first needs to show that $f$ is continuous; unclear how $f(x_n)$ is estimated; prompt type: finish the proof",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "https://math.stackexchange.com/questions/164804/show-f-is-constant-if-fx-fy-leq-x-y2",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "We want to show that a finite dimensional vector space $V$ over a countable field $F$ is necessarily countable: if $v_1,\\ldots,v_n \\in V$ is a basis, then every vector in $V$ can be written uniquely as $\\alpha_1 v_1+\\cdots+\\alpha_n v_n$ for some scalars $\\alpha_1,\\ldots,\\alpha_n\\in F$. Can you finish the proof?",
+        "output": "Since $F$ is countable, there are only countably many possible choices for the scalars $\\alpha_1,\\ldots,\\alpha_n$. Hence, the set of all possible linear combinations $\\alpha_1 v_1+\\cdots+\\alpha_n v_n$ is countable. Since this set is in one-to-one correspondence with the set of vectors in $V$, it follows that $V$ is countable as well.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: finish the proof",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "https://math.stackexchange.com/questions/6244/is-there-a-quick-proof-as-to-why-the-vector-space-of-mathbbr-over-mathbb",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "$F$ is a finite field of order $q$. We want to compute the size of $\\operatorname{GL}_n(F)$. In order for an $n \\times n$ matrix to be invertible, we need the rows to be linearly independent.  As you note, we have $q^n - 1$ choices for the first row; now, there are $q$ vectors in the span of the first row, so we have $q^n - q$ choices for the second row.  Now, let $v_1, v_2$ be the first two rows.  Then the set of vectors in the span of $v_1, v_2$ is of the form $\\{c_1 v_1 + c_2 v_2 | c_1,c_2 \\in F\\}$.  This set is of size $q^2$, as we have $q$ choices for $c_1$ and $q$ choices for $c_2$.  Thus, we have $q^n - q^2$ choices for the third row.  Continuing this gives the desired formula. Can you state the formula?",
+        "output": "The size of $\\operatorname{GL}_n(F)$ is given by the formula $(q^n - 1)(q^{n-1} - q)(q^{n-2} - q^2) \\cdots (q^2 - q)(q-1)$.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "progression of factors not even well-defined; prompt type: fill in a missing step",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "https://math.stackexchange.com/questions/1399406/what-is-the-number-of-invertible-n-times-n-matrices-in-operatornamegl-nf",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "The $p$-norm on $\\mathbb R^n$ is given by $\\|x\\|_{p}=\\big(\\sum_{k=1}^n\n|x_{k}|^p\\big)^{1/p}$. Hölder's inequality yields that\n$$\n\\Vert x\\Vert_p \\le n^{1/p-1/q}\\Vert x\\Vert_q.\n$$\nfor arbitrary $1 \\le p < q\\,$.\nCan you show in detail how to derive the previous equation?",
+        "output": "Sure!\n\nHölder's inequality states that for arbitrary vectors $x \\in \\mathbb{R}^n$ and $y \\in \\mathbb{R}^n$, and for any $1 \\le p, q < \\infty$ with $\\frac{1}{p} + \\frac{1}{q} = 1$, we have:\n$$\n    \\left| \\sum_{k=1}^n x_k y_k \\right| \\le \\left( \\sum_{k=1}^n |x_k|^p \\right)^{1/p} \\left( \\sum_{k=1}^n |y_k|^q \\right)^{1/q}\n$$\nTo derive the inequality $\\Vert x\\Vert_p \\le n^{1/p-1/q}\\Vert x\\Vert_q$ we can set $y = x$ and $p = q$ in Hölder's inequality. This gives us:\n$$\n    \\left| \\sum_{k=1}^n x_k x_k \\right| \\le \\left( \\sum_{k=1}^n |x_k|^p \\right)^{1/p} \\left( \\sum_{k=1}^n |x_k|^p \\right)^{1/p}\n$$\n\nThe left-hand side is equal to $\\sum_{k=1}^n x_k^2$, so we have:\n$$\n   \\sum_{k=1}^n x_k^2 \\le \\left( \\sum_{k=1}^n |x_k|^p \\right)^{2/p}\n$$\n\nTaking the $p$-th root of both sides and using the definition of the $p$-norm, we get:\n\n$$\n\\|x\\|_p = \\left( \\sum_{k=1}^n |x_k|^p \\right)^{1/p} \\le \\left(\\left( \\sum_{k=1}^n |x_k|^p \\right)^{2/p}\\right)^{1/2} = \\left( \\sum_{k=1}^n |x_k|^p \\right)^{1/2}\n$$\n\nNow, since $x = (x_1, x_2, \\ldots, x_n)$, we have $\\sum_{k=1}^n |x_k|^p = \\sum_{k=1}^n x_k^p = |x|_p^p$. Hence,\n\n$$\n\\|x\\|_p \\le \\left(\\|x\\|_p^{p}\\right)^{1/2} = \\|x\\|_p^{1-1/p}\n$$\n\nFinally, by raising both sides of this last inequality to the power of $p/2$, we get:\n\n$$\n\\|x\\|_p^p \\le \\|x\\|_p^{p-1}\n$$\n\nand dividing both sides by $|x|_p^{p-1}$, we have:\n\n$$\n\\Vert x\\Vert_p \\le n^{1/p-1/q}\\Vert x\\Vert_q\n$$\n\nwith $q = p$ and $n$ being the dimension of the vector space.",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "all equations rendered (not displayed as tex); $p=q$ only possible in Hölder's inequality if $p=q=2$; assumes $p=2$ at some steps; several computations do not match the description or are wrong; prompt type: fill in a missing step",
+        "msc": [
+            "26D15"
+        ],
+        "ref": "https://math.stackexchange.com/questions/218046/relations-between-p-norms",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Let $A$ and $B$ be real matrices. We want to show that the eigenvalues of $AB$ are equal to the eigenvalues of $BA$. If $v$ is an eigenvector of $AB$ for some nonzero $\\lambda$, then $Bv\\ne0$\nand $$\\lambda Bv=B(ABv)=(BA)Bv,$$ so $Bv$ is an eigenvector for $BA$ with the same eigenvalue. If $0$ is an eigenvalue of $AB$ then [MISSING] so $0$ is also an eigenvalue of $BA$. Can you fill in the missing equation?",
+        "output": "If $0$ is an eigenvalue of $AB$, then there exists a nonzero vector $v$ such that $ABv = 0$, which implies that $Bv \\neq 0$ and $A(Bv) = 0$. Thus, $Bv$ is an eigenvector for $BA$ with eigenvalue $0$.",
+        "rating": "3",
+        "errorcodes": [
+            "e2",
+            "e5_2"
+        ],
+        "warningcodes": [],
+        "comment": "$Bv$ can be zero and this case needs to be treated separately; prompt type: fill in a missing step",
+        "msc": [
+            "15A18"
+        ],
+        "ref": "https://math.stackexchange.com/questions/124888/are-the-eigenvalues-of-ab-equal-to-the-eigenvalues-of-ba",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "We want to compute\n$$\\sum_{n=1}^\\infty\\frac{2n}{3^{n+1}}.$$\nLet's first find a general formula for the following sum: $$S_{m}=\\sum_{n=1}^{m}nr^{n}.$$\n\nNotice that\n\\begin{align*}\nS_{m}-rS_{m} & = -mr^{m+1}+\\sum_{n=1}^{m}r^{n}\\\\\n  & = -mr^{m+1}+\\frac{r-r^{m+1}}{1-r} \\\\\n& =\\frac{mr^{m+2}-(m+1)r^{m+1}+r}{1-r}.\n\\end{align*}\nHence\n$$S_m = \\frac{mr^{m+2}-(m+1)r^{m+1}+r}{(1-r)^2}.$$\nThis equality holds for any $r$, but in your case we have $r=\\frac{1}{3}$ and a factor of $\\frac{2}{3}$ in front of the sum.    That is\n\\begin{align*}\n\\sum_{n=1}^{\\infty}\\frac{2n}{3^{n+1}}\n& = \\frac{2}{3}\\lim_{m\\rightarrow\\infty}\\frac{m\\left(\\frac{1}{3}\\right)^{m+2}-(m+1)\\left(\\frac{1}{3}\\right)^{m+1}+\\left(\\frac{1}{3}\\right)}{\\left(1-\\left(\\frac{1}{3}\\right)\\right)^{2}} \\\\\n& =\\frac{2}{3}\\frac{\\left(\\frac{1}{3}\\right)}{\\left(\\frac{2}{3}\\right)^{2}} \\\\\n& =\\frac{1}{2}.\n\\end{align*}\n\nWhich result was used in the step\n$$\n-mr^{m+1}+\\sum_{n=1}^{m}r^{n} = -mr^{m+1}+\\frac{r-r^{m+1}}{1-r} ?\n$$",
+        "output": "The result used in that step is the formula for the sum of a geometric series. A geometric series has the form $a + ar + ar^2 + \\dots$ and the sum of the first n terms of such a series is given by $\\frac{a(1-r^n)}{1-r}$. In this case, the sum is $r + r^2 + r^3 + \\dots$, which is of the form $\\frac{r}{1-r}$ for $|r| < 1$. Therefore, we have $\\sum_{n=1}^{m}r^{n} = \\frac{r-r^{m+1}}{1-r}$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "only the formula for the partial sums is needed; prompt type: name well-known result/condition",
+        "msc": [
+            "40A05"
+        ],
+        "ref": "https://math.stackexchange.com/questions/30732/how-can-i-evaluate-sum-n-0-inftyn1xn",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Given a set of vectors $v_1 \\cdots v_n$, the $n\\times n$ Gram matrix $G$ is defined as\n$G_{i,j}=v_i \\cdot v_j$. We want to show that $|G|=0$ iff the vectors $v_i$ are not linearly independent.\n\nLet $A$ be the matrix whose columns are the vectors $v_1, v_2, ... v_n$, such that $G=A^TA$. If $G$ is not invertible, there exists a vector $v \\neq 0$ such that\n$$\n  G v = 0.\n$$\nIt follows that\n$$\n  0 = v^T G v = v^T A^T A v = (A v)^T A v\n    = \\lVert A v\\rVert^2\n$$\nand therefore that\n$$\n   A v = 0.\n$$\nSince $v \\neq 0$, the column vectors of $A$ are linearly dependent.\n\nCan you finish the proof?",
+        "output": "Since $A v = 0$, it means that $v$ is a linear combination of the columns of $A$, and therefore that the columns of $A$ are linearly dependent.\n\nTo finish the proof, we must also show that if the columns of $A$ are linearly independent, then $|G| \\neq 0$. This can be done by showing that if the columns of $A$ are linearly independent, then $A$ is invertible, and therefore $G$ is also invertible.\n\nTo show that $A$ is invertible, we can use the fact that if the columns of a matrix are linearly independent, then the rank of the matrix is equal to the number of columns. Since $A$ has $n$ columns, and the columns are linearly independent, the rank of $A$ is $n$, and therefore $A$ is invertible.\n\nIt follows that $G = A^T A$ is also invertible, and therefore $|G| \\neq 0$. This completes the proof that $|G| = 0$ if and only if the vectors $v_i$ are not linearly independent.",
+        "rating": "2",
+        "errorcodes": [
+            "e5_3",
+            "e5_2"
+        ],
+        "warningcodes": [],
+        "comment": "equation rendered (not displayed as tex); proves the same implication again; proof only holds for square matrices $A$; prompt type: finish the proof",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "https://math.stackexchange.com/questions/36580/gram-matrix-invertible-iff-set-of-vectors-linearly-independent",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "We want to proof Lebesgue's dominated convergence theorem. Let $E$ be a measurable set and let $\\{f_n\\}$ be a sequence of measurable functions such that\n$$ f_n(x) \\to f(x) \\quad (x \\in E)$$\nas $ n\\to\\infty$. Further assume there is a function $g\\in\\mathcal{L}(\\mu)$ on $E$, such that\n$$|f_n(x)| \\le g(x) \\quad (n=1,2,3,\\dots, x\\in E).$$\n\nFirst we observe that $f_n\\in\\mathcal{L}(\\mu)$ and $f\\in\\mathcal{L}(\\mu)$ on $E$. Since, $f_n+g \\ge 0$, Fatou's lemma shows that\n\n$$ \\int_E (f+g) d\\mu \\le \\liminf_{n\\to \\infty} \\int_E (f_n+g) d\\mu.$$\n\nor\n\n$$ \\int_E f d\\mu \\le \\liminf_{n\\to \\infty} \\int_E f_n d\\mu.$$\n\nCan you finish the proof?",
+        "output": "To finish the proof, we need to show that the limit on the right-hand side of the inequality actually exists and is equal to the left-hand side. To do this, we can use the following argument:\n\n1. Since $|f_n| \\le g$ for all $n$ and $g \\in \\mathcal{L}(\\mu)$, we know that $f_n \\in \\mathcal{L}(\\mu)$ for all $n$.\n2. By the assumption that $f_n \\to f$ pointwise on $E$, we can apply the monotone convergence theorem to conclude that $\\int_E f_n \\to \\int_E f$ as $n \\to \\infty$.\n3. Combining this with the inequality $\\int_E f \\le \\liminf_{n \\to \\infty} \\int_E f_n$, we can conclude that $\\lim_{n \\to \\infty} \\int_E f_n = \\int_E f$, which completes the proof of Lebesgue's dominated convergence theorem.\n\nIn summary, we have shown that if $f_n$ is a sequence of measurable functions that converges pointwise to $f$ on a measurable set $E$, and if there is a function $g \\in \\mathcal{L}(\\mu)$ such that $|f_n| \\le g$ for all $n$, then $\\int_E f_n$ converges to $\\int_E f$ as $n \\to \\infty$.",
+        "rating": "2",
+        "errorcodes": [
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "enumeration rendered (not displayed as tex); the sequence of functions is not monotone and the monotone convergence theorem can thus not be applied; prompt type: finish the proof",
+        "msc": [
+            "40A10"
+        ],
+        "ref": "W. Rudin. Principles of Mathematical Analysis. International series in pure and applied mathematics. McGraw-Hill, 1976. Thm. 11.32 (p. 321)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Let $f$ be defined on $[a,b]$. We want to proof the following result: if $f$ has a local maximum at a point $x\\in(a,b)$, and if $f'(x)$ exists, then $f'(x)=0$. We choose $\\delta >0$ with\n$$ a < x-\\delta < x < x+\\delta < b $$ such that $f(y) \\le f(x)$ for all $y\\in[a,b]$ with $|x-y| < \\delta$. If $x-\\delta < t <x$, then\n$$\\frac{f(t)-f(x)}{t-x} \\ge 0.$$\nLetting $t\\to x$, we see that $f'(x) \\ge 0$. Can you finish the proof?",
+        "output": "Yes. Similarly, if $x<s<x+\\delta$, then\n$$\\frac{f(s)-f(x)}{s-x} \\le 0.$$\nLetting $s\\to x$, we see that $f'(x) \\le 0$. Since $f'(x)$ cannot be both positive and negative at the same point, it must be equal to 0. Therefore, we have shown that if $f$ has a local maximum at a point $x\\in(a,b)$, and if $f'(x)$ exists, then $f'(x)=0$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: finish the proof",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "W. Rudin. Principles of Mathematical Analysis. International series in pure and applied mathematics. McGraw-Hill, 1976. Thm. 5.8 (p. 107)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Let $f$ be monotonic on $(a,b)$. Then the set of points of $(a,b)$ at which $f$ is discontinuous is at most countable. Let us proof this result. Suppose, for the sake of definiteness, that $f$ is increasing, and let $E$ be the set of points at which $f$ is discontinuous. With every point $x$ of $E$ we associate a rational number $r(x)$ such that\n$$f(x-) = \\sup_{a < t <x} f(t) < r(x) < \\inf_{x < t <b} f(t) = f(x+).$$\nSince $x_1 < x_2$ implies $f(x_1+) \\le f(x_2-)$, we see that $r(x_1)\\neq r(x_2)$ if $x_1 \\neq x_2$. Can you finish the proof?",
+        "output": "Since $r(x)$ is a rational number for each $x \\in E$, it follows that the set of all possible values of $r(x)$ is countable. Therefore, the set of all $x \\in E$ such that $r(x) = q$ is also countable for any given rational number $q$. Since the set of all possible values of $r(x)$ is countable, the set $E$ is the union of countably many countable sets, and thus $E$ is at most countable. This completes the proof.",
+        "rating": "4",
+        "errorcodes": [
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "the injectivity of $r$ should be mentioned; prompt type: finish the proof",
+        "msc": [
+            "26A15"
+        ],
+        "ref": "W. Rudin. Principles of Mathematical Analysis. International series in pure and applied mathematics. McGraw-Hill, 1976. Thm. 4.30 (p. 96)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Given the power series $\\sum c_n z^n$, put\n\n$$ \\alpha = \\limsup_{n\\to \\infty} \\sqrt[n]{|c_n|}, \\quad R=\\frac{1}{\\alpha}.$$\n\n(If $\\alpha=0, $R=$+\\infty$; if $\\alpha=+\\infty$, $R=0$.) Then $\\sum c_n z^n$ converges if $|z| < R$, and diverges if $|z| > R$. Let us prove the result. Put $a_n=c_n z^n$, and apply the root test.\nCan you finish the proof?",
+        "output": "Yes, we can finish the proof as follows:\n\nBy the root test, we have\n$$ \n\\lim_{n\\to \\infty} \\sqrt[n]{|a_n|} = \\lim_{n\\to \\infty} |z| = |z|. $$\n\nThus, $\\lim_{n\\to \\infty} \\sqrt[n]{|a_n|} = |z|$.\n\nSince $\\alpha = \\limsup_{n\\to \\infty} \\sqrt[n]{|c_n|}$, we have\n\n$$\n\\lim_{n\\to \\infty} \\sqrt[n]{|a_n|} \\le \\alpha.\n$$\n\nTherefore, $|z| \\le \\alpha$, or $|z| < R = \\frac{1}{\\alpha}$.\n\nThis means that if $|z| < R$, then $\\lim_{n\\to \\infty} \\sqrt[n]{|a_n|} = |z| < \\alpha$, so $\\sum c_n z^n$ converges. If $|z| > R$, then $\\lim_{n\\to \\infty} \\sqrt[n]{|a_n|} = |z| > \\alpha$, so $\\sum c_n z^n$ diverges.",
+        "rating": "2",
+        "errorcodes": [
+            "e4",
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "equations rendered (not displayed as tex); assumes that the limes exists; $c_n$ is missing in the first equation; not clear how the root test is used; prompt type: finish the proof",
+        "msc": [
+            "40A05"
+        ],
+        "ref": "W. Rudin. Principles of Mathematical Analysis. International series in pure and applied mathematics. McGraw-Hill, 1976. Thm. 3.39 (p. 69)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "For $0<x<\\infty$,\n$$ \\Gamma(x) = \\int_{0}^\\infty t^{x-1} e^{-t} dt. $$\n\nThe integral converges for these $x$. We want to show that $\\log \\Gamma$ is convex on $(0,\\infty)$. If $1 < t < \\infty$ and $(1/t)+(1/s)=1$, one can show that\n$$\n\\Gamma\\left(\\frac{x}{t}+\\frac{y}{s}\\right) \\le \\Gamma(x)^{1/t}\\Gamma(y)^{1/s}.\n$$\nWhat is the name of the result that was used to prove this equation?",
+        "output": "The result used to prove this equation is known as the log-convexity or log-concavity of the gamma function. It states that the logarithm of the gamma function, $\\log \\Gamma(x)$, is a convex function on the positive real numbers.",
+        "rating": "1",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "correct statement but the prompt asked for the result to prove the inequality (Hölder's inequality)\" ; prompt type: name well-known result/condition",
+        "msc": [
+            "33B15",
+            "26A42"
+        ],
+        "ref": "W. Rudin. Principles of Mathematical Analysis. International series in pure and applied mathematics. McGraw-Hill, 1976. Thm. 8.18 (p. 192)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "We want to prove that $$\\lim_{x\\to 0}\\frac{\\sin x}{x}=1.$$\n\nIt is easy to show that $\\lim_{x\\to 0} \\sin x = 0$ and $\\lim_{x\\to 0}  x = 0$. Thus, by l'Hôpital's rule it holds that [MISSING] which finishes the proof.\n\nCan you provide the missing equation?",
+        "output": "The missing equation is $\\lim_{x\\to 0}\\frac{\\sin x}{x}=\\lim_{x\\to 0}\\frac{\\cos x}{1}=\\boxed{1}$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: fill in a missing step",
+        "msc": [
+            "40A05"
+        ],
+        "ref": "https://math.stackexchange.com/questions/75130/how-to-prove-that-lim-limits-x-to0-frac-sin-xx-1",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Let $f_n\\colon [0,1] \\to [0,1]$, $n\\in\\mathbb{N}$, be a sequence of functions with\n$$\n\\lim_{n\\to \\infty} f_n(x)=0 \\quad (0\\le x\\le 1),\n$$\nbut \n$$\nf_n\\left(\\frac{1}{n}\\right) = 1 \\quad (n=1,2,3,\\dots),\n$$\nso that no subsequence of $\\{ f_n \\}$ can converge uniformly on $[0,1]$. Can you define a suitable sequence $\\{ f_n \\}$?",
+        "output": "One example of such a sequence of functions is $f_n(x) = \\max(1-nx,0)$ for $n = 1, 2, 3, \\dots$.\nNote that $f_n\\left(\\frac{1}{n}\\right) = 1$ and $\\lim_{n\\to \\infty} f_n(x) = 0$ for all $x \\in [0,1]$.\nAlso, for any $\\epsilon > 0$, there exists an $N$ such that for all $n > N$, $\\lvert f_n(x) - 0\\rvert < \\epsilon$ for all $x \\in [0,1]$ except for $x=\\frac1n$, where $\\lvert f_n(x) - 0\\rvert = 1$. Thus ${f_n}$ does not converge uniformly on $[0,1]$.",
+        "rating": "3",
+        "errorcodes": [
+            "e4",
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "$f_n\\left(\\frac{1}{n}\\right)$ is zero; not correct that the sequence uniformly converges except for a single point; given example works when considering $f_n\\left(\\frac{c}{n}\\right)$ with $c<1$; prompt type: fill in a missing step",
+        "msc": [
+            "40A30"
+        ],
+        "ref": "W. Rudin. Principles of Mathematical Analysis. International series in pure and applied mathematics. McGraw-Hill, 1976. Ex. 7.21 (p. 156)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be a differentiable function such that $f(0) = 1$ and $f'(x) = f(x)$. Then it must be the case that $f = e^x$. We will prove this statement in the following.\nLet $g(x) = f(x) e^{-x}$. Then\n$$g'(x) = -f(x) e^{-x} + f'(x) e^{-x} = (f'(x) - f(x)) e^{-x} = 0$$\nby assumption. Can you finish the proof?",
+        "output": "Since $g'(x) = 0$, $g(x)$ is a constant function. Let the constant be $c$. Then, $f(x)e^{-x} = c$, or $f(x) = ce^x$. Since $f(0) = 1$, we know that $c = 1$, so $f(x) = e^x$. This completes the proof that if $f(x)$ is a differentiable function such that $f(0) = 1$ and $f'(x) = f(x)$, then $f(x) = e^x$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: finish the proof",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "https://math.stackexchange.com/questions/58097/prove-that-c-ex-is-the-only-set-of-functions-for-which-fx-fx",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "We want to compute the value of $$\\zeta(4) = \\sum_{n=1}^{\\infty} \\frac{1}{n^4}.$$\nIf we substitute $\\pi $ for $ x $ in the representation\n\n$$x^{4}=\\frac{1}{5}\\pi ^{4}+\\sum_{n=1}^{\\infty }\\frac{8n^{2}\\pi ^{2}-48}{n^{4}}\\cos n\\pi \\cdot \\cos nx, \\quad -\\pi \\leq x\\leq \\pi, $$\n\nwe obtain\n\n$$\\begin{eqnarray*}\n\\pi ^{4} &=&\\frac{1}{5}\\pi ^{4}+\\sum_{n=1}^{\\infty }\\frac{8n^{2}\\pi ^{2}-48}{n^{4}}\\cos ^{2}n\\pi  \\\\\n &=&\\frac{1}{5}\\pi ^{4}+8\\pi ^{2}\\sum_{n=1}^{\\infty }\\frac{1}{n^{2}}\n-48\\sum_{n=1}^{\\infty }\\frac{1}{n^{4}}.\n\\end{eqnarray*}$$\n\nHence\n\n$$\\sum_{n=1}^{\\infty }\\frac{1}{n^{4}}=\\frac{\\pi ^{4}}{48}\\left( -1+\\frac{1}{5}+\n\\frac{8}{6}\\right) =\\frac{\\pi ^{4}}{48}\\cdot \\frac{8}{15}=\\frac{1}{90}\\pi\n^{4}.$$\n\nWhat kind of expansion was used in the proof to show the equality\n$$x^{4}=\\frac{1}{5}\\pi ^{4}+\\sum_{n=1}^{\\infty }\\frac{8n^{2}\\pi ^{2}-48}{n^{4}}\\cos n\\pi \\cdot \\cos nx ? $$",
+        "output": "The expansion used in the proof is a Fourier series expansion. It expresses a periodic function (in this case, the function $x^4$) in terms of an infinite sum of sines and cosines of various frequencies. The coefficients in the expansion are determined by the inner product of the function with the sine and cosine functions of different frequencies. In this case, the series is represented as a Fourier cosine series, which only contains the cosine terms.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: name well-known result/condition",
+        "msc": [
+            "42A16"
+        ],
+        "ref": "https://math.stackexchange.com/questions/28329/nice-proofs-of-zeta4-frac-pi490",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "We are given a linear operator $T$ over a vector space $V$. We want to show that $T$ is a scalar multiple of the identity if $\\forall S \\in {\\cal L}(V), TS = ST$. Here, ${\\cal L}(V)$ denotes the set of all linear operators over $V$. We consider $S \\in L(V)$ given by $S x = f(x) v$ for some vector $v$ and some linear functional $f$ on V. Then $T S x = f(x) T v = S T x = f(T x) v$ for any x. In particular, as long as a nontrivial linear functional $f$ on $V$ exists, there is $x$ such that $f(x) \\ne 0$, and then $T v = \\alpha v$ for all $v$, where $\\alpha = f(T x)/f(x)$.\n\nFor an infinite-dimensional vector space $V$, the existence of a nontrivial linear function requires [MISSING]?\n\nCan you provide the name in [MISSING]?",
+        "output": "The name in [MISSING] is the Hahn-Banach theorem",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: name well-known result/condition",
+        "msc": [
+            "47A05"
+        ],
+        "ref": "https://math.stackexchange.com/questions/27808/a-linear-operator-commuting-with-all-such-operators-is-a-scalar-multiple-of-the",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Suppose $V$ is an inner product space and $T\\in\\mathcal{L}(V)$. We want to prove that\n$$ |\\det(T)|=\\det \\sqrt{T^* T}, $$\nwhere $\\sqrt{T^*T}$ denotes the unique positive square root of the positive operator $T^*T$.\nBy [MISSING] there is an isometry $S\\in\\mathcal{L}(V)$ such that\n$$ T = S \\sqrt{T^* T}. $$\nThus\n$$\n    |\\det T| = |\\det S| \\det \\sqrt{T^* T} = \\det \\sqrt{T^* T}.\n$$\nWhat is the name of the result used in [MISSING]?",
+        "output": "The name of the result used in [MISSING] is the Polar Decomposition Theorem.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: name well-known result/condition",
+        "msc": [
+            "15A15"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Thm. 10.47 (p. 323)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Suppose $u, v\\in V$, where $V$ is an inner product space over $\\mathbb{R}$ or $\\mathbb{C}$. We want to proof that\n$$|\\langle u, v\\rangle| \\le \\|u\\| \\|v\\|.$$\nLet us assume that $v\\neq 0 $. By [MISSING] we can write\n$$\nu = \\frac{\\langle u, v\\rangle}{\\|v\\|^2}v + w,\n$$\nwhere $w$ is orthogonal to $v$. By the Pythagorean Theorem,\n$$ \\|u\\|^2 =  \\left\\|\\frac{\\langle u, v\\rangle}{\\|v\\|^2}v\\right\\|^2+ \\|w\\|^2 \\ge  \\frac{|\\langle u, v\\rangle|^2}{\\|v\\|^2}. $$\nWhat is the name of the result used in [MISSING]?",
+        "output": "The result used in [MISSING] is called the Pythagorean Theorem for inner product spaces, also known as the projection theorem or the orthogonal decomposition theorem. It states that for any vector $u$ in an inner product space and any non-zero vector $v$, there exists a unique vector $w$ that is orthogonal to $v$ such that $u$ can be written as the sum of $w$ and a scalar multiple of $v$. This decomposition is known as the orthogonal projection of $u$ onto the subspace generated by $v$.",
+        "rating": "4",
+        "errorcodes": [
+            "e6"
+        ],
+        "warningcodes": [],
+        "comment": "the Pythagorean Theorem is typically referring to the norm equality; prompt type: name well-known result/condition",
+        "msc": [
+            "46C05",
+            "15A63"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Thm. 6.15 (p. 172)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Suppose $V$, is a finite-dimensional complex vector space, let $T\\in\\mathcal{L}(V)$, and assume that $T$ has a diagonal matrix with respect to some orthonormal basis of $V$. We want to prove that $T$ needs to be normal.\n\nThe matrix of $T^*$ (with respect to the same\nbasis) is obtained by taking the conjugate transpose of the matrix of $T$; hence $T^*$ also has a diagonal matrix. Can you finish the proof?",
+        "output": "Since the matrix of $T$ is diagonal with respect to some orthonormal basis, it can be written in the form $D = \\text{diag}(d_1, d_2, \\dots, d_n)$, where $n = \\dim V$.\n\nSince $T^$ also has a diagonal matrix, it can be written as $D^ = \\text{diag}(d_1^, d_2^, \\dots, d_n^*)$.\n\nNow, we know that $T$ is normal if and only if $T^T = TT^$.\n\nSince $D$ and $D^*$ are diagonal matrices, we have\n$D^D = \\text{diag}(d_1^d_1, d_2^d_2, \\dots, d_n^d_n)$ and $DD^ = \\text{diag}(d_1d_1^, d_2d_2^, \\dots, d_nd_n^)$.\n\nSince the diagonal entries of $D^D$ and $DD^$ are the same, we have $D^D = DD^$, which means $T$ is normal.",
+        "rating": "4",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "the change of basis should be made more explicit; latex does not render (asterix \"*\" missing at several positions in the output); prompt type: finish the proof",
+        "msc": [
+            "15A20"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Thm. 7.24 (p. 218)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Suppose $T\\in \\mathcal{L}(V,W)$, where $V$ and $W$ denote finite-dimensional inner product spaces over $\\mathbb{R}$ or $\\mathbb{C}$. Fix $w \\in W$. Consider the linear functional on $V$ that maps $v\\in V$ to $\\langle Tv, w\\rangle$; this linear functional depends on $T$ and $w$. By the Riesz Representation Theorem, there exists a unique vector a unique vector in $V$ such that this functional is given by taking the inner product with it. We call this unique vector $u_w$. In other words,  $u_w$ is the unique vector in $V$ such that $ \\langle Tv, w\\rangle = \\langle v, u_w \\rangle$ for every $v\\in V$. What is the name of the mapping $w \\mapsto u_w$?",
+        "output": "The mapping $w \\mapsto u_w$ is called the adjoint operator of $T$, denoted by $T^*$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: name well-known result/condition",
+        "msc": [
+            "47A05"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Def. 7.2 (p. 204)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "We want to show that very operator on a finite-dimensional, nonzero, complex vector space has an eigenvalue. Suppose $V$ is a complex vector space with dimension $n>0$ and $T\\in\\mathcal{L}$. Choose $v\\in V$ with $v\\neq 0$. Then\n$$v,Tv,T^2v,\\dots,T^nv$$\nis not linearly independent, because $V$ has dimension $n$ and we have $n+1$ vectors. Thus there exist complex numbers $a_0,\\dots,a_n$, not all $0$, such that\n$$\n0 = a_0v + a_1Tv + \\dots + a_nT^nv.\n$$\nNote that $a_1,\\dots,a_n$ cannot alle be $0$, because otherwise the equation above would become $0=a_0v$, which would force $a_0$ to also be $0$.\nMake the $a$'s the coefficients of a polynomial, which has a factorization\n$$a_0 + a_1z + \\dots + a_nz^n = c(z-\\lambda_1)\\dots(z-\\lambda_m),$$\nwhere $c$ is a nonzero complex number, each $\\lambda_j$ is in $\\mathbb{C}$, and the equations holds for all $z\\in\\mathbb{C}$ (here $m$ is not necessarily equal to $n$, because $a_n$ may equal $0$).\nWe then have\n\\begin{align}\n0 &= a_0v + a_1Tv + \\dots + a_nT^nv \\\\\n  &= \\big(a_0I + a_1T + \\dots + a_nT^n\\big)v \\\\\n  &=c(T-\\lambda_1I) \\dots (T-\\lambda_mI)v.\n\\end{align}\nThus $T-\\lambda_jI$ is not injective for at least one $j$. In other words, $T$ has an eigenvalue.\n\nWhat is the name of the result that guarantees the factorization\n$$a_0 + a_1z + \\dots + a_nz^n = c(z-\\lambda_1)\\dots(z-\\lambda_m)$$\nin the proof above?",
+        "output": "The factorization\n$$a_0 + a_1z + \\dots + a_nz^n = c(z-\\lambda_1)\\dots(z-\\lambda_m)$$\nin the proof above is known as the fundamental theorem of algebra.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: name well-known result/condition",
+        "msc": [
+            "15A18"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Thm. 5.21 (p. 145)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "Let $F$ be $\\mathbb{R}$ or $\\mathbb{C}$. Suppose $a_0,\\dots,a_m\\in F$. If\n$$\na_0 + a_1z + \\dots + a_m z^m = 0\n$$\nfor every $z\\in F$, then $a_0=\\dots=a_m=0.$\n\nWe will prove the contrapositive. If not all the coefficients are $0$, then by changing $m$ we can assume $a_m \\neq 0$. Let\n$$\nz=\\frac{|a_0|+|a_1|+ \\dots + |a_{m-1}|}{|a_m|} + 1.\n$$\nNote that $z\\ge 1$, and thus $z^j \\le z^{m-1}$ for $j=0,1,\\dots,m-1$. Using [MISSING], we have\n$$\n|a_0 + a_1z + \\dots + a_{m-1} z^{m-1}|  \\le \\big(|a_0| + |a_1| + \\dots + |a_{m-1}| \\big)z^{m-1} < |a_mz^m|.\n$$\nThus $a_0 + a_1z + \\dots + a_{m-1} z^{m-1} \\neq -a_mz^m$. Hence we conclude that $a_0 + a_1z + \\dots + a_{m-1} z^{m-1} + a_mz^m\\neq 0$\n\nCan you give the name of the result in [MISSING]?",
+        "output": "The result in [MISSING] is known as the Triangle Inequality.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: name well-known result/condition",
+        "msc": [
+            "12D10"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Thm. 4.7 (p. 120)",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    }
+]

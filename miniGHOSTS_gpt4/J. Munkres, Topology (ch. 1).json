@@ -1,0 +1,152 @@
+[
+    {
+        "prompt": "",
+        "output": "Before proceeding, let's define what contrapositive and converse of a statement mean:\n\nThe contrapositive of a statement of the form \"If P then Q\" is \"If not Q then not P\".\nThe converse of a statement of the form \"If P then Q\" is \"If Q then P\".\n\nOriginal Statement (P → Q): If $x < 0$, then $x^2 - x > 0$.\n\nContrapositive Statement (¬Q → ¬P): If $x^2 - x ≤ 0$, then $x ≥ 0$.\n\nConverse Statement (Q → P): If $x^2 - x > 0$, then $x < 0$.\n\nNow let's examine which of these are true:\n\nOriginal Statement (P → Q): This statement is true. If $x < 0$, the expression $x^2 - x$ will be positive. This is because the term $x^2$ will always be positive and subtracting a negative $x$ (since $x < 0$) effectively becomes addition, making the whole expression positive.\n\nContrapositive Statement (¬Q → ¬P): This should be true as well, because the contrapositive of a statement is logically equivalent to the original statement. If $x^2 - x ≤ 0$, then it implies that $x ≥ 0$. We can verify this by choosing a positive $x$, for instance $x = 1$, which indeed satisfies $x^2 - x ≤ 0$.\n\nConverse Statement (Q → P): This statement is not necessarily true. There are instances where $x^2 - x > 0$ and $x$ is not less than $0$. For example, if $x = 2$, then $x^2 - x = 2^2 - 2 = 2 > 0$, but $x = 2$ is not less than $0$.\n\nSo, the original statement and its contrapositive are true, but the converse is not always true.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "The verification of the contrapositive is weird and not necessary.",
+        "msc": [
+            "03B05"
+        ],
+        "ref": "Munkres-Topology-Chapter1ex3/a-page14",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "The negation of the statement \"For at least one $a \\not in A$, it is true that $a^2 in B\" is:\n\n\"For all $a \\not in A$, it is not true that $a^2 in B\". In other words, \"There does not exist $a \\not in A$ such that $a^2 in B\".",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "It could be further simplified to $a^2 \\not in B$.",
+        "msc": [
+            "03B05"
+        ],
+        "ref": "Munkres-Topology-Chapter1ex4/d-page14",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "The descriptions provided for sets D, E, and F are given in set-builder notation. This is a way of defining a set by stating the properties that its members must satisfy.\n\nTo express these sets in terms of $A$, $B$, and $C$ using the symbols $\\cup$ (union), $\\cap$ (intersection), and $\\setminus$ (set difference), we'll need to understand each set's definition and then translate it into the appropriate combination of these operations. Here are the results:\n\nSet $D = {x | x \\in A \\text{ and } (x \\in B \\text{ or } x \\in C)}$\n\nThis description is saying that set D contains all the elements that are both in A and either in B or C. We can write this as $D = A \\cap (B \\cup C)$, which represents the intersection of set A with the union of sets B and C.\n\nSet $E = {x | (x \\in A \\text{ and } x \\in B) \\text{ or } x \\in C}$\n\nThis set contains all the elements that are both in A and B, or that are in C. We can express this as $E = (A \\cap B) \\cup C$, which is the union of the intersection of A and B with set C.\n\nSet $F = {x | x \\in A \\text{ and } (x \\in B \\text{ implies } x \\in C)}$\n\nThis set is slightly more complex. It includes all elements of A for which the implication \"if x is in B then x is in C\" is true. It's important to remember that an implication is always true if the premise (here, \"x in B\") is false. So, all elements of A that are not in B are included (since the implication is vacuously true for them), and also all elements that are in both B and C. We can express this as $F = A \\cap ((A \\cap B) \\cup (A \\setminus B))$, which is the intersection of A with the union of the intersection of A and B, and the difference between A and B.\n\nThese translations into set operations use the fact that the $\\cap$, $\\cup$, and $\\setminus$ operations correspond to logical and, or, and not, respectively, in the sense of operations on indicator functions or characteristic functions.",
+        "rating": "3",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "The last statement is wrong as B and C are interchanged.",
+        "msc": [
+            "03B05"
+        ],
+        "ref": "Munkres-Topology-Chapter1ex7-page15",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "The subset you've mentioned ${(x, y) | x^2 + y^2 < 1}$ describes a disc of radius 1 centered at the origin (0,0) in the Euclidean plane $R \\times R$. The shape of this set in the plane is circular, not rectangular.\n\nA Cartesian product $A \\times B$ of two subsets $A, B$ of $R$ is a rectangle (possibly degenerate) in the plane. It is the set of all pairs where the first element comes from $A$ and the second element comes from $B$. Therefore, the Cartesian product of two subsets of the real numbers always forms a rectangular region in the plane, if we visualize it.\n\nSince the given subset describes a disc and not a rectangle, it cannot be expressed as a Cartesian product of two subsets of $R$. Therefore, the given subset is not equal to the Cartesian product of two subsets of the real numbers.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "03B05"
+        ],
+        "ref": "Munkres-Topology-Chapter1ex10/e-page15",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "The original statement is indeed true. The notation $\\bigcup_{A \\in C} A$ refers to the union of all sets in the collection $C$. If $x$ belongs to this union, then by definition, $x$ must belong to at least one set $A$ in the collection $C$. This is precisely the definition of union in set theory.\n\nThe converse statement is: \"If $x$ is in $A$ for at least one $A$ in $C$, then $x$ is in $\\bigcup_{A \\in C} A$.\" This converse statement is also true. If $x$ belongs to at least one set $A$ in the collection $C$, then $x$ certainly belongs to the union of all sets in $C$, because that union includes all elements of every set in $C$. This too follows directly from the definition of union in set theory.\n\nSo, both the original statement and its converse are true.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "03B05"
+        ],
+        "ref": "Munkres-Topology-Chapter1ex5/a-page14",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "The statement \"$A \\subset C$ and $B \\subset D \\Rightarrow (A \\times B) \\subset (C \\times D)$\" is indeed true for all sets $A, B, C$, and $D$ in set theory.\n\nHere's why:\n\n$A \\subset C$ means that every element of $A$ is also an element of $C$.\n$B \\subset D$ means that every element of $B$ is also an element of $D$.\n$(A \\times B)$ denotes the Cartesian product of $A$ and $B$, which is the set of all ordered pairs where the first element is from $A$ and the second element is from $B$.\n$(C \\times D)$ is the Cartesian product of $C$ and $D$, which is the set of all ordered pairs where the first element is from $C$ and the second element is from $D$.\n\nGiven 1 and 2, it follows that every ordered pair in $(A \\times B)$ is also an ordered pair in $(C \\times D)$. Thus, $(A \\times B) \\subset (C \\times D)$, and the statement is true.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "03B05"
+        ],
+        "ref": "Munkres-Topology-Chapter1ex2/j-page14",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "The original statement is true:\n\n\"If $x \\in \\bigcap_{A \\in C} A$ then $x \\in A$ for at least one $A \\in C$.\"\n\nThis is true by definition. If $x$ is in the intersection of all sets in collection $C$, then $x$ must be in each set in $C$. Therefore, it must be in at least one set in $C$.\n\nConversely, the statement:\n\n\"If $x \\in A$ for at least one $A \\in C$, then $x \\in \\bigcap_{A \\in C} A$.\"\n\nis false.\n\nThis is because if $x$ is in at least one set in $C$, that doesn't imply that $x$ is in the intersection of all sets in $C$. Being in the intersection of all sets requires $x$ to be in every set in $C$, not just at least one. So if $x$ is in at least one set, but not in every set, then $x$ is not in the intersection of all sets.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "03B05"
+        ],
+        "ref": "Munkres-Topology-Chapter1ex5/c-page14",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "\n\n\nDeMorgan's laws are a pair of transformation rules that hold for sets and logic. In set theory, DeMorgan's laws are typically stated in terms of unions (∪) and intersections (∩) as follows:\n\nThe complement of the union of two sets is equal to the intersection of their complements.\nThe complement of the intersection of two sets is equal to the union of their complements.\n\nFormally, let A and B be sets in a universal set U. The two laws can be written as follows:\n\n(A ∪ B)' = A' ∩ B'\n(A ∩ B)' = A' ∪ B'\n\nHere the ' symbol represents the complement of a set, which is the set of all elements in the universal set that are not in the given set. A' is the complement of A, and B' is the complement of B.\n\nProof for arbitrary unions and intersections: Let's generalize DeMorgan’s laws to countably infinite collections of sets. Let I be a non-empty index set, and for each i ∈ I, let Ai be a set. Then DeMorgan's laws become:\n\n(⋃_{i∈I} Ai)' = ⋂_{i∈I} Ai'\n(⋂_{i∈I} Ai)' = ⋃_{i∈I} Ai'\n\nProof:\n\nWe'll prove (⋃_{i∈I} Ai)' = ⋂_{i∈I} Ai'.\n\nLet x ∈ (⋃_{i∈I} Ai)'. Then by the definition of complement, x is not in any of the sets Ai, for any i ∈ I. So x is in the complement of every set Ai, i.e., x ∈ Ai', for every i ∈ I. Therefore, x ∈ ⋂_{i∈I} Ai'. So we have (⋃_{i∈I} Ai)' ⊆ ⋂_{i∈I} Ai'.\n\nConversely, let x ∈ ⋂_{i∈I} Ai'. Then by the definition of intersection, x is in every set Ai', for every i ∈ I. So x is not in any of the sets Ai, i.e., x ∈ Ai, for any i ∈ I. Therefore, x ∈ (⋃_{i∈I} Ai)'. So we have ⋂_{i∈I} Ai' ⊆ (⋃_{i∈I} Ai)'.\n\nSince (⋃_{i∈I} Ai)' ⊆ ⋂_{i∈I} Ai' and ⋂_{i∈I} Ai' ⊆ (⋃_{i∈I} Ai)', we have (⋃_{i∈I} Ai)' = ⋂_{i∈I} Ai'.\n\nSimilarly, we can prove (⋂_{i∈I} Ai)' = ⋃_{i∈I} Ai'. The proof is very similar to the above and is left as an exercise for you.\n\nAnd thus we've proven DeMorgan's laws for arbitrary unions and intersections.",
+        "rating": "4",
+        "errorcodes": [
+            "e5_2"
+        ],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "Details are missing in the proof of the first claim. The proof of the the second claim is left as an exercise.",
+        "msc": [
+            "03B05"
+        ],
+        "ref": "Munkres-Topology-Chapter1ex9-page15",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "Yes, the subset ${(x, y) | x \\text{ is an integer}}$ of $R \\times R$ can be expressed as the Cartesian product of two subsets of $R$.\n\nWe can identify the subsets of $R$ as follows:\n\nThe subset of $R$ for the x-values is the set of integers, denoted by $\\mathbb{Z}$.\n\nThe subset of $R$ for the y-values is all of $R$, since there is no restriction on the value of y.\n\nThus, the subset ${(x, y) | x \\text{ is an integer}}$ of $R \\times R$ is equal to the Cartesian product $\\mathbb{Z} \\times R$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "03B05"
+        ],
+        "ref": "Munkres-Topology-Chapter1ex10/a-page15",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "The set of pairs ${(x, y) | y > x}$ is not equal to the cartesian product of two subsets of $R$.\n\nThe Cartesian product of two sets $A$ and $B$, denoted by $A \\times B$, is the set of all ordered pairs $(a, b)$ where $a \\in A$ and $b \\in B$. Therefore, if a set of ordered pairs is equal to the Cartesian product of two subsets of $R$, it must contain every possible combination of an element from the first subset and an element from the second subset.\n\nHowever, the set ${(x, y) | y > x}$ does not have this property. For any real number $r$, there is no pair in the set of the form $(r, r)$, because $r$ is not strictly greater than $r$. Therefore, there is no subset $A$ of $R$ such that $(r, r)$ is in $A \\times A$ for all $r$ in $A$, which means the set ${(x, y) | y > x}$ cannot be expressed as the Cartesian product of two subsets of $R$.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "The proof only deals with cartesian products of the form $A \\times A$.",
+        "msc": [
+            "03B05"
+        ],
+        "ref": "Munkres-Topology-Chapter1ex10/c-page15",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    }
+]

@@ -1,0 +1,168 @@
+[
+    {
+        "prompt": "Let $f$ have a continuous derivative on $[a,b]$. We want to show that $f$ satisfies a Lipschitz condition on $[a,b]$. By [MISSING], \n\n$$f(x) - f(y) = f'(\\xi)(x-y)$$ \n\nfor some $\\xi \\in (y,x)$. But since $f'$ is continuous and $[a,b]$ is compact, then $f'$ is bounded in that interval, say by $C$. Thus taking absolute values yields \n\n$$\\lvert f(x) - f(y)\\rvert \\le C \\lvert x-y\\rvert$$ \n\nCan you name the result used in [MISSING]?",
+        "output": "Yes, the result used in [MISSING] is the Mean Value Theorem (MVT). The Mean Value Theorem states that if a function is continuous on a closed interval $[a, b]$ and differentiable on the open interval $(a, b)$, then there exists at least one point $c \\in (a, b)$ such that\n\n$$f'(c) = \\frac{f(b) - f(a)}{b - a}$$\n\nIn the context of your provided proof, the Mean Value Theorem is applied to the function $f$ on the interval $(y, x)$, which results in the existence of a point $\\xi \\in (y, x)$ such that\n\n$$f(x) - f(y) = f'(\\xi)(x-y)$$",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "(correctly) applies MVT although this was not asked; prompt type: name well-known result/condition",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "https://math.stackexchange.com/questions/476072/continuous-differentiability-implies-lipschitz-continuity",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "We want to show that the vector space of $\\mathbb{R}$ over $\\mathbb{Q}$ is infinite-dimensional. We use an explicit example of an infinite $\\, \\mathbb Q$-independent set of reals. Consider the set consisting of the logs of all primes $\\, p_i.\\,$ If $ \\, c_1 \\log p_1 +\\,\\cdots\\, + c_n\\log p_n =\\, 0,\\  c_i\\in\\mathbb Q,\\,$ multiplying by a common denominator we can assume that all $\\ c_i \\in \\mathbb Z\\,$. Can you finish the proof?",
+        "output": "Yes, I can help you finish the proof. We want to show that the set consisting of the logs of all primes is linearly independent over $\\mathbb{Q}$, which would prove that the vector space of $\\mathbb{R}$ over $\\mathbb{Q}$ is infinite-dimensional.\n\nWe have the linear combination of logs of primes:\n\n$$c_1 \\log p_1 + c_2 \\log p_2 + \\cdots + c_n \\log p_n = 0, \\text{ where } c_i \\in \\mathbb{Z}$$\n\nExponentiating both sides of the equation, we get:\n\n$$\\exp(c_1 \\log p_1 + c_2 \\log p_2 + \\cdots + c_n \\log p_n) = \\exp(0)$$\n\nUsing properties of exponentiation and logarithms, we can simplify the left side:\n\n$$p_1^{c_1} p_2^{c_2} \\cdots p_n^{c_n} = 1$$\n\nNow, we have a product of prime powers equal to 1. Since prime factorization is unique, the only way this product can be equal to 1 is if all the exponents $c_i$ are equal to 0. In other words:\n\n$$c_1 = c_2 = \\cdots = c_n = 0$$\n\nSince the only linear combination of logs of primes that results in 0 is the trivial one (where all coefficients are 0), the set of logs of primes is linearly independent over $\\mathbb{Q}$. Since there are infinitely many prime numbers, this set is infinite, and thus the vector space of $\\mathbb{R}$ over $\\mathbb{Q}$ is infinite-dimensional.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "; prompt type: finish the proof",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "https://math.stackexchange.com/questions/6244/is-there-a-quick-proof-as-to-why-the-vector-space-of-mathbbr-over-mathbb",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "We want to prove that $$\\lim_{x\\to 0}\\frac{\\sin x}{x}=1.$$\n\nIt is easy to show that $\\lim_{x\\to 0} \\sin x = 0$ and $\\lim_{x\\to 0}  x = 0$. Thus, it holds that \n\n$$\\lim_{x\\to 0}\\frac{\\sin x}{x}=\\lim_{x\\to 0}\\frac{\\cos x}{1}=1.$$\n\nWhich result has been used in the previous equation?",
+        "output": "The argument you've presented is not correct, as you cannot simply separate the limit of the numerator and the denominator to obtain the desired result. The correct way to prove that $\\lim_{x\\to 0}\\frac{\\sin x}{x}=1$ is by using L'Hôpital's rule or geometric arguments, such as the squeeze theorem.\n\nTo use L'Hôpital's rule, we must first check that the limit is of an indeterminate form (0/0 or ∞/∞). Since $\\lim_{x\\to 0} \\sin x = 0$ and $\\lim_{x\\to 0} x = 0$, the limit is indeed of the form 0/0. Now we can apply L'Hôpital's rule:\n\n$$\\lim_{x\\to 0}\\frac{\\sin x}{x}=\\lim_{x\\to 0}\\frac{\\cos x}{1}=1.$$\n\nIn this case, L'Hôpital's rule was used to determine the limit.",
+        "rating": "4",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [
+            "w2",
+            "w4"
+        ],
+        "comment": "the limit has not been separated in the prompt, and the same argument is repeated in the output; (correct) argumentation for the application of L'Hôpital's rule, however this was not asked; prompt type: name well-known result/condition",
+        "msc": [
+            "40A05"
+        ],
+        "ref": "https://math.stackexchange.com/questions/75130/how-to-prove-that-lim-limits-x-to0-frac-sin-xx-1",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be a differentiable function such that $f(0) = 1$ and $f'(x) = f(x)$. Then it must be the case that $f = e^x$. We will prove this statement in the following. \nLet $g(x) = f(x) e^{-x}$. Then $g$ is constant. But $g(0) = 1$, so $g(x) = 1$ identically. Can you show why $g$ is constant?",
+        "output": "To show that $g(x)$ is constant, we will differentiate it with respect to $x$ and show that the derivative is zero.\n\nRecall that $g(x) = f(x) e^{-x}$, and we are given that $f'(x) = f(x)$.\n\nNow, we will find the derivative of $g(x)$ using the product rule:\n\n\\begin{aligned} g'(x) &= \\frac{d}{dx} (f(x) e^{-x}) \\\\ &= f'(x) e^{-x} + f(x) (-e^{-x}) \\\\ \\end{aligned}\n \nSince we know $f'(x) = f(x)$, we can substitute this into the equation:\n\n\\begin{aligned} g'(x) &= f(x) e^{-x} - f(x) e^{-x} \\\\ \\end{aligned}\n\n \nNow, we see that $g'(x)$ simplifies to:\n\n\\begin{aligned} g'(x) &= 0 \\\\ \\end{aligned}\n\n \nSince the derivative of $g(x)$ is zero for all $x$, it implies that $g(x)$ is constant. As we know that $g(0) = 1$, we can conclude that $g(x) = 1$ identically for all $x$. Thus, $f(x) = e^x$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "(correctly) finishes the proof although this was not asked; prompt type: fill in a missing step",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "https://math.stackexchange.com/questions/58097/prove-that-c-ex-is-the-only-set-of-functions-for-which-fx-fx",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "We want to compute the value of $$\\zeta(4) = \\sum_{n=1}^{\\infty} \\frac{1}{n^4}.$$\nIf we substitute  $\\pi $ for $ x $ in the Fourier trigonometric series expansion of $f(x)=x^{4}$, with $-\\pi \\leq x\\leq \\pi $, we obtain\n\n$$\n\\pi ^{4} =\\frac{1}{5}\\pi ^{4}+8\\pi ^{2}\\sum_{n=1}^{\\infty }\\frac{1}{n^{2}}\n-48\\sum_{n=1}^{\\infty }\\frac{1}{n^{4}}.\n$$\n\nHence\n\n$$\\sum_{n=1}^{\\infty }\\frac{1}{n^{4}}=\\frac{\\pi ^{4}}{48}\\left( -1+\\frac{1}{5}+\n\\frac{8}{6}\\right) =\\frac{\\pi ^{4}}{48}\\cdot \\frac{8}{15}=\\frac{1}{90}\\pi\n^{4}.$$\n\nCan you provide the Fourier trigonometric series expansion of $f(x)=x^{4}$ used in the proof?",
+        "output": "Certainly! In order to derive the Fourier trigonometric series expansion of the function $$f(x) = x^4$$ on the interval $$-\\pi \\leq x \\leq \\pi$$, we need to find the Fourier coefficients $$a_0, a_n$$, and $$b_n$$.\n\nThe Fourier series is given by the following formula:\n\nf(x) = \\frac{a_0}{2} + \\sum_{n=1}^{\\infty} \\left(a_n \\cos\\left(\\frac{2\\pi nx}{2\\pi}\\right) + b_n \\sin\\left(\\frac{2\\pi nx}{2\\pi}\\right)\\right),\n\nwhere the Fourier coefficients are calculated as follows:\n\na_0 = \\frac{1}{\\pi}\\int_{-\\pi}^{\\pi} f(x) dx,\na_n = \\frac{1}{\\pi}\\int_{-\\pi}^{\\pi} f(x) \\cos(nx) dx,\nb_n = \\frac{1}{\\pi}\\int_{-\\pi}^{\\pi} f(x) \\sin(nx) dx.\n\nSince $$f(x) = x^4$$ is an even function, all the $$b_n$$ coefficients will be zero.\n\nNow let's compute the coefficients $$a_0$$ and $$a_n$$:\n\n1. For $$a_0$$:\na_0 = \\frac{1}{\\pi}\\int_{-\\pi}^{\\pi} x^4 dx = \\frac{1}{\\pi}\\left[\\frac{x^5}{5}\\right]_{-\\pi}^{\\pi} = \\frac{2\\pi^4}{5}.\n\n2. For $$a_n$$:\na_n = \\frac{1}{\\pi}\\int_{-\\pi}^{\\pi} x^4 \\cos(nx) dx.\nIntegrating by parts multiple times, we can find that:\n\na_n = -\\frac{8(\\pi^2n^2 - 6)\\cos(n\\pi)}{n^4},\nNow, we can express the Fourier series for $$f(x) = x^4$$:\n\nx^4 = \\frac{\\pi^4}{5} + \\sum_{n=1}^{\\infty} \\left(-\\frac{8(\\pi^2n^2 - 6)\\cos(n\\pi)}{n^4}\\right) \\cos(nx).\n\nFinally, substituting $$\\pi$$ for $$x$$, we obtain the desired equation.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [
+            "w4",
+            "w2"
+        ],
+        "comment": "wrong sign in the expression for the coefficient $a_n$; equations rendered (not displayed as tex); $2\\pi$ could be canceled in general formula; weird $$...$$-equation formatting of variables; repeats the substitution although this was not asked; prompt type: fill in a missing step",
+        "msc": [
+            "42A16"
+        ],
+        "ref": "https://math.stackexchange.com/questions/28329/nice-proofs-of-zeta4-frac-pi490",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "We want to prove that $\\operatorname{rank}A^TA=\\operatorname{rank}A$ for any $A\\in \\mathbb{R}_{m \\times n}$. Let $\\mathbf{x} \\in N(A)$ where $N(A)$ is the null space of $A$. \n\nSo, $$\\begin{align} A\\mathbf{x} &=\\mathbf{0} \\\\\\implies A^TA\\mathbf{x} &=\\mathbf{0}  \\\\\\implies \\mathbf{x} &\\in N(A^TA) \\end{align}$$ Hence $N(A) \\subseteq N(A^TA)$.\n\nAgain let $\\mathbf{x} \\in N(A^TA)$\n\nSo, $$\\begin{align} A^TA\\mathbf{x} \\implies \\mathbf{x} &\\in N(A) \\end{align}$$ Hence $N(A^TA) \\subseteq N(A)$.\n\nTherefore $$\\begin{align} N(A^TA) &= N(A)\\\\ \\implies \\dim(N(A^TA)) &= \\dim(N(A))\\\\ \\implies \\text{rank}(A^TA) &= \\text{rank}(A)\\end{align}$$\n\nCan you provide the details for the step $$\\begin{align} A^TA\\mathbf{x} \\implies \\mathbf{x} &\\in N(A) \\end{align}$$ above?",
+        "output": "Certainly! It seems there's a mistake in your original statement: $$\\begin{align} A^TA\\mathbf{x} \\implies \\mathbf{x} &\\in N(A) \\end{align}$$\n\nThis statement is incorrect, and I'll provide the correct details to show that $N(A^TA) \\subseteq N(A)$.\n\nLet $\\mathbf{x} \\in N(A^TA)$, so we have $A^TA\\mathbf{x} = \\mathbf{0}$. We want to show that $\\mathbf{x} \\in N(A)$, or in other words, $A\\mathbf{x} = \\mathbf{0}$.\n\nTo do this, consider the following:\n\n$$\\begin{align} \\mathbf{x}^TA^TA\\mathbf{x} &= (\\mathbf{0})^T\\mathbf{0} \\ \\implies (A\\mathbf{x})^T(A\\mathbf{x}) &= \\mathbf{0}^T\\mathbf{0} \\end{align}$$\n\nHere, we used the property $(AB)^T = B^TA^T$ for the transpose of a product of two matrices.\n\nNow, observe that $(A\\mathbf{x})^T(A\\mathbf{x})$ is the dot product of the vector $A\\mathbf{x}$ with itself, which is equal to the square of the Euclidean norm of the vector $A\\mathbf{x}$:\n\n$$\\begin{align} |A\\mathbf{x}|^2 &= 0 \\end{align}$$\n\nSince the square of the Euclidean norm is zero, the Euclidean norm must be zero as well:\n\n$$\\begin{align} |A\\mathbf{x}| &= 0 \\end{align}$$\n\nThe Euclidean norm of a vector is zero if and only if the vector itself is the zero vector:\n\n$$\\begin{align} A\\mathbf{x} &= \\mathbf{0} \\end{align}$$\n\nThus, we have shown that $\\mathbf{x} \\in N(A)$, which means $N(A^TA) \\subseteq N(A)$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "detected typo (missing $=0$) in original prompt; prompt type: fill in a missing step",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "https://math.stackexchange.com/questions/349738/prove-operatornamerankata-operatornameranka-for-any-a-in-m-m-times-n",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "We want to show that a finite dimensional vector space $V$ over a countable field $F$ is necessarily countable: if $v_1,\\ldots,v_n \\in V$ is a basis, then every vector in $V$ can be written uniquely as $\\alpha_1 v_1+\\cdots+\\alpha_n v_n$ for some scalars $\\alpha_1,\\ldots,\\alpha_n\\in F$. Can you finish the proof?",
+        "output": "To finish the proof, we will show that there is a bijection between the set of all vectors in $V$ and a countable set. Since $F$ is countable and $V$ is a finite-dimensional vector space with basis $v_1, \\ldots, v_n$, we can describe every vector in $V$ uniquely as a linear combination of the basis vectors with coefficients in $F$.\n\nLet's consider the set $F^n$ consisting of all ordered n-tuples of elements in $F$, i.e., $F^n = {(\\alpha_1, \\ldots, \\alpha_n) \\mid \\alpha_1, \\ldots, \\alpha_n \\in F}$. Since $F$ is countable, the Cartesian product of $n$ copies of $F$ is also countable. To see this, consider a function that maps each tuple $(\\alpha_1, \\ldots, \\alpha_n)$ to the natural numbers using a pairing function such as the Cantor pairing function, which is known to be a bijection between $\\mathbb{N}\\times\\mathbb{N}$ and $\\mathbb{N}$. We can use this pairing function iteratively to handle higher dimensions.\n\nNow, we define a function $\\phi: F^n \\to V$ such that for any $(\\alpha_1, \\ldots, \\alpha_n) \\in F^n$, $\\phi(\\alpha_1, \\ldots, \\alpha_n) = \\alpha_1 v_1 + \\cdots + \\alpha_n v_n$. We want to show that this function is a bijection.\n\n$\\phi$ is injective (one-to-one): Suppose $\\phi(\\alpha_1, \\ldots, \\alpha_n) = \\phi(\\beta_1, \\ldots, \\beta_n)$. Then $\\alpha_1 v_1 + \\cdots + \\alpha_n v_n = \\beta_1 v_1 + \\cdots + \\beta_n v_n$. Since the basis vectors are linearly independent, this implies $\\alpha_1 = \\beta_1, \\ldots, \\alpha_n = \\beta_n$. Thus, $\\phi$ is injective.\n\n$\\phi$ is surjective (onto): For any vector $v \\in V$, we can express $v$ as a unique linear combination of the basis vectors, i.e., $v = \\alpha_1 v_1 + \\cdots + \\alpha_n v_n$ for some $\\alpha_1, \\ldots, \\alpha_n \\in F$. Then, $(\\alpha_1, \\ldots, \\alpha_n) \\in F^n$ and $\\phi(\\alpha_1, \\ldots, \\alpha_n) = v$. So, $\\phi$ is surjective.\n\nSince $\\phi$ is a bijection between $F^n$ and $V$, and $F^n$ is countable, it follows that $V$ is also countable.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "wrong latex formatting of curly brackets; prompt type: finish the proof",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "https://math.stackexchange.com/questions/6244/is-there-a-quick-proof-as-to-why-the-vector-space-of-mathbbr-over-mathbb",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "Let $f_n\\colon [0,1] \\to [0,1]$, $n\\in\\mathbb{N}$, be a sequence of functions with\n$$\n\\lim_{n\\to \\infty} f_n(x)=0 \\quad (0\\le x\\le 1),\n$$\nbut \n$$\nf_n\\left(\\frac{1}{n}\\right) = 1 \\quad (n=1,2,3,\\dots),\n$$\nso that no subsequence of $\\{ f_n \\}$ can converge uniformly on $[0,1]$. Can you define a suitable sequence $\\{ f_n \\}$?",
+        "output": "Yes, we can define such a sequence of functions using \"bump functions\". Let's define the sequence ${f_n}$ as follows:\n\n$$ f_n(x) = \\begin{cases} n^2x & \\text{if } 0 \\le x \\le \\frac{1}{2n}, \\\\ 2n - n^2x & \\text{if } \\frac{1}{2n} \\le x \\le \\frac{1}{n}, \\\\ 0 & \\text{if } \\frac{1}{n} \\le x \\le 1. \\end{cases} $$\n \nFirst, note that $f_n$ maps $[0, 1]$ to $[0, 1]$ for each $n$. Now, let's verify the given conditions:\n\nPointwise convergence to 0:\nFor any fixed $x \\in [0, 1]$, if $x = 0$, then $f_n(x) = 0$ for all $n \\in \\mathbb{N}$. If $x > 0$, there exists $N \\in \\mathbb{N}$ such that $x > \\frac{1}{N}$. For all $n \\ge N$, $f_n(x) = 0$. Thus, $\\lim_{n \\to \\infty} f_n(x) = 0$ for all $x \\in [0, 1]$.\n\n$f_n(\\frac{1}{n}) = 1$:\nFor any $n \\in \\mathbb{N}$, we have $f_n\\left(\\frac{1}{n}\\right) = 2n - n^2\\frac{1}{n} = 2n - n = n - n = 1$.\n\nNow, let's show that no subsequence of ${f_n}$ converges uniformly on $[0, 1]$.\n\nAssume, for the sake of contradiction, that there exists a subsequence ${f_{n_k}}$ that converges uniformly to the zero function on $[0, 1]$. This means that for any $\\varepsilon > 0$, there exists an integer $K$ such that for all $k \\ge K$, we have $|f_{n_k}(x)| < \\varepsilon$ for all $x \\in [0, 1]$.\n\nLet's choose $\\varepsilon = \\frac{1}{2}$. Since $f_{n_k}\\left(\\frac{1}{n_k}\\right) = 1$ for all $k \\in \\mathbb{N}$, there exists an index $k \\ge K$ such that $|1 - 0| = 1 \\ge \\varepsilon = \\frac{1}{2}$, which is a contradiction. Therefore, no subsequence of ${f_n}$ can converge uniformly on $[0, 1]$.",
+        "rating": "3",
+        "errorcodes": [
+            "e4",
+            "e2"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "equation rendered (not displayed as tex); $f_n$ does not map to $[0,1]$ and is discontinuous (inequality signs in the definition do not make sense); wrong computation of $f_n(\\frac{1}{n})$; $f_n$ converges to zero pointwise; argument for the contradiction regarding uniform convergence is correct, however this was not asked; prompt type: fill in a missing step",
+        "msc": [
+            "40A30"
+        ],
+        "ref": "W. Rudin. Principles of Mathematical Analysis. International series in pure and applied mathematics. McGraw-Hill, 1976. Ex. 7.21 (p. 156)",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "Suppose $V$ is an inner product space and $T\\in\\mathcal{L}(V)$. We want to prove that\n$$ |\\det(T)|=\\det \\sqrt{T^* T}, $$\nwhere $\\sqrt{T^*T}$ denotes the unique positive square root of the positive operator $T^*T$.\nBy [MISSING] there is an isometry $S\\in\\mathcal{L}(V)$ such that\n$$ T = S \\sqrt{T^* T}. $$\nThus\n$$\n    |\\det T| = |\\det S| \\det \\sqrt{T^* T} = \\det \\sqrt{T^* T}.\n$$\nWhat is the name of the result used in [MISSING]?",
+        "output": "The result used in [MISSING] is the Polar Decomposition Theorem. It states that for any linear operator $T \\in \\mathcal{L}(V)$ on an inner product space $V$, there exists a unique isometry $S \\in \\mathcal{L}(V)$ and a unique positive operator $P \\in \\mathcal{L}(V)$ such that $T = SP$. In this case, $P = \\sqrt{T^* T}$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "(correctly) defines the theorem although this was not asked; prompt type: name well-known result/condition",
+        "msc": [
+            "15A15"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Thm. 10.47 (p. 323)",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "Suppose $u, v\\in V$, where $V$ is an inner product space over $\\mathbb{R}$ or $\\mathbb{C}$. We want to proof that\n$$|\\langle u, v\\rangle| \\le \\|u\\| \\|v\\|.$$\nLet us assume that $v\\neq 0 $. By [MISSING] we can write\n$$\nu = \\frac{\\langle u, v\\rangle}{\\|v\\|^2}v + w,\n$$\nwhere $w$ is orthogonal to $v$. By the Pythagorean Theorem,\n$$ \\|u\\|^2 =  \\left\\|\\frac{\\langle u, v\\rangle}{\\|v\\|^2}v\\right\\|^2+ \\|w\\|^2 \\ge  \\frac{|\\langle u, v\\rangle|^2}{\\|v\\|^2}. $$\nWhat is the name of the result used in [MISSING]?",
+        "output": "The result used in [MISSING] is the orthogonal decomposition theorem or the projection theorem. The theorem states that if $V$ is an inner product space and $v \\in V$ is nonzero, then for any $u \\in V$, there exists a unique vector $w \\in V$ such that $u$ can be written as the sum of a scalar multiple of $v$ and $w$, and $w$ is orthogonal to $v$. In other words, $u$ can be decomposed into the sum of its orthogonal projection onto the subspace spanned by $v$ and a component orthogonal to $v$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "(correctly) defines the theorem although this was not asked; prompt type: name well-known result/condition",
+        "msc": [
+            "46C05",
+            "15A63"
+        ],
+        "ref": "Sheldon Axler. Linear algebra done right. Springer. Thm. 6.15 (p. 172)",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    }
+]

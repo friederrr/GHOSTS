@@ -1,0 +1,149 @@
+[
+    {
+        "prompt": "Below is the graph of $y = a \\sin (bx + c)$ for some positive constants $a,$ $b,$ and $c.$  Find $a.$\n\n[asy]import TrigMacros;\n\nsize(300);\n\nreal f(real x)\n{\n\treturn 2*sin(4*x + pi/2);\n}\n\ndraw(graph(f,-pi,pi,n=700,join=operator ..),red);\ntrig_axes(-pi,pi,-3,3,pi/2,1);\nlayer();\nrm_trig_labels(-2,2, 2);\n\nlabel(\"$1$\", (0,1), E);\nlabel(\"$2$\", (0,2), E);\nlabel(\"$-1$\", (0,-1), E);\nlabel(\"$-2$\", (0,-2), E);\n[/asy]",
+        "output": "The function $y = a \\sin (bx + c)$ is a sine wave with amplitude $a.$ The amplitude of a sine or cosine wave is the maximum distance it reaches from the equilibrium position, which in this case is the x-axis.\n\nLooking at your graph, it's clear that the maximum and minimum values of the function are $2$ and $-2$ respectively, meaning the amplitude of the wave is $2$. So, $a = 2$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: The maximum value of $a \\sin (bx + c)$ is $a,$ so $a = \\boxed{2}.$",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex30 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "The complex numbers $5 + 10i,$ $7 + 2i,$ and $11 + 3i$ are three vertices of a rectangle.  Find the fourth vertex.",
+        "output": "A rectangle has opposite sides of equal length. We can find the fourth vertex by using the properties of parallelograms in the complex plane.\n\nLet's denote the vertices of the rectangle as $z_1, z_2, z_3,$ and $z_4,$ in the order they are given and the one we want to find. Thus,\n\n$z_1 = 5 + 10i,$\n$z_2 = 7 + 2i,$\n$z_3 = 11 + 3i,$\n$z_4 = ?$\n\nIn a parallelogram (and hence in a rectangle), the sum of the diagonals is equal, which means $z_1 + z_3 = z_2 + z_4.$ We can use this property to find $z_4.$\n\nSolving for $z_4,$ we have:\n\n$z_4 = z_1 + z_3 - z_2 = (5 + 10i) + (11 + 3i) - (7 + 2i) = (5 + 11 - 7) + (10i + 3i - 2i)i = 9 + 11i.$\n\nSo, the fourth vertex of the rectangle is $9 + 11i.$",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: Let $a = 5 + 10i,$ $b = 7 + 2i,$ and $c = 11 + 3i.$  Let $d$ be the fourth vertex.\n\nNote that\n\\[c - b = 4 + i\\]and\n\\[a - b = -2 + 8i = 2i(4 +i) = 2i(c - b).\\]Thus, the angle between the segment joining $a$ and $b$ and the segment joining $b$ and $c$ is $90^\\circ.$\n\n[asy]\nunitsize(0.5 cm);\n\npair A, B, C, D;\n\nA = (5,10);\nB = (7,2);\nC = (11,3);\nD = (9,11);\n\ndraw(A--B--C--D--cycle);\ndraw(A--C,dashed);\ndraw(B--D,dashed);\n\ndot(\"$a = 5 + 10i$\", A, W);\ndot(\"$b = 7 + 2i$\", B, S);\ndot(\"$c = 11 + 3i$\", C, E);\ndot(\"$d = 9 + 11i$\", D, N);\ndot((A + C)/2);\n[/asy]\n\nAs a rectangle, the midpoints of the diagonals coincide.  The midpoint of $a$ and $c$ is\n\\[\\frac{5 + 10i + 11 + 3i}{2} = 8 + \\frac{13}{2} i,\\]so\n\\[d = 2 \\left( 8 + \\frac{13}{2} i \\right) - (7 + 2i) = \\boxed{9 + 11i}.\\]",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex78 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "When $-24 + 7i$ is converted to the exponential form $re^{i \\theta}$, what is $\\cos \\theta$?",
+        "output": "To convert a complex number from rectangular form ($a + bi$) to exponential form ($re^{i\\theta}$), where $r$ is the magnitude and $\\theta$ is the argument, we can use the following formulas:\n\nMagnitude, $r =\\sqrt{a^2 + b^2}$\nArgument, $\\theta = arctan(\\frac{b}{a})$\n\nGiven that the complex number is $-24 + 7i$, we can calculate its magnitude and argument:\n\nMagnitude, $r = \\sqrt{(-24)^2 + 7^2} = \\sqrt{576 + 49} = \\sqrt{625} = 25$\nArgument, $\\theta = arctan(\\frac{7}{-24}) \\approx -0.2866$ (in radians)\n\nNow, to find the value of $cos(\\theta)$, we substitute the calculated value of $\\theta$ into the cosine function:\n\\[\ncos(-0.2866) \\approx 0.961\n⁡\\]\nTherefore, $cos(\\theta)$ is approximately 0.961.",
+        "rating": "4",
+        "errorcodes": [
+            "e2",
+            "e5_3"
+        ],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: We see that $r = \\sqrt{(-24)^2 + 7^2} = \\sqrt{625} = 25$, so\n\\[-24 + 7i = 25 \\left( -\\frac{24}{25} + \\frac{7}{25} i \\right) = 25 e^{i \\theta}\\]for some angle $\\theta$.  Hence, $\\cos \\theta = \\boxed{-\\frac{24}{25}}$.",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex23 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "The points $(0,0,0),$ $(a,1,1),$ $(1,b,1),$ and $(1,1,c)$ are coplanar, where $a \\neq 1,$ $b \\neq 1,$ and $c \\neq 1.$  Compute\n\\[\\frac{1}{1 - a} + \\frac{1}{1 - b} + \\frac{1}{1 - c}.\\]",
+        "output": "Points are coplanar if the volume of the parallelepiped they form is zero. The volume V of a parallelepiped defined by vectors $\\vec{AB} = \\vec{u}$, $\\vec{AC} = \\vec{v}$ and $\\vec{AD} = \\vec{w}$ is given by $V = |\\vec{u} \\cdot (\\vec{v} \\times \\vec{w})|$. In your case, the vectors are:\n\n$\\vec{OA} = (a, 1, 1)$\n$\\vec{OB} = (1, b, 1)$\n$\\vec{OC} = (1, 1, c)$\nSo, we want that $V = \\vec{OA} \\cdot (\\vec{OB} \\times \\vec{OC}) = 0$. Let's compute the cross product first:\n\n$\\vec{OB} \\times \\vec{OC} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\ 1 & b & 1 \\ 1 & 1 & c \\end{vmatrix} = (b - 1) \\hat{i} - (c - 1) \\hat{j} + (1 - 1) \\hat{k} = (b - 1, 1 - c, 0)$\nNow the dot product:\n\n$\\vec{OA} \\cdot (\\vec{OB} \\times \\vec{OC}) = (a, 1, 1) \\cdot (b - 1, 1 - c, 0) = ab - a + 1 - c = 0$\nThen, we have $ab - a + 1 - c = 0$, which can be written as $ab - a - c + 1 = 0$.\n\nWe can express $b$ from this equation as $b = \\frac{a + c - 1}{a}$.\n\nFinally, let's substitute this value of $b$ into your expression and simplify:\n\n$\\frac{1}{1 - a} + \\frac{1}{1 - b} + \\frac{1}{1 - c} = \\frac{1}{1 - a} + \\frac{a}{a + c - 2} + \\frac{1}{1 - c}$\n$= \\frac{a + c - 2}{(1 - a)(a + c - 2)} + \\frac{a}{a + c - 2} + \\frac{a + c - 2}{(1 - c)(a + c - 2)}$\n$= \\frac{1}{1 - a} + \\frac{1}{1 - c} = \\frac{(1 - c) + (1 - a)}{(1 - a)(1 - c)}$\n$= \\frac{2 - a - c}{(1 - a)(1 - c)}$\nSo, the sum equals $\\frac{2 - a - c}{(1 - a)(1 - c)}$.",
+        "rating": "3",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: The normal vector to the plane will be orthogonal to both\n\\[\\begin{pmatrix} a \\\\ 1 \\\\ 1 \\end{pmatrix} - \\begin{pmatrix} 1 \\\\ b \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} a - 1 \\\\ 1 - b \\\\ 0 \\end{pmatrix}\\]and\n\\[\\begin{pmatrix} a \\\\ 1 \\\\ 1 \\end{pmatrix} - \\begin{pmatrix} 1 \\\\ 1 \\\\ c \\end{pmatrix} = \\begin{pmatrix} a - 1 \\\\ 0 \\\\ 1 - c \\end{pmatrix}.\\]Their cross product is\n\\[\\begin{pmatrix} a - 1 \\\\ 1 - b \\\\ 0 \\end{pmatrix} \\times \\begin{pmatrix} a - 1 \\\\ 0 \\\\ 1 - c \\end{pmatrix} = \\begin{pmatrix} (b - 1)(c - 1) \\\\ (a - 1)(c - 1) \\\\ (a - 1)(b - 1) \\end{pmatrix}.\\]By scaling, we can take $\\begin{pmatrix} 1/(1 - a) \\\\ 1/(1 - b) \\\\ 1/(1 - c) \\end{pmatrix}$ as the normal vector.  Since the plane passes through $(0,0,0),$ the equation of the plane is\n\\[\\frac{x}{1 - a} + \\frac{y}{1 - b} + \\frac{z}{1 - c} = 0.\\]Since the plane passes through $(a,1,1),$\n\\[\\frac{a}{1 - a} + \\frac{1}{1 - b} + \\frac{1}{1 - c} = 0.\\]Adding 1 to both sides, we get\n\\[\\frac{a}{1 - a} + 1 + \\frac{1}{1 - b} + \\frac{1}{1 - c} = 1,\\]so\n\\[\\frac{1}{1 - a} + \\frac{1}{1 - b} + \\frac{1}{1 - c} = \\boxed{1}.\\]",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex83 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Compute\n\\[\\begin{pmatrix} 3 & 1 & 0 \\\\ -7 & 4 & 2 \\\\ 0 & 5 & -1 \\end{pmatrix} \\begin{pmatrix} 4 \\\\ -1 \\\\ -2 \\end{pmatrix}.\\]",
+        "output": "The multiplication of a matrix by a vector is done by performing the dot product of each row of the matrix with the vector. The dot product of two vectors is the sum of the products of their corresponding entries.\n\nSo for your matrix and vector, the multiplication would result in another vector with three components, each component being the dot product of the corresponding row of the matrix with the vector:\n\n\\begin{pmatrix} 3 & 1 & 0 \\\\ -7 & 4 & 2 \\\\ 0 & 5 & -1 \\end{pmatrix} \\begin{pmatrix} 4 \\\\ -1 \\\\ -2 \\end{pmatrix} = \\begin{pmatrix} 3*4 + 1*(-1) + 0*(-2) \\\\ -7*4 + 4*(-1) + 2*(-2) \\\\ 0*4 + 5*(-1) + -1*(-2) \\end{pmatrix} = \\begin{pmatrix} 11 \\\\ -30 \\\\ -3 \\end{pmatrix}\nSo the result of the multiplication is the vector \n\\begin{pmatrix} 11 \\\\ -30 \\\\-3 \\end{pmatrix}.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: We have that\n\\[\\begin{pmatrix} 3 & 1 & 0 \\\\ -7 & 4 & 2 \\\\ 0 & 5 & -1 \\end{pmatrix} \\begin{pmatrix} 4 \\\\ -1 \\\\ -2 \\end{pmatrix} = \\begin{pmatrix} (3)(4) + (1)(-1) + (0)(-2) \\\\ (-7)(4) + (4)(-1) + (2)(-2) \\\\ (0)(4) + (5)(-1) + (-1)(-2) \\end{pmatrix} = \\boxed{\\begin{pmatrix} 11 \\\\ -36 \\\\ -3 \\end{pmatrix}}.\\]",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex12 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "If $\\det \\mathbf{A} = -7$ and $\\det \\mathbf{B} = 3,$ then find $\\det (\\mathbf{B} \\mathbf{A}).$",
+        "output": "The determinant of the product of two matrices is equal to the product of their determinants. This is a fundamental property of determinants, and can be written as:\n\ndet(BA) = det(B) * det(A)\n\nGiven that det(A) = -7 and det(B) = 3, we find:\n\ndet(BA) = 3 * -7 = -21.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: We have that $\\det (\\mathbf{B} \\mathbf{A}) = (\\det \\mathbf{B})(\\det \\mathbf{A}) = (3)(-7) = \\boxed{-21}.$",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex192 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "The projection of $\\begin{pmatrix} 2 \\\\ y \\\\ -5 \\end{pmatrix}$ onto $\\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}$ is\n\\[\\frac{5}{6} \\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}.\\]Find $y.$",
+        "output": "To solve for $y$, we need to use the formula for the projection of a vector onto another vector:\n\nThe projection of a vector $\\mathbf{u}$ onto another vector $\\mathbf{v}$ is given by:\n\nproj\nv\nu\n=\nu\n⋅\nv\n∥\nv\n∥\n2\nv\n,\nproj \nv\n​\t\n u= \n∥v∥ \n2\n \nu⋅v\n​\t\n v,\n\nwhere $\\mathbf{u} \\cdot \\mathbf{v}$ is the dot product of $\\mathbf{u}$ and $\\mathbf{v}$, and $|\\mathbf{v}|^2$ is the square of the norm (or length) of $\\mathbf{v}$.\n\nGiven that $\\begin{pmatrix} 2 \\ y \\ -5 \\end{pmatrix}$ is projected onto $\\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}$, we can set $\\mathbf{u} = \\begin{pmatrix} 2 \\ y \\ -5 \\end{pmatrix}$ and $\\mathbf{v} = \\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}$.\n\nThe dot product $\\mathbf{u} \\cdot \\mathbf{v}$ is:\n\nu\n⋅\nv\n=\n(\n2\n)\n(\n1\n)\n+\n(\ny\n)\n(\n−\n2\n)\n+\n(\n(\n−\n5\n)\n(\n1\n)\n)\n=\n2\n−\n2\ny\n−\n5\n=\n−\n3\n−\n2\ny\n.\nu⋅v=(2)(1)+(y)(−2)+((−5)(1))=2−2y−5=−3−2y.\n\nThe square of the norm of $\\mathbf{v}$ is:\n\n∥\nv\n∥\n2\n=\n(\n1\n)\n2\n+\n(\n−\n2\n)\n2\n+\n(\n1\n)\n2\n=\n6.\n∥v∥ \n2\n =(1) \n2\n +(−2) \n2\n +(1) \n2\n =6.\n\nThe projection of $\\mathbf{u}$ onto $\\mathbf{v}$ is then:\n\nproj\nv\nu\n=\n−\n3\n−\n2\ny\n6\n(\n1\n−\n2\n1\n \n)\n.\nproj \nv\n​\t\n u= \n6\n−3−2y\n​\t\n  \n⎝\n⎛\n​\t\n  \n1\n−2\n1\n​\t\n  \n⎠\n⎞\n​\t\n .\n\nGiven that this is equal to $\\frac{5}{6} \\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}$, we can equate the coefficients:\n\n−\n3\n−\n2\ny\n6\n=\n5\n6\n.\n6\n−3−2y\n​\t\n = \n6\n5\n​\t\n .\n\nSolving this equation for $y$ gives:\n\n−\n3\n−\n2\ny\n=\n5.\n−3−2y=5.\n−\n2\ny\n=\n8.\n−2y=8.\ny\n=\n−\n4.\ny=−4.\n\nSo, the value of $y$ that makes the projection of $\\begin{pmatrix} 2 \\ y \\ -5 \\end{pmatrix}$ onto $\\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}$ equal to $\\frac{5}{6} \\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}$ is $-4$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: The projection of $\\begin{pmatrix} 2 \\\\ y \\\\ -5 \\end{pmatrix}$ onto $\\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}$ is\n\\[\\frac{\\begin{pmatrix} 2 \\\\ y \\\\ -5 \\end{pmatrix} \\cdot \\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}}{\\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix} \\cdot \\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}} \\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix} = \\frac{-2y - 3}{6} \\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}.\\]Then $-2y - 3 = 5,$ so $y = \\boxed{-4}.$",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex34 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "If $\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = -8,$ then find\n\\[\\begin{vmatrix} b & a \\\\ d & c \\end{vmatrix}.\\]",
+        "output": "We know that interchanging the rows of a determinant changes its sign. Therefore, if $\\begin{vmatrix} a & b \\ c & d \\end{vmatrix} = -8,$ then interchanging the rows, we have\n∣\nc\nd\na\nb\n \n∣\n=\n−\n(\n−\n8\n)\n=\n8.\n∣\n∣\n​\t\n  \nc\na\n​\t\n  \nd\nb\n​\t\n  \n∣\n∣\n​\t\n =−(−8)=8.Now, let's interchange the columns of the determinant $\\begin{vmatrix} c & d \\ a & b \\end{vmatrix}$ to get\n∣\nd\nc\nb\na\n \n∣\n.\n∣\n∣\n​\t\n  \nd\nb\n​\t\n  \nc\na\n​\t\n  \n∣\n∣\n​\t\n .This doesn't change the value of the determinant. Hence, we have\n∣\nd\nc\nb\na\n \n∣\n=\n8.\n∣\n∣\n​\t\n  \nd\nb\n​\t\n  \nc\na\n​\t\n  \n∣\n∣\n​\t\n =8.Therefore, $\\begin{vmatrix} b & a \\ d & c \\end{vmatrix} = \\boxed{8}.$",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: Since $\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = -8,$ $ad - bc = -8.$  Then\n\\[\\begin{vmatrix} b & a \\\\ d & c \\end{vmatrix} = bc - ad = \\boxed{8}.\\](Why does this make sense geometrically?)",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex109 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Let $u,$ $v,$ $w$ be the roots of $z^3 = 1.$  Find $uv + uw + vw.$",
+        "output": "The roots of $z^3 = 1$ are complex roots of unity and can be expressed as $1$, $w$, and $w^2$, where $w = e^{2\\pi i/3}$ is a primitive third root of unity.\n\nWe are asked to find the sum of the products of pairs of roots, which is equal to $uw + uv + vw = (1)(w) + (1)(w^2) + (w)(w^2) = w + w^2 + w^3$.\n\nHowever, we know that $w^3 = 1$, so this simplifies to $w + w^2 + 1$.\n\nThe complex number $w$ can be expressed in rectangular form as $-1/2 + \\sqrt{3}/2 \\cdot i$.\n\nSo, $w^2$ is $(-1/2 + \\sqrt{3}/2 \\cdot i)^2 = 1/4 - 1/2 \\cdot i\\sqrt{3} - 3/4 = -1/2 - 1/2 \\cdot i\\sqrt{3}$.\n\nAdding these values together, we have $w + w^2 + 1 = (-1/2 + \\sqrt{3}/2 \\cdot i) + (-1/2 - 1/2 \\cdot i\\sqrt{3}) + 1 = 0$.\n\nTherefore, the sum $uv + uw + vw = 0$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: By Vieta's formulas, $uv + uw + vw = \\boxed{0}.$",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex126 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Let $\\mathbf{a} = \\begin{pmatrix} 4 \\\\ \\sqrt{\\pi} \\\\ -14 \\end{pmatrix}$ and $\\mathbf{b} = \\begin{pmatrix} -1 \\\\ 3 \\\\ 10 \\end{pmatrix}.$  Compute $\\mathbf{a} \\cdot (\\mathbf{a} \\times \\mathbf{b}).$",
+        "output": "The quantity $\\mathbf{a} \\cdot (\\mathbf{a} \\times \\mathbf{b})$ is a scalar triple product. One property of the scalar triple product is that it equals zero when the three vectors are coplanar.\n\nHowever, there is an even more direct approach to this problem. The scalar triple product is equivalent to the determinant of the 3x3 matrix formed by placing the vectors $\\mathbf{a}$, $\\mathbf{a}$, and $\\mathbf{b}$ as the rows (or columns) of the matrix:\n\na\n⋅\n(\na\n×\nb\n)\n=\n∣\na\na\nb\n \n∣\n.\na⋅(a×b)= \n∣\n∣\n​\t\n  \na\na\nb\n​\t\n  \n∣\n∣\n​\t\n .\n\nSince the first two rows of the matrix are identical, the determinant of this matrix is zero. Therefore,\n\na\n⋅\n(\na\n×\nb\n)\n=\n0.\na⋅(a×b)=0.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: The vectors $\\mathbf{a}$ and $\\mathbf{a} \\times \\mathbf{b}$ are always orthogonal, so their dot product is $\\boxed{0}.$",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex24 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    }
+]

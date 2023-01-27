@@ -1,0 +1,319 @@
+[
+    {
+        "prompt": "Evaluate\n\\[\\begin{vmatrix} 0 & b - a & c - a \\\\ a - b & 0 & c - b \\\\ a - c & b - c & 0 \\end{vmatrix}.\\]",
+        "output": "This is the determinant of a 3x3 matrix. The determinant is computed by taking the sum of the product of each element in the first row and its corresponding minor, multiplied by -1 to the power of the sum of its row and column indices. In this case, the determinant is:\n\n[(0)(-1)^{0+0}(b-c)(-1)^{1+1}(a-c)(-1)^{2+2} + (b-a)(-1)^{0+1}(0)(-1)^{1+2}(a-c)(-1)^{2+0} + (c-a)(-1)^{0+2}(a-b)(-1)^{1+0}(0)(-1)^{2+1}]\n\nwhich simplifies to:\n\n[-(b-c)(a-c)(a-b) + (b-a)(a-c)(c-b) + (c-a)(b-c)(a-b)]\n\nSince this is a scalar it is equal to zero, so the determinant is equal to 0.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: We can expand the determinant as follows:\n\\begin{align*}\n\\begin{vmatrix} 0 & b - a & c - a \\\\ a - b & 0 & c - b \\\\ a - c & b - c & 0 \\end{vmatrix} &= -(b - a) \\begin{vmatrix} a - b & c - b \\\\ a - c & 0 \\end{vmatrix} + (c - a) \\begin{vmatrix} a - b & 0 \\\\ a - c & b - c \\end{vmatrix} \\\\\n&= -(b - a)(-(c - b)(a - c)) + (c - a)(a - b)(b - c) \\\\\n&= \\boxed{0}.\n\\end{align*}",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex19 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "Below is the graph of $y = a \\sin (bx + c)$ for some positive constants $a,$ $b,$ and $c.$  Find $a.$\n\n[asy]import TrigMacros;\n\nsize(300);\n\nreal f(real x)\n{\n\treturn 2*sin(4*x + pi/2);\n}\n\ndraw(graph(f,-pi,pi,n=700,join=operator ..),red);\ntrig_axes(-pi,pi,-3,3,pi/2,1);\nlayer();\nrm_trig_labels(-2,2, 2);\n\nlabel(\"$1$\", (0,1), E);\nlabel(\"$2$\", (0,2), E);\nlabel(\"$-1$\", (0,-1), E);\nlabel(\"$-2$\", (0,-2), E);\n[/asy]",
+        "output": "The graph oscillates between 2 and -2. The amplitude of the function is the maximum value minus the minimum value, which is $2-(-2) = 4$. The amplitude of the given function is a, so $a = 4$",
+        "rating": "3",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: The maximum value of $a \\sin (bx + c)$ is $a,$ so $a = \\boxed{2}.$",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex30 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "Compute $e^{\\pi i}.$",
+        "output": "e^(πi) = cos(π) + i sin(π) = -1 + i(0) = -1.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: We have that $e^{\\pi i} = \\cos \\pi + i \\sin \\pi = \\boxed{-1}.$",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex31 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "A curve is parameterized by\n\\[(x,y) = (t^3 + 7, -3t^2 - 6t - 5).\\]Find the point the curve passes through at $t = 2.$",
+        "output": "To find the point the curve passes through at $t = 2$, we substitute $t = 2$ into the parameterization:\n\n$(x,y) = (t^3 + 7, -3t^2 - 6t - 5)$\n\nSo when $t = 2$,\n\n$(x,y) = (2^3 + 7, -3(2)^2 - 6(2) - 5) = (11, -11)$\n\nTherefore, the curve passes through the point $(11, -11)$ at $t = 2$.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: At $t = 2,$ $(x,y) = (2^3 + 7, -3 \\cdot 2^2 - 6 \\cdot 2 - 5) = \\boxed{(15,-29)}.$",
+        "msc": [
+            "11A05"
+        ],
+        "ref": "MATH_dataset precalculus ex43 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "Compute\n\\[\\begin{vmatrix} 0 & 1 \\\\ 3 & 5 \\end{vmatrix}.\\]",
+        "output": "The determinant of the matrix is\n\n[\\begin{vmatrix} 0 & 1 \\ 3 & 5 end{vmatrix} = 05 - 13 = -3.]\n\nSo the result is -3.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: We have that\n\\[\\begin{vmatrix} 0 & 1 \\\\ 3 & 5 \\end{vmatrix} = (0)(5) - (1)(3) = \\boxed{-3}.\\]",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex56 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "If $\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = -8,$ then find\n\\[\\begin{vmatrix} b & a \\\\ d & c \\end{vmatrix}.\\]",
+        "output": "The determinant of a matrix is only changed by multiplying by -1 when the rows are switched. Therefore,\n\n$\\begin{vmatrix} b & a \\ d & c end{vmatrix}$ = -$\\begin{vmatrix} a & b \\ c & d end{vmatrix}$ = -(-8) = 8.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: Since $\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = -8,$ $ad - bc = -8.$  Then\n\\[\\begin{vmatrix} b & a \\\\ d & c \\end{vmatrix} = bc - ad = \\boxed{8}.\\](Why does this make sense geometrically?)",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex109 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "Let $u,$ $v,$ $w$ be the roots of $z^3 = 1.$  Find $uv + uw + vw.$",
+        "output": "If $u, v, w$ are the roots of $z^3 = 1$, then $uvw = 1$ since the product of the roots is the constant term of the polynomial. Thus\n[uv + uw + vw = u(v + w) + vw = u + vw = u + \\frac{1}{u} = \\frac{u^2 + 1}{u}.]\nSince $u^3 = 1$, then $u^3 - 1 = 0$ and so $u^2 + 1 = 0$, therefore $uv + uw + vw = \\frac{u^2 + 1}{u}=\\frac{0}{u}=0$",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: By Vieta's formulas, $uv + uw + vw = \\boxed{0}.$",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex126 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "Find the mid-point of the line segment with end-points $(7,-3,2)$ and $(4,1,0).$",
+        "output": "The midpoint of a line segment is given by the average of the coordinates of the endpoints. Therefore, the midpoint of the line segment with endpoints $(7,-3,2)$ and $(4,1,0)$ is given by the average of these coordinates:\n\n$\\frac{(7+4,-3+1,2+0)}{2} = (\\frac{11}{2},-2,1)$\n\nThe midpoint is $(\\frac{11}{2},-2,1)$",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: To find the mid-point, we take the average of the coordinates, which works out to\n\\[\\left( \\frac{7 + 4}{2}, \\frac{-3 + 1}{2}, \\frac{2 + 0}{2} \\right) = \\boxed{\\left( \\frac{11}{2}, -1, 1 \\right)}.\\]",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex183 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "If $\\det \\mathbf{A} = -7$ and $\\det \\mathbf{B} = 3,$ then find $\\det (\\mathbf{B} \\mathbf{A}).$",
+        "output": "The determinant of a matrix product is the product of the determinants of the individual matrices. In this case, $det (mathbf{B} mathbf{A}) = det mathbf{B} det mathbf{A} = 3 cdot -7 = -21$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: We have that $\\det (\\mathbf{B} \\mathbf{A}) = (\\det \\mathbf{B})(\\det \\mathbf{A}) = (3)(-7) = \\boxed{-21}.$",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex192 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "Simplify $\\frac{\\csc \\theta}{\\sin \\theta} - \\frac{\\cot \\theta}{\\tan \\theta}.$",
+        "output": "$\\frac{csc \\theta}{sin \\theta} - \\frac{cot \\theta}{\\tan \\theta} = \\frac{1}{sin \\theta} - \\frac{cot \\theta}{\\frac{sin \\theta}{cos \\theta}} = \\frac{1}{sin \\theta} - \\frac{cot \\theta}{\\frac{sin^2 \\theta}{cos \\theta}} = \\frac{1}{sin \\theta} - \\frac{cot \\theta}{\\frac{1}{cos \\theta}} = \\frac{1}{sin \\theta} - \\frac{\\frac{cos \\theta}{sin \\theta}}{\\frac{1}{cos \\theta}} = \\frac{1}{sin \\theta} - \\frac{cos \\theta}{sin \\theta} = \\frac{sin \\theta - cos \\theta}{sin \\theta} = \\frac{sin \\theta}{sin \\theta} - \\frac{cos \\theta}{sin \\theta} = 1 - csc \\theta cot \\theta$",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: We have that\n\\begin{align*}\n\\frac{\\csc \\theta}{\\sin \\theta} - \\frac{\\cot \\theta}{\\tan \\theta} &= \\frac{1/\\sin \\theta}{\\sin \\theta} - \\frac{\\cos \\theta/\\sin \\theta}{\\sin \\theta/\\cos \\theta} \\\\\n&= \\frac{1}{\\sin^2 \\theta} - \\frac{\\cos^2 \\theta}{\\sin^2 \\theta} \\\\\n&= \\frac{1 - \\cos^2 \\theta}{\\sin^2 \\theta} = \\frac{\\sin^2 \\theta}{\\sin^2 \\theta} = \\boxed{1}.\n\\end{align*}",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex201 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "Compute\n\\[\\begin{pmatrix} 3 & 1 & 0 \\\\ -7 & 4 & 2 \\\\ 0 & 5 & -1 \\end{pmatrix} \\begin{pmatrix} 4 \\\\ -1 \\\\ -2 \\end{pmatrix}.\\]",
+        "output": "[\\begin{pmatrix} 3 & 1 & 0 \\ -7 & 4 & 2 \\ 0 & 5 & -1 \\end{pmatrix} \\begin{pmatrix} 4 \\ -1 \\ -2 \\end{pmatrix} = \\begin{pmatrix} 12 \\ -12 \\ -9 \\end{pmatrix}]",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "Level_2 \nOfficial solution: We have that\n\\[\\begin{pmatrix} 3 & 1 & 0 \\\\ -7 & 4 & 2 \\\\ 0 & 5 & -1 \\end{pmatrix} \\begin{pmatrix} 4 \\\\ -1 \\\\ -2 \\end{pmatrix} = \\begin{pmatrix} (3)(4) + (1)(-1) + (0)(-2) \\\\ (-7)(4) + (4)(-1) + (2)(-2) \\\\ (0)(4) + (5)(-1) + (-1)(-2) \\end{pmatrix} = \\boxed{\\begin{pmatrix} 11 \\\\ -36 \\\\ -3 \\end{pmatrix}}.\\]",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex12 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "When $-24 + 7i$ is converted to the exponential form $re^{i \\theta}$, what is $\\cos \\theta$?",
+        "output": "To convert $-24 + 7i$ to the exponential form $re^{i\\theta}$, we first find the magnitude, $r$, and the argument, $\\theta$, of the complex number. The magnitude is given by the square root of the sum of the squares of the real and imaginary parts:\n\n$r = sqrt{(-24)^2 + (7)^2} = 25$\n\nThe argument, $\\theta$, is given by the arctangent of the ratio of the imaginary part to the real part:\n\n$\\theta = arctan{\\frac{7}{-24}} = -0.24497866$\n\nSo, $-24 + 7i = 25e^{i(-0.24497866)}$\n\nAnd, $cos \\theta = cos(-0.24497866) = -0.97315463$",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: We see that $r = \\sqrt{(-24)^2 + 7^2} = \\sqrt{625} = 25$, so\n\\[-24 + 7i = 25 \\left( -\\frac{24}{25} + \\frac{7}{25} i \\right) = 25 e^{i \\theta}\\]for some angle $\\theta$.  Hence, $\\cos \\theta = \\boxed{-\\frac{24}{25}}$.",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex23 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "Let $\\mathbf{a} = \\begin{pmatrix} 4 \\\\ \\sqrt{\\pi} \\\\ -14 \\end{pmatrix}$ and $\\mathbf{b} = \\begin{pmatrix} -1 \\\\ 3 \\\\ 10 \\end{pmatrix}.$  Compute $\\mathbf{a} \\cdot (\\mathbf{a} \\times \\mathbf{b}).$",
+        "output": "The vector triple product of $mathbf{a}$, $mathbf{b}$, and $mathbf{c}$ is defined as $mathbf{a} cdot (mathbf{b} \\times mathbf{c})$.\n\nThe vector cross product of $mathbf{b}$ and $mathbf{c}$ is $mathbf{b} \\times mathbf{c} = \\begin{pmatrix}(3)(-14) - (-1)(sqrt{pi})\\(-1)(-14) - (10)(4)\\(10)(sqrt{pi}) - (3)(4)\\end{pmatrix} = \\begin{pmatrix} -42 - sqrt{pi}\\ -40 + 4sqrt{pi} \\ -12sqrt{pi} + 12 \\end{pmatrix}$\n\nSo, $mathbf{a} cdot (mathbf{b} \\times mathbf{c}) = \\begin{pmatrix} 4 \\ sqrt{pi} \\ -14 \\end{pmatrix} \\cdot \\begin{pmatrix} -42 - sqrt{pi}\\ -40 + 4sqrt{pi} \\ -12sqrt{pi} + 12 \\end{pmatrix} = (4)(-42 - sqrt{pi}) + (sqrt{pi})(-40 + 4sqrt{pi}) + (-14)(-12sqrt{pi} + 12) = -168 - 4sqrt{pi} + 4pi - 56sqrt{pi} + 168 = \\boxed{0}$",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: The vectors $\\mathbf{a}$ and $\\mathbf{a} \\times \\mathbf{b}$ are always orthogonal, so their dot product is $\\boxed{0}.$",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex24 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "The projection of $\\begin{pmatrix} 2 \\\\ y \\\\ -5 \\end{pmatrix}$ onto $\\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}$ is\n\\[\\frac{5}{6} \\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}.\\]Find $y.$",
+        "output": "To find the projection of a vector onto another vector, we can use the formula:\n$operatorname{proj}_{mathbf{u}} mathbf{v} = \\frac{mathbf{v} cdot mathbf{u}}{|mathbf{u}|^2} mathbf{u}$\n\nGiven the projection of $\\begin{pmatrix} 2 \\ y \\ -5 \\end{pmatrix}$ onto $\\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}$ is $\\frac{5}{6} \\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}$, we can substitute and solve for y:\n\n$\\frac{5}{6} \\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix} = \\frac{\\begin{pmatrix} 2 \\ y \\ -5 \\end{pmatrix} cdot \\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}}{|\\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}|^2} \\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}$\n\n$\\frac{5}{6} = \\frac{2 - 4y + (-5)}{6}$\n\n$y = -\\frac{1}{2}$",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: The projection of $\\begin{pmatrix} 2 \\\\ y \\\\ -5 \\end{pmatrix}$ onto $\\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}$ is\n\\[\\frac{\\begin{pmatrix} 2 \\\\ y \\\\ -5 \\end{pmatrix} \\cdot \\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}}{\\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix} \\cdot \\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}} \\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix} = \\frac{-2y - 3}{6} \\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}.\\]Then $-2y - 3 = 5,$ so $y = \\boxed{-4}.$",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex34 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "Find all values of $x,$ $0 \\le x \\le 2 \\pi,$ which satisfy\n\\[\\sin^2 x + \\cos x + 1 = 0.\\]Enter all the solutions, separated by commas.",
+        "output": "The given equation can be rewritten as $sin^2 x + cos x + 1 = (sin x + 1)(sin x + cos x) = 0$. Thus, the solutions are $x = arcsin(-1) + 2npi$ and $x = arccos(-1) + 2npi$, where $n$ is an integer. The values of $x$ between $0$ and $2pi$ are:\n\n$arcsin(-1) + 2npi = \\frac{3pi}{2} + 2npi$\n$arccos(-1) + 2npi = \\frac{pi}{2} + 2npi$\n\nSo the solutions are $\\frac{3pi}{2} + 2npi$ and $\\frac{pi}{2} + 2npi$ where $n$ is an integer.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: Since $\\sin^2 x = 1 - \\cos^2 x,$ we get\n\\[1 - \\cos^2 x + \\cos x + 1 = 0.\\]Then $\\cos^2 x - \\cos x - 2 = 0,$ which factors as $(\\cos x - 2)(\\cos x + 1) = 0.$  Since $-1 \\le \\cos x \\le 1,$ the only possible value of $\\cos x = -1.$  The only solution in the range $0 \\le x \\le 2 \\pi$ is $x = \\boxed{\\pi}.$",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex35 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "Let $\\mathbf{a}$ be a unit vector.  Compute\n\\[\\|\\mathbf{a} \\times \\mathbf{i}\\|^2 + \\|\\mathbf{a} \\times \\mathbf{j}\\|^2 + \\|\\mathbf{a} \\times \\mathbf{k}\\|^2.\\]",
+        "output": "The cross product of two vectors is a vector that is orthogonal to both of the original vectors. Since $mathbf{i}, mathbf{j},$ and $mathbf{k}$ are mutually orthogonal unit vectors, the vectors $mathbf{a} \\times mathbf{i}, mathbf{a} \\times mathbf{j},$ and $mathbf{a} \\times mathbf{k}$ are also mutually orthogonal unit vectors. Therefore, the sum of the squares of their magnitudes is simply the number of vectors squared:\n\n∥\na\n×\ni\n∥\n2\n+\n∥\na\n×\nj\n∥\n2\n+\n∥\na\n×\nk\n∥\n2\n=\n1\n2\n+\n1\n2\n+\n1\n2\n=\n3\n  \n∥a×i∥ \n2\n +∥a×j∥ \n2\n +∥a×k∥ \n2\n \n\t\n  \n=1 \n2\n +1 \n2\n +1 \n2\n \n=3\n\t\n ",
+        "rating": "3",
+        "errorcodes": [
+            "e3",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: Let $\\mathbf{a} = \\begin{pmatrix} x \\\\ y \\\\ z \\end{pmatrix}.$  Since $\\mathbf{a}$ is a unit vector, $x^2 + y^2 + z^2 = 1.$\n\nAlso,\n\\[\\|\\mathbf{a} \\times \\mathbf{i}\\|^2 = \\left\\| \\begin{pmatrix} x \\\\ y \\\\ z \\end{pmatrix} \\times \\begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\end{pmatrix} \\right\\|^2 = \\left\\| \\begin{pmatrix} 0 \\\\ z \\\\ -y \\end{pmatrix} \\right\\|^2 = y^2 + z^2.\\]Similarly,\n\\[\\|\\mathbf{a} \\times \\mathbf{j}\\|^2 = \\left\\| \\begin{pmatrix} x \\\\ y \\\\ z \\end{pmatrix} \\times \\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix} \\right\\|^2 = \\left\\| \\begin{pmatrix} -z \\\\ 0 \\\\ x \\end{pmatrix} \\right\\|^2 = x^2 + z^2,\\]and\n\\[\\|\\mathbf{a} \\times \\mathbf{k}\\|^2 = \\left\\| \\begin{pmatrix} x \\\\ y \\\\ z \\end{pmatrix} \\times \\begin{pmatrix} 0 \\\\ 0 \\\\ 1 \\end{pmatrix} \\right\\|^2 = \\left\\| \\begin{pmatrix} y \\\\ -x \\\\ 0 \\end{pmatrix} \\right\\|^2 = x^2 + y^2.\\]Therefore,\n\\begin{align*}\n\\|\\mathbf{a} \\times \\mathbf{i}\\|^2 + \\|\\mathbf{a} \\times \\mathbf{j}\\|^2 + \\|\\mathbf{a} \\times \\mathbf{k}\\|^2 &= (y^2 + z^2) + (x^2 + z^2) + (x^ 2 + y^2) \\\\\n&= 2(x^2 + y^2 + z^2) = \\boxed{2}.\n\\end{align*}",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex45 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "If $\\sin^2 \\theta + \\sin \\theta = 1,$ then find $\\cos^4 \\theta + \\cos^2 \\theta.$",
+        "output": "We can start by using the identity $sin^2 \\theta + cos^2 \\theta = 1$.\nSubstituting $1 - cos^2 \\theta$ for $sin^2 \\theta$ in the given equation:\n$(1 - cos^2 \\theta) + sin \\theta = 1$\n$1 - cos^2 \\theta + sin \\theta = 1$\n$cos^2 \\theta + sin \\theta - 1 = 0$\n\nNow, we can use the identity $cos \\theta = sqrt{1-sin^2 \\theta}$\nSquaring both sides of the above equation:\n$cos^4 \\theta + 2 cos^2 \\theta sin \\theta + sin^2 \\theta - 2 cos^2 \\theta + 1 = 0$\n\nSimplifying, we get:\n$cos^4 \\theta + cos^2 \\theta = cos^4 \\theta + cos^2 \\theta$\n\nSo, $cos^4 \\theta + cos^2 \\theta = cos^4 \\theta + cos^2 \\theta$.",
+        "rating": "2",
+        "errorcodes": [
+            "e4",
+            "e5_5"
+        ],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: From $\\sin^2 \\theta + \\sin \\theta = 1,$ $\\sin \\theta = 1 - \\sin^2 \\theta = \\cos^2 \\theta.$  Then $\\cos^4 \\theta = \\sin^2 \\theta,$ so\n\\[\\cos^4 \\theta + \\cos^2 \\theta = \\sin^2 \\theta + \\cos^2 \\theta = \\boxed{1}.\\]",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex77 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "The complex numbers $5 + 10i,$ $7 + 2i,$ and $11 + 3i$ are three vertices of a rectangle.  Find the fourth vertex.",
+        "output": "The fourth vertex of a rectangle is the one that is diagonally opposite of a given vertex. The complex number $5 + 10i$ and $11 + 3i$ are diagonally opposite, since they add to the same complex number $(5 + 10i) + (11 + 3i) = 16 + 13i$. Thus, the fourth vertex is $11 + 3i$.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: Let $a = 5 + 10i,$ $b = 7 + 2i,$ and $c = 11 + 3i.$  Let $d$ be the fourth vertex.\n\nNote that\n\\[c - b = 4 + i\\]and\n\\[a - b = -2 + 8i = 2i(4 +i) = 2i(c - b).\\]Thus, the angle between the segment joining $a$ and $b$ and the segment joining $b$ and $c$ is $90^\\circ.$\n\n[asy]\nunitsize(0.5 cm);\n\npair A, B, C, D;\n\nA = (5,10);\nB = (7,2);\nC = (11,3);\nD = (9,11);\n\ndraw(A--B--C--D--cycle);\ndraw(A--C,dashed);\ndraw(B--D,dashed);\n\ndot(\"$a = 5 + 10i$\", A, W);\ndot(\"$b = 7 + 2i$\", B, S);\ndot(\"$c = 11 + 3i$\", C, E);\ndot(\"$d = 9 + 11i$\", D, N);\ndot((A + C)/2);\n[/asy]\n\nAs a rectangle, the midpoints of the diagonals coincide.  The midpoint of $a$ and $c$ is\n\\[\\frac{5 + 10i + 11 + 3i}{2} = 8 + \\frac{13}{2} i,\\]so\n\\[d = 2 \\left( 8 + \\frac{13}{2} i \\right) - (7 + 2i) = \\boxed{9 + 11i}.\\]",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex78 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "Find the angle between the vectors $\\begin{pmatrix} 4 \\\\ 4 \\\\ 7 \\end{pmatrix}$ and $\\begin{pmatrix} 1 \\\\ 4 \\\\ 1 \\end{pmatrix},$ in degrees.",
+        "output": "To find the angle between two vectors, we can use the dot product formula:\n$cos(\\theta) = \\frac{vec{u} cdot vec{v}}{|vec{u}| |vec{v}|}$, where $\\theta$ is the angle between the vectors $vec{u}$ and $vec{v}$, and $|vec{u}|$ and $|vec{v}|$ are the magnitudes of the vectors.\n\nSo,\n$cos(\\theta) = \\frac{\\begin{pmatrix} 4 \\ 4 \\ 7 \\end{pmatrix} cdot \\begin{pmatrix} 1 \\ 4 \\ 1 \\end{pmatrix}}{|\\begin{pmatrix} 4 \\ 4 \\ 7 \\end{pmatrix}| |\\begin{pmatrix} 1 \\ 4 \\ 1 \\end{pmatrix}|} = \\frac{4 + 16 + 7}{sqrt{4^2 + 4^2 + 7^2} sqrt{1^2 + 4^2 + 1^2}} = \\frac{27}{sqrt{85} sqrt{26}}$\n\nAnd we can find the angle in degrees by using:\n$\\theta = arccos(cos(\\theta)) * 180/pi$\n\n$\\theta = arccosleft(\\frac{27}{sqrt{85} sqrt{26}}\\right) * 180/pi$\n\nwhich gives us\n$\\theta approx 51.34$ degrees",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: If $\\theta$ is the angle between the vectors, then\n\\[\\cos \\theta = \\frac{\\begin{pmatrix} 4 \\\\ 4 \\\\ 7 \\end{pmatrix} \\cdot \\begin{pmatrix} 1 \\\\ 4 \\\\ 1 \\end{pmatrix}}{\\left\\| \\begin{pmatrix} 4 \\\\ 4 \\\\ 7 \\end{pmatrix} \\right\\| \\left\\| \\begin{pmatrix} 1 \\\\ 4 \\\\ 1 \\end{pmatrix} \\right\\|} = \\frac{(4)(1) + (4)(4) + (7)(1)}{9 \\cdot \\sqrt{18}} = \\frac{27}{27 \\sqrt{2}} = \\frac{1}{\\sqrt{2}}.\\]Hence, $\\theta = \\boxed{45^\\circ}.$",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex80 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    },
+    {
+        "prompt": "The points $(0,0,0),$ $(a,1,1),$ $(1,b,1),$ and $(1,1,c)$ are coplanar, where $a \\neq 1,$ $b \\neq 1,$ and $c \\neq 1.$  Compute\n\\[\\frac{1}{1 - a} + \\frac{1}{1 - b} + \\frac{1}{1 - c}.\\]",
+        "output": "The four points $(0,0,0),$ $(a,1,1),$ $(1,b,1),$ and $(1,1,c)$ are coplanar if and only if the determinant of the matrix whose rows are their coordinates is zero. The determinant is\\begin{vmatrix} 1 & 1 & 1 \\-a & 0 & 0 \\ 0 & -b & 0 \\0 & 0 & -c\\end{vmatrix} = (1)(-b)(-c) + (0)(0)(-c) + (0)(-b)(1) + (-a)(0)(0) = -bc + ab\n\nSo the equation for the plane is $-x+ay+bz = ab - bc = 0$\n\nThe equation for the plane is in the form $ax+by+cz = d$ where $d = ab-bc$\n\nSo $-x+ay+bz = 0$\n\nThe normal vector of the plane is $(-1, a, b)$, which means the equation of the plane can also be written as\n\n$\\frac{x}{1} = \\frac{y}{a} = \\frac{z}{b} = d$\n\nSo the answer is $\\frac{1}{1} + \\frac{1}{a} + \\frac{1}{b} = \\frac{1}{1-a} + \\frac{1}{1-b} + \\frac{1}{1-c}$",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Level_2 \nOfficial solution: The normal vector to the plane will be orthogonal to both\n\\[\\begin{pmatrix} a \\\\ 1 \\\\ 1 \\end{pmatrix} - \\begin{pmatrix} 1 \\\\ b \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} a - 1 \\\\ 1 - b \\\\ 0 \\end{pmatrix}\\]and\n\\[\\begin{pmatrix} a \\\\ 1 \\\\ 1 \\end{pmatrix} - \\begin{pmatrix} 1 \\\\ 1 \\\\ c \\end{pmatrix} = \\begin{pmatrix} a - 1 \\\\ 0 \\\\ 1 - c \\end{pmatrix}.\\]Their cross product is\n\\[\\begin{pmatrix} a - 1 \\\\ 1 - b \\\\ 0 \\end{pmatrix} \\times \\begin{pmatrix} a - 1 \\\\ 0 \\\\ 1 - c \\end{pmatrix} = \\begin{pmatrix} (b - 1)(c - 1) \\\\ (a - 1)(c - 1) \\\\ (a - 1)(b - 1) \\end{pmatrix}.\\]By scaling, we can take $\\begin{pmatrix} 1/(1 - a) \\\\ 1/(1 - b) \\\\ 1/(1 - c) \\end{pmatrix}$ as the normal vector.  Since the plane passes through $(0,0,0),$ the equation of the plane is\n\\[\\frac{x}{1 - a} + \\frac{y}{1 - b} + \\frac{z}{1 - c} = 0.\\]Since the plane passes through $(a,1,1),$\n\\[\\frac{a}{1 - a} + \\frac{1}{1 - b} + \\frac{1}{1 - c} = 0.\\]Adding 1 to both sides, we get\n\\[\\frac{a}{1 - a} + 1 + \\frac{1}{1 - b} + \\frac{1}{1 - c} = 1,\\]so\n\\[\\frac{1}{1 - a} + \\frac{1}{1 - b} + \\frac{1}{1 - c} = \\boxed{1}.\\]",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex83 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-01-21"
+    }
+]

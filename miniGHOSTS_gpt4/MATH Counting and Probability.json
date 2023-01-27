@@ -1,0 +1,157 @@
+[
+    {
+        "prompt": "Given that $\\binom{15}{8}=6435$, $\\binom{16}{9}=11440$, and $\\binom{16}{10}=8008$, find $\\binom{15}{10}$.",
+        "output": "Using Pascal's identity, we know that:\n\n$\\binom{n}{k} = \\binom{n-1}{k-1} + \\binom{n-1}{k}$\n\nPlugging in the given values, we want to find $\\binom{15}{10}$, so we can rewrite Pascal's identity as:\n\n$\\binom{15}{10} = \\binom{14}{9} + \\binom{14}{10}$\n\nWe are given $\\binom{16}{9}=11440$ and $\\binom{16}{10}=8008$, so we can apply Pascal's identity again for both of these values:\n\n$\\binom{16}{9} = \\binom{15}{8} + \\binom{15}{9}$, which gives us:\n\n$\\binom{15}{9} = \\binom{16}{9} - \\binom{15}{8} = 11440 - 6435 = 5005$\n\n$\\binom{16}{10} = \\binom{15}{9} + \\binom{15}{10}$, which gives us:\n\n$\\binom{15}{10} = \\binom{16}{10} - \\binom{15}{9} = 8008 - 5005 = 3003$\n\nSo, $\\binom{15}{10} = 3003$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Official solution: We can use Pascal's identity $ \\binom{n-1}{k-1}+\\binom{n-1}{k}=\\binom{n}{k}$ to find $\\binom{15}{9}$.\n\n\\begin{align*}\n\\binom{15}{8}+\\binom{15}{9}&=\\binom{16}{9} \\rightarrow \\\\\n6435+\\binom{15}{9}&=11440 \\rightarrow \\\\\n\\binom{15}{9}&=5005\n\\end{align*}\n\nWe can use the identity again to find $\\binom{15}{10}$.\n\n\\begin{align*}\n\\binom{15}{9}+\\binom{15}{10}&=\\binom{16}{10} \\rightarrow \\\\\n5005+\\binom{15}{10}&=8008 \\rightarrow \\\\\n\\binom{15}{10}&=3003\n\\end{align*}\n\nTherefore, $\\binom{15}{10}=\\boxed{3003}$.",
+        "msc": [
+            "60C05",
+            "12E30"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Counting & Probability Level 2",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "How many ways are there to divide 12 people into a group of 3, a group of 4, and a group of 5, if Henry has to be in the group of 4?",
+        "output": "If Henry has to be in the group of 4, you are left with dividing the remaining 11 people into groups of 3 and 5. To do this, you will use combinations.\n\nA combination formula is written as C(n, k) and can be calculated using the following formula:\n\nC(n, k) = n! / (k!(n-k)!)\n\nwhere n is the total number of elements, k is the number of elements you want to choose, and ! denotes a factorial.\n\nFirst, you will select 3 people from the 11 remaining people (excluding Henry) to form the group of 3:\n\nC(11, 3) = 11! / (3! * (11-3)!)\nC(11, 3) = 11! / (3! * 8!)\nC(11, 3) = 39916800 / (6 * 40320)\nC(11, 3) = 39916800 / 241920\nC(11, 3) = 165\n\nNext, you will select 5 people from the remaining 8 to form the group of 5:\n\nC(8, 5) = 8! / (5! * (8-5)!)\nC(8, 5) = 8! / (5! * 3!)\nC(8, 5) = 40320 / (120 * 6)\nC(8, 5) = 40320 / 720\nC(8, 5) = 56\n\nHowever, since the groups are already defined by their size, you don't need to consider the different ways of forming the groups of 4 and 5, so you only need the combinations for the group of 3.\n\nThus, there are 165 different ways to divide the 12 people into a group of 3, a group of 4 with Henry, and a group of 5.\n\n",
+        "rating": "4",
+        "errorcodes": [
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "Official solution: If Henry is in the group of 4, there are $\\binom{11}{3}=165$ ways to choose the other people in the group of 4. Then there are $\\binom{8}{3}=56$ ways to choose the group of 3, and the group of 5 is made up of the remaining people. The total number of valid ways to divide the people into groups is $165\\cdot 56=\\boxed{9240}$.",
+        "msc": [
+            "60C05"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Counting & Probability Level 4",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "At a school, all 60 students play on at least one of three teams: Basketball, Soccer, and Mathletics. 8 students play all three sports, half the students play basketball, and the ratio of the size of the math team to the size of the basketball team to the size of the soccer team is $4:3:2$. How many students at the school play on exactly two teams?",
+        "output": "\n\n\nLet's denote the number of students in each team as follows:\n\nB: the number of students on the basketball team\nS: the number of students on the soccer team\nM: the number of students on the math team\n\nWe're given that half the students play basketball, so B = 30 (half of 60).\n\nWe are also given the ratio of the size of the math team to the size of the basketball team to the size of the soccer team is 4:3:2. We can express this as follows:\nM/B = 4/3 and S/B = 2/3.\n\nNow we can find the number of students on the soccer and math teams:\nM = (4/3) * B = (4/3) * 30 = 40\nS = (2/3) * B = (2/3) * 30 = 20\n\nNow let's denote the number of students in each of the following categories:\n\nA: the number of students who play all three sports (given as 8)\nB_only: the number of students who play basketball and exactly one other sport\nS_only: the number of students who play soccer and exactly one other sport\nM_only: the number of students who play math and exactly one other sport\n\nWe know that there are 60 students in total. We can express the total number of students as the sum of the students in each category:\n\n60 = B + S + M - (A + B_only + S_only + M_only)\n\nWe're looking for the number of students who play exactly two sports, which is equal to (B_only + S_only + M_only).\n\nUsing the values we calculated for B, S, and M:\n\n60 = 30 + 20 + 40 - (A + B_only + S_only + M_only)\n60 = 90 - (A + B_only + S_only + M_only)\n\nNow we substitute the given value of A:\n\n60 = 90 - (8 + B_only + S_only + M_only)\n60 = 82 - (B_only + S_only + M_only)\n\nNow we solve for the sum of the students who play exactly two sports:\n\nB_only + S_only + M_only = 82 - 60\nB_only + S_only + M_only = 22\n\nTherefore, 22 students play on exactly two teams.",
+        "rating": "3",
+        "errorcodes": [
+            "e4",
+            "e5_4",
+            "e6"
+        ],
+        "warningcodes": [],
+        "comment": "Official solution: We have enough information to solve for the size of each team. There are $\\dfrac{60}{2}=30$ members of the basketball team, $\\dfrac{4}{3}(30)=40$ members of the math team, and $\\dfrac{2}{3}(30)=20$ members of the soccer team. Adding these up gives us 90, so clearly we're overcounting since there are only 60 students. The number of times that each student is counted in this total is equal to the number of teams that student plays on. This means that all 60 students will be counted at least once, all students who play exactly two sports will be counted one extra time, and all students who play three sports will be counted two extra times. Letting $x$ be the number of students who play two sports and $y$ be the number who play all three gives us $60+x+2y=90$. However, we know that $y=8$, so we can substitute that in and get $x=\\boxed{14}$.",
+        "msc": [
+            "60A05",
+            "60C05"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Counting & Probability Level 5",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "Mr. and Mrs. Lopez have three children.  When they get into their family car, two people sit in the front, and the other three sit in a row in the back.  Either Mr. Lopez or Mrs. Lopez must sit in the driver's seat, and their youngest child is not allowed to sit in the other front seat.  How many seating arrangements are possible?",
+        "output": "Let's break down the possible seating arrangements step by step:\n\nDriver's seat: Either Mr. Lopez or Mrs. Lopez must sit in the driver's seat, so there are 2 possibilities.\n\nFront passenger seat: Since the youngest child is not allowed to sit in the front passenger seat, there are only 2 choices: either the oldest or the middle child. So, there are 2 possibilities for this seat.\n\nBack row seats: There are 3 people left to sit in the 3 seats in the back row. They can be seated in any order. The number of ways to arrange these 3 people is given by the permutation formula:\n\nP(n, r) = n! / (n-r)!, where n is the total number of items and r is the number of items to arrange. In our case, n = 3 and r = 3.\n\nP(3, 3) = 3! / (3-3)!\nP(3, 3) = 3! / 0!\nP(3, 3) = 6 / 1\nP(3, 3) = 6\n\nSo, there are 6 possible seating arrangements for the back row.\n\nTo find the total number of seating arrangements, we multiply the possibilities for each seat:\n\n2 (driver's seat) * 2 (front passenger seat) * 6 (back row seats) = 24 possible seating arrangements.\n\n",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Official solution: There are only two possible occupants for the driver's seat. After the driver is chosen, there are three remaining people who can sit in the other front seat. Then the three remaining people can sit in the back seats in any arrangement. There are three choices of people to sit in the first back seat, two choices of people to sit in the next back seat, and one person to sit in the last back seat. Therefore, there are $2 \\cdot 3 \\cdot 3 \\cdot 2 \\cdot 1 = \\boxed{36}$ possible seating arrangements.",
+        "msc": [
+            "60C05"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Counting & Probability Level 3",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "Determine the number of ways to arrange the letters of the word MISSISSIPPI.",
+        "output": "To determine the number of ways to arrange the letters of the word MISSISSIPPI, we will use the permutation formula for arranging objects with repetitions. The word MISSISSIPPI has 11 letters, with repetitions of M (1), I (4), S (4), and P (2).\n\nThe formula for arranging objects with repetitions is:\n\nP(n; n1, n2, ..., nk) = n! / (n1! * n2! * ... * nk!)\n\nwhere:\n\nn is the total number of objects (in this case, letters)\nn1, n2, ..., nk are the number of repetitions of each distinct object (in this case, the count of each letter)\n! denotes the factorial of a number\n\nIn this case, we have:\n\nn = 11 (total number of letters)\nn1 = 1 (number of M's)\nn2 = 4 (number of I's)\nn3 = 4 (number of S's)\nn4 = 2 (number of P's)\n\nPlug these numbers into the formula:\n\nP(11; 1, 4, 4, 2) = 11! / (1! * 4! * 4! * 2!)\n\nNow, compute the factorials:\n\n11! = 11 * 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 39,916,800\n1! = 1\n4! = 4 * 3 * 2 * 1 = 24\n2! = 2 * 1 = 2\n\nNow, substitute the factorials back into the formula:\n\nP(11; 1, 4, 4, 2) = 39,916,800 / (1 * 24 * 24 * 2) = 39,916,800 / 1,152\n\nDivide the numbers:\n\nP(11; 1, 4, 4, 2) = 34,650\n\nSo, there are 34,650 ways to arrange the letters of the word MISSISSIPPI.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Official solution: First we count the arrangements if all the letters are unique, which is $11!$. Then since the I's, S's and the P's are not unique, we divide by $4!$, $4!$, and $2!$ for the arrangements of I's, S's, and P's, for an answer of $\\dfrac{11!}{4! \\times 4! \\times 2!} = \\boxed{34,\\!650}$.",
+        "msc": [
+            "60C05"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Counting & Probability Level 3",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "Ali, Bonnie, Carlo and Dianna are going to drive together to a nearby theme park.  The car they are using has four seats: one driver's seat, one front passenger seat and two different back seats. Bonnie and Carlo are the only two who can drive the car. How many possible seating arrangements are there?",
+        "output": "Since Bonnie and Carlo are the only two who can drive the car, there are two options for the driver's seat. After the driver is chosen, there are three people left for the front passenger seat. Then, there will be two people left for the first back seat and finally one person for the last back seat.\n\nTo find the total number of seating arrangements, we can use the counting principle and multiply the number of choices for each seat:\n\n2 (driver's seat) * 3 (front passenger seat) * 2 (first back seat) * 1 (second back seat) = 12 seating arrangements.\n\n",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Official solution: There are 2 choices for the driver.  The other three can seat themselves in $3\\times 2 \\times 1 = 6$ different ways. So the number of seating arrangements is $2 \\times 6 =\\boxed{12}$.",
+        "msc": [
+            "60C05"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Counting & Probability Level 2",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "How many prime numbers less than 100 have a units digit of 3?",
+        "output": "To find the prime numbers with a units digit of 3 and less than 100, we can list them out. Note that 1 is not considered a prime number, so we won't include it in the list:\n\n3, 13, 23, 43, 53, 73, and 83.\n\nThere are 7 prime numbers less than 100 with a units digit of 3.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Official solution: We list out all the positive integers less than 100 with a units digit of 3:  3, 13, 23, 33, 43, 53, 63, 73, 83, 93.  Of these, only 33, 63, and 93 are not prime.  Thus our answer is $\\boxed{7}$.",
+        "msc": [
+            "11A63",
+            "11A41"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Counting & Probability Level 2",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "Krishanu and Shaunak each pick an integer at random between 1 and 10, inclusive. What is the probability that the product of their numbers is more than 10? Express your answer as a common fraction.",
+        "output": "To find the probability that the product of the two numbers is more than 10, we can count the number of outcomes that result in a product greater than 10 and divide it by the total number of possible outcomes.\n\nSince Krishanu and Shaunak each pick an integer between 1 and 10 (inclusive), there are a total of 10 x 10 = 100 possible outcomes. Now let's find the number of outcomes with a product greater than 10.\n\nWe can systematically go through the integers and find their products:\n\nIf Krishanu picks 1 or Shaunak picks 1, the product will always be less than or equal to 10.\nIf Krishanu picks 2 or Shaunak picks 2, the product will be greater than 10 only if the other person picks a number greater than 5. There are 4 such numbers (6, 7, 8, 9, and 10), so there are 4 + 4 = 8 outcomes.\nIf Krishanu picks 3 or Shaunak picks 3, the product will be greater than 10 only if the other person picks a number greater than 3. There are 6 such numbers (4, 5, 6, 7, 8, 9, and 10), so there are 6 + 6 = 12 outcomes.\nIf Krishanu picks 4 or Shaunak picks 4, the product will be greater than 10 only if the other person picks a number greater than 2. There are 7 such numbers (3, 4, 5, 6, 7, 8, 9, and 10), so there are 7 + 7 = 14 outcomes.\nIf Krishanu picks 5 or Shaunak picks 5, the product will be greater than 10 only if the other person picks a number greater than 2. There are 7 such numbers (3, 4, 5, 6, 7, 8, 9, and 10), so there are 7 + 7 = 14 outcomes.\nIf both Krishanu and Shaunak pick a number greater than 5 (i.e., 6, 7, 8, 9, or 10), there are 5 x 5 = 25 outcomes.\n\nNow, we need to subtract the duplicate outcomes because we counted some of them twice. There are 5 duplicates (6x4, 6x5, 7x3, 8x2, and 9x2) so subtract 5 from the sum.\n\nSo, the total number of outcomes with a product greater than 10 is: 8 + 12 + 14 + 14 + 25 - 5 = 68.\n\nTherefore, the probability that the product of their numbers is more than 10 is 68/100, which can be simplified to 17/25.\n\n",
+        "rating": "4",
+        "errorcodes": [
+            "e4",
+            "e5_4",
+            "e1"
+        ],
+        "warningcodes": [],
+        "comment": "Official solution: Since 10 is small for a product, we consider the complementary probability, that their product is at most 10. To do this, we count the number of ordered pairs of positive integers $(m,n)$ with $mn\\le10$ ($m$ is Krishanu's number and $n$ is Shaunak's number). If $m=1$, there are 10 such pairs; if $m=2$, there are 5; if $m=3$ there are 3; if $m=4$ or $m=5$, there are 2, and if $m=6,7,8,9,10$ there is 1, for a total of $$10+5+3+2+2+1+1+1+1+1=27$$ordered pairs with product at most 10. The probability one of these is picked is then $27/100$, since there are $10\\cdot10=100$ possible ordered pairs. Therefore, the probability that the product of their numbers is greater than 10 is $1-27/100=\\boxed{\\frac{73}{100}}$.",
+        "msc": [
+            "60C05"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Counting & Probability Level 5",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "How many non-empty subsets of $\\{ 1 , 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 \\}$ consist entirely of prime numbers?  (We form a subset of the group of numbers by choosing some number of them, without regard to order.  So, $\\{1,2,3\\}$ is the same as $\\{3,1,2\\}$.)",
+        "output": "To count the number of non-empty subsets consisting entirely of prime numbers, we first identify the prime numbers within the given set ${ 1 , 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }$. The prime numbers are: ${ 2, 3, 5, 7, 11 }$.\n\nNow, we want to find all the non-empty subsets of this set of prime numbers. To do that, we can use the formula for the number of subsets of a set with $n$ elements, which is $2^n$. However, this formula counts the empty set as well, so we need to subtract one to exclude it. In our case, $n = 5$, so the number of non-empty subsets of the set of prime numbers is:\n\n$2^5 - 1 = 32 - 1 = 31$\n\nThus, there are 31 non-empty subsets of ${ 1 , 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }$ that consist entirely of prime numbers.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Official solution: We consider the subset $\\{ 2, 3, 5, 7, 11 \\}$ which consists only of the prime integers in the original set. Any subset consisting entirely of prime numbers must be a subset of this particular subset. And, there are $2^5 - 1 = \\boxed{31}$ non-empty subsets of this 5-element set, which we can easily see by making the choice of including or not including each element.",
+        "msc": [
+            "60C05"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Counting & Probability Level 4",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "The Smith family has 4 sons and 3 daughters.  In how many ways can they be seated in a row of 7 chairs such that all 3 girls sit next to each other?",
+        "output": "To solve this problem, we can use the concept of treating the 3 girls as a single unit. We want them to sit together, so we can think of them as a single \"block\" or \"super-girl.\" Now we have 5 entities to arrange: the 4 sons and the \"super-girl.\"\n\nThere are 5! ways to arrange these 5 entities in a row:\n\n5! = 5 × 4 × 3 × 2 × 1 = 120 ways\n\nNow, we need to consider the arrangements of the 3 girls within the \"super-girl\" block. There are 3! ways to arrange the girls among themselves:\n\n3! = 3 × 2 × 1 = 6 ways\n\nTo get the total number of arrangements in which all 3 girls sit next to each other, we multiply the number of ways to arrange the 5 entities by the number of ways to arrange the girls within the \"super-girl\" block:\n\n120 (arrangements of 5 entities) × 6 (arrangements of 3 girls) = 720\n\nSo there are 720 ways to seat the Smith family's children such that all 3 girls sit next to each other.\n\n",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Official solution: We want to deal with the restriction first.\n\nWithout worrying about which specific boys and girls go in which seats, in how many ways can the girls sit together?\n\nThere are 5 basic configurations of boys and girls:  $$GGGBBBB, BGGGBBB, BBGGGBB,$$ $$BBBGGGB, BBBBGGG$$ where $B$ is a boy and $G$ is a girl.  Then, within each configuration, there are $4!$ ways in which we can assign the 4 sons to seats, and $3!$ ways in which we can assign the 3 daughters to seats.\n\nTherefore the number of possible seatings is $5 \\times 4! \\times 3! = \\boxed{720}$.",
+        "msc": [
+            "60C05"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Counting & Probability Level 3",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    }
+]

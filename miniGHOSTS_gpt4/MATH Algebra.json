@@ -1,0 +1,149 @@
+[
+    {
+        "prompt": "At which point do the lines $s=9-2t$ and $t=3s+1$ intersect? Give your answer as an ordered pair in the form $(s, t).$",
+        "output": "To find the point of intersection, we need to solve the given equations as a system of linear equations. We can use the substitution method to do this. The two equations are:\n\n$s = 9 - 2t$\n$t = 3s + 1$\n\nLet's substitute the expression for $s$ from equation (1) into equation (2):\n\n$t = 3(9 - 2t) + 1$\n\nNow, let's solve for $t$:\n\n$t = 27 - 6t + 1$\n$7t = 28$\n$t = 4$\n\nNow that we have the value of $t$, we can plug it back into equation (1) to find the value of $s$:\n\n$s = 9 - 2(4)$\n$s = 9 - 8$\n$s = 1$\n\nSo, the point of intersection is $(s, t) = (1, 4)$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Official Solution: We can substitute the second equation into the first equation to get  $$s=9-2(3s+1)=9-6s-2.$$Moving the variable terms to the left-hand side and the constants to the right-hand side, we find $$s+6s=7.$$This gives  $s=1$ which we may plug into either equation to get $t$. For example, $$t=3(1)+1=4.$$So the lines intersect at the point $\\boxed{(1,4)}$.",
+        "msc": [
+            "51N20"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Algebra Level 4",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "Suppose that $a$ and $b$ are nonzero real numbers, and that the equation  $${x^2 + ax + b = 0}$$ has comments $a$ and $b$. Then what is the pair $(a,b)$?",
+        "output": "Let's first understand what is meant by \"comments\" in this context. Since this is a mathematical problem, I believe you meant to say \"roots\" instead of \"comments\". So, we are given that the quadratic equation:\n\n$x^2 + ax + b = 0$\n\nhas roots $a$ and $b$. Let's use Vieta's formulas, which state that for a quadratic equation of the form:\n\n$x^2 + px + q = 0$\n\nthe sum of the roots is given by $-p$ and the product of the roots is given by $q$. In this case, $p = a$ and $q = b$. So, we have:\n\nSum of roots: $a + b = -a$\nProduct of roots: $ab = b$\n\nNow, let's solve these equations.\n\nFrom the first equation, $a + b = -a$, we get $2a = -b$.\n\nNow, let's substitute this into the second equation, $ab = b$:\n\n$a(-\\frac{1}{2}a) = -\\frac{1}{2}a^2 = b$\n\nNow, we have the values of $a$ and $b$ in terms of each other:\n\n$b = -\\frac{1}{2}a^2$\n\nSince $a$ and $b$ are both nonzero, we know that $a \\neq 0$. Thus, we can divide both sides of the equation by $a$:\n\n$\\frac{b}{a} = -\\frac{1}{2}a$\n\nNow, substitute $-\\frac{1}{2}a$ for $b$ in the equation $2a = -b$:\n\n$2a = -(-\\frac{1}{2}a)$\n\n$2a = \\frac{1}{2}a$\n\nNow, divide both sides by $a$:\n\n$2 = \\frac{1}{2}$\n\nThis is a contradiction, as 2 is not equal to $\\frac{1}{2}$. Therefore, there is no pair $(a, b)$ that satisfies the given conditions.",
+        "rating": "2",
+        "errorcodes": [
+            "e5_5"
+        ],
+        "warningcodes": [],
+        "comment": "Official Solution: The given conditions imply that $$\nx^2 + ax + b = (x-a)(x-b) = x^2 -(a+b)x + ab,\n$$ so $$\na+b = -a \\quad\\text{and}\\quad ab = b.\n$$ Since $b \\neq 0$, the second equation implies that $a=1$. The first equation gives $b=-2$, so $(a,b) = \\boxed{(1,-2)}$.",
+        "msc": [
+            "12D10",
+            "12E30"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Algebra Level 5",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "How many vertical asymptotes does the graph of $y=\\frac{2}{x^2+x-6}$ have?",
+        "output": "To find the vertical asymptotes of the given function, $y = \\frac{2}{x^2 + x - 6}$, we first need to determine the values of $x$ that make the denominator equal to zero, as these are the points at which the function will be undefined.\n\nLet's factor the denominator:\n\n$x^2 + x - 6 = (x - 2)(x + 3)$\n\nNow, we can set each factor equal to zero and solve for x:\n\n$x - 2 = 0$ yields $x = 2$\n\n$x + 3 = 0$ yields $x = -3$\n\nSo, the graph of the function $y = \\frac{2}{x^2 + x - 6}$ has vertical asymptotes at $x = 2$ and $x = -3$, which means there are 2 vertical asymptotes.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Official Solution: The denominator of the rational function factors into $x^2+x-6=(x-2)(x+3)$. Since the numerator is always nonzero, there is a vertical asymptote whenever the denominator is $0$, which occurs for $x = 2$ and $x = -3$.  Therefore, the graph has $\\boxed{2}$ vertical asymptotes.",
+        "msc": [
+            "51N20"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Algebra Level 3",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "Evaluate $\\log_{5^2}5^4$.",
+        "output": "To evaluate $\\log_{5^2}5^4$, we can use the following logarithm property:\n\n$\\log_{a^m}b^n = \\frac{n}{m}\\log_a{b}$\n\nIn this case, $a = 5$, $m = 2$, $b = 5$, and $n = 4$. Plugging these values into the equation, we get:\n\n$\\log_{5^2}5^4 = \\frac{4}{2}\\log_5{5}$\n\nNow, we know that $\\log_a{a} = 1$, so $\\log_5{5} = 1$. Therefore, the expression simplifies to:\n\n$\\frac{4}{2}\\log_5{5} = \\frac{4}{2}(1) = 2$.\n\nSo, $\\log_{5^2}5^4 = 2$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Official Solution: Let $x=\\log_{5^2}5^4$. Writing the equation in exponential form gives $(5^2)^x=5^4$. So, $x=\\boxed{2}$.",
+        "msc": [
+            "26A09"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Algebra Level 2",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "Solve  \\[\\frac{x-9}{x+1}=2\\]for $x$.",
+        "output": "To solve the equation [\\frac{x-9}{x+1}=2], first, we need to get rid of the fraction. We can do this by multiplying both sides of the equation by $(x+1)$:\n\n[(x+1)\\cdot\\frac{x-9}{x+1}=2\\cdot(x+1)]\n\nSince $(x+1)$ in the denominator cancels out $(x+1)$ in the numerator, we are left with:\n\n[x-9=2(x+1)]\n\nNow, distribute the 2 on the right side of the equation:\n\n[x-9=2x+2]\n\nNext, isolate the variable $x$ by moving all $x$ terms to one side and the constants to the other side. Subtract $x$ from both sides of the equation:\n\n[-9=x+2]\n\nFinally, subtract 2 from both sides of the equation to solve for $x$:\n\n[-11=x]\n\nSo, the solution for the equation is $x=-11$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Official Solution: Cross-multiplication gives  \\[x-9=2x+2.\\]Simplifying this expression tells us  \\[x=\\boxed{-11}.\\]",
+        "msc": [
+            "12E30"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Algebra Level 2",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "For integers $n$, let \\[f(n) = \\left\\{\n\\begin{array}{cl}\nn^2 & \\text{ if }n\\text{ is odd}, \\\\\nn^2 - 4n - 1 & \\text{ if }n\\text{ is even}.\n\\end{array}\n\\right.\\]Find $f(f(f(f(f(4)))))$.",
+        "output": "To find the value of $f(f(f(f(f(4)))))$, we need to compute each function call in sequence. To start, we compute $f(4)$:\n\n\nSince 4 is an even integer, we use the second condition: $f(n) = n^2 - 4n - 1$:\n$$f(4) = 4^2 - 4 \\cdot 4 - 1 = 16 - 16 - 1 = -1.$$\n\n\nNext, we need to compute $f(f(4)) = f(-1)$:\n\n\nSince -1 is an odd integer, we use the first condition: $f(n) = n^2$:\n$$f(-1) = (-1)^2 = 1.$$\n\n\nNext, we compute $f(f(f(4))) = f(1)$:\n\n\nAgain, since 1 is an odd integer, we use the first condition: $f(n) = n^2$:\n$$f(1) = 1^2 = 1.$$\n\n\nSince $f(1)$ equals 1, any subsequent applications of the function will also equal 1. Thus:\n$$f(f(f(f(f(4))))) = f(f(f(1))) = f(1) = 1.$$\n",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Official Solution: Working from the inside out, we first compute $f(4) = 4^2-4(4)-1=-1$.  Next we find $f(-1)=(-1)^2=1$, and then $f(1)=1^2=1$. Putting these together, we have $f(f(f(f(f(4)))))=f(f(f(f(-1))))=f(f(f(1)))=f(f(1))=f(1)=\\boxed{1}$.",
+        "msc": [
+            "39B12"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Algebra Level 2",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "If $x$, $y$, and $z$ are positive real numbers satisfying: \\begin{align*}\n\\log x - \\log y &= a, \\\\\n\\log y - \\log z &= 15, \\text{ and} \\\\\n\\log z - \\log x &= -7, \\\\\n\\end{align*}where $a$ is a real number, what is $a$?",
+        "output": "Let's use the properties of logarithms to simplify the given equations:\n\n$\\log x - \\log y = \\log \\left(\\frac{x}{y}\\right) = a$\n$\\log y - \\log z = \\log \\left(\\frac{y}{z}\\right) = 15$\n$\\log z - \\log x = \\log \\left(\\frac{z}{x}\\right) = -7$\n\nNow, let's multiply equations (1) and (2):\n\n$\\log \\left(\\frac{x}{y}\\right) \\cdot \\log \\left(\\frac{y}{z}\\right) = a \\cdot 15$\n\nUsing the property $\\log A \\cdot \\log B = \\log (A^B)$, we have:\n\n$\\log \\left(\\frac{x}{y}\\right)^{15} = a \\cdot 15$\n\nNow, multiply equations (2) and (3):\n\n$\\log \\left(\\frac{y}{z}\\right) \\cdot \\log \\left(\\frac{z}{x}\\right) = 15 \\cdot (-7)$\n\nUsing the same property, we get:\n\n$\\log \\left(\\frac{y}{z}\\right)^{-7} = -105$\n\nNow, let's take the inverse of equation (4) (which means taking the reciprocal of both sides):\n\n$\\log \\left(\\frac{z}{y}\\right)^{7} = 105$\n\nNow, multiply equations (5) and (6):\n\n$\\log \\left(\\frac{x}{y}\\right)^{15} \\cdot \\log \\left(\\frac{z}{y}\\right)^{7} = 15a \\cdot 105$\n\nUsing the property $\\log A \\cdot \\log B = \\log (A^B)$, we have:\n\n$\\log \\left(\\frac{x}{y}\\right)^{105} = 1575a$\n\nNow, let's observe that $\\left(\\frac{x}{y}\\right)^{105} = \\left(\\frac{y}{z}\\right)^{-7}$ (by comparing equation (4) and (7)). Thus, we can write:\n\n$\\left(\\frac{x}{y}\\right)^{105} = \\left(\\frac{y}{z}\\right)^{-7}$\n\nTaking the logarithm of both sides:\n\n$105 \\log \\left(\\frac{x}{y}\\right) = -7 \\log \\left(\\frac{y}{z}\\right)$\n\nNow, substitute the value of $a$ from equation (1) into the equation above:\n\n$105a = -7 \\cdot 15$\n\nDivide both sides by -7:\n\n$15a = 15$\n\nNow, divide both sides by 15 to get the value of $a$:\n\n$a = 1$",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Official Solution: Notice that by the logarithmic identity $\\log(x) - \\log(y) = \\log\\frac{x}{y}$, the equations are equivalent to $\\log\\frac{x}{y}=a$, $\\log\\frac{y}{z}=15$, and $\\log\\frac{z}{x}=-7$ respectively. Adding all three equations together yields $\\log\\frac{x}{y} + \\log\\frac{y}{z} + \\log\\frac{z}{x} = a + 15 - 7$. From the identity $\\log (x) + \\log (y) = \\log (xy)$, we obtain $\\log\\left(\\frac{x}{y}\\cdot\\frac{y}{z}\\cdot\\frac{z}{x}\\right) = a + 8$. Cancelations result in $\\log(1) = a + 8$. Since $\\log(1) = 0$, we find $a = \\boxed{-8}$.",
+        "msc": [
+            "26A09"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Algebra Level 4",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "Because of redistricting, Liberty Middle School's enrollment increased to 598 students. This is an increase of $4\\%$ over last year's enrollment. What was last year's enrollment?",
+        "output": "Let's denote last year's enrollment as E. We are given that this year's enrollment is 598 students, which is a 4% increase over last year's enrollment. We can express this as:\n\nE + 4% of E = 598\n\nFirst, let's convert 4% to a decimal by dividing by 100:\n\n4% = 4 / 100 = 0.04\n\nNow we can rewrite the equation:\n\nE + 0.04 * E = 598\n\nNow, we can factor out E:\n\nE (1 + 0.04) = 598\n\nE * 1.04 = 598\n\nTo find last year's enrollment, E, we'll divide both sides of the equation by 1.04:\n\nE = 598 / 1.04\n\nE ≈ 575.96\n\nSince we cannot have a fraction of a student, we'll round the number to the nearest whole number. Last year's enrollment was approximately 576 students.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Official Solution: If we knew last year's enrollment at Liberty Middle School, we would multiply by $1.04$ to get the new enrollment of $598$ students. Working backward, we can divide $598$ by $1.04$ to get $\\boxed{575\\text{ students}}$. Alternatively, we could solve the equation $x + 0.04x = 598$, where $x$ is last year's enrollment.",
+        "msc": [
+            "00A08"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Algebra Level 2",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "What is the largest number $c$ such that $2x^2+5x+c=0$ has at least one real comment? Express your answer as a common fraction.",
+        "output": "For a quadratic equation of the form $ax^2 + bx + c = 0$ to have at least one real solution, its discriminant must be greater than or equal to 0. The discriminant is given by the formula:\n\n$D = b^2 - 4ac$\n\nIn our case, $a = 2$, $b = 5$, and we want to find the largest value for $c$. So we set up the inequality:\n\n$D \\geq 0$\n\nSubstituting the values of $a$ and $b$:\n\n$(5)^2 - 4(2)c \\geq 0$\n\nSolving for $c$:\n\n$25 - 8c \\geq 0$\n\n$8c \\leq 25$\n\n$c \\leq \\frac{25}{8}$\n\nSo the largest value for $c$ such that the equation $2x^2 + 5x + c = 0$ has at least one real solution is $\\frac{25}{8}$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Official Solution: In order for this quadratic to have at least one real comment, its discriminant must be non-negative. In other words, $b^2 - 4ac = 5^2 - 4(2)(c) = 25 - 8c \\ge 0$. Rearranging, we have $25 \\ge 8c$. Dividing by 8, we have $25/8 \\ge c$. Therefore, the largest possible value of $c$ such that this quadratic has a real comment is $\\boxed{\\frac{25}{8}}$.",
+        "msc": [
+            "12D10"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Algebra Level 4",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    },
+    {
+        "prompt": "Simplify $(7b^3)^2 \\cdot (4b^2)^{-3},$ given that $b$ is non-zero.",
+        "output": "To simplify the expression $(7b^3)^2 \\cdot (4b^2)^{-3},$ we'll first apply the exponent rules to each term, and then simplify the expression:\n\nDistribute the exponents to both the coefficients and variables:\n\n$(7^2 b^{3 \\cdot 2}) \\cdot (4^{-3} b^{2 \\cdot -3})$\n\nCalculate the exponents:\n\n$(49 b^6) \\cdot (\\frac{1}{64} b^{-6})$\n\nMultiply the coefficients and add the exponents of $b$ (since the exponents have the same base and we're multiplying the terms):\n\n$49 \\cdot \\frac{1}{64} \\cdot b^{6 - 6}$\n\nSimplify the expression:\n\n$\\frac{49}{64} \\cdot b^0$\n\nSince any number raised to the power of 0 is 1 (except 0, but we know that $b$ is non-zero):\n\n$\\frac{49}{64} \\cdot 1$\n\nThe simplified expression is:\n\n$\\frac{49}{64}$",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Official Solution: We see that $(7b^3)^2 = 7^2 \\cdot b^{3\\cdot2} = 49 \\cdot b^6.$ Likewise, $(4b^2)^{-3} = 4^{-3} \\cdot b^{-6}.$ Now, $(7b^3)^2 \\cdot (4b^2)^{-3} = 49 \\cdot b^6 \\cdot 4^{-3} \\cdot b^{-6},$ and since $4^{-3} = \\frac{1}{64},$ we have $\\frac{49}{64} \\cdot b^6 \\cdot b^{-6} = \\boxed{\\frac{49}{64}},$ since $b^0 = 1$ for all non-zero $b.$",
+        "msc": [
+            "12E30"
+        ],
+        "ref": " MATH Dataset https://github.com/hendrycks/math; Algebra Level 3",
+        "confidence": "high",
+        "timestamp": "2023-06-07"
+    }
+]

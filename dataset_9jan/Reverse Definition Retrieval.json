@@ -1,0 +1,443 @@
+[
+    {
+        "prompt": "How do you call a function such that every preimage of an open set is open?",
+        "output": "A function that satisfies this property is called an open function.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "26B05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "How do you call a complete normed space?",
+        "output": "A complete normed space is also called a Banach space.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "The metric should be induced by the norm. This is not explicitly stated.",
+        "msc": [
+            "46B99"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "How do you call a function space containing all function that have $k in N$ weak derivatives that lie in a Lebesgue space $L^p$?",
+        "output": "Such a function space is typically referred to as the Sobolev space $W^{k,p}$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "46E35"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "Given an integrable function $f$ on an open domain how would you call a function g such that $int f phi' dx = -int g phi' dx$ holds for all compactly supported and smooth functions $phi$?",
+        "output": "A function $g$ that satisfies $int f phi' dx = -int g phi' dx$ for all compactly supported and smooth functions $phi$ is called the weak derivative of $f$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "46E35"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "How do you call a Banach space such that the canonical map into its bidual space is surjective?",
+        "output": "A Banach space for which the canonical map into its bidual space is surjective is called a reflexive Banach space.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "46A25"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "Given a vector space, how would you call the space of all continuous functionals on this space? ",
+        "output": "The space of all continuous functionals on a given vector space is called the dual space or the dual vector space.",
+        "rating": "4",
+        "errorcodes": [
+            "e1",
+            "e5_3"
+        ],
+        "warningcodes": [],
+        "comment": "More precisely, it would be the topological dual, it seems that the model assumed the vector space was finite",
+        "msc": [
+            "46A20"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "Given a Hilbert space, how would you call a spanning set of linearly independent, mutually orthogonal vectors that are normalized.",
+        "output": "A spanning set of linearly independent, mutually orthogonal vectors that are normalized in a Hilbert space is called an orthonormal basis.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "Given a linear operator A. How would you refer to the complex numbers lambda such that A-lambda I, where I is the identity operator, is not invertible?",
+        "output": "The complex numbers lambda such that A-lambda I is not invertible are called the eigenvalues of the linear operator A.",
+        "rating": "4",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "This should be referred to as the spectrum, since, in infinite dimensions, not every element of the spectrum needs to be an eigenvalue.",
+        "msc": [
+            "47A10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "Let B be an operator defined on a dense subset T of a normed space X mapping to a normed space Y. How do you call B if there does not exist a constant C such that |Bx| leq C |x| for all $x in X$.\n",
+        "output": "If there does not exist a constant C such that |Bx| leq C |x| for all x in X, then the operator B is not a bounded operator.",
+        "rating": "4",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "This is commonly referred to as an unbounded operator.",
+        "msc": [
+            "47A05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "For an operator A: X \\to Y, where X,Y are Hilbert spaces, how do you call the operator B, such that $langle Ax, y\\rangle = langle x, By \\rangle$ for all x in X and y in Y?",
+        "output": "The operator B, such that $langle Ax, y\\rangle = langle x, By \\rangle$ for all x in X and y in Y, is called the adjoint operator, denoted as A^*.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "47A05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "How would you call a topological space, where the topology is generated by a family of seminorms?",
+        "output": "A topological space where the topology is generated by a family of seminorms is called a locally convex topological vector space.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "46A03"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "On a dual banach space, how would you call the topology which is generated by the functionals of point evaluations.",
+        "output": "On a dual Banach space, the topology generated by the functionals of point evaluations is called the weak* topology.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "46A03"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "Let Delta be the laplace operator and Delta u = -f be the Poisson equation. How would you call a function u such that langle \\nabla u, \\nabla phi\\rangle =   \\nabla f, phi\\rangle holds for all test functions phi?",
+        "output": "A function u that satisfies the equation langle \\nabla u, \\nabla phi\\rangle = langle \\nabla f, phi\\rangle for all test functions phi is called a weak solution of the Poisson equation -Delta u = f.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "35D30"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "How would you call the set of functions on $mathbb{R}^n$ which are smooth and decay faster than every polynomial?",
+        "output": "The set of functions on $mathbb{R}^n$ which are smooth and decay faster than every polynomial are commonly referred to as 'rapidly decreasing smooth functions' or 'smooth functions of rapid decrease.' Another term for this set of functions is 'Schwartz functions'.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "This is actually impressive since 'decaying faster than every polynomial' is a very inaccurate way of describing rapid decay.",
+        "msc": [
+            "46A11"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "How would you call a function that has one vanishing moment and is localised in time and frequency?",
+        "output": "A function that has one vanishing moment and is localized in time and frequency can be referred to as a 'wavelet.' ",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "42C40"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "How do you call a topological space, which has a countable dense subset?",
+        "output": "A topological space that has a countable dense subset is called a separable space.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "54D65"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "How do you call a topological space that has a countable base?",
+        "output": "A topological space that has a countable base is called a second countable space or a separable space.",
+        "rating": "4",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "Being separable is a strictly weaker property than being second countable. Second accountability is sometimes referred to as 'complete separability', which is what ChatGPT probably meant to say.",
+        "msc": [
+            "54D10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "Let X be a real Banach space. How is a sequence of vectors (v_k)_{k=1}^infty called such that for each x in X there exists a unique sequence $(c_k)_{k=1}^infty$ of real numbers such that $x = sum_{k=1}^infty c_k v_k$?",
+        "output": "Such a sequence of vectors $(v_k)_{k=1}^infty$ in a real Banach space X is called a Schauder basis.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "46B15"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "Let X be a Banach space. How would I call the type of convergence of a sequence $x_n$ of elements of X to an element x in X, if f(x_n) \\to f(x) holds for all f in the dual space of $X$?",
+        "output": "The type of convergence of a sequence $x_n$ of elements of a Banach space X to an element x in X, if f(x_n) converges to f(x) for all f in the dual space of X, is called weak convergence.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "60B10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "How would you call a linear operator that maps bounded sets to relatively compact sets?",
+        "output": "Such an operator would be called a 'compact operator.'",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "47A05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "How would you call the linear functional on a set of smooth test functions that maps each function to its value at the origin?",
+        "output": "It is commonly known as the 'evaluation functional' or 'point evaluation functional' and it maps a smooth test function to its value at the origin. The notation for this functional is often represented as partial(phi) = phi(0).",
+        "rating": "3",
+        "errorcodes": [
+            "e1"
+        ],
+        "warningcodes": [],
+        "comment": "This is a name. But I would prefer to call this distribution the Dirac delta.",
+        "msc": [
+            "46F10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "Consider a sequence of random variables X_n and a random variable X. How would you call the type of convergence where for every epsilon > 0 it holds that $P(|X_n - X| > epsilon)\\to 0$ for n \\to infty.",
+        "output": "The type of convergence you are describing is called almost sure convergence or a.s. convergence.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "It is convergence in probability",
+        "msc": [
+            "60B10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "Consider a sequence of functions f_n and another function f all defined on a set X and mapping to a metric space. How would you call the type of convergence where for every $xin X$ it holds that $f_x(x) \\to f(x)$ for $n \\to infty$.",
+        "output": "The type of convergence where for every $x in X$ it holds that $f_x(x) \\to f(x)$ for $n \\to infty$ is called pointwise convergence.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "40A30"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "Consider a sequence of functions f_n and another function f all defined on a set X and mapping to a metric space. How would you call the type of convergence where $sup_{x in X} d(f_x(x), f(x)) \\to 0$ for $n \\to infty$.",
+        "output": "The type of convergence you are describing is called uniform convergence.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "40A30"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "Consider a sequence of functions f_n and another function f all defined on a topological space X and mapping to a metric space. How would you call the type of convergence where for every compact subset K of X it holds that $sup_{x in K} d(f_x(x), f(x)) \\to 0$ for $n \\to infty$.",
+        "output": "The type of convergence you are describing is called pointwise compact convergence.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "This is compact convergence or uniform convergence on compact sets.",
+        "msc": [
+            "40A30"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "How do you call a function such that its Fourier transform is compactly supported?",
+        "output": "A function whose Fourier transform is compactly supported is called a 'Schwartz function.' The space of all Schwartz functions is also known as the 'Schwartz space.'",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "First of all, not all Schwartz functions have compactly support, second of all, they need to be smooth in the Fourier domain. So compact support alone is neither a necessary nor a sufficient condition for being a Schwartz function. ",
+        "msc": [
+            "42B10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "How would you call a collection of nonnegative functions defined on a common domain that sum up to 1.",
+        "output": "A collection of nonnegative functions defined on a common domain and satisfying $sum_{n} f_n(x) = 1$ for all x in the domain is called a 'partition of unity'.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "60A05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "How would you call an element from the dual space of the Schwartz functions?",
+        "output": "An element of the dual space of the Schwartz functions is called a tempered distribution.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "46F05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "For a distribution $f$ defined on a domain X, how would you call the subset of X such that for every point in that subset f cannot be represented as a smooth function in any neighborhood of that point.",
+        "output": "For a distribution $f$ defined on a domain $X$, the subset of $X$ such that for every point in that subset $f$ cannot be represented as a smooth function in any neighborhood of that point is called the 'non-smooth' or 'non-differentiable' points of $f$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "I would call these points 'singular support'. The definitions given by ChatGPT are OK though because it interprets distribution in the stochastic sense.",
+        "msc": [
+            "60A05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "Let f be an element of the dual space of some set of test functions defined on a subset of $mathbb{R}^n$. How would you call the set of all point and direction pairs, along which f is not smooth?",
+        "output": "The set of all point and direction pairs, along which f is not smooth is called the singular set or singular support of f.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "Singular support only refers to the points, not the directions. Wavefront set would be correct.",
+        "msc": [
+            "46F05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    }
+]

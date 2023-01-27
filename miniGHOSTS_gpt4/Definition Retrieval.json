@@ -1,0 +1,168 @@
+[
+    {
+        "prompt": "Please give a formal definition of a Sobolev space",
+        "output": "Sure, I'd be happy to provide a formal definition of a Sobolev space.\n\nSobolev spaces are functional spaces of functions admitting weak derivatives up to a certain order. They are named after the Russian mathematician Sergei Sobolev. Its utility in the theory of partial differential equations is that it often includes the solutions to various PDEs.\n\nHere's the definition for a basic Sobolev space:\n\nLet Ω be an open subset of ℝ^n. The Sobolev space W^{k,p}(Ω) (or H^{k,p}(Ω) in some notations), consists of all functions u such that each derivative of u with order less than or equal to k is in L^p(Ω), the Lebesgue space of p-integrable functions.\n\nMore precisely, if α is a multi-index with |α| ≤ k, then the α-th derivative D^αu of u must be a function in L^p(Ω).\n\nHere, α is a multi-index notation, a way of denoting higher-dimensional derivatives in a concise way. |α| is the total order of the derivative, and D^α is the derivative operator corresponding to α.\n\nThe norm on W^{k,p}(Ω) is typically defined as follows:\n\n||u||{W^{k,p}(Ω)} = (Σ{|α| ≤ k} ||D^αu||_{L^p(Ω)}^p)^(1/p)\n\nif 1 ≤ p < ∞, and\n\n||u||{W^{k,∞}(Ω)} = max{|α| ≤ k} ||D^αu||_{L^∞(Ω)}\n\nif p = ∞.\n\nThe Sobolev space W^{k,p}(Ω) is then a Banach space with this norm.\n\nWhen p=2, these spaces are Hilbert spaces and denoted as H^k(Ω), and the norm is defined similarly but it includes the square root at the end due to the property of the L^2 space.\n\nAs a final note, the Sobolev spaces are important because of the Sobolev Embedding Theorem, which describes conditions under which a Sobolev space may be continuously embedded into another space, and the Rellich-Kondrachov theorem which gives conditions under which this embedding is compact.",
+        "rating": "4",
+        "errorcodes": [
+            "e1"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "The notion of weak derivative is only mentioned in the beginning.",
+        "msc": [
+            "46E35"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Please give a formal definition of the adjoint of an unbounded operator",
+        "output": "The adjoint of a bounded operator in a Hilbert space is well-defined, but for unbounded operators, the situation is a bit more subtle. First, a brief refresher on the definition of an adjoint for a bounded operator.\n\nLet H and K be Hilbert spaces over the complex numbers and let A: H → K be a bounded linear operator. The adjoint of A, denoted by A*, is the unique bounded linear operator from K to H such that, for all x in H and y in K, the following equality holds:\n\n⟨Ax, y⟩_K = ⟨x, A*y⟩_H\n\nwhere ⟨ , ⟩ denotes the inner product in the corresponding Hilbert space.\n\nIn the case of unbounded operators, the definition is more involved and requires the notion of the domain of an operator.\n\nLet A be an unbounded operator on a Hilbert space H. The domain of A, denoted by Dom(A), is a dense subset of H, meaning that its closure is the entire space H. The operator A assigns to each element φ of Dom(A) an element Aφ of H.\n\nThe adjoint of A, denoted by A*, is defined as follows:\n\nThe domain Dom(A*) of A* consists of all ψ in H such that the map φ ↦ ⟨Aφ, ψ⟩ is a bounded linear functional on Dom(A). For ψ in Dom(A*), A*ψ is the unique element of H such that, for all φ in Dom(A), the following equality holds:\n\n⟨Aφ, ψ⟩ = ⟨φ, A*ψ⟩\n\nThis might seem more abstract than the definition for bounded operators, but it is necessary to deal with the complications arising from unboundedness. Some unbounded operators do not have an adjoint, but when they do, the adjoint has nice properties that generalize those of the adjoint of a bounded operator. Note, however, that the domain of an unbounded operator and its adjoint can be quite different. The adjoint of an unbounded operator is always closed (meaning that if a sequence in the domain of the adjoint converges and its image under the adjoint also converges, then the limit of the sequence is in the domain of the adjoint), and an unbounded operator is closed if and only if its adjoint is densely defined (meaning that the closure of its domain is the entire space H).",
+        "rating": "4",
+        "errorcodes": [
+            "e1"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "Very vague and only focuses on operators $A:H \to H$, where $H$ is a Hilbert space.",
+        "msc": [
+            "47A05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Please give a formal definition of a compact operator",
+        "output": "In the field of functional analysis, a compact operator is a linear operator from one Banach space (or more generally, topological vector space) to another with the property that it \"brings\" bounded sets into relatively compact sets — that is, the closure of their image is compact.\n\nMore specifically, let's assume that X and Y are normed spaces (a special case of topological vector spaces). A linear operator T from X to Y is said to be compact if for every bounded sequence (x_n) in X, there exists a subsequence (x_{n_k}) such that (T(x_{n_k})) is a convergent sequence in Y.\n\nThe concept of a compact operator on Hilbert spaces (a special type of normed space) is particularly important in quantum mechanics and the theory of partial differential equations. Compact operators are very similar to finite-dimensional linear transformations, in a certain sense, and they have many of the nice properties that finite-dimensional operators do.\n\nPlease note that compactness of an operator is not equivalent to boundedness of the operator, although every compact operator is bounded.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "There are many other equivalent definitions, the existence of which has not been mentioned",
+        "msc": [
+            "47A05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Please give a formal definition of convergence in probability",
+        "output": "Convergence in probability is a concept in probability theory and statistics which refers to the behavior of random variables as the number of trials or experiments (often represented as \"n\") goes to infinity. It is used to describe the notion that as we gather more and more data, the probability of a certain outcome becomes increasingly certain.\n\nA sequence of random variables X_1, X_2, X_3, ..., X_n is said to converge in probability to a random variable X if for every positive ε (epsilon), the probability that the absolute difference between X_n and X is greater than ε converges to zero as n approaches infinity. This can be formally written as:\n\nFor every ε > 0,\nlim (n → ∞) P(|X_n - X| > ε) = 0\n\nThis means that as we increase the number of trials (n), the probability that the difference between our sequence of random variables (X_n) and the random variable (X) is more than some small amount (ε) becomes increasingly unlikely, or in other words, it converges to zero.\n\nIn simpler terms, this means that as we increase the number of trials, the random variables in the sequence become increasingly likely to be very close to X.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "",
+        "msc": [
+            "60B10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Please give a formal definition of a reflexive space",
+        "output": "A reflexive space is a concept in functional analysis, a branch of mathematics. Specifically, it pertains to certain properties of Banach spaces, which themselves are normed vector spaces with specific properties. A Banach space is said to be reflexive if it coincides with its bidual, or more formally, if it is isometrically isomorphic to its bidual space.\n\nTo give a more formal definition:\n\nA normed vector space X over the field of real or complex numbers is called a reflexive space if the evaluation map Eval: X → X'', defined by Eval(x)(f) = f(x) for all x in X and f in X', is an isometric isomorphism.\n\nHere, X' denotes the dual space of X, i.e., the space of all continuous linear functionals on X, and X'' denotes the bidual space, i.e., the dual space of the dual space X'.\n\nRemember that an isometric isomorphism is a bijective map (i.e., a map that is both injective and surjective) that preserves the norm, meaning that the norm of x in X is the same as the norm of Eval(x) in X''. If such a map exists from X to X'', then X is reflexive.\n\nReflexive spaces have many desirable properties. For instance, in a reflexive Banach space, every bounded sequence has a weakly convergent subsequence. This is a generalization of the finite-dimensional situation and is a very useful property.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "",
+        "msc": [
+            "46A25"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Please give a formal definition of a partition of unity",
+        "output": "A partition of unity is a mathematical tool often used in the theory of differentiable manifolds. It is important in the definition of integration on manifolds, among other things. Here's a formal definition:\n\nLet M be a topological space and {Uα}α∈A be an open cover of M. A partition of unity subordinate to {Uα}α∈A is a set of continuous functions {φα : M → [0, 1]}α∈A such that:\n\nThe support of each φα, denoted as supp(φα), is a closure of an open set contained in Uα. Here, the \"support\" of φα refers to the closure of the set of points where φα is not zero.\n\nFor every point p in M, there is a neighborhood of p in which all but a finite number of the φα's are identically zero. In other words, each point in M is in the support of only finitely many φα's.\n\nThe sum of all the φα's is identically 1 at every point in M. That is, for all p in M, ∑α∈A φα(p) = 1. This sum is well-defined (i.e., it doesn't depend on the order of addition) and finite at each point because of the second condition.\n\nIf M is a differentiable manifold and the φα's are required to be smooth (infinitely differentiable), we have a smooth partition of unity. Smooth partitions of unity are used extensively in differential topology and differential geometry.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "",
+        "msc": [
+            "26B40"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Please give a formal definition of a Schauder basis",
+        "output": "A Schauder basis is a concept in functional analysis, a branch of mathematics. It's a specific type of basis for a topological vector space, particularly those that aren't necessarily finite-dimensional.\n\nFormally, a sequence (x_n) of vectors in a topological vector space X is called a Schauder basis if for every x in X, there exists a unique sequence of scalars (c_n) such that\n\nx = ∑ c_n * x_n\n\nwhere the series converges in the topology of X. That is, for every x in X and every neighborhood U of x, there exists an N such that for all natural numbers n > N, the tail of the series:\n\n∑_(i=n+1)^∞ c_i * x_i\n\nlies in U.\n\nIn simple terms, this means that every vector in X can be written as a (possibly infinite) linear combination of the basis vectors in a unique way, and this series converces in the topology of the space X. The concept is an extension of the idea of a basis in finite-dimensional vector spaces.\n\nA well-known example of a Schauder basis is the sequence of functions 1, x, x², x³, ... in the space of continuous real-valued functions on the interval [0, 1], with the topology of uniform convergence.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "",
+        "msc": [
+            "46B15"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Please give a formal definition of a weak convergence",
+        "output": "Weak convergence, also known as convergence in distribution, is a concept in the field of probability theory and statistics. It describes a type of convergence related to random variables and probability distributions.\n\nHere is a formal definition for sequences of random variables in a metric space:\n\nLet (S, d) be a metric space with its Borel σ-algebra B, and let (Ω, F, P) be a probability space. A sequence of random variables Xn : Ω → S is said to converge weakly (or in distribution) to a random variable X : Ω → S if\n\n∫_Ω f(Xn)dP → ∫_Ω f(X)dP,\n\nfor all bounded continuous functions f : S → ℝ.\n\nIn simpler terms, a sequence of random variables {Xn} converges weakly to X (denoted as Xn => X) if the expected value of any bounded continuous function of Xn converges to the expected value of the same function of X, for all n.\n\nAn equivalent definition in terms of cumulative distribution functions for real-valued random variables is:\n\nA sequence of real-valued random variables Xn converges weakly to X if\n\nlim (n → ∞) F_n(x) = F(x),\n\nfor every number x at which F is continuous, where F_n and F are the cumulative distribution functions of Xn and X, respectively.\n\nThat is, the cumulative distribution functions (CDFs) of the sequence of random variables converge pointwise to the CDF of the limiting random variable at all points where the latter function is continuous.",
+        "rating": "4",
+        "errorcodes": [
+            "e1"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "Only weak convergence in probability theory is considered and not weak convergence in the theory of topological vector spaces.",
+        "msc": [
+            "60B10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Please give a formal definition of a wavelet",
+        "output": "\n\n\nA wavelet is a type of mathematical function used in signal processing and image analysis, particularly for the purpose of performing multi-resolution analysis.\n\nThe term \"wavelet\" means a small wave, and wavelets are functions that are localized in both time (or space) and frequency. Wavelets oscillate, but unlike sinusoids, their oscillation is constrained within a finite region. This makes wavelets useful for analyzing phenomena that change over time or space.\n\nMore formally, a function ψ(t) is considered a wavelet if it satisfies the following two conditions:\n\nAdmissibility Condition: The integral of the absolute square of the Fourier transform of the wavelet function is finite. Mathematically, it's expressed as:\n\n∫|ψ̂(ω)|²dω < ∞\n\nwhere ψ̂(ω) is the Fourier transform of ψ(t).\n\nZero Mean Condition: The integral of the wavelet function over all time (or space) must be zero. In mathematical terms, it is:\n\n∫ψ(t)dt = 0\n\nThese two conditions ensure that the wavelet is well-behaved and that it can effectively analyze signals across different scales and locations.\n\nThe wavelet transform of a function (or signal) f(t) is defined as the convolution of f(t) with a scaled and translated version of the wavelet function ψ(t). This allows the wavelet transform to capture both the frequency (or scale) and location information of the original signal.",
+        "rating": "4",
+        "errorcodes": [
+            "e1"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "Condition for squre norm one is missing for the (mother) wavelet.",
+        "msc": [
+            "42C40"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "Please give a formal definition of a dual space",
+        "output": "\n\n\nIn mathematics, particularly in linear algebra and functional analysis, the dual space of a vector space V (over a field F) is a set of all linear functionals on V. In other words, it is a space consisting of linear maps that take vectors in V and produce scalars in F. This set forms a vector space itself, often denoted as V* or V^*.\n\nHere is a formal definition:\n\nGiven a vector space V over a field F, the dual space V* is defined as the set of all linear functionals φ: V → F. That is, each φ in V* is a function such that:\n\nFor all v1, v2 in V and a, b in F, φ(av1 + bv2) = aφ(v1) + bφ(v2) (Linearity).\nFor all v in V, φ(v) is a scalar in F.\n\nFurthermore, we can define addition and scalar multiplication on V* such that it forms a vector space over F:\n\nAddition: Given φ, ψ in V*, the sum (φ + ψ) is a function defined by (φ + ψ)(v) = φ(v) + ψ(v) for all v in V.\nScalar Multiplication: Given φ in V* and a in F, the scalar product (aφ) is a function defined by (aφ)(v) = a * φ(v) for all v in V.\n\nThis definition can be extended to the concept of double duals and duals of vector spaces of infinite dimension, though the latter requires additional considerations from the field of functional analysis.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "46A20"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    }
+]

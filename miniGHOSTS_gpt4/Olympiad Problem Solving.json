@@ -1,0 +1,173 @@
+[
+    {
+        "prompt": "",
+        "output": "Actually, that's not entirely accurate. The statement might sound logical given our traditional understanding of geometrical shapes, but a counterintuitive and surprising result exists within the realm of mathematical research: it is indeed possible to divide a cube into a number of smaller, distinct (not identical) cubes.\n\nThis mathematical curiosity is known as the 'Perfect Cube Dissection' or 'Cube Packing', and is related to the broader area of 'Packing Problems' in mathematics. It asks whether a given shape can be dissected (i.e., divided without gaps or overlaps) into smaller distinct shapes of the same type.\n\nThe first successful proof for cubes was presented by Roland Sprague in 1939. He demonstrated that a cube can be dissected into 22 distinct smaller cubes. In 1969, another solution with 23 cubes was discovered. However, no solutions are known with 24 through 31 cubes, and there are solutions known for some numbers greater than 31. The smallest number for which no solution is known is 24.\n\nSo, it is mathematically proven that a cube can indeed be divided into several smaller distinct cubes.",
+        "rating": "1",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [
+            "w2",
+            "w3"
+        ],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.48 ex17",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "The question appears to be referring to a mathematical proof, specifically a problem in combinatorial geometry.\n\nLet's assume we are using two colors, say red and blue, to color the plane. The problem can be proved using the Pigeonhole Principle, which essentially states that if n items are put into m containers, with n > m, then at least one container must contain more than one item.\n\nIn our problem, a regular triangle is one where all three sides are equal. This is the triangle we need to prove exists within a two-color plane.\n\nTo prove this, let's start with an equilateral triangle ABC in the plane, with each corner being a different point. The side length of this triangle doesn't matter.\n\nWe don't know how the plane is colored, so we can only assume that each vertex of our triangle could be either red or blue. That means each vertex has 2 possibilities for its color - hence for the whole triangle there are 2^3 = 8 possibilities for the coloring of the vertices.\n\nNow, consider four points: A, B, C, and D in the plane. If you think about all possible ways of drawing three points from a set of four, there are four possible combinations: ABC, ABD, ACD, and BCD.\n\nDue to the Pigeonhole Principle, among these four triangles (with vertices selected from A, B, C, D), there must exist at least two triangles having vertices of the same color combination. If any of these triangles has vertices all of the same color, we're done: it's a regular triangle with vertices of the same color.\n\nIf not, the only possible ways to color these two triangles would be:\n\nOne vertex is of one color and the other two vertices are of another color.\nEach vertex is of a different color.\nGiven that we only have two colors, option 2 is not possible. This leads to option 1 being the only possibility. But if two triangles share a vertex and have the same color combination under these conditions, they must each have a different colored vertex that isn't shared. This leads to an inherent contradiction, because the two triangles would then have to share a color at that vertex, meaning that all three vertices of these triangles are of the same color.\n\nThis proof shows that, in a plane colored with two colors, there will always exist three points of the same color, which are the vertices of a regular triangle.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_4",
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.28 ex35",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "To show that the equation $x^2 + y^2 + z^2 = 2xyz$ has no integral solutions other than $x=y=z=0$, we can use a method of contradiction.\n\nAssume that there is a non-zero solution. Without loss of generality, let's say $|x| \\leq |y| \\leq |z|$. Since $x, y, z$ are integers, we get that $x^2 \\leq y^2 \\leq z^2$.\n\nSubstituting the equation $x^2 + y^2 + z^2 = 2xyz$ into the inequality gives us:\n\\[\n2xyz \\leq y^2 \\leq z^2 \n\\]\n\nSince $y$ and $z$ are integers, this implies that $2xz \\leq y \\leq z$.\n\nNotice that $y = z$ only when $x = 0$ or $2x = 1$. The first case gives us $x=y=z=0$, which we know, but we're looking for non-zero solutions. The second case is impossible since $x$ is an integer.\n\nTherefore, $2xz < y < z$ must be true.\n\nAt the same time, the original equation $x^2 + y^2 + z^2 = 2xyz$ can be rewritten as $x^2 - 2xyz + z^2 = -y^2$, which is equivalent to $(x-z)^2 = -y^2$.\n\nBut $(x-z)^2 \\geq 0$ for all real numbers $x$ and $z$, and $-y^2 \\leq 0$ for all real numbers $y$. Therefore, the only possible integer solution to $(x-z)^2 = -y^2$ is when $x = z$ and $y = 0$, i.e., $x = y = z = 0$.\n\nThis is a contradiction to our previous conclusion that $2xz < y < z$ must be true. Therefore, there are no non-zero integral solutions to the equation $x^2 + y^2 + z^2 = 2xyz$.\n\nSo, the only solution is $x = y = z = 0$.",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.124 exE12",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "Your statement says: \"An $a \\times b$ rectangle can be covered by $1 \\times n$ rectangles if and only if $n$ divides $a$ or $n$ divides $b$.\"\n\nIn order to provide a formal proof, we need to prove two separate implications:\n\nIf $n$ divides $a$ or $n$ divides $b$, then an $a \\times b$ rectangle can be covered by $1 \\times n$ rectangles.\nIf an $a \\times b$ rectangle can be covered by $1 \\times n$ rectangles, then $n$ divides $a$ or $n$ divides $b$.\nIf $n$ divides $a$, then $a = nk$ for some integer $k$. Then we can cover the $a \\times b$ rectangle by $k$ $1 \\times n$ rectangles placed side by side along the length $a$. Similar logic applies if $n$ divides $b$.\nNow we'll prove the other direction. Assume an $a \\times b$ rectangle can be covered by $1 \\times n$ rectangles. We will prove this by contradiction.\nSuppose neither $n$ divides $a$ nor $n$ divides $b$. Then there exists integers $k$ and $l$ such that $a = nk + r$, $b = nl + s$ where $0 < r < n$ and $0 < s < n$. This implies that the $a \\times b$ rectangle has dimensions that are not multiples of $n$. But if we attempt to cover this rectangle with $1 \\times n$ rectangles, there will always be a portion of size $r \\times b$ or $a \\times s$ left over that cannot be covered by $1 \\times n$ rectangles because both $r$ and $s$ are less than $n$. This contradicts our assumption that the $a \\times b$ rectangle can be covered by $1 \\times n$ rectangles.\nThis completes the proof. The $a \\times b$ rectangle can be covered by $1 \\times n$ rectangles if and only if $n$ divides $a$ or $n$ divides $b$.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_2"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.26 ex8",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "Sure, here's a step-by-step proof.\n\nFirst, let's understand what we are trying to prove: We want to show that no matter how we color the points on a sphere with two colors, there will always be a set of three points of the same color that form the vertices of an equilateral (regular) triangle.\nLet's begin the proof by drawing an equator on the sphere. Now, think of the equator as a big circle and the sphere as a ball.\nDivide this equator into four equal parts using four points: A, B, C, and D in clockwise order.\nThese four points will form two equilateral triangles on the plane of the equator, ABC and BCD.\nBecause we have two colors and four points, at least one color must be repeated among these four points according to the pigeonhole principle.\nLet's say points A and B are the same color.\nNow, let's consider the poles of the sphere. Call them P (North Pole) and Q (South Pole).\nIf either P or Q is the same color as points A and B, we've found our regular triangle. Let's say P, A, and B form this regular triangle if P is the same color as A and B.\nIf both P and Q are not the same color as A and B, then P and Q must be the same color (since there are only two colors).\nIn this case, we can form a regular triangle with points P, C, and D or Q, C, and D, since C and D are the same color, and either P or Q will match this color.\nTherefore, in either case, we've proven that there exist three points of the same color that form the vertices of a regular triangle on a sphere, regardless of how the sphere is colored with two colors.\nRemember that this proof is built on some assumptions:\n\nA regular triangle is an equilateral triangle (all sides are of equal length).\n\"Point\" refers to any location on the sphere, not just specific dots or marks.\nThe colors can be distributed in any way, but there can be no area that is a blend of the two colors—every point must be one color or the other.\nThe sphere is perfectly symmetrical, with no distortions or irregularities.\nWe are working with a 3D sphere, not a 2D circle.",
+        "rating": "3",
+        "errorcodes": [
+            "e3",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.28 ex36",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "To prove this, we can apply the Pigeonhole Principle. The Pigeonhole Principle states that if there are more pigeons than pigeonholes, then there must be at least one pigeonhole with more than one pigeon. In the context of this problem, the 'pigeons' are the sums, and the 'pigeonholes' are the remainders mod 2n.\n\nConsider the integers arranged in 2n slots, with their respective positions. If we add the position number to each of these integers, the resulting sums will be between 2 and 4n.\n\nThe possible remainders when divided by 2n are 0, 1, ..., 2n-1, so there are exactly 2n possible remainders. But there are 2n sums, which are in the range of 2 to 4n. And, when we subtract the smallest possible sum (which is 2) from the largest possible sum (which is 4n), we get a range of 4n - 2 = 4n - 2n = 2n different sums.\n\nGiven that there are 2n possible sums and 2n possible remainders, by the Pigeonhole Principle, there must be at least two sums that have the same remainder when divided by 2n. Hence, the statement is proven.",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4",
+            "e5_1",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.10 ex18",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "If the floor is tiled with $2 \\times 2$ and $1 \\times 4$ tiles, then the area of the floor must be a multiple of 4. This is because the area of each $2 \\times 2$ tile is 4, and the area of each $1 \\times 4$ tile is also 4. Let's consider the two scenarios:\n\nIf the broken tile was a $2 \\times 2$ tile and the replacement is a $1 \\times 4$ tile: To replace a $2 \\times 2$ tile with a $1 \\times 4$ tile, you would need to rearrange the tiles so that there is a $1 \\times 4$ slot available. However, this is impossible because the $2 \\times 2$ tile is square, and you cannot create a $1 \\times 4$ rectangular slot by moving the remaining $2 \\times 2$ tiles around without creating a gap elsewhere.\nIf the broken tile was a $1 \\times 4$ tile and the replacement is a $2 \\times 2$ tile: To replace a $1 \\times 4$ tile with a $2 \\times 2$ tile, you would need to rearrange the tiles so that there is a $2 \\times 2$ slot available. However, this is also impossible. In order to make a $2 \\times 2$ space using $1 \\times 4$ tiles, you would need to move two such tiles side by side, but this creates a gap of $2 \\times 2$ elsewhere, which can't be filled with the $1 \\times 4$ tiles.\nTherefore, in either case, it is not possible to cover the floor by rearranging the tiles.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.26 ex1",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "To prove that there is no quadruple of positive integers (x, y, z, u) satisfying the equation $x^2 + y^2 = 3(z^2 + u^2)$, we can proceed with the following steps:\n\nReduction to lowest terms: Suppose we have a solution (x, y, z, u) to the equation. If x, y, z, and u share a common factor, we can divide through by that factor squared and still get a solution in integers. This means we can assume without loss of generality that the solution is in lowest terms: that is, the greatest common divisor of x, y, z, u is 1.\nParity argument: Consider the equation modulo 3. We know that squares are either 0 or 1 modulo 3 (because 0^2 = 0, 1^2 = 1, 2^2 = 1 when considered modulo 3). Now consider the possible cases:\nIf x and y are both multiples of 3 (x ≡ y ≡ 0 mod 3), then the left-hand side of the equation is 0. But this means z and u must also both be multiples of 3 (z ≡ u ≡ 0 mod 3), contradicting our assumption that (x, y, z, u) was reduced to lowest terms.\nIf x and/or y are not multiples of 3, then their squares (x^2, y^2) are 1 modulo 3, making the left-hand side 2 or 1 modulo 3. But the right-hand side, being a multiple of 3, is always 0 modulo 3, so the equation cannot be satisfied in these cases either.\nTherefore, there are no positive integer solutions (x, y, z, u) to the equation x^2 + y^2 = 3(z^2 + u^2).",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.43 exE9",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "If no two lines are parallel, each pair of lines intersects exactly once. Now suppose there is an intersection point, $P$, of two lines, $L_1$ and $L_2$. By the given condition, there is at least one more line, $L_3$, passing through this point $P$.\n\nWe can apply this logic iteratively: for any line $L_i$ (for $i\\geq 3$) passing through $P$, it must intersect any other line $L_j$ (for $j\\neq i$) at this point $P$ (since otherwise, there would be another intersection point of $L_i$ and $L_j$ where no additional line passes through, violating the given condition).\n\nTherefore, all the lines must pass through the same point $P$. Hence, the assertion is proved.",
+        "rating": "2",
+        "errorcodes": [
+            "e2",
+            "e5_4",
+            "e5_5"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.47 ex2",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "I'm afraid that's not entirely correct. The equation $x^2 + y^2 = x^2 y^2$ actually has infinitely many integral solutions, including $x = y = 0$. To see this, note that the equation can be rewritten as\n\n$x^2(1 - y^2) + y^2 = 0$\n\nThis can be further rearranged to\n\n$x^2 = \\frac{y^2}{y^2 - 1}$\n\nThis equation holds for all integer values of $y$ such that $y = -1, 0, 1$, as these values result in $x = 0$ (which is an integer).\n\nHowever, for $|y| > 1$, the equation has no integral solutions for $x$, since the right-hand side will be a fraction. Therefore, the only integral solutions are $(x, y) = (0, -1), (0, 0), (0, 1)$.",
+        "rating": "2",
+        "errorcodes": [
+            "e2",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "00A07"
+        ],
+        "ref": "Arthur_Engel Problem_Solving_Strategies Springer_Verlag New-York 1998 p.132 ex43",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    }
+]

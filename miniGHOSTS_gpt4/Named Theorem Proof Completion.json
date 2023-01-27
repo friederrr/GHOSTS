@@ -1,0 +1,151 @@
+[
+    {
+        "prompt": "State the Riemann-Lebesgue Lemma and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "The Riemann-Lebesgue Lemma is a fundamental result in mathematical analysis, particularly in the context of Fourier analysis. It states that the Fourier transform of an integrable function approaches zero as the frequency goes to infinity. More formally, let f be a function that is absolutely integrable on the real line, i.e., ∫ |f(x)| dx < ∞, where the integral is taken over the entire real line (-∞, +∞).\nThe Riemann-Lebesgue Lemma then asserts that for such a function f, its Fourier transform F(ω), given by\nF(ω) = ∫ f(x) e^(-iωx) dx,\ntends to zero as ω tends to infinity, i.e.,\nlim (ω → ±∞) F(ω) = 0.\nThe main mathematical results and tools used in the proof of the Riemann-Lebesgue Lemma include:\nIntegration by parts: A technique used to compute integrals involving products of functions, which can be applied to manipulate the integral of the Fourier transform.\nAbsolute integrability: This property of the function f ensures that the Fourier transform F(ω) exists and is well-defined for all ω.\nDominated convergence theorem: A powerful theorem in measure theory that allows exchanging the limit and the integral under certain conditions. This theorem is used to show that the limit of the Fourier transform exists and is equal to zero.\nBoundedness of continuous functions: This property is used to bound the terms obtained after applying integration by parts.\nCompact support property: If the function f has compact support (i.e., it is zero outside a compact interval), then the proof of the Riemann-Lebesgue Lemma can be simplified using the fact that the integral is nonzero only on a finite interval. This idea can be generalized to the case where f is absolutely integrable over the entire real line by using a suitable approximation.",
+        "rating": "4",
+        "errorcodes": [
+            "e1"
+        ],
+        "warningcodes": [],
+        "comment": "The Fourier transform is continuous, which is usually part of the statement of the Riemann Lebesgue Lemma. ",
+        "msc": [
+            "42A38"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "State the Sobolev Embedding Theorem and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "The Sobolev Embedding Theorem is a fundamental result in the theory of partial differential equations and functional analysis. It establishes a relationship between Sobolev spaces, which are spaces of functions having weak derivatives up to a certain order, and other function spaces, such as L^p spaces and Hölder spaces. The theorem provides important information about the regularity and integrability properties of functions in Sobolev spaces.\n\nThe Sobolev Embedding Theorem can be stated as follows:\n\nLet Ω be an open, bounded subset of ℝ^n with a Lipschitz boundary, 1 ≤ p < q ≤ ∞, 0 ≤ k ∈ ℕ, and s ∈ ℝ such that:\nn/p = n/q - s.\n\nIf u ∈ W^{k,p}(Ω) (a Sobolev space), then u belongs to the Hölder space C^{k-1+s}(Ω) and the L^q(Ω) space, and there exists a constant C > 0, depending only on Ω, p, q, and n, such that:\n\n‖u‖{C^{k-1+s}(Ω)} ≤ C ‖u‖{W^{k,p}(Ω)}\n\n‖u‖{L^q(Ω)} ≤ C ‖u‖{W^{k,p}(Ω)}\n\nwhere ‖·‖ denotes the corresponding norms on the function spaces.\n\nThe main mathematical results and tools used in the proof of the Sobolev Embedding Theorem include:\n\nExtension operators: These are linear operators that extend functions defined on Ω to functions defined on ℝ^n while preserving their Sobolev space membership and controlling their norms. Extension operators are essential for reducing the problem to the case of ℝ^n.\n\nConvolution and mollifiers: Convolution with smooth, compactly supported functions (mollifiers) is used to approximate functions in Sobolev spaces by smooth functions. This technique helps in proving the continuity and differentiability of functions in Sobolev spaces.\n\nInequalities:\na. Hölder's inequality: This inequality relates the L^p norms of the product of two functions to the L^p norms of the functions themselves.\nb. Poincaré inequality: It establishes a relationship between the norm of a function in a Sobolev space and the norm of its derivatives, which helps control the behavior of functions in Sobolev spaces.\nc. Rellich-Kondrachov compactness theorem: This theorem ensures the compactness of the embedding, which is crucial in many applications, particularly in the study of partial differential equations.\n\nFourier transform and Fourier multiplier theorems: In some approaches, the Fourier transform is used to analyze the behavior of functions in Sobolev spaces, and the multiplier theorems help establish bounds on the Fourier transform of derivatives.\n\nThese results and techniques are combined to establish the Sobolev Embedding Theorem, which has widespread applications in the study of partial differential equations, functional analysis, and numerical analysis.",
+        "rating": "3",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "The relationship between p,q,k,s does not seem to be right. Choosing p very close to q yields that essentially C^{k-1-delta} would be embedded in W^{k,p}, but this does not hold for every dimension.",
+        "msc": [
+            "46E35"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "State the closed graph theorem and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "The Closed Graph Theorem is a fundamental result in functional analysis that connects the concepts of continuity and closedness for linear operators between Banach spaces. It can be stated as follows:\n\nClosed Graph Theorem: Let X and Y be Banach spaces, and let T: X → Y be a linear operator. T is continuous if and only if its graph, defined as the set G(T) = {(x, Tx) ∈ X × Y : x ∈ X}, is a closed subset of the product space X × Y.\n\nTo prove the Closed Graph Theorem, several important mathematical results and tools are used:\n\nBanach Space: A Banach space is a complete normed vector space, meaning that every Cauchy sequence in the space converges to a limit within the space.\n\nBounded Linear Operators: A linear operator T: X → Y is said to be bounded if there exists a constant C > 0 such that ||Tx|| ≤ C||x|| for all x ∈ X. Bounded linear operators are automatically continuous.\n\nThe Principle of Uniform Boundedness (Banach-Steinhaus Theorem): This theorem states that for a family of bounded linear operators between Banach spaces, if for every x in the domain, the set of norms of the operators applied to x is bounded, then the supremum of the operator norms is also bounded.\n\nProjections in Banach spaces: Projections are linear operators P: X → X such that P^2 = P. In some proofs, projections are used to construct auxiliary operators that help establish a relationship between the norms of elements in the domain and the range.\n\nClosed Subspaces and Quotient Spaces: A subspace of a Banach space is said to be closed if it contains all its limit points. Quotient spaces are formed by taking the factor space with respect to a closed subspace.\n\nHahn-Banach Theorem: This theorem allows for the extension of continuous linear functionals on a subspace to the entire Banach space without changing the norm of the functional.\n\nOpen Mapping Theorem: This theorem states that a continuous, surjective linear operator between Banach spaces is an open map, meaning that it maps open sets to open sets.\n\nThese mathematical tools and results are used in various ways to prove the Closed Graph Theorem, depending on the chosen approach. The proof generally involves showing that the assumptions of the theorem imply the continuity of the linear operator, or conversely, that the continuity implies the closedness of the graph.",
+        "rating": "4",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "Statement correct and most related results are useful for the proof. The theorem of Hahn-Banach is not necessary.",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "State the Fourier inversion theorem and give a list of the main mathematical results and tools which are used in its proof.",
+        "output": "The Fourier inversion theorem is a fundamental result in the field of Fourier analysis, which deals with the representation of functions in terms of sinusoids. The theorem states that if a function f(x) has a Fourier transform F(w), then the inverse Fourier transform of F(w) will recover the original function f(x), under certain conditions.\n\nMathematically, the Fourier inversion theorem can be expressed as follows:\n\nf(x) = (1 / (2π)) ∫[−∞, ∞] F(w) e^(iwx) dw\n\nwhere f(x) is a function of x, F(w) is its Fourier transform, and the integral is taken over the entire real line.\n\nThe proof of the Fourier inversion theorem relies on several mathematical results and tools:\n\nFourier Transform and Inverse Fourier Transform: The theorem is based on the idea that a function can be decomposed into its frequency components using the Fourier transform and reconstructed using the inverse Fourier transform.\n\nIntegration: The theorem involves integration over the real line to represent the function as a continuous sum of sinusoids.\n\nComplex Exponentials: The use of complex exponentials (e^(iwx)) enables the representation of both sine and cosine functions in a compact form.\n\nSchwartz's Lemma: This result is used to establish the convergence of the integral involved in the Fourier inversion theorem. Schwartz's Lemma states that if two functions are equal almost everywhere (except possibly on a set of measure zero), then their Fourier transforms are equal.\n\nRiemann-Lebesgue Lemma: This lemma states that the Fourier transform of an absolutely integrable function tends to zero as the frequency goes to infinity. This result is used to show the convergence of the Fourier series at certain points.\n\nDominated Convergence Theorem: This theorem is used to justify the interchange of limits and integration when dealing with the convergence of the Fourier series. The Dominated Convergence Theorem states that if a sequence of functions converges pointwise to a limit, and this sequence is uniformly bounded by an integrable function, then the limit of the integrals is equal to the integral of the limit.\n\nParseval's Identity: This identity relates the energy (or square of the L2 norm) of a function to the energy of its Fourier transform. It helps establish the convergence of the Fourier series in the L2 sense, which is crucial for the proof of the Fourier inversion theorem.\n\nLebesgue's Differentiation Theorem: This result is used to show the pointwise convergence of the Fourier series. Lebesgue's Differentiation Theorem states that if a function is absolutely continuous, then the average of its values over increasingly small intervals converges to the value of the function at the point of interest.",
+        "rating": "3",
+        "errorcodes": [
+            "e1",
+            "e5_3"
+        ],
+        "warningcodes": [],
+        "comment": "The assumptions for the inverse Fourier transform to be an inverse are not stated. The related results are OK, though.",
+        "msc": [
+            "42A38"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "State Minkowski's inequality and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "Minkowski's inequality is a fundamental result in functional analysis and measure theory, which is particularly important in the context of Lp spaces. It is named after the mathematician Hermann Minkowski. The inequality states that for any two measurable functions f and g, and any real number p ≥ 1, the following inequality holds:\n\n(||f + g||_p)^(1/p) ≤ (||f||_p)^(1/p) + (||g||_p)^(1/p)\n\nHere, ||·||_p denotes the Lp-norm, defined as:\n\n(||f||_p) = ( ∫|f(x)|^p dx )^(1/p)\n\nThe main mathematical results and tools used in the proof of Minkowski's inequality include:\n\nHölder's inequality: This is another fundamental inequality in functional analysis, which states that for any two measurable functions f and g, and any pair of real numbers p and q such that 1/p + 1/q = 1, the following inequality holds:\n∫|f(x)g(x)| dx ≤ (||f||_p) (||g||_q)\n\nTriangle inequality: This is a basic inequality for any metric space, stating that the sum of the lengths of two sides of a triangle is always greater than or equal to the length of the remaining side. Minkowski's inequality is, in fact, a generalization of the triangle inequality to Lp spaces.\n\nProperties of exponents: Manipulations involving the properties of exponents and real numbers are used in the proof, such as (a^p + b^p)^(1/p) ≤ a + b for p ≥ 1.\n\nMeasure theory: The proof relies on the concepts and tools from measure theory, such as measurable functions, Lebesgue integration, and properties of Lebesgue integral.\n\nReal analysis: Some basic results from real analysis, such as the monotonicity of functions and the properties of absolute values, are employed in the proof.\n\nThe proof of Minkowski's inequality combines these mathematical tools, primarily relying on Hölder's inequality and the properties of exponents, to show that the Lp-norm of the sum of two functions is less than or equal to the sum of their Lp-norms. This result has numerous applications in functional analysis, harmonic analysis, and partial differential equations.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": " ",
+        "msc": [
+            "26D15"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "State the fundamental theorem of calculus and give a list of the main mathematical results and tools which are used in its proof.",
+        "output": "The Fundamental Theorem of Calculus (FTC) has two main parts and is central to the study of calculus:\n\nThe First Fundamental Theorem of Calculus states that if f is continuous on the closed interval [a, b] and F is an antiderivative of f on [a, b], then ∫ from a to b of f(x) dx = F(b) - F(a). Essentially, it provides a connection between differentiation and integration, saying that integration of a function over some interval can be computed by using any one of its infinitely many antiderivatives.\n\nThe Second Fundamental Theorem of Calculus states that if f is a function that is continuous over some interval and x is any number in that interval, then if F(x) = ∫ from atoxoff(t) dt, then Fis uniformly continuous and differentiable on the open interval(a, b), and F'(x) = f(x)for allxin(a, b)`. In other words, it says that differentiation is the reverse of integration, or the derivative of the integral of a function is the original function.\n\nNow let's list the main mathematical results and tools used in its proof:\n\nLimits and Continuity: The concept of limits is vital in defining both integrals and derivatives, and continuity is a prerequisite in the FTC for the function being integrated.\n\nRiemann Sum: The FTC relies on the concept of a Riemann sum, which provides a method for approximating integrals.\n\nMean Value Theorem: This theorem is often used in the proof of the First Fundamental Theorem of Calculus. It states that if a function is continuous on the closed interval [a, b] and differentiable on the open interval (a, b), then there exists some c in (a, b) such that f'(c) = (f(b)-f(a)) / (b-a).\n\nAntiderivatives and Indefinite Integration: Antiderivatives play a crucial role in the FTC, particularly in the first part. The concept of indefinite integration is also needed, which is essentially finding antiderivatives.\n\nThe Squeeze (Sandwich) Theorem: This theorem is occasionally used in the proof of the Second Fundamental Theorem of Calculus. It helps to bound a function by two other functions that approach the same limit, thereby establishing that the original function must also approach this limit.\n\nProperties of Definite Integrals: Understanding the basic properties of integrals is necessary in the proofs, including the rules about integrals over subintervals of the original interval of integration.\n\nRemember that the specific tools and results used may vary slightly depending on the exact form and rigor of the proof.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "State the Krein-Milman theorem and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "The Krein-Milman theorem is a key result in functional analysis, particularly in the study of convex sets in locally convex topological vector spaces. The theorem, as stated for a locally convex space, is as follows:\n\nKrein-Milman Theorem: Let X be a locally convex space, and let K be a non-empty, compact, convex subset of X. Then K is the closed convex hull of its extreme points. In other words, each point in K can be written as a convex combination of extreme points of K.\n\nThe proof of this theorem employs a number of important mathematical results and tools. Here are the main ones:\n\nTopological Preliminaries: The proof uses basic facts about topologies, such as the fact that a locally convex space has a base of the neighbourhood system at each point consisting of convex sets. Compactness and its properties also play a crucial role.\n\nHahn-Banach Theorem: This theorem, which allows for the extension of linear functionals in a suitable way, is often invoked in the proof of the Krein-Milman theorem. This theorem is used to show that for any point in K not an extreme point, there exists a hyperplane strictly separating it from some extreme point.\n\nSeparation Theorem: Also known as the Hyperplane Separation Theorem, it states that if you have two disjoint, nonempty convex sets and one of them is open, then there exists a hyperplane that strictly separates the two sets.\n\nZorn's Lemma: This is a statement about partially ordered sets. When applied to the set of all closed faces of K containing a given extreme point, ordered by reverse inclusion, it guarantees the existence of a minimal face. This minimal face is then shown to be a singleton set - i.e., a point. Zorn's Lemma is used to handle the potentially infinite nature of the space.\n\nRemember that this is a high-level overview. Each step of the proof would need to be fleshed out in detail for a thorough understanding.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "46A03"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "State the Plancherel theorem and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "The Plancherel theorem is a fundamental result in Fourier analysis that establishes a relationship between the Fourier transform of a function and its energy (squared magnitude). The theorem is used extensively in signal processing, physics, and engineering. It is named after the Swiss mathematician Michel Plancherel. The theorem can be stated as follows:\n\nLet f and g be functions in L^2(R), the space of square-integrable functions on the real line. Then their Fourier transforms, F[f] and F[g], also belong to L^2(R), and the following identity holds:\n\n∫_{-∞}^{∞} f(x)g*(x) dx = (1/(2π)) ∫_{-∞}^{∞} FfF[g]*(ξ) dξ\n\nHere, g* denotes the complex conjugate of g, and F[f] and F[g] are the Fourier transforms of f and g, respectively. The Plancherel theorem essentially states that the L^2-inner product of f and g is equal to the L^2-inner product of their Fourier transforms, up to a constant factor of 1/(2π). In the special case where f = g, the theorem reduces to the Parseval's identity:\n\n∫_{-∞}^{∞} |f(x)|^2 dx = (1/(2π)) ∫_{-∞}^{∞} |Ff|^2 dξ\n\nThe main mathematical results and tools used in the proof of the Plancherel theorem include:\n\nFourier transform: The Fourier transform is a linear transform that decomposes a function into its constituent frequencies. It is defined as:\nFf = ∫_{-∞}^{∞} f(x)e^{-i2πξx} dx\n\nInverse Fourier transform: The inverse Fourier transform is used to recover the original function from its Fourier transform:\nf(x) = ∫_{-∞}^{∞} Ffe^{i2πξx} dξ\n\nRiemann-Lebesgue lemma: This lemma states that if f is an absolutely integrable function (i.e., f ∈ L^1(R)), then its Fourier transform vanishes at infinity.\n\nL^2 convergence: To prove the Plancherel theorem, it is necessary to show that the Fourier transform converges in the L^2 sense, i.e., the Fourier transform of a square-integrable function is also square-integrable.\n\nBessel's inequality and Riesz-Fisher theorem: These results are used to show the existence of the Fourier transform in L^2(R) and its uniqueness.\n\nSchwartz's inequality (Cauchy-Schwarz inequality): This inequality is used to show that the inner product of functions is finite, which is crucial in establishing the Plancherel identity.\n\nLimit theorems: The Dominated Convergence Theorem and the Monotone Convergence Theorem are used to justify interchanging the order of integration and limits.\n\nThe proof of the Plancherel theorem combines these mathematical tools and results to establish the relationship between the energy of a function and its Fourier transform.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "42B10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "State Rolle's theorem and give a list of the main mathematical results and tools which are used in its proof.",
+        "output": "Rolle's Theorem is a fundamental result in calculus that provides a necessary condition for the existence of critical points (maxima or minima) of a differentiable function. The theorem states:\n\nIf a function f(x) is continuous on the closed interval [a, b], differentiable on the open interval (a, b), and f(a) = f(b), then there exists at least one point c in the open interval (a, b) such that the derivative f'(c) = 0.\n\nThe proof of Rolle's Theorem relies on several key mathematical results and tools:\n\nExtreme Value Theorem: If a function is continuous on a closed interval [a, b], then it attains its maximum and minimum values on that interval. This theorem ensures that there exist points in the interval [a, b] where the function attains its extreme values.\n\nFermat's Theorem: If a function has a local maximum or minimum at an interior point c in its domain, and the derivative of the function exists at that point, then the derivative at that point is zero, i.e., f'(c) = 0. This theorem provides a link between extreme values and the derivative.\n\nContinuity and differentiability properties: Rolle's Theorem assumes that the function is continuous on [a, b] and differentiable on (a, b). These properties are important to ensure the existence of extreme values in the interval and the validity of Fermat's Theorem.\n\nTo prove Rolle's Theorem, one typically follows these steps:\n\nShow that the function attains its maximum and minimum values on the interval [a, b] using the Extreme Value Theorem.\n\nConsider two cases:\na. The extreme values occur at the endpoints a and/or b. In this case, the function is constant, and the derivative is zero everywhere in the interval (a, b).\nb. At least one of the extreme values occurs at an interior point c. Apply Fermat's Theorem to show that the derivative at that point is zero, i.e., f'(c) = 0.\n\nIn either case, the theorem is proven, as there exists at least one point c in the open interval (a, b) such that the derivative f'(c) = 0.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "State the open mapping theorem and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "The Open Mapping Theorem is a fundamental result in functional analysis, specifically in the study of Banach spaces and continuous linear operators between them. The theorem is stated as follows:\n\nOpen Mapping Theorem: Let X and Y be Banach spaces, and let T: X → Y be a continuous linear operator. If T is surjective (i.e., T maps X onto Y), then T is an open mapping. In other words, the image of any open set in X under T is an open set in Y.\n\nThe main mathematical results and tools used in the proof of the Open Mapping Theorem include:\n\nBaire Category Theorem: This theorem states that a complete metric space cannot be represented as a countable union of nowhere dense sets. In the context of the Open Mapping Theorem, it is used to show that the image of some open ball in X under T must have non-empty interior in Y.\n\nBanach Spaces: These are complete normed vector spaces, meaning that every Cauchy sequence in the space converges to a limit within the space. The properties of Banach spaces, such as completeness and the triangle inequality, are essential in the proof.\n\nUniform Boundedness Principle (Banach-Steinhaus Theorem): This theorem states that if a family of continuous linear operators on a Banach space is pointwise bounded, then it is uniformly bounded. It is used to obtain bounds on the inverse images of certain sets in the proof.\n\nClosed Graph Theorem: This theorem states that a linear operator between Banach spaces is continuous if and only if its graph is a closed subspace. This result helps to establish the continuity of the inverse operator in the proof.\n\nInverse Operator: In order to prove the Open Mapping Theorem, one must show that the inverse operator exists and is continuous. This requires the use of several of the above tools, such as the Uniform Boundedness Principle and the Closed Graph Theorem.\n\nThe proof of the Open Mapping Theorem relies on the interplay between these tools and results, ultimately establishing that a continuous, surjective linear operator between Banach spaces must map open sets to open sets.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    }
+]

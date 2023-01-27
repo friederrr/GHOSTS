@@ -1,0 +1,154 @@
+[
+    {
+        "prompt": "What is the integral of 5[cosh(tan(4))]^-1",
+        "output": "To find the integral of 5 * [cosh(tan(4))]^-1 with respect to x, you can rewrite the integral as:\n∫(5 * sech(tan(4))) dx \nUnfortunately, there is no elementary function that represents the antiderivative of this function. You would need to use numerical integration methods, like the trapezoidal rule or Simpson's rule, to approximate the definite integral over a specific interval.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "39",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 1|sub Y' mul INT+ 5 pow cosh tan INT+ 4 INT- 1, RHS: mul INT+ 5 mul x pow cosh tan INT+ 4 INT- 1",
+        "confidence": "high",
+        "timestamp": "2023-03-18"
+    },
+    {
+        "prompt": "What is the integral of (14 + 2x)[cos(30 + x^2 + 14x)]",
+        "output": "Integrating a function of the form (a + bx) * cos(c + x^2 + dx) analytically is generally very difficult or impossible to express in terms of elementary functions. In this case, the function to integrate is (14 + 2x) * cos(30 + x^2 + 14x).\n To solve the integral, you may need to use numerical methods or advanced techniques such as series expansion, depending on the context of the problem. If you need an approximate result, you can use a numerical integration method like Simpson's rule or the trapezoidal rule.\n If you require a closed-form expression, you might consider consulting a symbolic computation software like Mathematica or Maple to see if they can provide a solution in terms of special functions. However, be aware that it's possible that no simple closed-form expression exists for this integral.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "30",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 1|sub Y' mul add INT+ 1 4 mul INT+ 2 x cos add INT+ 3 0 add pow x INT+ 2 mul INT+ 1 4 x, RHS: sin add x mul add INT+ 3 x add INT+ 1 0 x",
+        "confidence": "high",
+        "timestamp": "2023-03-18"
+    },
+    {
+        "prompt": "What is the integral of (5 - cos(4))(6 + 12x)",
+        "output": "To find the integral of (5 - cos(4))(6 + 12x), first note that cos(4) is a constant. Now, let's integrate the given function with respect to x:\n ∫[(5 - cos(4))(6 + 12x)] dx\nSince 5 and cos(4) are constants, we can rewrite the integral as:\n∫[5(6 + 12x) - cos(4)(6 + 12x)] dx\nNow, let's distribute the constants and separate the terms:\n∫[30 + 60x - 6cos(4) - 12xcos(4)] dx\nNow, we integrate each term separately:\n∫30 dx + ∫60x dx - ∫6cos(4) dx - ∫12xcos(4) dx\nSince 30, 60, 6cos(4) are constants, their integrals are straightforward:\n(30x) + (60 * (1/2) * x^2) - (6cos(4)x)\nwhich simplifies to:\n30x + 30x^2 - 6cos(4)x\nNow, we need to find the integral of the last term, ∫12xcos(4) dx. This requires integration by parts. Let's use integration by parts with:\nu = 12x\ndv = cos(4) dx\nNow, differentiate u and integrate dv to get:\ndu = 12 dx\nv = ∫cos(4) dx = (1/4)sin(4x)\nApplying integration by parts:\n∫12xcos(4) dx = uv - ∫v du = (12x * (1/4)sin(4x)) - ∫(1/4)sin(4x) * 12 dx\nNow, integrate the remaining term:\n(3x * sin(4x)) - (3 * ∫sin(4x) dx)\nTo integrate sin(4x), we use the following formula:\n∫sin(ax) dx = -(1/a)cos(ax) + C\nSo,\n∫sin(4x) dx = -(1/4)cos(4x) + C\nSubstitute this back into our expression:\n(3x * sin(4x)) - (3 * (-(1/4)cos(4x) + C))\nNow, combine all the terms to get the final answer:\n30x + 30x^2 - 6cos(4)x + 3xsin(4x) + (3/4)cos(4x) + C\nThus, the integral of (5 - cos(4))(6 + 12x) is:\n30x + 30x^2 - 6cos(4)x + 3xsin(4x) + (3/4)cos(4x) + C",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "47",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul add INT+ 5 mul INT- 1 cos INT+ 4 add INT+ 6 mul INT+ 1 2 x, RHS: mul INT+ 6 mul x add INT+ 5 add mul INT- 1 cos INT+ 4 add mul INT+ 5 x mul INT- 1 mul x cos INT+ 4",
+        "confidence": "high",
+        "timestamp": "2023-03-18"
+    },
+    {
+        "prompt": "What is the integral of -13/6 * cosh(2) + 13/6 * x",
+        "output": "To find the integral of the given expression, we can integrate each term separately:\n∫(-13/6 * cosh(2) + 13/6 * x) dx\nSince the integral operator is linear, we can break down the expression into two separate integrals:\n(-13/6) * ∫(cosh(2)) dx + (13/6) * ∫x dx\nThe first term is the integral of a constant times cosh(2). Since the constant (-13/6) can be factored out, and cosh(2) is a constant, the integral becomes:\n(-13/6) * cosh(2) * ∫(1) dx\nThe integral of 1 with respect to x is x. So, the first term becomes:\n(-13/6) * cosh(2) * x\nNow, let's find the integral of the second term, which is a simple power function:\n(13/6) * ∫x dx\nUsing the power rule for integration, we have:\n(13/6) * (x^2 / 2)\nCombining both terms and adding the constant of integration (C), we get the final result:\n(-13/6) * cosh(2) * x + (13/12) * x^2 + C",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "100",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' add mul div INT- 1 3 INT+ 6 cosh INT+ 2 mul div INT+ 1 3 INT+ 6 x, RHS: mul div INT+ 1 3 INT+ 1 2 mul x add x mul INT- 2 cosh INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-03-18"
+    },
+    {
+        "prompt": "What is the integral of -10 + x^2 + 18x + 25sqrt(5)",
+        "output": "To calculate the integral of the given function, we can integrate each term individually:\nFunction: f(x) = -10 + x^2 + 18x + 25√5\nWe'll integrate each term with respect to x:\n∫(-10)dx = -10x + C1\n∫(x^2)dx = (1/3)x^3 + C2\n∫(18x)dx = 9x^2 + C3\n∫(25√5)dx = 25√5x + C4\nNow, we can sum up the individual integrals to obtain the integral of the whole function:\n∫f(x)dx = (-10x + C1) + (1/3)x^3 + C2) + (9x^2 + C3) + (25√5x + C4)\nCombine the constants C1, C2, C3, and C4 into a single constant C:\n∫f(x)dx = (1/3)x^3 + 9x^2 - 10x + 25√5x + C\nSo, the integral of the given function is:\n(1/3)x^3 + 9x^2 - 10x + 25√5x + C",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "60",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' add INT- 1 0 add pow x INT+ 2 add mul INT+ 1 8 x mul INT+ 2 5 sqrt INT+ 5, RHS: mul div INT+ 1 INT+ 3 mul x add INT- 3 0 add pow x INT+ 2 add mul INT+ 2 7 x mul INT+ 7 5 sqrt INT+ 5",
+        "confidence": "high",
+        "timestamp": "2023-03-18"
+    },
+    {
+        "prompt": "What is the integral of 4x^7(3 + x^2)",
+        "output": "To find the integral of the given function, 4x^7(3 + x^2), first apply the distributive property:\n∫(4x^7 * 3 + 4x^7 * x^2) dx\nNow, integrate each term separately:\n∫(12x^7 + 4x^9) dx\nTo integrate, use the power rule for integration, which states that the integral of x^n is (x^(n+1))/(n+1) + C, where C is the constant of integration. Applying the power rule to each term:\n(12/8)x^8 + (4/10)x^10 + C\nSimplify the expression:\n(3/2)x^8 + (2/5)x^10 + C\nSo, the integral of 4x^7(3 + x^2) with respect to x is:\n(3/2)x^8 + (2/5)x^10 + C",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "42:",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 41|sub Y' mul INT+ 4 mul pow x INT+ 7 add INT+ 3 pow x INT+ 2, RHS: mul div INT+ 1 INT+ 1 0 mul pow x INT+ 8 add INT+ 1 5 mul INT+ 4 pow x INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-03-18"
+    },
+    {
+        "prompt": "What is the integral of 7x + (13/4) * x^2 + xln(2x)",
+        "output": "To calculate the integral of the given expression, we will find the integral of each term separately and then sum them up. The expression is:\n∫(7x + (13/4) * x^2 + x * ln(2x)) dx\nWe can break it down into three separate integrals:\n∫(7x) dx + ∫((13/4) * x^2) dx + ∫(x * ln(2x)) dx\nThe integral of 7x is straightforward:\n∫(7x) dx = (7/2)x^2 + C1\nThe integral of (13/4)x^2 is also straightforward:\n∫((13/4) * x^2) dx = (13/12)x^3 + C2\nThe integral of x * ln(2x) is a bit more complicated, as it involves integration by parts.\n Let u = ln(2x) and dv = x dx.\nThen, we need to find du and v:\ndu = (1/x) dx (chain rule with derivative of ln(2x) being 1/x)\nv = (1/2)x^2 (integral of x with respect to dx)\nNow we can apply integration by parts formula:\n∫(x * ln(2x)) dx = uv - ∫(v * du)\n= (1/2)x^2 * ln(2x) - ∫((1/2)x^2 * (1/x) dx)\n= (1/2)x^2 * ln(2x) - ∫((1/2)x) dx\n= (1/2)x^2 * ln(2x) - (1/4)x^2 + C3\nNow we can sum up the three separate integrals:\n(7/2)x^2 + C1 + (13/12)x^3 + C2 + (1/2)x^2 * ln(2x) - (1/4)x^2 + C3\nCombining constants and like terms:\n(7/2)x^2 - (1/4)x^2 + (13/12)x^3 + (1/2)x^2 * ln(2x) + C\nWhich simplifies to:\n(13/12)x^3 + (27/4)x^2 + (1/2)x^2 * ln(2x) + C\nThis is the integral of the given expression.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "74: Minor slip on one term",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 1|sub Y' add x mul x add INT+ 6 add mul div INT+ 1 3 INT+ 4 x ln mul INT+ 2 x, RHS: add mul div INT+ 1 3 INT+ 4 pow x INT+ 2 add mul div INT+ 1 3 INT+ 1 2 pow x INT+ 3 mul div INT+ 1 INT+ 2 mul pow x INT+ 2 ln mul INT+ 2 x",
+        "confidence": "high",
+        "timestamp": "2023-03-18"
+    },
+    {
+        "prompt": "What is the integral of 12 + 6cosh(x)",
+        "output": "To compute the integral of the given function, we can split it into two separate integrals and then integrate each part separately.\nThe function we want to integrate is:\nf(x) = 12 + 6cosh(x)\nLet's break it down:\n∫(12 + 6cosh(x)) dx = ∫12 dx + ∫6cosh(x) dx\nNow, we'll integrate each part:\n∫12 dx = 12x + C1\n∫6cosh(x) dx\nFor the second integral, recall that the derivative of sinh(x) is cosh(x). So, we can find the integral of 6cosh(x) as follows:\n∫6cosh(x) dx = 6sinh(x) + C2\nNow, combine the results:\n∫(12 + 6cosh(x)) dx = 12x + 6sinh(x) + C\nwhere C is the constant of integration (C = C1 + C2).",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "90: Correct!",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 40|sub Y' add INT+ 1 2 mul INT+ 6 cosh x, RHS: add mul INT+ 6 sinh x mul INT+ 1 2 x",
+        "confidence": "high",
+        "timestamp": "2023-03-18"
+    },
+    {
+        "prompt": "What is the integral of 125 + 25[(x - sinx)^-1 * (2 - 2cosx)]",
+        "output": "To find the integral of the given expression, let's break it into two parts and integrate each part separately:\n∫(125)dx + ∫[25((x - sin(x))^-1 * (2 - 2cos(x))]dx\nIntegrating the first part is straightforward:\n∫(125)dx = 125x + C1\nFor the second part, let's try substituting:\nLet u = x - sin(x). Then, du = (1 - cos(x))dx.\nNow, let's express the second part of the integral in terms of u:\n∫[25((x - sin(x))^-1 * (2 - 2cos(x))]dx = ∫[25(u^-1) * (2 - 2cos(x))]dx\nNow, substitute dx using the derivative we found:\ndx = du / (1 - cos(x))\nSo, the integral becomes:\n∫[25(u^-1) * (2 - 2cos(x))] * du / (1 - cos(x))\nNotice that (2 - 2cos(x)) / (1 - cos(x)) = 2(1 + cos(x))\nTherefore, the integral becomes:\n∫[50u^-1 * (1 + cos(x))]du\nNow we need to express cos(x) in terms of u. Since u = x - sin(x), we can write x = u + sin(x). We know that sin^2(x) + cos^2(x) = 1, so we can write cos^2(x) = 1 - sin^2(x).\nNow we need to find sin(x) in terms of u. This can be quite challenging, and in fact, there is no simple algebraic expression that directly relates sin(x) and u. As a result, we cannot find a closed-form solution for the integral.\nHowever, if you are looking for a numerical solution, you can approximate the integral using numerical integration techniques, such as the trapezoidal rule or Simpson's rule.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "37",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 1|sub Y' add INT+ 1 2 5 mul INT+ 1 2 5 mul pow add x mul INT- 1 sin x INT- 1 add INT+ 2 mul INT- 2 cos x, RHS: add mul INT+ 1 2 5 x mul INT+ 1 2 5 ln pow add x mul INT- 1 sin x INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-03-18"
+    },
+    {
+        "prompt": "What is the integral of (tan^2(2x) - 1)^{-1} * [-2x^2(cos2x)^-2 + (1 + 2xatanh(tan2x) * tan^2(2x) - 1)]",
+        "output": "To find the integral of the given expression, let's simplify it and try to recognize a pattern that will help us integrate it more easily. The expression is:\n∫(-(2x^2)(cos(2x))^(-2) + (1 + 2x * atanh(tan(2x))) * (tan^2(2x) - 1)) * (tan^2(2x) - 1)^(-1) dx\nFirst, let's simplify the expression by distributing the (tan^2(2x) - 1)^(-1) term:\n= ∫(-2x^2 * (cos(2x))^(-2) * (tan^2(2x) - 1)^(-1) + (1 + 2x * atanh(tan(2x))) * (tan^2(2x) - 1)^(-1) * (tan^2(2x) - 1)) dx\nNow, let's focus on the second term of the integrand:\n(1 + 2x * atanh(tan(2x))) * (tan^2(2x) - 1)^(-1) * (tan^2(2x) - 1)\nNotice that the (tan^2(2x) - 1) term cancels out with the (tan^2(2x) - 1)^(-1) term:\n(1 + 2x * atanh(tan(2x)))\nSo, the integral becomes:\n∫(-2x^2 * (cos(2x))^(-2) * (tan^2(2x) - 1)^(-1) + 1 + 2x * atanh(tan(2x))) dx\nNow, we can split the integral into three separate integrals:\n∫(-2x^2 * (cos(2x))^(-2) * (tan^2(2x) - 1)^(-1)) dx + ∫1 dx + ∫(2x * atanh(tan(2x))) dx\nThe middle integral is simply x + C, where C is the constant of integration. The first and the third integrals are quite complex, and they don't appear to have elementary antiderivatives.\nSo, the best we can do is to write the result as:\n∫(-2x^2 * (cos(2x))^(-2) * (tan^2(2x) - 1)^(-1)) dx + x + ∫(2x * atanh(tan(2x))) dx + C\nAs the first and the third integrals don't seem to have elementary antiderivatives, they will need to be approximated numerically or evaluated using special functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "77",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 3|sub Y' mul pow add INT- 1 pow tan mul INT+ 2 x INT+ 2 INT- 1 add mul add INT+ 1 mul INT+ 2 mul x atanh tan mul INT+ 2 x add INT- 1 pow tan mul INT+ 2 x INT+ 2 mul INT- 2 mul pow x INT+ 2 pow cos mul INT+ 2 x INT- 2, RHS: add x mul pow x INT+ 2 atanh tan mul INT+ 2 x",
+        "confidence": "high",
+        "timestamp": "2023-03-18"
+    }
+]

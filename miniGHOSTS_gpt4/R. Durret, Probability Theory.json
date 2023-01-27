@@ -1,0 +1,161 @@
+[
+    {
+        "prompt": "",
+        "output": "To show that the class of measurable functions is the smallest class containing simple functions and being closed under pointwise limits, we will first show that the class of measurable functions contains simple functions and is closed under pointwise limits. Then, we will show that any smaller class does not satisfy these properties.\n\nMeasurable functions contain simple functions and are closed under pointwise limits.\n\n(a) Simple functions are measurable: Consider a simple function $\\phi : \\Omega \\to \\mathbb{R}$ defined as $\\phi(x) = \\sum_{i=1}^n c_i \\mathds{1}{A_i}(x)$, where the $c_i$ are real numbers and $A_i$ are measurable sets. Since each $A_i$ is a measurable set, the indicator function $\\mathds{1}{A_i}(x)$ is also measurable. The sum of measurable functions and scalar multiples of measurable functions are also measurable. Thus, $\\phi(x)$ is measurable, and the class of measurable functions contains simple functions.\n\\(b) Measurable functions are closed under pointwise limits: Let ${f_n}$ be a sequence of measurable functions from $\\Omega$ to $\\mathbb{R}$. Suppose that the pointwise limit of this sequence exists, i.e., for every $x \\in \\Omega$, $f(x) = \\lim_{n \\to \\infty} f_n(x)$. We need to show that $f$ is a measurable function.\n\nLet $a \\in \\mathbb{R}$ be an arbitrary real number. We want to show that the set ${x \\in \\Omega \\mid f(x) > a}$ is measurable. Note that for every $x \\in \\Omega$, $f(x) > a$ if and only if there exists some positive integer $N$ such that $f_n(x) > a$ for all $n \\ge N$. Therefore, we can write:\n\n${x \\in \\Omega \\mid f(x) > a} = \\bigcup_{n=1}^\\infty \\bigcap_{k=n}^\\infty {x \\in \\Omega \\mid f_k(x) > a}$.\n\nSince each $f_k$ is a measurable function, the set ${x \\in \\Omega \\mid f_k(x) > a}$ is measurable. The intersection of measurable sets is measurable, and the countable union of measurable sets is measurable. Thus, the set ${x \\in \\Omega \\mid f(x) > a}$ is measurable, and $f$ is a measurable function. Hence, the class of measurable functions is closed under pointwise limits.\n\nAny smaller class does not satisfy these properties.\n\nSuppose there exists a smaller class $\\mathcal{M}$ that contains simple functions and is closed under pointwise limits. Since the class of measurable functions contains simple functions, $\\mathcal{M}$ must also contain simple functions. Now consider a sequence of functions in $\\mathcal{M}$ with pointwise limits. Since $\\mathcal{M}$ is closed under pointwise limits, the limit function must also belong to $\\mathcal{M}$. However, this contradicts the assumption that $\\mathcal{M}$ is a smaller class than the class of measurable functions.\n\nTherefore, the class of measurable functions is the smallest class containing simple functions and being closed under pointwise limits.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_2",
+            "e5_5"
+        ],
+        "warningcodes": [],
+        "comment": "The second part of the proof is not convincing. In the first part it is used that sums of measurable functions are measurable, without proof. ",
+        "msc": [
+            "28A20"
+        ],
+        "ref": "Rick Durrett-Probability: Theory and Examples-V5-ex1.3.7",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "",
+        "output": "To prove that if g is an integrable step function on ℝ, then $\\lim_{n \\to \\infty} \\int g(x) \\cos(nx) dx = 0$, we will use the Riemann-Lebesgue Lemma.\n\nThe Riemann-Lebesgue Lemma states that if a function f is integrable over an interval [a, b], then the limit of the Fourier coefficients as the frequency n goes to infinity is 0, i.e.,\n\n$$\\lim_{n \\to \\infty} \\int_a^b f(x) e^{-2\\pi i nx} dx = 0$$\n\nIn our case, the function g is a step function, and it is integrable on ℝ. We want to show that\n\n$$\\lim_{n \\to \\infty} \\int_{-\\infty}^{\\infty} g(x) \\cos(nx) dx = 0$$\n\nWe can rewrite the cosine term using Euler's formula:\n\n$$\\cos(nx) = \\frac{e^{inx} + e^{-inx}}{2}$$\n\nNow we have:\n\n$$\\lim_{n \\to \\infty} \\int_{-\\infty}^{\\infty} g(x) \\frac{e^{inx} + e^{-inx}}{2} dx$$\n\nSplitting the integral, we get:\n\n$$\\lim_{n \\to \\infty} \\frac{1}{2} \\int_{-\\infty}^{\\infty} g(x) e^{inx} dx + \\frac{1}{2} \\int_{-\\infty}^{\\infty} g(x) e^{-inx} dx$$\n\nNow, applying the Riemann-Lebesgue Lemma to each term, we get:\n\n$$\\lim_{n \\to \\infty} \\frac{1}{2} \\int_{-\\infty}^{\\infty} g(x) e^{inx} dx = 0$$\n\nand\n\n$$\\lim_{n \\to \\infty} \\frac{1}{2} \\int_{-\\infty}^{\\infty} g(x) e^{-inx} dx = 0$$\n\nSince both limits are 0, their sum is also 0:\n\n$$\\lim_{n \\to \\infty} \\int_{-\\infty}^{\\infty} g(x) \\cos(nx) dx = 0$$\n\nThis completes the proof.",
+        "rating": "4",
+        "errorcodes": [
+            "e5_5"
+        ],
+        "warningcodes": [],
+        "comment": "This proof is nice, but using the Riemann Lebesgue Lemma is too strong of a tool for an exercise of this level of difficulty. It should have been shown with elementary tools",
+        "msc": [
+            "28A25"
+        ],
+        "ref": "Rick Durrett-Probability: Theory and Examples-V5-ex1.4.4",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "",
+        "output": "To show that $f^\\delta$ is lower semicontinuous and $f_\\delta$ is upper semicontinuous, we need to prove the following two statements:\n\n$f^\\delta(x)$ is lower semicontinuous: For every $x \\in \\mathbb{R}^d$ and every $\\epsilon > 0$, there exists a $\\delta' > 0$ such that $f^\\delta(y) \\ge f^\\delta(x) - \\epsilon$ for all $y$ with $|x - y| < \\delta'$.\n\n$f_\\delta(x)$ is upper semicontinuous: For every $x \\in \\mathbb{R}^d$ and every $\\epsilon > 0$, there exists a $\\delta' > 0$ such that $f_\\delta(y) \\le f_\\delta(x) + \\epsilon$ for all $y$ with $|x - y| < \\delta'$.\n\nProof for (1):\n\nLet $x \\in \\mathbb{R}^d$ and $\\epsilon > 0$. Since $f^\\delta(x) = \\sup{f(y) : |x - y| < \\delta}$, there exists $x_0 \\in \\mathbb{R}^d$ such that $|x - x_0| < \\delta$ and $f(x_0) > f^\\delta(x) - \\epsilon$. Now, let $\\delta' = \\delta - |x - x_0| > 0$. For any $y$ with $|x - y| < \\delta'$, we have\n\n$$|y - x_0| \\le |y - x| + |x - x_0| < \\delta',$$\n\nwhich implies $|y - x_0| < \\delta$. Therefore, for all $y$ with $|x - y| < \\delta'$, we have\n\n$$f^\\delta(y) \\ge f(y - x_0) > f^\\delta(x) - \\epsilon.$$\n\nThus, $f^\\delta(x)$ is lower semicontinuous.\n\nProof for (2):\n\nLet $x \\in \\mathbb{R}^d$ and $\\epsilon > 0$. Since $f_\\delta(x) = \\inf{f(y) : |x - y| < \\delta}$, there exists $x_0 \\in \\mathbb{R}^d$ such that $|x - x_0| < \\delta$ and $f(x_0) < f_\\delta(x) + \\epsilon$. Now, let $\\delta' = \\delta - |x - x_0| > 0$. For any $y$ with $|x - y| < \\delta'$, we have\n\n$$|y - x_0| \\le |y - x| + |x - x_0| < \\delta',$$\n\nwhich implies $|y - x_0| < \\delta$. Therefore, for all $y$ with $|x - y| < \\delta'$, we have\n\n$$f_\\delta(y) \\le f(y - x_0) < f_\\delta(x) + \\epsilon.$$\n\nThus, $f_\\delta(x)$ is upper semicontinuous.",
+        "rating": "4",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [
+            "w5"
+        ],
+        "comment": "The line 'For any $y$ with $|x - y| < \\delta'$, we have $$|y - x_0| \\le |y - x| + |x - x_0| < \\delta',$$' is obviously wrong, but it seems to be a typo. It should be delta instead of delta'. The rest appears to be ok.",
+        "msc": [
+            "28A20"
+        ],
+        "ref": "Rick Durrett-Probability: Theory and Examples-V5-ex1.3.6",
+        "confidence": "high",
+        "timestamp": "2023-03-21"
+    },
+    {
+        "prompt": "",
+        "output": "To show that Z is a random variable, we need to prove that for any Borel set B, the preimage of B under Z, i.e., {ω ∈ Ω: Z(ω) ∈ B}, belongs to the σ-algebra F. Let B be a Borel set.\n\nThe preimage of B under Z can be written as:\n\n{ω ∈ Ω: Z(ω) ∈ B} = {ω ∈ Ω: (ω ∈ A and X(ω) ∈ B) or (ω ∈ A^c and Y(ω) ∈ B)}\n\nNow, consider the sets:\n\nC = {ω ∈ Ω: ω ∈ A and X(ω) ∈ B} = A ∩ {ω ∈ Ω: X(ω) ∈ B}\nD = {ω ∈ Ω: ω ∈ A^c and Y(ω) ∈ B} = A^c ∩ {ω ∈ Ω: Y(ω) ∈ B}\n\nSince X and Y are random variables, for any Borel set B, the preimages {ω ∈ Ω: X(ω) ∈ B} and {ω ∈ Ω: Y(ω) ∈ B} belong to the σ-algebra F. Since A ∈ F and A^c ∈ F (as F is a σ-algebra), their intersections with the preimages also belong to F, i.e., C ∈ F and D ∈ F.\n\nNow, we can write the preimage of B under Z as the union of sets C and D:\n\n{ω ∈ Ω: Z(ω) ∈ B} = C ∪ D\n\nSince F is a σ-algebra and both C and D belong to F, their union C ∪ D also belongs to F. Therefore, for any Borel set B, the preimage of B under Z belongs to F, which means Z is a random variable.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "60E05"
+        ],
+        "ref": "Rick Durrett-Probability: Theory and Examples-V5-ex1.2.1",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "",
+        "output": "To show that if $f$ is a continuous function and $X_n \\to X$ almost surely, then $f(X_n) \\to f(X)$ almost surely, we will use the concept of continuity and the definition of almost sure convergence.\n\nLet's first recall the definitions:\n\nA function $f$ is continuous at a point $x_0$ if for any $\\epsilon > 0$, there exists a $\\delta > 0$ such that for all $x$ satisfying $|x - x_0| < \\delta$, we have $|f(x) - f(x_0)| < \\epsilon$.\n\nA sequence of random variables $X_n$ converges almost surely to a random variable $X$ if the probability that the sequence converges pointwise to $X$ is 1, i.e., $P(\\lim_{n\\to\\infty} X_n = X) = 1$.\n\nNow let's proceed with the proof:\n\nFix $\\epsilon > 0$. Since $f$ is continuous, for any $x_0$ there exists a $\\delta > 0$ such that if $|x - x_0| < \\delta$, then $|f(x) - f(x_0)| < \\epsilon$. We have to show that $P(\\lim_{n\\to\\infty} f(X_n) = f(X)) = 1$.\n\nFor any $\\omega$ in the sample space $\\Omega$, if $X_n(\\omega) \\to X(\\omega)$ as $n \\to \\infty$, then since $f$ is continuous, we have $f(X_n(\\omega)) \\to f(X(\\omega))$ as $n \\to \\infty$. This implies that $\\lim_{n\\to\\infty} f(X_n(\\omega)) = f(X(\\omega))$ for all $\\omega$ such that $\\lim_{n\\to\\infty} X_n(\\omega) = X(\\omega)$.\n\nNow, since $X_n \\to X$ almost surely, we have $P(\\lim_{n\\to\\infty} X_n = X) = 1$. This implies that the set $A = {\\omega \\in \\Omega: \\lim_{n\\to\\infty} X_n(\\omega) = X(\\omega)}$ has probability 1. Using the property of continuous functions we established above, we know that for all $\\omega \\in A$, $\\lim_{n\\to\\infty} f(X_n(\\omega)) = f(X(\\omega))$. Therefore, the set $B = {\\omega \\in \\Omega: \\lim_{n\\to\\infty} f(X_n(\\omega)) = f(X(\\omega))}$ contains the set $A$, and since $P(A) = 1$, we also have $P(B) = 1$.\n\nThus, we've shown that $P(\\lim_{n\\to\\infty} f(X_n) = f(X)) = 1$, which means $f(X_n) \\to f(X)$ almost surely.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "The proof could be 1/5th of the length",
+        "msc": [
+            "28A20"
+        ],
+        "ref": "Rick Durrett-Probability: Theory and Examples-V5-ex1.3.3.",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "",
+        "output": "To show that if $f geq 0$ and $int f dmu = 0$, then $f = 0$ almost everywhere, we will use a proof by contradiction.\n\nAssume that $f geq 0$, $int f dmu = 0$, and $f \\neq 0$ on a set of positive measure. Let $E_n = {x in X mid f(x) > \\frac{1}{n}}$ for $n in mathbb{N}$. Since $f \\neq 0$ on a set of positive measure, there exists some $n$ such that $mu(E_n) > 0$.\n\nNote that $E_n$ is a measurable set because $f$ is a measurable function. We can now define a simple function $g$ such that:\n\ng(x) = \\begin{cases} \\frac{1}{n} & \\text{if } x in E_n \\ 0 & \\text{otherwise} \\end{cases}\n \notherwise\n \n \nClearly, $g leq f$ pointwise, because $g(x) = \\frac{1}{n}$ only when $f(x) > \\frac{1}{n}$, and $g(x) = 0$ otherwise.\n\nNow, we can use the monotonicity property of the Lebesgue integral, which states that if $g leq f$ pointwise, then $int g dmu leq int f dmu$. In our case, we know that $int f dmu = 0$. So, we have:\n\nint g dmu leq int f dmu = 0\n\nHowever, we also have:\n\nint g dmu = int_{E_n} \\frac{1}{n} dmu + int_{X setminus E_n} 0 dmu = \\frac{1}{n} mu(E_n)\n\nSince $mu(E_n) > 0$ and $\\frac{1}{n} > 0$, we get $\\frac{1}{n} mu(E_n) > 0$. This leads to a contradiction, because $int g dmu > 0$, but we also have $int g dmu leq 0$.\n\nTherefore, our assumption that $f \\neq 0$ on a set of positive measure must be false, and we conclude that $f = 0$ almost everywhere.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "28A25"
+        ],
+        "ref": "Rick Durrett-Probability: Theory and Examples-V5-ex1.4.1",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "",
+        "output": "Let $F(x) = P(X leq x)$ be the cumulative distribution function (CDF) of a continuous random variable $X$, and let $Y = F(X)$. We want to show that $Y$ has a uniform distribution on $(0,1)$, that is, for all $y in [0, 1]$, $P(Y leq y) = y$.\n\nWe can compute the CDF of $Y$ as follows:\n\nP(Y leq y) = P(F(X) leq y)\n\nNow, let's consider the event ${F(X) leq y}$. By the definition of the CDF, this event is equivalent to ${X leq F^{-1}(y)}$, where $F^{-1}(y)$ is the inverse function of $F(x)$. Since $F(x)$ is continuous, its inverse function exists and is unique. Thus, we can rewrite the probability as:\n\nP(Y leq y) = P(X leq F^{-1}(y))\n\nBy the definition of the CDF of $X$:\n\nP(Y leq y) = F(F^{-1}(y))\n\nAs $F$ and $F^{-1}$ are inverse functions, we have:\n\nP(Y leq y) = y\nP(Y≤y)=y\nThis shows that $Y$ has a uniform distribution on $(0,1)$.",
+        "rating": "2",
+        "errorcodes": [
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "The invertibility of F is not clear to me and the argument is not convincing.",
+        "msc": [
+            "60E05"
+        ],
+        "ref": "Rick Durrett-Probability: Theory and Examples-V5-ex1.2.5",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "",
+        "output": "To show that $g(x) = \\int_{[a, x]} f(y) dy$ is continuous on $(a, b)$, we need to show that for any $x_0 \\in (a, b)$ and any $\\epsilon > 0$, there exists a $\\delta > 0$ such that if $|x - x_0| < \\delta$, then $|g(x) - g(x_0)| < \\epsilon$.\n\nSince $f$ is $\\mu$-integrable on $[a, b]$, it is also Lebesgue integrable (as the Lebesgue measure is a special case of a measure). Hence, $f$ is measurable and finite almost everywhere on $[a, b]$.\n\nLet $x_0 \\in (a, b)$ and $\\epsilon > 0$. Since $f$ is integrable on $[a, b]$, it must be absolutely integrable, i.e., $\\int_{[a, b]} |f(y)| dy < \\infty$. The absolute integrability of $f$ implies that $f$ is of bounded variation on $[a, b]$. Therefore, for any $\\epsilon > 0$, there exists a $\\delta > 0$ such that for any measurable subset $E \\subseteq [a, b]$ with $\\mu(E) < \\delta$, we have $\\int_E |f(y)| dy < \\epsilon$.\n\nNow, let $x \\in (a, b)$ such that $|x - x_0| < \\delta$. Without loss of generality, assume $x > x_0$. Then, consider the subset $E = [x_0, x] \\subseteq [a, b]$. We have $\\mu(E) = \\mu([x_0, x]) = |x - x_0| < \\delta$. By our choice of $\\delta$, this implies that $\\int_E |f(y)| dy < \\epsilon$.\n\nNow, let's compute $|g(x) - g(x_0)|$:\n\n$|g(x) - g(x_0)| = \\left|\\int_{[a, x]} f(y) dy - \\int_{[a, x_0]} f(y) dy\\right| = \\left|\\int_{[x_0, x]} f(y) dy\\right|$\n\nUsing the triangle inequality, we can bound this by the absolute value of the integral of the absolute value of $f$:\n\n$\\left|\\int_{[x_0, x]} f(y) dy\\right| \\leq \\int_{[x_0, x]} |f(y)| dy = \\int_E |f(y)| dy < \\epsilon$\n\nThis shows that for any $\\epsilon > 0$, there exists a $\\delta > 0$ such that if $|x - x_0| < \\delta$, then $|g(x) - g(x_0)| < \\epsilon$, which implies that $g(x)$ is continuous on $(a, b)$.",
+        "rating": "3",
+        "errorcodes": [
+            "e3",
+            "e5_2",
+            "e5_3"
+        ],
+        "warningcodes": [],
+        "comment": "This is only shown for the Lebesgue measure. Contrary to what chatGPT says this is not enough. Also, the existence of E is not properly argued. In any case, a specific E is used after that. The proof could easily be fixed though.",
+        "msc": [
+            "28A25"
+        ],
+        "ref": "Rick Durrett-Probability: Theory and Examples-V5-ex1.5.8",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "",
+        "output": "To show that the smallest σ-algebra containing $S_d$ is the Borel σ-algebra, we need to prove that the generated σ-algebra is contained in the Borel σ-algebra, and conversely, that the Borel σ-algebra is contained in the generated σ-algebra.\n\nRecall that the Borel σ-algebra on $mathbb{R}^d$ is generated by the collection of all open sets in $mathbb{R}^d$. Let's denote the Borel σ-algebra as $mathcal{B}(mathbb{R}^d)$.\n\nFirst, we show that the σ-algebra generated by $S_d$, denoted by $sigma(S_d)$, is contained in the Borel σ-algebra $mathcal{B}(mathbb{R}^d)$:\n\nNotice that every set in $S_d$ is a product of open intervals and closed intervals in $mathbb{R}^d$. The intersection of a closed interval and an open interval is an open interval or the empty set. Therefore, the intersection of finitely many sets in $S_d$ is a finite union of open sets, which is an open set.\n\nThe σ-algebra generated by $S_d$, $sigma(S_d)$, contains all countable unions, intersections, and complements of sets in $S_d$. Since $mathcal{B}(mathbb{R}^d)$ is a σ-algebra containing all open sets, it must also contain all countable unions, intersections, and complements of open sets.\n\nBy (1) and (2), we have that $sigma(S_d) subseteq mathcal{B}(mathbb{R}^d)$.\n\nNext, we show that the Borel σ-algebra $mathcal{B}(mathbb{R}^d)$ is contained in the σ-algebra generated by $S_d$, $sigma(S_d)$:\n\nNote that every open set in $mathbb{R}^d$ can be expressed as a countable union of sets in $S_d$. This is because each open set in $mathbb{R}^d$ can be covered by a countable collection of open rectangles with rational endpoints, and each of these open rectangles can be expressed as the union of sets in $S_d$.\n\nSince $sigma(S_d)$ is the smallest σ-algebra containing all sets in $S_d$, it must contain all countable unions, intersections, and complements of sets in $S_d$.\n\nBy (1) and (2), we have that $mathcal{B}(mathbb{R}^d) subseteq sigma(S_d)$.\n\nThus, we have shown that the smallest σ-algebra containing $S_d$ is the Borel σ-algebra, as $sigma(S_d) subseteq mathcal{B}(mathbb{R}^d)$ and $mathcal{B}(mathbb{R}^d) subseteq sigma(S_d)$.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "ChatGPT starts with the wild claim that: The intersection of a closed interval and an open interval is an open interval or the empty set. From thereon, the argument cannot be salvaged. ",
+        "msc": [
+            "28A05"
+        ],
+        "ref": "Rick Durrett-Probability: Theory and Examples-V5-ex1.1.2",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    },
+    {
+        "prompt": "",
+        "output": "Let's first state the Cauchy-Schwarz inequality. For any two random variables $X$ and $Z$ with finite second moments, the Cauchy-Schwarz inequality states that:\n\n$(E[XZ])^2 le E[X^2]E[Z^2]$.\n\nNow, let's apply the Cauchy-Schwarz inequality to the random variables $Y$ and $mathds{1}{Y > 0}$, where $mathds{1}{Y > 0}$ is the indicator function that takes the value 1 when $Y > 0$ and 0 otherwise.\n\nIn this case, $X = Y$ and $Z = mathds{1}{Y > 0}$. We have $E[Y^2] < infty$ by assumption, and $E[(mathds{1}{Y > 0})^2]$ is finite because the indicator function can only take values 0 and 1. Thus, we can apply the Cauchy-Schwarz inequality:\n\n$(E[Ymathds{1}{Y > 0}])^2 le E[Y^2]E[(mathds{1}{Y > 0})^2]$.\n\nNow let's analyze the expectations:\n\n$E[Ymathds{1}_{Y > 0}] = E[Y]$ because when $Y > 0$, the indicator function is 1, and when $Y le 0$, the indicator function is 0 and the product is also 0.\n$E[(mathds{1}{Y > 0})^2] = E[mathds{1}{Y > 0}]$ because squaring the indicator function does not change its value.\nSo we have:\n\n$(E[Y])^2 le E[Y^2]E[mathds{1}_{Y > 0}]$.\n\nNow we want to get an inequality with $P(Y > 0)$. Recall that $E[mathds{1}_{Y > 0}] = P(Y > 0)$. Thus,\n\n$(E[Y])^2 le E[Y^2]P(Y > 0)$.\n\nDivide both sides by $E[Y^2]$:\n\n$\\frac{(E[Y])^2}{E[Y^2]} le P(Y > 0)$.\n\nFinally, we have:\n\n$P(Y > 0) ge \\frac{(E[Y])^2}{E[Y^2]}$.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "28A25"
+        ],
+        "ref": "Rick Durrett-Probability: Theory and Examples-V5-ex1.6.6",
+        "confidence": "high",
+        "timestamp": "2023-03-17"
+    }
+]

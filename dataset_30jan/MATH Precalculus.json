@@ -1,0 +1,319 @@
+[
+    {
+        "prompt": "Evaluate\n\\[\\begin{vmatrix} 0 & b - a & c - a \\\\ a - b & 0 & c - b \\\\ a - c & b - c & 0 \\end{vmatrix}.\\]",
+        "output": "Expanding along the first column, we get\n\\begin{align\\*}\n\\begin{vmatrix} 0 & b - a & c - a \\ a - b & 0 & c - b \\ a - c & b - c & 0 \\end{vmatrix} &= (b - a) \\begin{vmatrix} a - b & c - b \\ a - c & 0 \\end{vmatrix} - (c - a) \\begin{vmatrix} a - b & 0 \\ b - c & c - b \\end{vmatrix} \\\\\n&= (b - a)(b - c)(a - c) + (c - a)(a - b)(b - c) \\\\\n&= (a - b)(b - c)(c - a) \\\\\n&= -(a - b)(b - c)(a - c).\n\\end{align\\*}Thus, the determinant is equal to $-(a - b)(b - c)(c - a)$.\n",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex19 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-04"
+    },
+    {
+        "prompt": "Below is the graph of $y = a \\sin (bx + c)$ for some positive constants $a,$ $b,$ and $c.$  Find $a.$\n\n[asy]import TrigMacros;\n\nsize(300);\n\nreal f(real x)\n{\n\treturn 2*sin(4*x + pi/2);\n}\n\ndraw(graph(f,-pi,pi,n=700,join=operator ..),red);\ntrig_axes(-pi,pi,-3,3,pi/2,1);\nlayer();\nrm_trig_labels(-2,2, 2);\n\nlabel(\"$1$\", (0,1), E);\nlabel(\"$2$\", (0,2), E);\nlabel(\"$-1$\", (0,-1), E);\nlabel(\"$-2$\", (0,-2), E);\n[/asy]",
+        "output": "The value of $a$ is 2.\n",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex30 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-04"
+    },
+    {
+        "prompt": "Compute $e^{\\pi i}.$",
+        "output": "$e^{\\pi i} = \\cos(\\pi) + i \\sin(\\pi) = -1 + 0i = -1$.\n",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex31 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-04"
+    },
+    {
+        "prompt": "A curve is parameterized by\n\\[(x,y) = (t^3 + 7, -3t^2 - 6t - 5).\\]Find the point the curve passes through at $t = 2.$",
+        "output": "Substituting $t=2$ into the parameterization, we get\n\\begin{align\\*}\n(x,y) &= (t^3 + 7, -3t^2 - 6t - 5) \\\\\n&= (2^3 + 7, -3(2^2) - 6(2) - 5) \\\\\n&= (11, -11).\n\\end{align\\*}Thus, the curve passes through the point $(11, -11)$ when $t=2$.\n",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "11A05"
+        ],
+        "ref": "MATH_dataset precalculus ex43 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-04"
+    },
+    {
+        "prompt": "Compute\n\\[\\begin{vmatrix} 0 & 1 \\\\ 3 & 5 \\end{vmatrix}.\\]",
+        "output": "The determinant of the 2x2 matrix\n\\[\\begin{vmatrix} 0 & 1 \\ 3 & 5 \\end{vmatrix}]\nis simply $(0)(5) - (1)(3) = -3$. Hence, the determinant of the given matrix is equal to $-3$.\n",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex56 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-04"
+    },
+    {
+        "prompt": "If $\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = -8,$ then find\n\\[\\begin{vmatrix} b & a \\\\ d & c \\end{vmatrix}.\\]",
+        "output": "The determinant of a matrix is unchanged when you swap the rows and/or columns, so\n\\[\\begin{vmatrix} b & a \\ d & c \\end{vmatrix} = \\begin{vmatrix} a & b \\ c & d \\end{vmatrix} = -8.]\n",
+        "rating": "3",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex109 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-04"
+    },
+    {
+        "prompt": "Let $u,$ $v,$ $w$ be the roots of $z^3 = 1.$  Find $uv + uw + vw.$",
+        "output": "By Vieta's formulas, $uv + uw + vw = -1.$\n",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex126 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-04"
+    },
+    {
+        "prompt": "Find the mid-point of the line segment with end-points $(7,-3,2)$ and $(4,1,0).$",
+        "output": "The mid-point of the line segment between two points $(x\\_1, y\\_1, z\\_1)$ and $(x\\_2, y\\_2, z\\_2)$ is given by $\\left(\\frac{x\\_1 + x\\_2}{2}, \\frac{y\\_1 + y\\_2}{2}, \\frac{z\\_1 + z\\_2}{2}\\right)$.\n\nSo, the mid-point of the line segment between $(7,-3,2)$ and $(4,1,0)$ is $\\left(\\frac{7 + 4}{2}, \\frac{-3 + 1}{2}, \\frac{2 + 0}{2}\\right) = \\left(\\frac{11}{2}, -1, 1\\right)$.\n",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex183 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-04"
+    },
+    {
+        "prompt": "If $\\det \\mathbf{A} = -7$ and $\\det \\mathbf{B} = 3,$ then find $\\det (\\mathbf{B} \\mathbf{A}).$",
+        "output": "The determinant of the product of two matrices is equal to the product of their determinants, i.e. $\\det (\\mathbf{B} \\mathbf{A}) = \\det \\mathbf{B} \\cdot \\det \\mathbf{A} = 3 \\cdot -7 = -21$.\n",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex192 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-04"
+    },
+    {
+        "prompt": "Simplify $\\frac{\\csc \\theta}{\\sin \\theta} - \\frac{\\cot \\theta}{\\tan \\theta}.$",
+        "output": "Let's first simplify the two fractions separately:\n\n$\\frac{\\csc \\theta}{\\sin \\theta} = \\frac{1}{\\sin \\theta} \\cdot \\frac{1}{\\sin \\theta} = \\frac{1}{\\sin^2 \\theta}$\n\n$\\frac{\\cot \\theta}{\\tan \\theta} = \\frac{\\frac{1}{\\tan \\theta}}{\\tan \\theta} = \\frac{1}{\\tan^2 \\theta} = \\frac{\\cos^2 \\theta}{\\sin^2 \\theta}$\n\nNow, substituting these back into the original expression:\n\n$\\frac{\\csc \\theta}{\\sin \\theta} - \\frac{\\cot \\theta}{\\tan \\theta} = \\frac{1}{\\sin^2 \\theta} - \\frac{\\cos^2 \\theta}{\\sin^2 \\theta} = \\frac{1 - \\cos^2 \\theta}{\\sin^2 \\theta} = \\frac{\\sin^2 \\theta}{\\sin^2 \\theta} = 1$\n\nSo, the simplified expression is $\\boxed{1}.$\n",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "Level_1 \nOfficial solution: We have that\n\\begin{align*}\n\\frac{\\csc \\theta}{\\sin \\theta} - \\frac{\\cot \\theta}{\\tan \\theta} &= \\frac{1/\\sin \\theta}{\\sin \\theta} - \\frac{\\cos \\theta/\\sin \\theta}{\\sin \\theta/\\cos \\theta} \\\\\n&= \\frac{1}{\\sin^2 \\theta} - \\frac{\\cos^2 \\theta}{\\sin^2 \\theta} \\\\\n&= \\frac{1 - \\cos^2 \\theta}{\\sin^2 \\theta} = \\frac{\\sin^2 \\theta}{\\sin^2 \\theta} = \\boxed{1}.\n\\end{align*}",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex201 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-04"
+    },
+    {
+        "prompt": "Compute\n\\[\\begin{pmatrix} 3 & 1 & 0 \\\\ -7 & 4 & 2 \\\\ 0 & 5 & -1 \\end{pmatrix} \\begin{pmatrix} 4 \\\\ -1 \\\\ -2 \\end{pmatrix}.\\]",
+        "output": "We have that\n\\[\\begin{pmatrix} 3 & 1 & 0 \\ -7 & 4 & 2 \\ 0 & 5 & -1 \\end{pmatrix} \\begin{pmatrix} 4 \\ -1 \\ -2 \\end{pmatrix} = \\begin{pmatrix} 3 \\cdot 4 + 1 \\cdot -1 + 0 \\cdot -2 \\ -7 \\cdot 4 + 4 \\cdot -1 + 2 \\cdot -2 \\ 0 \\cdot 4 + 5 \\cdot -1 + -1 \\cdot -2 \\end{pmatrix} = \\boxed{\\begin{pmatrix} 11 \\ -13 \\ 3 \\end{pmatrix}}.]\n",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "15A03"
+        ],
+        "ref": "MATH_dataset precalculus ex12 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-06"
+    },
+    {
+        "prompt": "When $-24 + 7i$ is converted to the exponential form $re^{i \\theta}$, what is $\\cos \\theta$?",
+        "output": "The exponential form of a complex number $z = x + yi$ is $re^{i\\theta} = r(\\cos \\theta + i\\sin \\theta)$, where $r$ is the magnitude and $\\theta$ is the argument. The magnitude $r$ of $-24 + 7i$ can be calculated as $\\sqrt{(-24)^2 + (7)^2} = 25$. So, $-24 + 7i = 25e^{i\\theta}$.\n\nThe argument $\\theta$ can be calculated using the inverse tangent function: $\\theta = \\arctan(\\frac{7}{-24})$.\n\nFinally, $\\cos \\theta = \\cos(\\arctan(\\frac{7}{-24})) = \\frac{-24}{25}$.\n",
+        "rating": "4",
+        "errorcodes": [
+            "e4",
+            "e5_4"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex23 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-06"
+    },
+    {
+        "prompt": "Let $\\mathbf{a} = \\begin{pmatrix} 4 \\\\ \\sqrt{\\pi} \\\\ -14 \\end{pmatrix}$ and $\\mathbf{b} = \\begin{pmatrix} -1 \\\\ 3 \\\\ 10 \\end{pmatrix}.$  Compute $\\mathbf{a} \\cdot (\\mathbf{a} \\times \\mathbf{b}).$",
+        "output": "The cross product of two vectors $\\mathbf{a}$ and $\\mathbf{b}$ in $\\mathbb{R}^3$ is given by\n\n$$\\mathbf{a} \\times \\mathbf{b} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\ a\\_1 & a\\_2 & a\\_3 \\ b\\_1 & b\\_2 & b\\_3 \\end{vmatrix} = \\begin{pmatrix} a\\_2b\\_3 - a\\_3b\\_2 \\ a\\_3b\\_1 - a\\_1b\\_3 \\ a\\_1b\\_2 - a\\_2b\\_1 \\end{pmatrix}.$$\n\nSo,\n\n$$\\mathbf{a} \\times \\mathbf{b} = \\begin{pmatrix} \\sqrt{\\pi} \\cdot 10 - (-14) \\cdot 3 \\ -4 \\cdot 10 - \\sqrt{\\pi} \\cdot (-1) \\ 4 \\cdot 3 - \\sqrt{\\pi} \\cdot (-1) \\end{pmatrix} = \\begin{pmatrix} -34 + 30\\sqrt{\\pi} \\ -40 + 4\\sqrt{\\pi} \\ 12 - \\sqrt{\\pi} \\end{pmatrix}.$$\n\nFinally,\n\n$$\\mathbf{a} \\cdot (\\mathbf{a} \\times \\mathbf{b}) = \\begin{pmatrix} 4 \\ \\sqrt{\\pi} \\ -14 \\end{pmatrix} \\cdot \\begin{pmatrix} -34 + 30\\sqrt{\\pi} \\ -40 + 4\\sqrt{\\pi} \\ 12 - \\sqrt{\\pi} \\end{pmatrix} = 4(-34 + 30\\sqrt{\\pi}) + \\sqrt{\\pi}(-40 + 4\\sqrt{\\pi}) - 14(12 - \\sqrt{\\pi}) = \\boxed{-476 + 76\\sqrt{\\pi}}.$$\n",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [
+            "w1"
+        ],
+        "comment": "",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex24 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-06"
+    },
+    {
+        "prompt": "The projection of $\\begin{pmatrix} 2 \\\\ y \\\\ -5 \\end{pmatrix}$ onto $\\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}$ is\n\\[\\frac{5}{6} \\begin{pmatrix} 1 \\\\ -2 \\\\ 1 \\end{pmatrix}.\\]Find $y.$",
+        "output": "The projection of $\\begin{pmatrix} 2 \\ y \\ -5 \\end{pmatrix}$ onto $\\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}$ is given by\n\\[\\frac{\\begin{pmatrix} 2 \\ y \\ -5 \\end{pmatrix} \\cdot \\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}}{\\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix} \\cdot \\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}} \\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix} = \\frac{2 - 4y + 5}{6} \\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix} = \\frac{5}{6} \\begin{pmatrix} 1 \\ -2 \\ 1 \\end{pmatrix}.]Solving $2 - 4y + 5 = 15,$ we find $y = \\boxed{\\frac{4}{2}} = 2.$\n",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex34 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-06"
+    },
+    {
+        "prompt": "Find all values of $x,$ $0 \\le x \\le 2 \\pi,$ which satisfy\n\\[\\sin^2 x + \\cos x + 1 = 0.\\]Enter all the solutions, separated by commas.",
+        "output": "We know that $\\sin^2 x + \\cos^2 x = 1,$ so\n\\[\\sin^2 x + \\cos x + 1 = 1 + \\cos x + 1 = 2.]Thus, no such value of $x$ exists, so the only solution is $\\boxed{}.$\n",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex35 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-06"
+    },
+    {
+        "prompt": "Let $\\mathbf{a}$ be a unit vector.  Compute\n\\[\\|\\mathbf{a} \\times \\mathbf{i}\\|^2 + \\|\\mathbf{a} \\times \\mathbf{j}\\|^2 + \\|\\mathbf{a} \\times \\mathbf{k}\\|^2.\\]",
+        "output": "Recall that the magnitude of the cross product of two vectors $\\mathbf{a}$ and $\\mathbf{b}$ is given by\n\\[|\\mathbf{a} \\times \\mathbf{b}| = |\\mathbf{a}| |\\mathbf{b}| \\sin \\theta,]\nwhere $\\theta$ is the angle between $\\mathbf{a}$ and $\\mathbf{b}$.  Since $\\mathbf{a}$ is a unit vector, $|\\mathbf{a}| = 1$.  Furthermore, since $\\mathbf{i}$, $\\mathbf{j}$, and $\\mathbf{k}$ are mutually orthogonal, the angle between $\\mathbf{a}$ and each of these vectors is either $0$ or $\\frac{\\pi}{2}$.  Hence,\n\\[|\\mathbf{a} \\times \\mathbf{i}| = \\begin{cases} 1 & \\text{if $a\\_1 = 0$}, \\ 0 & \\text{otherwise}. \\end{cases}]\nSimilarly,\n\\[|\\mathbf{a} \\times \\mathbf{j}| = \\begin{cases} 1 & \\text{if $a\\_2 = 0$}, \\ 0 & \\text{otherwise}. \\end{cases}]\nand\n\\[|\\mathbf{a} \\times \\mathbf{k}| = \\begin{cases} 1 & \\text{if $a\\_3 = 0$}, \\ 0 & \\text{otherwise}. \\end{cases}]\nTherefore,\n\\begin{align\\*}\n|\\mathbf{a} \\times \\mathbf{i}|^2 + |\\mathbf{a} \\times \\mathbf{j}|^2 + |\\mathbf{a} \\times \\mathbf{k}|^2 &= \\left(\\begin{cases} 1 & \\text{if $a\\_1 = 0$}, \\ 0 & \\text{otherwise}. \\end{cases}\\right)^2 + \\left(\\begin{cases} 1 & \\text{if $a\\_2 = 0$}, \\ 0 & \\text{otherwise}. \\end{cases}\\right)^2 + \\left(\\begin{cases} 1 & \\text{if $a\\_3 = 0$}, \\ 0 & \\text{otherwise}. \\end{cases}\\right)^2 \\\\\n&= \\left(\\begin{cases} 1 & \\text{if $a\\_1 = 0$ or $a\\_2 = 0$ or $a\\_3 = 0$}, \\ 0 & \\text{otherwise}. \\end{cases}\\right) \\\\\n&= \\boxed{1}.\n\\end{align\\*}\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex45 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-06"
+    },
+    {
+        "prompt": "If $\\sin^2 \\theta + \\sin \\theta = 1,$ then find $\\cos^4 \\theta + \\cos^2 \\theta.$",
+        "output": "Squaring the equation $\\sin^2 \\theta + \\sin \\theta = 1,$ we get $(\\sin^2 \\theta + \\sin \\theta)^2 = 1^2,$ which simplifies to $2 \\sin^3 \\theta + 2 \\sin^2 \\theta + \\sin^2 \\theta = 1.$  Hence, $2 \\sin^3 \\theta + 3 \\sin^2 \\theta = 1.$\n\nSince $\\sin^2 \\theta + \\cos^2 \\theta = 1,$ we have $\\cos^2 \\theta = 1 - \\sin^2 \\theta.$  Substituting this into the equation $2 \\sin^3 \\theta + 3 \\sin^2 \\theta = 1,$ we get $2 \\sin^3 \\theta + 3 (1 - \\sin^2 \\theta) = 1.$  Solving for $\\sin^2 \\theta,$ we find $\\sin^2 \\theta = \\frac{1}{5}.$  Then\n\\[\\cos^2 \\theta = 1 - \\sin^2 \\theta = 1 - \\frac{1}{5} = \\frac{4}{5}.]Finally,\n\\[\\cos^4 \\theta + \\cos^2 \\theta = \\cos^2 \\theta (\\cos^2 \\theta + 1) = \\frac{4}{5} \\cdot \\frac{9}{5} = \\boxed{\\frac{36}{25}}.]\n",
+        "rating": "2",
+        "errorcodes": [
+            "e4",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "33B10"
+        ],
+        "ref": "MATH_dataset precalculus ex77 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-06"
+    },
+    {
+        "prompt": "The complex numbers $5 + 10i,$ $7 + 2i,$ and $11 + 3i$ are three vertices of a rectangle.  Find the fourth vertex.",
+        "output": "A rectangle has opposite sides that are parallel and equal in length.  The distance between two complex numbers $a + bi$ and $c + di$ is given by $\\sqrt{(c-a)^2 + (d-b)^2}$.  So, if the complex numbers $5 + 10i,$ $7 + 2i,$ and $11 + 3i$ are three vertices of a rectangle, then the fourth vertex must be the complex number whose distance from both $5 + 10i$ and $11 + 3i$ is equal to the distance between these two points.  Thus, we want to find the complex number of the form $x + yi$ that satisfies the equation\n\\begin{align\\*}\n\\sqrt{(x-5)^2 + (y-10)^2} &= \\sqrt{(11-5)^2 + (3-10)^2}, \\\\\n\\sqrt{(x-11)^2 + (y-3)^2} &= \\sqrt{(5-11)^2 + (10-3)^2}.\n\\end{align\\*}Solving, we find $(x,y) = \\boxed{(11,10)}$.\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex78 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-06"
+    },
+    {
+        "prompt": "Find the angle between the vectors $\\begin{pmatrix} 4 \\\\ 4 \\\\ 7 \\end{pmatrix}$ and $\\begin{pmatrix} 1 \\\\ 4 \\\\ 1 \\end{pmatrix},$ in degrees.",
+        "output": "The angle $\\theta$ between two non-zero vectors $\\mathbf{a}$ and $\\mathbf{b}$ is given by\n\n$\\cos(\\theta) = \\frac{\\mathbf{a} \\cdot \\mathbf{b}}{\\left|\\mathbf{a}\\right| \\left|\\mathbf{b}\\right|}.$\n\nHence,\n\n$\\cos(\\theta) = \\frac{\\begin{pmatrix} 4 \\ 4 \\ 7 \\end{pmatrix} \\cdot \\begin{pmatrix} 1 \\ 4 \\ 1 \\end{pmatrix}}{\\left|\\begin{pmatrix} 4 \\ 4 \\ 7 \\end{pmatrix}\\right| \\left|\\begin{pmatrix} 1 \\ 4 \\ 1 \\end{pmatrix}\\right|} = \\frac{4+16+7}{\\sqrt{4^2 + 4^2 + 7^2} \\sqrt{1^2 + 4^2 + 1^2}} = \\frac{27}{\\sqrt{58} \\sqrt{26}}.$\n\nFinally,\n\n$\\theta = \\cos^{-1} \\left(\\frac{27}{\\sqrt{58} \\sqrt{26}}\\right) \\approx 61.7^\\circ.$\n\nSo, the angle between the vectors $\\begin{pmatrix} 4 \\ 4 \\ 7 \\end{pmatrix}$ and $\\begin{pmatrix} 1 \\ 4 \\ 1 \\end{pmatrix}$ is approximately $61.7^\\circ.$\n",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex80 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-06"
+    },
+    {
+        "prompt": "The points $(0,0,0),$ $(a,1,1),$ $(1,b,1),$ and $(1,1,c)$ are coplanar, where $a \\neq 1,$ $b \\neq 1,$ and $c \\neq 1.$  Compute\n\\[\\frac{1}{1 - a} + \\frac{1}{1 - b} + \\frac{1}{1 - c}.\\]",
+        "output": "Let $\\mathbf{p}\\_1 = (0,0,0),$ $\\mathbf{p}\\_2 = (a,1,1),$ $\\mathbf{p}\\_3 = (1,b,1),$ and $\\mathbf{p}\\_4 = (1,1,c).$  Then $\\mathbf{p}\\_2 - \\mathbf{p}\\_1,$ $\\mathbf{p}\\_3 - \\mathbf{p}\\_1,$ and $\\mathbf{p}\\_4 - \\mathbf{p}\\_1$ are coplanar, so their cross product must be the zero vector.  Hence,\n\\begin{align\\*}\n\\begin{vmatrix}\na & 1 & 1 \\\\\n1 & b & 1 \\\\\n1 & 1 & c\n\\end{vmatrix} &= (b - 1)(c - 1) - (a - 1) = 0.\n\\end{align\\*}Solving for $c,$ we find\n\\[c = \\frac{1}{a} + \\frac{1}{b} + 1.]Then\n\\[\\frac{1}{1 - a} + \\frac{1}{1 - b} + \\frac{1}{1 - c} = \\frac{1}{1 - a} + \\frac{1}{1 - b} + \\frac{1}{1 - \\left( \\frac{1}{a} + \\frac{1}{b} + 1 \\right)}.]Let $d = \\frac{1}{a} + \\frac{1}{b}.$  Then\n\\begin{align\\*}\n\\frac{1}{1 - a} + \\frac{1}{1 - b} + \\frac{1}{1 - \\left( \\frac{1}{a} + \\frac{1}{b} + 1 \\right)} &= \\frac{1}{1 - a} + \\frac{1}{1 - b} + \\frac{1}{1 - (d + 1)} \\\\\n&= \\frac{1}{1 - a} + \\frac{1}{1 - b} + \\frac{1}{d}.\n\\end{align\\*}\n",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "51A05"
+        ],
+        "ref": "MATH_dataset precalculus ex83 https://github.com/hendrycks/math",
+        "confidence": "high",
+        "timestamp": "2023-02-06"
+    }
+]

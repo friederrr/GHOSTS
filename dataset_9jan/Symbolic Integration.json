@@ -1,0 +1,1607 @@
+[
+    {
+        "prompt": "What is the integral of -8x -4x^2",
+        "output": "The integral of -8x - 4x^2 is -4x^3 - 8x^2 + C, where C is the constant of integration.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "1",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 23|sub Y' mul INT- 1 mul x add INT+ 8 mul INT+ 4 x, RHS: add mul INT- 4 pow x INT+ 2 mul div INT- 4 INT+ 3 pow x INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-22"
+    },
+    {
+        "prompt": "What is the integral of 2*x^2 + x*e^(e^4)",
+        "output": "The integral of 2x^2 is x^3 + C, where C is the constant of integration.\n The integral of xe^(e^4) is e^(e^4) * x + C , where C is the constant of integration.\n So, the integral of 2x^2 + xe^(e^4) would be x^3 + e^(e^4) * x + C.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "2",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 14|sub Y' mul x add mul INT+ 2 x exp exp INT+ 4, RHS: add mul div INT+ 2 INT+ 3 pow x INT+ 3 mul div INT+ 1 INT+ 2 mul pow x INT+ 2 exp exp INT+ 4",
+        "confidence": "high",
+        "timestamp": "2023-01-22"
+    },
+    {
+        "prompt": "What is the integral of sqrt(x) + x^2 + 15*x",
+        "output": "The integral of sqrt(x) is (2/3)x^(3/2) + C, where C is the constant of integration.\n The integral of x^2 is (1/3)x^3 + C.\n The integral of 15x is (15/1)x^2 + C.\n So, the integral of sqrt(x) + x^2 + 15*x is (2/3)x^(3/2) + (1/3)x^3 + (15/1)x^2 + C.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "3",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 3|sub Y' add sqrt x add pow x INT+ 2 mul INT+ 1 5 x, RHS: add mul div INT+ 1 INT+ 3 pow x INT+ 3 add mul div INT+ 2 INT+ 3 pow x div INT+ 3 INT+ 2 mul div INT+ 1 5 INT+ 2 pow x INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-22"
+    },
+    {
+        "prompt": "What is the integral of 0.2*x + 0.2*(x^3) + e^(2*x)",
+        "output": "The integral of 0.2x is (0.2x)^2/2 = 0.02x^2\n The integral of 0.2*(x^3) is (0.2/4)*(x^4) = 0.05x^4 The integral of e^(2x) is (1/2)e^(2x)\n So, the overall integral is 0.02x^2 + 0.05x^4 + (1/2)e^(2x) + C, where C is the constant of integration.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "4",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 2|sub Y' add mul div INT+ 1 INT+ 5 x add mul div INT+ 1 INT+ 5 pow x INT+ 3 exp mul INT+ 2 x, RHS: add mul div INT+ 1 INT+ 2 exp mul INT+ 2 x add mul div INT+ 1 INT+ 1 0 pow x INT+ 2 mul div INT+ 1 INT+ 2 0 pow x INT+ 4",
+        "confidence": "high",
+        "timestamp": "2023-01-22"
+    },
+    {
+        "prompt": "What is the integral of x^2 * (x + asinh(sin(3)))",
+        "output": "The antiderivative of x^2 * (x + asinh(sin(3))) is (1/3)x^3 + (1/2)x^2 * asinh(sin(3)) + C, where C is the constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "5: Uses the terminology antiderivative instead of integral. Antiderivative was not mentioned in the question.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 2|sub Y' mul pow x INT+ 2 add x asinh sin INT+ 3, RHS: add mul div INT+ 1 INT+ 4 pow x INT+ 4 mul div INT+ 1 INT+ 3 mul pow x INT+ 3 asinh sin INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-22"
+    },
+    {
+        "prompt": "What is the integral of x^3 * sin(2x) * sin(4)^-1",
+        "output": "The integral of x^3 * sin(2x) * sin(4)^-1 is not easily expressible in terms of elementary functions. It does not have a closed-form solution and would need to be evaluated numerically or using special functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "6: Responds that integral doesn't have a closed form solution which is incorrect. Suggestes evaluation numerically or using special functions.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 2|sub Y' mul pow x INT+ 3 mul pow sin INT+ 4 INT- 1 sin mul INT+ 2 x, RHS: mul pow sin INT+ 4 INT- 1 add mul div INT- 3 INT+ 8 sin mul INT+ 2 x add mul div INT- 1 INT+ 2 mul pow x INT+ 3 cos mul INT+ 2 x add mul div INT+ 3 INT+ 4 mul x cos mul INT+ 2 x mul div INT+ 3 INT+ 4 mul pow x INT+ 2 sin mul INT+ 2 x",
+        "confidence": "high",
+        "timestamp": "2023-01-22"
+    },
+    {
+        "prompt": "What is the integral of 2x + 2x^2 + x[(x + x*e^x)^-1]",
+        "output": "The integral of 2x is 2x^2, the integral of 2x^2 is (2/3)x^3, and the integral of x[(x + xe^x)^-1] is ln|x + xe^x|. So the total integral is:\n (2/3)x^3 + 2x^2 + ln|x + x*e^x| + C (where C is the constant of integration)",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "7: Seems to be a recurring numerical error integrating 2x as 2x^2",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 2|sub Y' add mul INT+ 2 x add mul INT+ 2 pow x INT+ 2 mul x pow add x mul x exp x INT- 1, RHS: add x add pow x INT+ 2 add mul INT- 1 ln add INT+ 1 exp x mul div INT+ 2 INT+ 3 pow x INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-22"
+    },
+    {
+        "prompt": "What is the integral of -x^2 + 4x^4 + x^5 + x^6",
+        "output": "The integral of -x^2 + 4x^4 + x^5 + x^6 is -(x^3/3) + (x^5/5) + (x^6/6) + (x^7/7) + C, where C is the constant of integration.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "8: Arithmetic slip with prefactor.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 2|sub Y' mul x add mul INT- 1 x mul pow x INT+ 3 add INT+ 4 add x pow x INT+ 2, RHS: add mul div INT- 1 INT+ 3 pow x INT+ 3 add mul div INT+ 1 INT+ 6 pow x INT+ 6 add mul div INT+ 1 INT+ 7 pow x INT+ 7 mul div INT+ 4 INT+ 5 pow x INT+ 5",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 2x - (2/3)(x^5) - (4/3)x^3",
+        "output": "The integral of 2x is (2/1)x^2 + C, where C is the constant of integration. The integral of -(2/3)(x^5) is -(2/3)(x^6)/6 + C, and the integral of -(4/3)x^3 is -(4/3)x^4/4 + C.\n So the integral of 2x - (2/3)(x^5) - (4/3)x^3 is (2/1)x^2 - (2/3)(x^6)/6 - (4/3)x^4/4 + C.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "9",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 1|sub Y' add mul INT+ 2 x mul div INT- 2 INT+ 3 mul pow x INT+ 2 add pow x INT+ 3 mul INT+ 2 x, RHS: add pow x INT+ 2 add mul div INT- 1 INT+ 3 pow x INT+ 4 mul div INT- 1 INT+ 9 pow x INT+ 6",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 36x^-2 + 36x^-1 + 45 + 36x + 9x^2",
+        "output": "The integral of 36x^-2 is -36x^-1\n The integral of 36x^-1 is -36ln|x| + C, where C is a constant.\n The integral of 45 is 45x + C\n The integral of 36x is 18x^2 + C\n The integral of 9x^2 is 3x^3 + C\n Therefore, the integral of 36x^-2 + 36x^-1 + 45 + 36x + 9x^2 is -36x^-1 - 36ln|x| + 45x + 18x^2 + 3x^3 + C",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "10: Slip with minus sign on ln term. In general ChatGPT does well when the integrand is a sum of simple terms.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 1|sub Y' mul pow x INT- 2 mul pow add INT+ 6 mul INT+ 3 x INT+ 2 add INT+ 1 pow x INT+ 2, RHS: add mul INT- 3 6 pow x INT- 1 add mul INT+ 3 pow x INT+ 3 add mul INT+ 1 8 pow x INT+ 2 add mul INT+ 3 6 ln x mul INT+ 4 5 x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 2x + sqrt(2)x^0.5 + 2x^2 + x^(7/2)",
+        "output": "The integral of 2x is (2/1)x^1 + C where C is the constant of integration. The integral of sqrt(2)x^0.5 is (2/3)x^(3/2) + C. The integral of 2x^2 is (2/3)x^3 + C. The integral of x^(7/2) is (2/5)x^(9/2) + C. Therefore, the integral of 2x + sqrt(2)x^0.5 + 2x^2 + x^(7/2) is (2/1)x^1 + (2/3)x^(3/2) + (2/3)x^3 + (2/5)x^(9/2) + C.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "11: Most terms had a slip",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 1|sub Y' add mul INT+ 2 x add mul sqrt INT+ 2 sqrt x mul pow x INT+ 2 add INT+ 2 pow x div INT+ 3 INT+ 2, RHS: add pow x INT+ 2 add mul div INT+ 2 INT+ 3 pow x INT+ 3 add mul div INT+ 2 INT+ 9 pow x div INT+ 9 INT+ 2 mul div INT+ 2 INT+ 3 mul sqrt INT+ 2 pow x div INT+ 3 INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 2x^2 -x -xsinh(cosh(1))",
+        "output": "The integral of 2x^2 is (2/3)x^3 + C where C is a constant of integration.\n The integral of -x is -(1/2)x^2 + C\n The integral of -xsinh(cosh(1)) is not in closed form and cannot be represented by a combination of elementary functions.",
+        "rating": "4",
+        "errorcodes": [
+            "e3",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "12: Incorrect statement about integral of last term not having a closed form.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 1|sub Y' add mul x add INT- 1 mul INT+ 2 x mul INT- 1 mul x sinh cosh INT+ 1, RHS: add mul div INT+ 2 INT+ 3 pow x INT+ 3 mul pow x INT+ 2 add div INT- 1 INT+ 2 mul div INT- 1 INT+ 2 sinh cosh INT+ 1",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 3 -xlnx[5 + tan(1)]^-2",
+        "output": "The integral of 3 - xlnx [5 + tan(1)]^-2 is not an elementary function and cannot be expressed in terms of elementary functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "13: Said integrand wasn't an elementary function.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 1|sub Y' add INT+ 3 mul INT- 1 mul x mul pow add INT+ 5 tan INT+ 1 INT- 2 ln x, RHS: add mul INT+ 3 x add mul pow x INT+ 2 pow add INT+ 1 0 0 add mul INT+ 4 pow tan INT+ 1 INT+ 2 mul INT+ 4 0 tan INT+ 1 INT- 1 mul INT- 1 mul pow x INT+ 2 mul pow add INT+ 5 0 add mul INT+ 2 pow tan INT+ 1 INT+ 2 mul INT+ 2 0 tan INT+ 1 INT- 1 ln x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 4x^7 + sin(1 + x)",
+        "output": "The integral of 4x^7 is (4/8)x^8 + C, where C is the constant of integration.\n The integral of sin(1 + x) is -cos(1 + x) + C.\n So the integral of 4x^7 + sin(1 + x) is (4/8)x^8 - cos(1 + x) + C.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "14",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 1|sub Y' add mul INT+ 4 pow x INT+ 7 sin add INT+ 1 x, RHS: add mul div INT+ 1 INT+ 2 pow x INT+ 8 mul INT- 1 cos add INT+ 1 x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of -x + cos[ln(sin(3))] * ln(3x)",
+        "output": "The integral of -x + cos[ln(sin(3))] * ln(3x) is -(x^2)/2 + sin(3) * ln(3x) + C, where C is the constant of integration.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "15: Most terms have slips",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 1|sub Y' add mul INT- 1 x mul cos ln sin INT+ 3 ln mul INT+ 3 x, RHS: add mul div INT- 1 INT+ 2 pow x INT+ 2 add mul INT- 1 mul x cos ln sin INT+ 3 mul x mul cos ln sin INT+ 3 ln mul INT+ 3 x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 2x - x^2 -x^4 + x^3",
+        "output": "The integral of 2x - x^2 -x^4 + x^3 is (x^2 + x^3 - (1/5)x^5 + C) where C is the constant of integration.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "16",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 1|sub Y' add mul INT+ 2 x mul INT- 1 mul x add x mul x add pow x INT+ 2 mul INT- 1 x, RHS: add pow x INT+ 2 add mul div INT- 1 INT+ 3 pow x INT+ 3 add mul div INT- 1 INT+ 5 pow x INT+ 5 mul div INT+ 1 INT+ 4 pow x INT+ 4",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 3x + x[(x + 5)^2 / (x - 5)]",
+        "output": "The integral of 3x + x[(x + 5)^2 / (x - 5)] is 3x^2/2 + x(x + 5)^2/(x - 5) + C, where C is the constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "17: many important additive terms missing, such as the log term",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 1|sub Y' add mul INT+ 3 x mul x mul pow add INT- 5 x INT- 1 pow add INT+ 5 x INT+ 2, RHS: add mul INT+ 9 pow x INT+ 2 add mul INT+ 1 0 0 x add mul INT+ 5 0 0 ln add INT- 5 x mul div INT+ 1 INT+ 3 pow x INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 3x - 4x^2[cos(x+3)]",
+        "output": "The antiderivative of 3x - 4x^2 is x^2 - (4/3)x^3 and the antiderivative of [cos(x+3)] is -sin(x+3)\n Therefore, the integral of 3x - 4x^2[cos(x+3)] is x^2 - (4/3)x^3 - sin(x+3) + C, where C is the constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "18: Refers to integral as antiderivative in answer.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 1|sub Y' add x mul x add INT+ 2 mul INT- 4 mul x cos add INT+ 3 x, RHS: add mul INT+ 8 sin add INT+ 3 x add mul div INT+ 3 INT+ 2 pow x INT+ 2 add mul INT- 8 mul x cos add INT+ 3 x mul INT- 4 mul pow x INT+ 2 sin add INT+ 3 x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 1 - x + (5+2x)/x + e^x",
+        "output": "The integral of 1 - x + (5+2x)/x + e^x is e^x - x + 5ln(x) + C, where C is the constant of integration.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "19: terms in output missing, such as -x^2/2",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 1|sub Y' add INT+ 1 add mul INT- 1 x add mul pow x INT- 1 add INT+ 5 mul INT+ 2 x exp x, RHS: add mul INT+ 3 x add mul INT+ 5 ln x add mul div INT- 1 INT+ 2 pow x INT+ 2 exp x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of -3 + atan(x) + ln(tanh(3))",
+        "output": "The integral of -3 is -3x + C, where C is a constant of integration. The integral of atan(x) is ln(sec(x)) + C. The integral of ln(tanh(3)) does not have a closed-form solution, so it cannot be evaluated. Therefore, the integral of -3 + atan(x) + ln(tanh(3)) is -3x + ln(sec(x)) + C, where C is a constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "20: Mistakes constant term for something that needs to be integrated and says it doesn't have a closed form. But then why is it producing an answer if the last term doesn't have an analytic form?",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 1|sub Y' add INT- 3 add atan x ln tanh INT+ 3, RHS: add mul INT- 3 x add mul div INT- 1 INT+ 2 ln add INT+ 1 pow x INT+ 2 add mul x atan x mul x ln tanh INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of x/5 + xtan(x^2)/5",
+        "output": "The integral of x/5 is (x^2)/10 + C where C is the constant of integration.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "21: log(cos(x^2)) term missing",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward integration) prim_fwd.test, LHS: 23|sub Y' mul INT- 1 mul x add INT+ 8 mul INT+ 4 x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of (4 + x)[4 + 3x][e^{x*(4+x)^2}]",
+        "output": "The integral of (4 + x)[4 + 3x][e^{x*(4+x)^2}] is not expressible in terms of elementary functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "22",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 14|sub Y' mul add INT+ 4 x mul add INT+ 4 mul INT+ 3 x exp mul x pow add INT+ 4 x INT+ 2, RHS: exp mul x pow add INT+ 4 x INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of x^-10(1 - 9lnx)",
+        "output": "The integral of x^-10(1 - 9lnx) is x^-9(1 - 9lnx) + C, where C is the constant of integration.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "23: one term too much",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 8|sub Y' mul pow x INT- 1 0 add INT+ 1 mul INT- 9 ln x, RHS: mul pow x INT- 9 ln x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of -3[cosh(x)^-2 * cos(3tanh(x))]",
+        "output": "The integral of -3[cosh(x)^-2 * cos(3tanh(x))] is not a standard function. To solve this integral, you would need to use integration techniques such as substitution or integration by parts.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "24: Says integral not a standard function, incorrect statement.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 3|sub Y' mul INT- 3 mul pow cosh x INT- 2 cos mul INT+ 3 tanh x, RHS: mul INT- 1 sin mul INT+ 3 tanh x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of -1 -tan(x)^2 - 2/x^2 - cosh(x)/sinh(x)^2",
+        "output": "The integral of -1 - tan(x)^2 - 2/x^2 - cosh(x)/sinh(x)^2 is not a standard function. It does not have a closed-form solution and must be evaluated using numerical methods or approximations.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "25",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 2|sub Y' add INT- 1 add mul INT- 1 pow tan x INT+ 2 add mul INT- 2 pow x INT- 2 mul INT- 1 mul pow sinh x INT- 2 cosh x, RHS: add pow sinh x INT- 1 add mul INT- 1 tan x mul INT+ 2 pow x INT- 1",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of [1 + (x + xe^{3x})^2]^-1 * [1 + 3xe^{3x} + e^{3x}]",
+        "output": "This is a difficult integral to solve in closed form. It does not have an elementary antiderivative, and it would require a computer algebra system or a lot of clever substitution and integration by parts to evaluate. Can I help you with anything else?",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "26: Why is it so opinionated? Using adjectives like clever for the solution methods.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 2|sub Y' mul pow add INT+ 1 pow add x mul x exp mul INT+ 3 x INT+ 2 INT- 1 add INT+ 1 add mul INT+ 3 mul x exp mul INT+ 3 x exp mul INT+ 3 x, RHS: atan add x mul x exp mul INT+ 3 x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 2x[7 + sqrt(3)]^-1",
+        "output": "The integral of 2x(7 + sqrt(3))^-1 is (2/3) ln|7 + sqrt(3) + x sqrt(3) - 3x| + C, where C is the constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "27: the correct terms are there, but they are completely in the wrong place and connected by the wrong operators; in particular, no ln should be present ",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 2|sub Y' mul INT+ 2 mul x pow add INT+ 7 sqrt INT+ 3 INT- 1, RHS: mul pow x INT+ 2 pow add INT+ 7 sqrt INT+ 3 INT- 1",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of x[-3 - sinh(x)]exp[-3x - cosh(x)] + exp[-3x - cosh(x)]",
+        "output": "The integral of x[-3 - sinh(x)]exp[-3x - cosh(x)] + exp[-3x - cosh(x)] with respect to x does not have a closed-form solution. It must be evaluated numerically or approximated using numerical integration methods such as Simpson's rule or the trapezoidal rule.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "28",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 2|sub Y' add mul x mul add INT- 3 mul INT- 1 sinh x exp add mul INT- 1 cosh x mul INT- 3 x exp add mul INT- 1 cosh x mul INT- 3 x, RHS: mul x exp add mul INT- 1 cosh x mul INT- 3 x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of -e^{3x} * sin(e^{3x})",
+        "output": "The integral of -e^{3x} * sin(e^{3x}) is -cos(e^{3x})/3 + C where C is constant of integration.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "29",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 1|sub Y' mul INT- 1 mul exp mul INT+ 3 x sin exp mul INT+ 3 x, RHS: mul div INT+ 1 INT+ 3 cos exp mul INT+ 3 x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of (14 + 2x)[cos(30 + x^2 + 14x)]",
+        "output": "The integral of (14 + 2x)[cos(30 + x^2 + 14x)] is (14 + 2x)sin(30 + x^2 + 14x) + C, where C is the constant of integration.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "30: Factor error",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 1|sub Y' mul add INT+ 1 4 mul INT+ 2 x cos add INT+ 3 0 add pow x INT+ 2 mul INT+ 1 4 x, RHS: sin add x mul add INT+ 3 x add INT+ 1 0 x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of -sinx - [ln2cosx][sin(x)^-2][lnx]^-4 - (4/x)(lnx)^-5 * (sin(x)^-1)(ln2)",
+        "output": "The integral of -sinx - [ln2cosx][sin(x)^-2][lnx]^-4 - (4/x)(lnx)^-5 * (sin(x)^-1)(ln2) is not expressible in terms of elementary functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "31",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 1|sub Y' add mul INT- 1 sin x add mul INT- 1 mul pow ln x INT- 4 mul pow sin x INT- 2 mul cos x ln INT+ 2 mul INT- 4 mul pow x INT- 1 mul pow ln x INT- 5 mul pow sin x INT- 1 ln INT+ 2, RHS: add mul pow ln x INT- 4 mul pow sin x INT- 1 ln INT+ 2 cos x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 2(2 + e^x)^-1 - 2xe^x * [2 + e^x]^-2",
+        "output": "The integral of 2(2 + e^x)^-1 - 2xe^x * [2 + e^x]^-2 = -2 ln|2 + e^x| + C, where C is the constant of integration.",
+        "rating": "3",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "32",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 14|sub Y' add mul INT+ 2 pow add INT+ 2 exp x INT- 1 mul INT- 2 mul x mul pow add INT+ 2 exp x INT- 2 exp x, RHS: 0. mul INT+ 2 mul x pow add INT+ 2 exp x INT- 1",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of (4 - 2x)[x^2 - 4x]^-2",
+        "output": "The integral of (4 - 2x)[x^2 - 4x]^-2 is not in a standard form and it's not possible to solve it in closed form. This type of integral is called a \"non-elementary\" integral.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "33",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 2|sub Y' mul pow add mul INT- 1 x mul x add INT- 3 x INT- 2 add INT+ 4 mul INT- 2 x, RHS: pow add mul INT- 1 x mul x add INT- 3 x INT- 1",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 1 + x^-5(6 + x)^-1[x^5 + 5x^4(6 + x)]",
+        "output": "This is a bit of a complicated integral, but it can be solved using integration by substitution.\n let u = 6 + x, then x = u - 6 and dx = du\n substituting this into the integral we get:\n ∫(1 + (u-6)^-5)(u)^-1[(u-6)^5 + 5(u-6)^4u]du\n The integral can be simplified by applying the power rule and integral of inverse function\nThe antiderivative of above integral is :\n u^-5 (5u^4 - 4u^5 + 20u^3 - 30u^2 + 120u - 720)/120 + C\n Where C is constant of integration",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "34",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 2|sub Y' add INT+ 1 mul pow x INT- 5 mul pow add INT+ 6 x INT- 1 add pow x INT+ 5 mul INT+ 5 mul pow x INT+ 4 add INT+ 6 x, RHS: add x ln mul pow x INT+ 5 add INT+ 6 x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of x[cos(x^2cosx)]^-1 * [2cosx - xsinx]",
+        "output": "The integral of x[cos(x^2cosx)]^-1 * [2cosx - xsinx] is not in a standard form that can be evaluated in closed form. It can be evaluated using numerical methods or computer algebra systems such as Mathematica or Maple.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "35: Notable for suggesting the use of Mathematica or Maple.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 2|sub Y' mul x mul pow abs cos mul pow x INT+ 2 cos x INT- 1 add mul INT+ 2 cos x mul INT- 1 mul x sin x, RHS: asinh tan mul pow x INT+ 2 cos x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 1 + sqrt(2)x^2 * sin(sqrt(2)x) - 2xcos(sqrt(2)x)",
+        "output": "The integral of 1 + sqrt(2)x^2 * sin(sqrt(2)x) - 2xcos(sqrt(2)x) does not have a closed form solution and would have to be done using integration techniques such as substitution or integration by parts.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "36: Incorrect statement about closed form.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 1|sub Y' add INT+ 1 add mul INT- 2 mul x cos mul x sqrt INT+ 2 mul sqrt INT+ 2 mul pow x INT+ 2 sin mul x sqrt INT+ 2, RHS: add x mul INT- 1 mul pow x INT+ 2 cos mul x sqrt INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 125 + 25[(x - sinx)^-1 * (2 - 2cosx)]",
+        "output": "The integral of 125 + 25[(x - sinx)^-1 * (2 - 2cosx)] is not in a standard form that can be easily solved. It would likely require integration by substitution or integration by parts.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "37: Not a standard form is inccorect.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 1|sub Y' add INT+ 1 2 5 mul INT+ 1 2 5 mul pow add x mul INT- 1 sin x INT- 1 add INT+ 2 mul INT- 2 cos x, RHS: add mul INT+ 1 2 5 x mul INT+ 1 2 5 ln pow add x mul INT- 1 sin x INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 19 + 3x^2sinhx + 6xcoshx",
+        "output": "The integral of 19 is 19x + C, where C is the constant of integration.\n The integral of 3x^2sinhx is (x^3/3)coshx - (x^3/3)sinhx + C.\n The integral of 6xcoshx is (6/2)x^2coshx + C.\n Therefore, the integral of 19 + 3x^2sinhx + 6xcoshx is\n 19x + (x^3/3)coshx - (x^3/3)sinhx + (3/2)x^2coshx + C",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "38: Again it looks the sum form of the integrand.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 1|sub Y' add INT+ 1 9 add mul INT+ 3 mul pow x INT+ 2 sinh x mul INT+ 6 mul x cosh x, RHS: add x mul INT+ 3 mul x add INT+ 6 mul x cosh x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 5[cosh(tan(4))]^-1",
+        "output": "The integral of 5[cosh(tan(4))]^-1 is not expressible in terms of elementary functions. In general, integrals involving the inverse hyperbolic functions are not elementary, and cannot be expressed using a combination of basic algebraic operations, exponential functions, and logarithms.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [
+            "w2"
+        ],
+        "comment": "39: Comment about inverse hyperbolic functions.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 1|sub Y' mul INT+ 5 pow cosh tan INT+ 4 INT- 1, RHS: mul INT+ 5 mul x pow cosh tan INT+ 4 INT- 1",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of -[5 + tanh(xtan(1))]^-2 * [tan(1)*[cosh(xtan(1))]^-2]",
+        "output": "The integral of -[5 + tanh(xtan(1))]^-2 * [tan(1)*[cosh(xtan(1))]^-2] does not have a closed form solution, meaning that it cannot be expressed in terms of elementary functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "40",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 1|sub Y' mul INT- 1 mul pow add INT+ 5 tanh mul x tan INT+ 1 INT- 2 mul pow cosh mul x tan INT+ 1 INT- 2 tan INT+ 1, RHS: pow add INT+ 5 tanh mul x tan INT+ 1 INT- 1",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of (1 + x)^-1 * [4 + 29x(1 + x)]^-1 * [-4 + 29(1 + x)^2]",
+        "output": "The integral of (1 + x)^-1 * [4 + 29x(1 + x)]^-1 * [-4 + 29(1 + x)^2] cannot be expressed in terms of elementary functions.\n It is a hypergeometric function.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "41",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward integration) prim_bwd.test, LHS: 1|sub Y' mul pow add INT+ 1 x INT- 1 mul pow add INT+ 4 mul INT+ 2 9 mul x add INT+ 1 x INT- 1 add INT- 4 mul INT+ 2 9 pow add INT+ 1 x INT+ 2, RHS: ln add mul div INT+ 2 9 INT+ 2 x mul INT+ 2 mul x pow add x pow x INT+ 2 INT- 1",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 4x^7(3 + x^2)",
+        "output": "The integral of 4x^7(3 + x^2) is (4/8)x^8(3 + x^2) + C, where C is the constant of integration.",
+        "rating": "3",
+        "errorcodes": [
+            "e4",
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "42",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 41|sub Y' mul INT+ 4 mul pow x INT+ 7 add INT+ 3 pow x INT+ 2, RHS: mul div INT+ 1 INT+ 1 0 mul pow x INT+ 8 add INT+ 1 5 mul INT+ 4 pow x INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of -(8/3)x -(8/3)cosx",
+        "output": "The integral of -(8/3)x -(8/3)cosx is -(8/3)x^2/2 - (8/3)sinx + C, where C is the constant of integration.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "43",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 3|sub Y' add mul div INT- 8 INT+ 3 x mul div INT- 8 INT+ 3 cos x, RHS:  add mul div INT- 8 INT+ 3 sin x mul div INT- 4 INT+ 3 pow x INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of x + tanh(cosh(2))",
+        "output": "The integral of x is x^2/2 + C, where C is the constant of integration. To integrate tanh(cosh(2)), we first need to find the derivative of cosh(2), which is sinh(2).\n The derivative of tanh(x) is (sech(x))^2, where sech(x) = 1/cosh(x).\n Therefore, the integral of tanh(cosh(2)) is -tanh(cosh(2)) + C.\n So the overall integral is x^2/2 - tanh(cosh(2)) + C.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "44: Thinks second term has an x. A note here is that the prompt does not say with respect to x which may help.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 9|sub Y' add x tanh cosh INT+ 2, RHS: mul div INT+ 1 INT+ 2 mul x add x mul INT+ 2 tanh cosh INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of x + tan(2) + tanh(3)",
+        "output": "The integral of x is x^2/2 + C, where C is the constant of integration. The integral of tan(2) and tanh(3) do not have closed form solutions and need to be evaluated numerically or with special functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "45: Incorrect statement about closed form.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' add x add tan INT+ 2 tanh INT+ 3, RHS: mul div INT+ 1 INT+ 2 mul x add x add mul INT+ 2 tan INT+ 2 mul INT+ 2 tanh INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of x^2ln[xasinh(2)sin(3)]",
+        "output": "The integral of x^2ln[xasinh(2)sin(3)] is not in closed form, meaning it does not have a simple algebraic expression as its solution. It would require the use of special functions and/or series expansions to solve it.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "46",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul pow x INT+ 2 ln mul x mul asinh INT+ 2 sin INT+ 3, RHS: mul div INT+ 1 INT+ 9 mul pow x INT+ 3 add INT- 1 mul INT+ 3 ln mul x mul asinh INT+ 2 sin INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of (5 - cos(4))(6 + 12x)",
+        "output": "The integral of (5 - cos(4))(6 + 12x) with respect to x is (5 - cos(4))(6x + 6x^2) + C, where C is the constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "47",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul add INT+ 5 mul INT- 1 cos INT+ 4 add INT+ 6 mul INT+ 1 2 x, RHS: mul INT+ 6 mul x add INT+ 5 add mul INT- 1 cos INT+ 4 add mul INT+ 5 x mul INT- 1 mul x cos INT+ 4",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of [6 + cosh(2)]xe^x",
+        "output": "The integral of [6 + cosh(2)]xe^x is (6e^x + (sinh(2) + C)e^x) where C is the constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "48",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul x mul add INT+ 6 cosh INT+ 2 exp x, RHS: mul INT- 1 mul add INT+ 6 add mul INT- 1 mul x add INT+ 6 cosh INT+ 2 cosh INT+ 2 exp x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of [ln(x)^4] / 4096x",
+        "output": "The integral of (ln(x)^4) / 4096x is not expressible in terms of elementary functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "49: Incorrect statement about elementary functions?",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul div INT+ 1 INT+ 4 0 9 6 mul pow x INT- 1 pow ln x INT+ 4, RHS: mul div INT+ 1 INT+ 2 0 4 8 0 pow ln x INT+ 5",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of x^(7/2)[(3 + tanh(1))^-1]",
+        "output": "The integral of x^(7/2)[(3 + tanh(1))^-1] cannot be expressed in terms of elementary functions. It has to be expressed as an infinite series, a special function, or evaluated numerically.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "50: Notable for mention of infinite series.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul pow x div INT+ 7 INT+ 2 pow add INT+ 3 tanh INT+ 1 INT- 1, RHS: mul div INT+ 2 INT+ 9 mul pow x div INT+ 9 INT+ 2 pow add INT+ 3 tanh INT+ 1 INT- 1",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of e^x[43 + 6x + sin(tanh(16))]",
+        "output": "The integral of e^x[43 + 6x + sin(tanh(16))] is e^x[43x + 3x^2 + cos(tanh(16))] + C, where C is the constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "51",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul add INT+ 4 3 add mul INT+ 6 x sin tanh INT+ 1 6 exp x, RHS: mul add INT+ 3 7 add mul INT+ 6 x sin tanh INT+ 1 6 exp x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 3[tan(2)^4 * cos(x) * tan(1)]",
+        "output": "The integral of 3*[tan(2)^4 * cos(x) * tan(1)] is 3*[(sec(2)^4)/5 * sin(x) - (sec(2)^4 * tan(1) * ln|cos(x)|)].",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "52",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul INT+ 3 mul pow tan INT+ 2 INT+ 4 mul cos x tan INT+ 1, RHS: mul INT+ 3 mul pow tan INT+ 2 INT+ 4 mul sin x tan INT+ 1",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 2048 + 32x^3",
+        "output": "The antiderivative or indefinite integral of 2048 + 32x^3 with respect to x is\n ∫(2048 + 32x^3)dx = 2048x + (32/4)x^4 + C\n where C is the constant of integration.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "53",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' add INT+ 2 0 4 8 mul INT+ 3 2 pow x INT+ 3, RHS: mul INT+ 8 mul x add INT+ 2 5 6 pow x INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of 4[cos(1)^-1 * [6 + 3x + xcos(1)]]",
+        "output": "The integral of 4[cos(1)^-1 * [6 + 3x + xcos(1)]] is 4ln|cos(x)| + 3xsin(x) - x^2cos(x) + C, where C is the constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "54",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul INT+ 4 mul pow cos INT+ 1 INT- 1 add INT+ 6 add mul INT+ 3 x mul x cos INT+ 1, RHS: mul INT+ 2 mul pow cos INT+ 1 INT- 1 add INT+ 6 add mul INT+ 3 pow x INT+ 2 add mul INT+ 1 2 x mul pow x INT+ 2 cos INT+ 1",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of -3x^3[2 + acos(2)]^-1 * acos(2)",
+        "output": "The integral of -3x^3[2 + acos(2)]^-1 * acos(2) is not in a closed form, in general one has to use integration by parts or other techniques to solve it.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "55",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul INT- 3 mul pow x INT+ 3 mul pow add INT+ 2 acos INT+ 2 INT- 1 acos INT+ 2, RHS: mul INT- 3 mul pow x INT+ 4 mul pow add INT+ 8 mul INT+ 4 acos INT+ 2 INT- 1 acos INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of (1/2x)[2 + lnx][4 - pi]",
+        "output": "The integral of (1/2x)[2 + lnx][4 - pi] is (1/2)[x(2+lnx)(4-pi)- ∫x(2+lnx)(-1)dx]. The integral of x(2+lnx) is x^2 lnx+2x^2+C",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "56",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul div INT+ 1 INT+ 2 mul pow x INT- 1 mul add INT+ 2 mul x ln x add INT+ 4 mul INT- 1 pi, RHS: mul add INT+ 2 mul div INT- 1 INT+ 2 pi add INT+ 2 add mul INT- 1 x add mul x ln x ln pow x INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of (24 + 12x)[sin(3x^2) + 6x^2cos(3x^2)]",
+        "output": "The integral of (24 + 12x)[sin(3x^2) + 6x^2cos(3x^2)] is (12x + 24)[-1/3cos(3x^2) + 2x^3sin(3x^2)] + C, where C is the constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "57",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul add INT+ 2 4 mul INT+ 1 2 x add mul INT+ 6 mul pow x INT+ 2 cos mul INT+ 3 pow x INT+ 2 sin mul INT+ 3 pow x INT+ 2, RHS: add mul INT+ 2 cos mul INT+ 3 pow x INT+ 2 mul INT+ 1 2 mul x mul add INT+ 2 x sin mul INT+ 3 pow x INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of x^(3/2)[atan(e^2)]^5",
+        "output": "The integral of x^(3/2) [atan(e^2)]^5 is not in the form of a standard integral and cannot be expressed in terms of elementary functions. It does not have a closed-form solution, and it would need to be evaluated numerically or approximated using numerical integration techniques such as trapezoidal rule or Simpson's rule.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "58",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 23. 1|sub Y' mul pow x div INT+ 3 INT+ 2 pow atan exp INT+ 2 INT+ 5, RHS: mul div INT+ 2 INT+ 5 mul pow x div INT+ 5 INT+ 2 pow atan exp INT+ 2 INT+ 5",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of (1/3 + 3x)(xcoshx + sinhx)",
+        "output": "The integral of (1/3 + 3x)(xcoshx + sinhx) is (1/9 + x^2)(sinhx + coshx) + C, where C is the constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "59",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul add div INT+ 1 INT+ 3 mul INT+ 3 x add mul x cosh x sinh x, RHS: add mul INT+ 3 sinh x add mul INT- 3 mul x cosh x mul div INT+ 1 INT+ 3 mul x mul add INT+ 1 mul INT+ 9 x sinh x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of -10 + x^2 + 18x + 25sqrt(5)",
+        "output": "The integral of -10 + x^2 + 18x + 25sqrt(5) with respect to x is (-10x + (1/3)x^3 + 9x^2 + (25/2)sqrt(5)x) + C, where C is the constant of integration.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "60",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' add INT- 1 0 add pow x INT+ 2 add mul INT+ 1 8 x mul INT+ 2 5 sqrt INT+ 5, RHS: mul div INT+ 1 INT+ 3 mul x add INT- 3 0 add pow x INT+ 2 add mul INT+ 2 7 x mul INT+ 7 5 sqrt INT+ 5",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of x^2[(cos(5) + sin(0.5))^-1 * (1 + 2x)]",
+        "output": "The integral of x^2[(cos(5) + sin(0.5))^-1 * (1 + 2x)] is\n ∫x^2[(cos(5) + sin(0.5))^-1 * (1 + 2x)]dx =\n x^3[(cos(5) + sin(0.5))^-1 * (1 + 2x)]/(3) - ∫[(cos(5) + sin(0.5))^-1 * (3x^2 + 2x^3)]dx\n This is the antiderivative of the given function, which is also known as the indefinite integral of the function",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "61: Antiderivative mentioned.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 29. 1|sub Y' mul pow x INT+ 2 mul pow add cos INT+ 5 sin div INT+ 1 INT+ 2 INT- 1 add INT+ 1 mul INT+ 2 x, RHS: mul pow x INT+ 3 mul pow add cos INT+ 5 sin div INT+ 1 INT+ 2 INT- 1 add div INT+ 1 INT+ 3 mul div INT+ 1 INT+ 2 x",
+        "confidence": "high",
+        "timestamp": "2023-01-24"
+    },
+    {
+        "prompt": "What is the integral of x + tan(x + atan(2))",
+        "output": "The integral of x + tan(x + atan(2)) cannot be expressed in terms of elementary functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "62",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 23|sub Y' add x tan add x atan INT+ 2, RHS: add mul div INT+ 1 INT+ 2 pow x INT+ 2 mul div INT+ 1 INT+ 2 ln add INT+ 1 pow tan add x atan INT+ 2 INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of x^3 - cosx - tanx",
+        "output": "The integral of x^3 - cosx - tanx cannot be expressed in terms of elementary functions, i.e. there is no closed-form solution. It can only be approximated numerically or expressed in terms of special functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "63",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 14|sub Y' add pow x INT+ 3 add mul INT- 1 cos x mul INT- 1 tan x, RHS: add mul INT- 1 sin x add mul div INT+ 1 INT+ 4 pow x INT+ 4 ln cos x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of (1/(3*x))*(3 + x + x^3)",
+        "output": "The integral of (1/(3*x)) * (3 + x + x^3) can be solved by partial fraction decomposition and integration by substitution. The final result is:\n ln(abs(3x)) + (1/3) * ln(abs(x + 3)) - (1/9) * ln(abs(x - 3)) + C,\n where C is the arbitrary constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "64",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 12|sub Y' mul div INT+ 1 INT+ 3 mul pow x INT- 1 add INT+ 3 add x pow x INT+ 3, RHS: add mul div INT+ 1 INT+ 3 x add mul div INT+ 1 INT+ 9 pow x INT+ 3 ln x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 7x - x^{7/2}",
+        "output": "The integral of 7x - x^(7/2) cannot be expressed in terms of elementary functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "65",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 2|sub Y' add mul INT- 1 pow x div INT+ 7 INT+ 2 mul INT+ 7 x, RHS: add mul div INT- 2 INT+ 9 pow x div INT+ 9 INT+ 2 mul div INT+ 7 INT+ 2 pow x INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 2x + (x^2 / 3) + 3",
+        "output": "The integral of 2x + (x^2 / 3) + 3 is (x^2) + (x^3 / 3) + 3x + C, where C is an arbitrary constant of integration.",
+        "rating": "4",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "66: Arithmetic slip in one term",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 2|sub Y' add INT+ 3 add x mul div INT+ 1 INT+ 3 mul x add INT+ 3 x, RHS: add pow x INT+ 2 add mul INT+ 3 x mul div INT+ 1 INT+ 9 pow x INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of x^2 + 2x + 10x^3",
+        "output": "The integral of x^2 + 2x + 10x^3 is x^3 + x^2 + 5x^4 + C, where C is the constant of integration.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "67: multiple arithmetic slips",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 1|sub Y' mul x add x mul x add mul INT+ 2 pow x INT- 1 mul INT+ 1 0 x, RHS: add pow x INT+ 2 add mul div INT+ 1 INT+ 3 pow x INT+ 3 mul div INT+ 5 INT+ 2 pow x INT+ 4",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of x + sqrt(3)x^2 + tan(2x)",
+        "output": "The integral of x + sqrt(3)x^2 + tan(2x) does not have an elementary antiderivative, meaning it cannot be expressed in terms of a finite number of elementary functions (such as polynomials, exponentials, logarithms, trigonometric functions, etc.). A numerical method or approximation may be used to find its approximate value.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "68: Incorrectly describes integral as having no closed form.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 1|sub Y' add x add mul sqrt INT+ 3 pow x INT+ 2 tan mul INT+ 2 x, RHS: add mul div INT+ 1 INT+ 2 pow x INT+ 2 add mul div INT- 1 INT+ 2 ln cos mul INT+ 2 x mul div INT+ 1 INT+ 3 mul sqrt INT+ 3 pow x INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 2 * sqrt(1/x) * [tan(e^{tan(4)})]^{1/4}",
+        "output": "The integral of 2 * sqrt(1/x) * [tan(e^{tan(4)})]^(1/4) does not have a closed form solution and must be expressed using numerical or approximative methods.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "69",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 1|sub Y' mul INT+ 2 mul sqrt pow x INT- 1 pow tan exp tan INT+ 4 div INT+ 1 INT+ 4, RHS: mul INT+ 4 mul x mul sqrt pow x INT- 1 pow tan exp tan INT+ 4 div INT+ 1 INT+ 4",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 5x^6 + [5x^3 * cos(1)]",
+        "output": "The integral of 5x^6 is (5/7)x^7 + C, where C is the constant of integration.\n The integral of 5x^3 * cos(1) cannot be expressed in terms of elementary functions and must be expressed in terms of special functions.\n Thus, the integral of 5x^6 + [5x^3 * cos(1)] is (5/7)x^7 + C' where C' is another constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "70: Gets the first term correct but incorrectly says the second term has no closed form.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 1|sub Y' mul INT+ 5 mul pow x INT+ 3 add pow x INT+ 3 cos INT+ 1, RHS: add mul div INT+ 5 INT+ 7 pow x INT+ 7 mul div INT+ 5 INT+ 4 mul pow x INT+ 4 cos INT+ 1",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 1/(2 + ln(3/2))",
+        "output": "The integral of 1/(2 + ln(3/2)) cannot be expressed in terms of elementary functions and must be approximated numerically or solved using special functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "71: Doesn't recognize expression is constant",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 1|sub Y' mul x pow add mul INT+ 2 x mul x ln div INT+ 3 INT+ 2 INT- 1, RHS: mul INT- 1 mul x pow add INT- 2 add mul INT- 1 ln INT+ 3 ln INT+ 2 INT- 1",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 5 + atanx + sin(x - 1)",
+        "output": "The indefinite integral of 5 + atan(x) + sin(x - 1) cannot be expressed in terms of elementary functions and needs to be solved using numerical or approximative methods.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "72",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 1|sub Y' add INT+ 5 add atan x sin add INT- 1 x, RHS: add mul INT- 1 cos add INT- 1 x add mul INT+ 5 x add mul div INT- 1 INT+ 2 ln add INT+ 1 pow x INT+ 2 mul x atan x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of x^2*[70 + 5x]",
+        "output": "∫ x^2 * [70 + 5x] dx = (x^3/3) * (70 + 5x) - (5/3) * ∫ x^3 dx = (x^3/3) * (70 + 5x) - (5x^4/12) + C",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "73: Produces a random extra term that shouldn't be there.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 1|sub Y' mul pow x INT+ 2 add INT+ 7 0 mul INT+ 5 x, RHS: add mul div INT+ 5 INT+ 4 pow x INT+ 4 mul div INT+ 7 0 INT+ 3 pow x INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 7x + (13/4) * x^2 + xln(2x)",
+        "output": "The integral of 7x + (13/4) * x^2 + xln(2x) is (7/2)x^2 + (13/6)x^3 + (2x)ln(2x) - (1/2)x.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "74: First term correct but others not",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Forward Integration) prim_ibp.test, LHS: 1|sub Y' add x mul x add INT+ 6 add mul div INT+ 1 3 INT+ 4 x ln mul INT+ 2 x, RHS: add mul div INT+ 1 3 INT+ 4 pow x INT+ 2 add mul div INT+ 1 3 INT+ 1 2 pow x INT+ 3 mul div INT+ 1 INT+ 2 mul pow x INT+ 2 ln mul INT+ 2 x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of -sin(xe^{-x})/x^2 - (1/x)*[(x - 1)(cos(xe^-x))]",
+        "output": "Unfortunately, this integral does not have a closed form solution and must be approximated or calculated numerically.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "75",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 14|sub Y' mul INT- 1 mul pow x INT- 2 mul add mul exp x sin mul x exp mul INT- 1 x mul x mul add INT- 1 x cos mul x exp mul INT- 1 x exp mul INT- 1 x, RHS: mul pow x INT- 1 sin mul x exp mul INT- 1 x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of -(7 + x)^{-2} * [cosx + (7 + x)sinx]",
+        "output": "The integral of -(7 + x)^{-2} * [cosx + (7 + x)sinx] does not have a closed-form solution in terms of elementary functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "76",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 8|sub Y' mul INT- 1 mul pow add INT+ 7 x INT- 2 add mul add INT+ 7 x sin x cos x, RHS: mul pow add INT+ 7 x INT- 1 cos x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of (tan^2(2x) - 1)^{-1} * [-2x^2(cos2x)^-2 + (1 + 2xatanh(tan2x) * tan^2(2x) - 1)]",
+        "output": "This integral does not have an elementary antiderivative and cannot be expressed in terms of elementary functions. It can only be represented using special functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "77",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 3|sub Y' mul pow add INT- 1 pow tan mul INT+ 2 x INT+ 2 INT- 1 add mul add INT+ 1 mul INT+ 2 mul x atanh tan mul INT+ 2 x add INT- 1 pow tan mul INT+ 2 x INT+ 2 mul INT- 2 mul pow x INT+ 2 pow cos mul INT+ 2 x INT- 2, RHS: add x mul pow x INT+ 2 atanh tan mul INT+ 2 x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 1 - cosh(x^2 + cosx)*[2x - sinx]",
+        "output": "The integral of 1 - cosh(x^2 + cosx)*[2x - sinx] does not have a closed-form solution in terms of elementary functions. It can be expressed as a series or approximated numerically.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "78",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 2|sub Y' add INT+ 1 mul INT- 1 mul add mul INT- 1 sin x mul INT+ 2 x cosh add pow x INT+ 2 cos x, RHS: add x mul INT- 1 sinh add pow x INT+ 2 cos x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of (x - 4)^{-2} * [(x + 3)^{-2} * [x - 4][tanx] + (x + 3)tanx - cos^{-2}(x(x-4)(x+3))]",
+        "output": "The integral does not have a closed-form solution in terms of elementary functions and must be expressed as an infinite series or evaluated numerically.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "79",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 2|sub Y' mul pow add INT- 4 x INT- 2 mul pow add INT+ 3 x INT- 2 add mul add INT- 4 x tan x add mul add INT+ 3 x tan x mul INT- 1 mul pow cos x INT- 2 mul add INT- 4 x add INT+ 3 x, RHS: mul pow add INT+ 3 x INT- 1 mul pow add INT+ 4 mul INT- 1 x INT- 1 tan x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of  1 + 32e^{-x} -32xe^{-x}",
+        "output": "The integral of 1 + 32e^-x - 32xe^-x is (1 - 32x)e^-x + 32e^-x + C, where C is the constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "80",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 2|sub Y' add INT+ 1 add mul INT+ 3 2 exp mul INT- 1 x mul INT- 3 2 mul x exp mul INT- 1 x, RHS: add x mul INT+ 3 2 mul x exp mul INT- 1 x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of [-1 + (1 + x + cosx)^2]^{-1} * [-4 + sin(x) + (1 + x + cosx)^2]",
+        "output": "The integral does not have a closed form solution in terms of elementary functions. It must be approximated numerically or solved using advanced mathematical methods.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "81",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 2|sub Y' mul pow add INT- 1 pow add INT+ 1 add x cos x INT+ 2 INT- 1 add INT- 2 add pow add INT+ 1 add x cos x INT+ 2 sin x, RHS: add x atanh add INT+ 1 add x cos x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of -[sin(x + x(5 + x)^{-1/2}) * (1 + (5 + x)^{-1/2 - 1/2 * [x(5+x)^{-3/2}]})]",
+        "output": "The integral of the expression cannot be expressed in closed form.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "82",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 1|sub Y' mul INT- 1 mul add INT+ 1 add pow add INT+ 5 x div INT- 1 INT+ 2 mul div INT- 1 INT+ 2 mul x pow add INT+ 5 x div INT- 3 INT+ 2 sin add x mul x pow add INT+ 5 x div INT- 1 INT+ 2, RHS: cos add x mul x pow add INT+ 5 x div INT- 1 INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 1 - (x + sin(4))^{-2} + 2cos2x - 2(x^{-1})*(x + sin(4))^{-2} - (1/x^2 * sin(4) * (x + sin(4))^{-2})",
+        "output": "Unfortunately, this integral does not have an elementary solution and requires numerical or approximate methods to evaluate it.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "83: Biased language - unfortunately",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 1|sub Y' add INT+ 1 add mul INT- 1 pow add x sin INT+ 4 INT- 2 add mul INT+ 2 cos mul INT+ 2 x add mul INT- 2 mul pow x INT- 1 pow add x sin INT+ 4 INT- 2 mul INT- 1 mul pow x INT- 2 mul pow add x sin INT+ 4 INT- 2 sin INT+ 4, RHS: add x add mul pow x INT- 1 mul pow add x sin INT+ 4 INT- 1 add INT+ 1 x sin mul INT+ 2 x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 2 + sqrt(5) - (2x/3) - 4x^3 * sin(x^4) * cos^{-2}(x^4)",
+        "output": "The integral of 2 + sqrt(5) - (2x/3) - 4x^3 * sin(x^4) * cos^{-2}(x^4) cannot be expressed in terms of elementary functions and requires numerical or approximation methods for solution.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "84",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 1|sub Y' add INT+ 2 add sqrt INT+ 5 add mul div INT- 2 INT+ 3 x mul INT- 4 mul pow x INT+ 3 mul pow cos pow x INT+ 4 INT- 2 sin pow x INT+ 4, RHS: add x add mul INT- 1 pow cos pow x INT+ 4 INT- 1 add mul div INT- 4 INT+ 3 pow x INT+ 2 add mul x sqrt INT+ 5 mul x add INT+ 1 x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of x^2[135 + 20x^2 + 24x^3 + 80x]",
+        "output": "The integral of x^2 is x^3/3 + C, where C is a constant of integration.\n The integral of 135 + 20x^2 + 24x^3 + 80x is x^3 + 10x^2 + 40x + 135x + C, where C is a constant of integration.\n So, the integral of x^2[135 + 20x^2 + 24x^3 + 80x] is x^4/4 + 5x^3 + 20x^2 + 67.5x + C, where C is a constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "85",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 1|sub Y' mul pow x INT+ 2 add INT+ 1 3 5 add mul INT+ 2 0 pow x INT+ 2 add mul INT+ 2 4 pow x INT+ 3 mul INT+ 8 0 x, RHS: mul x add mul INT+ 2 5 pow x INT+ 2 mul x mul add INT+ 2 0 mul INT+ 4 pow x INT+ 2 add x pow x INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of -x * sinx * sin(x^2*acosx) * [2xacosx - x^2 * (1  - x^2)^{-1/2}]",
+        "output": "The integral cannot be expressed in closed-form in terms of elementary functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "86",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 1|sub Y' add mul cos mul pow x INT+ 2 acos x sin x add mul x mul cos x cos mul pow x INT+ 2 acos x mul INT- 1 mul x mul add mul INT- 1 mul pow x INT+ 2 pow add INT+ 1 mul INT- 1 pow x INT+ 2 div INT- 1 INT+ 2 mul INT+ 2 mul x acos x mul sin x sin mul pow x INT+ 2 acos x, RHS: mul x mul cos mul pow x INT+ 2 acos x sin x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of -1 + 1/x^3 * (x^15 - 1)^{-2} + 17x^12 * (x^15 - 1)^{-2} -5[cos^{-2}(cosx) * sinx*sin(cos(x))]",
+        "output": "This integral doesn't have a closed-form solution and must be evaluated numerically or through approximations.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "87",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 1|sub Y' add INT- 1 add mul INT- 2 mul pow x INT- 3 pow add INT- 1 pow x INT+ 1 5 INT- 2 add mul INT+ 1 7 mul pow x INT+ 1 2 pow add INT- 1 pow x INT+ 1 5 INT- 2 mul INT- 5 mul pow cos cos x INT- 2 mul sin x sin cos x, RHS: add mul INT- 1 x add mul INT+ 5 pow cos cos x INT- 1 mul pow x INT- 1 pow add x mul INT- 1 pow x INT+ 1 6 INT- 1",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 1 + 1/6 * sin^{-1}(cosx/x) - 1/6x[sin^{-2}(cosx/x) * cos(cosx/x)[[((1/x) * sinx) - (1/x^2 * cosx)]]]",
+        "output": "The integral does not have a closed form solution in terms of elementary functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "88",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 1|sub Y' add INT+ 1 add mul div INT+ 1 INT+ 6 pow sin mul pow x INT- 1 cos x INT- 1 mul div INT- 1 INT+ 6 mul x mul pow sin mul pow x INT- 1 cos x INT- 2 mul add mul INT- 1 mul pow x INT- 1 sin x mul INT- 1 mul pow x INT- 2 cos x cos mul pow x INT- 1 cos x, RHS: add x mul div INT+ 1 INT+ 6 mul x pow sin mul pow x INT- 1 cos x INT- 1",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of -2sinx[atanh(1/3 * ln(atan(atan(ln(sqrt(cos(4)))))))]",
+        "output": "The integral cannot be solved analytically as there is no known closed form expression for the antiderivative of this complex expression. Numerical methods or approximation techniques would need to be used.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "89",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Backward Integration) prim_ibp.test, LHS: 1|sub Y' mul INT- 2 mul pow atanh mul div INT+ 1 INT+ 3 ln atan atan ln sqrt cos INT+ 4 INT- 1 sin x, RHS: mul INT+ 2 mul pow atanh mul div INT+ 1 INT+ 3 ln atan atan ln sqrt cos INT+ 4 INT- 1 cos x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 12 + 6cosh(x)",
+        "output": "The integral of 12 + 6cosh(x) is 12x + 6 sinh(x) + C, where C is the constant of integration.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "90",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 40|sub Y' add INT+ 1 2 mul INT+ 6 cosh x, RHS: add mul INT+ 6 sinh x mul INT+ 1 2 x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 5x^11 - 20x^9",
+        "output": "The integral of 5x^11 is (5/12)x^12 + C, where C is the constant of integration.\n The integral of -20x^9 is (-20/10)x^10 + C.\n So, the integral of 5x^11 - 20x^9 is (5/12)x^12 - (20/10)x^10 + C.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "91",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 9|sub Y' mul INT+ 5 mul pow x INT+ 9 add INT- 4 pow x INT+ 2, RHS: mul div INT+ 1 INT+ 1 2 mul pow x INT+ 1 0 add INT- 2 4 mul INT+ 5 pow x INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of x^2 * cos(e^5/4)",
+        "output": "The integral of x^2 * cos(e^(5/4)) cannot be solved in terms of elementary functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "92",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 3|sub Y' mul pow x INT+ 2 cos mul div INT+ 1 INT+ 4 exp INT+ 5, RHS: mul div INT+ 1 INT+ 3 mul pow x INT+ 3 cos mul div INT+ 1 INT+ 4 exp INT+ 5",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of x -cos(4) -tan(3)",
+        "output": "The antiderivative (indefinite integral) of x is x^2/2 + C, where C is the constant of integration. The antiderivative of -cos(4) is sin(4) + C and the antiderivative of -tan(3) does not have a simple closed form expression, it can be expressed in terms of integrals of other functions.\n So, the integral of x -cos(4) -tan(3) is x^2/2 - sin(4) - tan(3) + C.",
+        "rating": "3",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "93: Doesn't pick up that trigonometric terms are constants.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' add x add mul INT- 1 cos INT+ 4 mul INT- 1 tan INT+ 3, RHS: mul div INT+ 1 INT+ 2 mul x add x add mul INT- 2 cos INT+ 4 mul INT- 2 tan INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of x^2/2 -x^/2 * e^{e^3}",
+        "output": "The integral of x^2/2 -x^/2 * e^{e^3} cannot be expressed in terms of elementary functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "94",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul div INT+ 1 INT+ 2 mul pow x INT+ 2 add INT+ 1 mul INT- 1 exp exp INT+ 3, RHS: mul div INT+ 1 INT+ 6 mul pow x INT+ 3 add INT+ 1 mul INT- 1 exp exp INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of x^4 * tan^4(1) * tan^4(5)",
+        "output": "The integral of x^4 * tan^4(1) * tan^4(5) is not possible to solve analytically in closed form, as tan^4(1) and tan^4(5) are transcendental functions, and the combination of them with x^4 makes the integral non-elementary. It can be evaluated numerically or approximated using numerical methods like Monte Carlo integration, but a closed-form solution does not exist.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "95",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul pow x INT+ 4 mul pow tan INT+ 1 INT+ 4 pow tan INT+ 5 INT+ 4, RHS: mul div INT+ 1 INT+ 5 mul pow x INT+ 5 mul pow tan INT+ 1 INT+ 4 pow tan INT+ 5 INT+ 4",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 1/5 * x^{-3/2} * cos^2(e^{tan(2)})",
+        "output": "Unfortunately, the integral of this expression cannot be expressed in closed form in terms of elementary functions. It is a complex and non-elementary function.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [
+            "w4"
+        ],
+        "comment": "96: Biased language - unfortunately",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul div INT+ 1 INT+ 5 mul pow x div INT- 3 INT+ 2 pow cos exp tan INT+ 2 INT+ 2, RHS: mul div INT- 2 INT+ 5 mul pow x div INT- 1 INT+ 2 pow cos exp tan INT+ 2 INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 2x - x^7atan(3)",
+        "output": "The integral of 2x is x^2 + C, where C is the constant of integration.\n The integral of -x^7atan(3) cannot be expressed in terms of elementary functions.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "97",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul x add INT+ 2 mul INT- 1 mul pow x INT+ 6 atan INT+ 3, RHS: add pow x INT+ 2 mul div INT- 1 INT+ 8 mul pow x INT+ 8 atan INT+ 3",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 1 + x + x^3*cosh(2)",
+        "output": "The indefinite integral of 1 + x + x^3*cosh(2) with respect to x is:\n x^2 + x^4/4 + x^3*sinh(2) + C, where C is an arbitrary constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "98",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' add INT+ 1 add x add pow x INT+ 3 cosh INT+ 2, RHS: mul div INT+ 1 INT+ 4 mul x add pow x INT+ 3 add mul INT+ 2 x mul INT+ 8 pow cosh INT+ 1 INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of 12x^2 + 6x^3 + 48cosh(1)x^2 + 24x^3cosh(1)",
+        "output": "The integral of 12x^2 + 6x^3 + 48cosh(1)x^2 + 24x^3cosh(1) is 4x^3 + 24x^2 + 48x cosh(1) + constant.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "99",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' mul INT+ 6 mul pow x INT+ 2 mul add INT+ 1 mul INT+ 4 cosh INT+ 1 add INT+ 2 x, RHS: mul div INT+ 1 INT+ 2 mul pow x INT+ 3 mul add INT+ 1 mul INT+ 4 cosh INT+ 1 add INT+ 8 mul INT+ 3 x",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    },
+    {
+        "prompt": "What is the integral of -13/6 * cosh(2) + 13/6 * x",
+        "output": "The integral of -13/6 * cosh(2) + 13/6 * x is -13/12 * sinh(2) + 13/6 * x^2 + C, where C is the arbitrary constant of integration.",
+        "rating": "2",
+        "errorcodes": [
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "100",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "https://github.com/facebookresearch/SymbolicMathematics (Integration by Parts) prim_ibp.test, LHS: 1|sub Y' add mul div INT- 1 3 INT+ 6 cosh INT+ 2 mul div INT+ 1 3 INT+ 6 x, RHS: mul div INT+ 1 3 INT+ 1 2 mul x add x mul INT- 2 cosh INT+ 2",
+        "confidence": "high",
+        "timestamp": "2023-01-29"
+    }
+]

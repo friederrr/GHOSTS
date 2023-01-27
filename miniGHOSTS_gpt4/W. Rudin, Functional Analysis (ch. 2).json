@@ -1,0 +1,166 @@
+[
+    {
+        "prompt": "",
+        "output": "Let's break this down:\n\nBilinear: A function is bilinear if it is linear in each of its arguments. Here $B: \\mathbb{R}^2 \\times \\mathbb{R} \\rightarrow \\mathbb{R}^2$ is defined by $B(x_1, x_2; y) = (x_1 y, x_2 y)$. It's easy to see that B is linear in each of its arguments. If you fix $(x_1, x_2)$, then B is linear in $y$. Similarly, if you fix $y$, then B is linear in $(x_1, x_2)$.\n\nContinuous: Linear (and hence bilinear) maps between finite dimensional spaces are always continuous, as they preserve the topology. In other words, linear transformations map open sets to open sets, closed sets to closed sets, etc. This is a general property of linear maps.\n\nNot open at $(1, 1; 0)$: To show that B is not open at a certain point, we need to find an open set in the domain which is not mapped to an open set in the co-domain. Here, any open ball around $(1, 1; 0)$ in $\\mathbb{R}^2 \\times \\mathbb{R}$ will be mapped to the single point $(0,0)$ in $\\mathbb{R}^2$, which is not an open set. Therefore, B is not open at $(1, 1; 0)$.\n\nFind all points where B is open: To answer this, we need to find all points $(x_1, x_2; y)$ such that B is open at that point. As we showed earlier, if $y=0$, then B is not open at $(x_1, x_2; 0)$, regardless of the values of $x_1$ and $x_2$. On the other hand, if $y\\neq 0$, then for any open set in the domain containing $(x_1, x_2; y)$, its image under B will also be open in $\\mathbb{R}^2$. This is because when $y\\neq 0$, the function B behaves like a scaling operation in $\\mathbb{R}^2$, which is an open map. Therefore, B is open at all points of the form $(x_1, x_2; y)$ with $y\\neq 0$.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_2",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "Details on continuity and the points where B is open are missing and it seems only separate continuity is considered.",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "Rudin-Functional Analysis-Second-Ed.Part2-ex11-page55",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "Let's denote the set of all functions $f$ such that $||f||_{L^2} \\leq n$ as $F_n$ for each positive integer $n$. We are given that each $F_n$ is closed in $L^1$ and has an empty interior.\n\nTo show that $L^2$ is of the first category in $L^1$, we need to express $L^2$ as a countable union of nowhere dense sets in $L^1$ (i.e., sets whose closures have empty interiors).\n\nNotice that $L^2 \\subseteq \\bigcup_{n=1}^\\infty F_n$. In fact, it is not hard to see that $L^2 = \\bigcup_{n=1}^\\infty F_n$.\n\nSo we can express $L^2$ as a countable union of the sets $F_n$. Now we need to show that each $F_n$ is nowhere dense in $L^1$.\n\nRecall that a set $A$ in a topological space is nowhere dense if its closure has an empty interior. We are given that each $F_n$ is closed in $L^1$ and has empty interior. Therefore, each $F_n$ is nowhere dense in $L^1$.\n\nSo we have shown that $L^2$ can be expressed as a countable union of nowhere dense sets in $L^1$. Hence, $L^2$ is of the first category in $L^1$.\n\nThis means that the space of square integrable functions (the $L^2$ space) is \"small\" in some sense when considered as a subset of the space of absolutely integrable functions (the $L^1$ space). The first category sets (or meager sets) are those that are seen as \"small\" or \"negligible\" in the context of Baire's category theorem.",
+        "rating": "4",
+        "errorcodes": [
+            "e5_2"
+        ],
+        "warningcodes": [],
+        "comment": "One should mention Baire's theorem.",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "Rudin-Functional Analysis-Second-Ed.Part2-ex4/b-page53",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "The first step is to consider the statement of the Baire Category Theorem for complete metric spaces, which says that in a complete metric space, the countable union of nowhere dense sets is of first category (nowhere dense), whereas the space itself is of second category.\n\nGiven a set of $L^1$ functions, it is a complete metric space under the metric induced by the norm ||.||$_1$, that is, for any two functions $f$ and $g$ in $L^1$, the $L^1$ distance between them is defined as the integral of the absolute value of their difference: $d(f, g) = ||f - g||_1 = \\int |f(x) - g(x)| dx$.\n\nThe task is to express the $L^2$ space as a countable union of nowhere dense sets in $L^1$. A set $A$ in a metric space is nowhere dense if its closure has an empty interior.\n\nWe start by defining the sets $F_n$ = {$f$ in $L^2$ : $||f||_2$ ≤ $n$}, where $n$ is a natural number. $F_n$ is the closed ball of radius $n$ centered at the origin in the $L^2$ norm.\n\nThen $L^2 = \\bigcup_{n=1}^{\\infty} F_n$, because any function in $L^2$ must have a finite $L^2$ norm, which means it must be in one of the $F_n$.\n\nEach $F_n$ is closed in $L^2$ (since it's a closed ball), and the inclusion map $i$ : $L^2$ → $L^1$ is continuous, so $i(F_n)$ is closed in $L^1$ (the image of a closed set under a continuous function is closed).\n\nBut $i(F_n)$ cannot contain an open ball in the $L^1$ metric, because if it did, there would be a function $f$ in $L^1$ such that $f$ is not in $L^2$ (since the inclusion map is not onto), but every function in $L^1$ that is \"close enough\" to $f$ in the $L^1$ metric is in $L^2$ (since it's in the open ball), which is a contradiction.\n\nTherefore, $i(F_n)$ is nowhere dense in $L^1$. And since $L^2 = \\bigcup_{n=1}^{\\infty} F_n$, we have $i(L^2) = \\bigcup_{n=1}^{\\infty} i(F_n)$, which is a countable union of nowhere dense sets in $L^1$.\n\nHence, by the Baire Category Theorem, $L^2$ is of first category in $L^1$.\n\nThis shows that while $L^2$ may be a subset of $L^1$, it is a \"small\" or \"negligible\" subset in a certain precise sense.",
+        "rating": "3",
+        "errorcodes": [
+            "e2",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "Continuous functions do not necessarily map closed sets to closed sets. The argument that i(F_n) is nowhere dense is incomplete.",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "Rudin-Functional Analysis-Second-Ed.Part2-ex6-page54",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "We need to show that B is a bilinear functional on X x X, and that it is separately continuous but not jointly continuous.\n\nLet's start with bilinearity.\n\nBilinearity\n\nA functional B: X x X -> R (real numbers) is bilinear if it satisfies the following conditions for all f, g, h in X and for all real numbers α:\n\nB(f + g, h) = B(f, h) + B(g, h) (Additivity in the first argument)\n\nB(f, g + h) = B(f, g) + B(f, h) (Additivity in the second argument)\n\nB(αf, g) = αB(f, g) (Homogeneity in the first argument)\n\nB(f, αg) = αB(f, g) (Homogeneity in the second argument)\n\nLet's verify these:\n\nB(f + g, h) = ∫_0^1 (f(t) + g(t)) h(t) dt = ∫_0^1 f(t)h(t) dt + ∫_0^1 g(t)h(t) dt = B(f, h) + B(g, h)\n\nSimilarly, B(f, g + h) = B(f, g) + B(f, h)\n\nB(αf, g) = ∫_0^1 αf(t)g(t) dt = α∫_0^1 f(t)g(t) dt = αB(f, g)\n\nSimilarly, B(f, αg) = αB(f, g)\n\nSo B is indeed a bilinear functional.\n\nSeparate Continuity\n\nA bilinear map B: X x X -> R is separately continuous if for each fixed y in X, the map B(x, y): X -> R is continuous, and for each fixed x in X, the map B(x, y): X -> R is continuous.\n\nGiven the properties of integration, we can use the dominated convergence theorem to show this. If we have a sequence of polynomials f_n converging to f in norm (which in this space means in the L^1 norm), then given a fixed g, B(f_n, g) = ∫_0^1 f_n(t)g(t) dt tends to ∫_0^1 f(t)g(t) dt = B(f, g) as n goes to infinity, by the dominated convergence theorem. Similarly, if we fix f and let g_n tend to g in norm, then B(f, g_n) tends to B(f, g).\n\nSo B is separately continuous.\n\nJoint Continuity\n\nJoint continuity means that B is continuous at every point of X x X when we equip X x X with the product topology. In our case, it is equivalent to the condition that for any sequences (f_n), (g_n) in X such that f_n tends to f and g_n tends to g in norm, we have B(f_n, g_n) tending to B(f, g).\n\nHowever, it is well-known and can be shown that B is not jointly continuous in this normed space. A counterexample can be constructed as follows:\n\nTake f_n(t) = n^(1/2) for 0 <= t <= 1/n and f_n(t) = 0 otherwise. Also, take g_n = f_n for all n. Clearly, ||f_n|| = ||g_n|| = 1 for all n, so they don't converge to 0 in norm. However, B(f_n, g_n) = ∫_0^1 f_n(t)g_n(t) dt = ∫_0^(1/n) n dt = 1 for all n, whereas B(f, g) = 0 for any pair of distinct f and g.\n\nHence, B is not jointly continuous.\n\nIn summary, B is a bilinear functional on X x X, it is separately continuous but it's not jointly continuous.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "The counterexample does not use polynomials in $X$.",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "Rudin-Functional Analysis-Second-Ed.Part2-ex12-page55",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "Given the assumption that X is a topological vector space that is of the second category in itself, it follows by the Baire category theorem that X cannot be written as a countable union of nowhere dense subsets.\n\nNow, the set K is given as closed, convex, and absorbing. An absorbing set in a topological vector space X is a set that, for any x ∈ X, there exists a positive scalar λ such that x is within the set λK. In other words, for any point in the space, you can \"inflate\" K by some factor and be sure to eventually encompass the point.\n\nNext, let's use the definition of an absorbing set to show that K contains a neighborhood of the origin.\n\nSince K is absorbing, for every x ∈ X, there exists a scalar λ > 0 such that x/λ ∈ K.\n\nThe collection of sets {λK: λ > 0} forms a basis for the neighborhoods of the origin in X.\n\nSo, there exists some λ_0 > 0 such that λ_0K is a neighborhood of the origin. Because the scalar multiplication is continuous, λ_0K is open.\n\nIf we show that λ_0K is contained in K, then we can say K contains a neighborhood of 0.\n\nTo show λ_0K is contained in K, let's assume the contrary, i.e., there exists a y ∈ λ_0K but y ∉ K. Then, there exists a x ∈ K and a scalar λ > 0 such that y = λx but y ∉ K.\n\nSince K is absorbing, there exists a scalar μ > 0 such that y/μ ∈ K.\n\nThen, we have λx/μ ∈ K.\n\nNow, choose δ > 0 such that δ < min(λ_0/λ, μ). Then, δy ∈ K (because K is absorbing) but δy ∉ λ_0K (because δ < λ_0/λ). This is a contradiction, so our assumption that y ∉ K must be wrong. Hence, λ_0K is contained in K.\n\nSo, we have shown that K contains a neighborhood of the origin, as required.",
+        "rating": "2",
+        "errorcodes": [
+            "e5_4",
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "Only the absorbing property has been used and the proof is not correct.",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "Rudin-Functional Analysis-Second-Ed.Part2-ex13-page55",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "To show that $L^2$ is of the first category in $L^1$, we need to express $L^2$ as a countable union of nowhere dense subsets in $L^1$. Remember that a set is nowhere dense if its closure has empty interior.\n\nLet's define, for each positive integer $n$,\n\n$$A_{n}=\\{f\\in L^{1}([0,1]):\\int_{0}^{1}f(x)g_{n}(x)dx>1/n\\}$$\n\nwhere $g_n$ is the given sequence of functions, i.e., $g_n = n$ on $[0, n^{-3}]$ and 0 else.\n\nIt is clear that ${A_n}$ is a sequence of sets and their union is the entire $L^1$ space. To see why, consider any function $f$ in $L^1$. Then, since $g_n \\to 0$ in $L^1$, we have $|f(x)g_n(x)| \\to 0$ almost everywhere, and thus by the Dominated Convergence Theorem, we get $\\int_0^1 |f(x)g_n(x)| , dx \\to 0$, so there exists an $N$ such that for all $n > N$, $f \\notin A_n$. Thus, each function in $L^1$ is in only finitely many of the $A_n$, so $L^1$ is the union of the $A_n$.\n\nNow we need to show that each $A_n$ is nowhere dense in $L^1$. For this, we show that the closure of $A_n$ has empty interior. Suppose to the contrary that there exists a function $f$ in the interior of $\\overline{A_n}$. Then, there exists a neighborhood of $f$ completely contained in $\\overline{A_n}$. The norm in $L^1$ is given by $|f|1 = \\int_0^1 |f(x)| , dx$, so a neighborhood of $f$ in $L^1$ is given by\n\n$$B_{\\epsilon}(f)=\\{h\\in L^{1}:\\left\\Vert f-h\\right\\Vert _{1}<\\epsilon\\}$$\n\nfor some $\\epsilon > 0$. Thus, there exists an $\\epsilon > 0$ such that $B\\epsilon(f) \\subseteq \\overline{A_n}$.\n\nSince the $L^2$ norm is stronger than the $L^1$ norm, there exists a function $h \\in L^2 \\cap B_\\epsilon(f)$. But since $h \\in L^2$, we have that $\\int_0^1 h(x)g_n(x) , dx \\to 0$, which implies that $h \\notin A_n$. This means that $h \\notin \\overline{A_n}$, which is a contradiction, since $h$ is in the $\\epsilon$-ball around $f$ that is supposed to be contained in $\\overline{A_n}$.\n\nTherefore, each $A_n$ must have empty interior in $L^1$, so $A_n$ is nowhere dense in $L^1$ for each $n$, and hence $L^2$ is of the first category in $L^1$.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "The union of $A_n$ does not seem to correspond to the entire $L^1$ space.",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "Rudin-Functional Analysis-Second-Ed.Part2-ex4/c-page53",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "\n\n\nLet's consider a bilinear mapping f: R^n x R^m -> R^p. If f is bilinear, then it satisfies the following properties for all vectors x, y ∈ R^n, u, v ∈ R^m and all scalars a, b ∈ R:\n\nf(x+u, v) = f(x, v) + f(u, v)\nf(ax, v) = a*f(x, v)\nf(x, u+v) = f(x, u) + f(x, v)\nf(x, bu) = b*f(x, u)\n\nSuppose f is continuous at the origin, i.e., for every ε > 0, there exists a δ > 0 such that for all x, y with ||(x,y)|| < δ, we have ||f(x,y)|| < ε.\n\nLet's prove that f is continuous at an arbitrary point (x_0, y_0) ∈ R^n x R^m.\n\nWe need to show that for every ε > 0, there exists a δ > 0 such that for all (x, y) ∈ R^n x R^m with ||((x,y) - (x_0, y_0))|| < δ, we have ||f(x, y) - f(x_0, y_0)|| < ε.\n\nGiven ε > 0, since f is continuous at the origin, there exists δ > 0 such that for all (x, y) with ||(x,y)|| < δ, we have ||f(x, y)|| < ε/2.\n\nNow consider an arbitrary point (x, y) such that ||((x,y) - (x_0, y_0))|| < δ. We want to bound ||f(x, y) - f(x_0, y_0)||.\n\nNote that f(x, y) - f(x_0, y_0) = f(x - x_0, y) + f(x_0, y - y_0) by the bilinearity of f.\n\nUsing the triangle inequality, we have ||f(x, y) - f(x_0, y_0)|| <= ||f(x - x_0, y)|| + ||f(x_0, y - y_0)||.\n\nSince ||(x - x_0, y)|| < δ and ||(x_0, y - y_0)|| < δ, from the continuity of f at the origin, we know that ||f(x - x_0, y)|| < ε/2 and ||f(x_0, y - y_0)|| < ε/2.\n\nSo, ||f(x, y) - f(x_0, y_0)|| <= ε/2 + ε/2 = ε.\n\nTherefore, f is continuous at (x_0, y_0), and since (x_0, y_0) was arbitrary, f is continuous everywhere.\n\nHence, a bilinear mapping is continuous if it is continuous at the origin.",
+        "rating": "3",
+        "errorcodes": [
+            "e5_2",
+            "e4"
+        ],
+        "warningcodes": [],
+        "comment": "Only deals with the special case $R^n$ and unclear how $||(x - x_0, y)||$ and $||(x_0, y - y_0)||$ are bounded.",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "Rudin-Functional Analysis-Second-Ed.Part2-ex10-page55",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "The statement you are asking for a proof of is known as the boundedness property of continuous bilinear maps. It says that if $B: X \\times Y \\to Z$ is a continuous bilinear map between normed (not necessarily complete) spaces, then it is bounded, i.e., there exists $M < \\infty$ such that\n\n$||B(x, y)|| \\leq M ||x|| ||y||$\n\nfor all $x \\in X, y \\in Y$. So no, completeness (i.e., the property of being a Banach space) is not needed here. This boundedness property follows directly from the definition of continuity and does not require the stronger property of completeness.\n\nTo prove the statement, recall that $B$ being continuous at $(x_0, y_0)$ means that for every $\\epsilon > 0$ there is a $\\delta > 0$ such that if $||x - x_0|| < \\delta$ and $||y - y_0|| < \\delta$, then $||B(x, y) - B(x_0, y_0)|| < \\epsilon$.\n\nIn particular, taking $x_0 = y_0 = 0$ (which are in $X$ and $Y$ since they are vector spaces), we have that for every $\\epsilon > 0$ there is a $\\delta > 0$ such that if $||x|| < \\delta$ and $||y|| < \\delta$, then $||B(x, y)|| < \\epsilon$.\n\nLet $x \\in X$ and $y \\in Y$ be arbitrary, and let $x' = \\frac{\\delta x}{2 ||x||}$ and $y' = \\frac{\\delta y}{2 ||y||}$. Then $||x'|| < \\delta$ and $||y'|| < \\delta$, so $||B(x', y')|| < \\epsilon$.\n\nBut $B(x', y') = \\frac{\\delta^2 B(x, y)}{4 ||x|| ||y||}$ by the bilinearity of $B$, so we have $||B(x, y)|| \\leq \\frac{4 \\epsilon ||x|| ||y||}{\\delta^2}$ for all $x \\in X$ and $y \\in Y$. Choosing $\\epsilon = \\frac{\\delta^2}{4}$, we obtain $||B(x, y)|| \\leq M ||x|| ||y||$, where $M = \\frac{4 \\epsilon}{\\delta^2}$.\n\nThis finishes the proof. Notice that we only used the properties of $X, Y$ and $Z$ being normed vector spaces and $B$ being a continuous bilinear map, so we did not need the completeness property.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": "",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "Rudin-Functional Analysis-Second-Ed.Part2-ex9-page55",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "First, let's remind ourselves of the definitions.\n\nA set is said to be of the first category (or meagre) if it is a countable union of nowhere dense sets. A set is nowhere dense if its closure has empty interior.\n\nA set is said to be of the second category if it is not of the first category.\n\nNow, let's construct a subset of the unit interval [0,1] which is of the first category (a meagre set) but whose Lebesgue measure is 1.\n\nConsider the Cantor set, which is a classic example of a set that has measure zero but is uncountable. Now, let's modify it to get the desired set.\n\nIn the construction of the Cantor set, we start with the interval [0,1] and remove the open middle third (1/3, 2/3) to get two closed intervals [0,1/3] and [2/3,1]. We then repeat this process for each of the remaining intervals, removing the open middle third of each. We continue this process infinitely many times. The Cantor set is the set of all points that never get removed.\n\nHowever, instead of removing the middle third of each interval, we can remove smaller open intervals from each of the remaining intervals, such that the total length of all the removed intervals sums to less than 1. That way, we'll get a set that is nowhere dense (since in every open interval we can find a smaller interval that we have removed) and has Lebesgue measure 1 (since the total length of the removed intervals is less than 1), but is of the first category, since it is a countable union of nowhere dense sets.\n\nFor example, at the nth step, we could remove an open interval of length less than 1/(2^n) from each of the remaining intervals. Then the total length of all the removed intervals is less than 1, and the remaining set has Lebesgue measure 1. This set is of the first category and has full measure in the unit interval [0,1].",
+        "rating": "3",
+        "errorcodes": [
+            "e2",
+            "e5_2"
+        ],
+        "warningcodes": [],
+        "comment": "The idea of using fat Cantor sets is good, however, it is not shown how to exactly get Lebesgue measure 1.",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "Rudin-Functional Analysis-Second-Ed.Part2-ex4/a-page53",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    },
+    {
+        "prompt": "",
+        "output": "We want to show that C, the set of all x in X such that the sequence {Λ_n(x)} is a Cauchy sequence in Y, is a closed subspace of X. A set C is closed if its complement in the space X, denoted by X \\ C, is open. Recall that a subset U of a topological space X is open if for every x in U, there is an open neighborhood N of x that is completely contained in U.\n\nFirstly, note that C is indeed a subspace of X. It contains the zero vector, because {Λ_n(0)} = 0 is certainly a Cauchy sequence. It is also closed under addition and scalar multiplication, because if {Λ_n(x)} and {Λ_n(y)} are Cauchy sequences, then so are {Λ_n(x+y)} and {cΛ_n(x)}, for any real number c, due to the linearity of Λ_n and the properties of Cauchy sequences.\n\nNow, we show that C is closed by showing that its complement is open.\n\nLet x be in X \\ C, meaning {Λ_n(x)} is not a Cauchy sequence. Since Λ_n is equicontinuous, for each ε > 0, there exists a neighborhood N of x such that for all y in N and all n, |Λ_n(y) - Λ_n(x)| < ε.\n\nNow, since {Λ_n(x)} is not a Cauchy sequence, there exists some ε > 0 such that for all N, there exist m, n > N with |Λ_m(x) - Λ_n(x)| ≥ ε. In particular, this means that there exist m, n such that |Λ_m(x) - Λ_n(x)| ≥ 3ε.\n\nLet y be in the neighborhood N of x defined above. Then we have |Λ_m(y) - Λ_n(y)| ≤ |Λ_m(y) - Λ_m(x)| + |Λ_m(x) - Λ_n(x)| + |Λ_n(x) - Λ_n(y)| < ε + 3ε + ε = 5ε, by the triangle inequality.\n\nThis means that if y is close enough to x (i.e., in the neighborhood N), then {Λ_n(y)} cannot be a Cauchy sequence, because we have found m, n with |Λ_m(y) - Λ_n(y)| > ε. Thus, y is also in X \\ C.\n\nTherefore, every x in X \\ C is contained in an open set of points also in X \\ C, so X \\ C is open. Hence, C is a closed subspace of X.",
+        "rating": "3",
+        "errorcodes": [
+            "e4",
+            "e5_4"
+        ],
+        "warningcodes": [],
+        "comment": "Wrong calculations in the second claim.",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "Rudin-Functional Analysis-Second-Ed.Part2-ex14/a-page55",
+        "confidence": "high",
+        "timestamp": "2023-06-06"
+    }
+]

@@ -1,0 +1,293 @@
+[
+    {
+        "prompt": "State the Hahn-Banach Theorem and give a list of the main mathematical results and tools that are used in its proof.",
+        "output": "Hahn-Banach Theorem: If X is a vector space over the field F, and if f is a sublinear functional defined on a linear subspace Y of X, then there exists an extension g of f to the whole of X such that ||g|| = ||f||, where ||.|| is a norm.\n\nMathematical results and tools used in its proof:\n\nConvexity and the Hahn-Banach Separation Theorem.\nThe Zorn's Lemma, a version of the Axiom of Choice.\nDual space theory and weak* topology.\nThe principle of local reflexivity.\nThe Banach-Alaoglu Theorem.\nThe theory of Hahn-Banach extensions.",
+        "rating": "3",
+        "errorcodes": [
+            "e3",
+            "e6"
+        ],
+        "warningcodes": [],
+        "comment": "'a norm' is a bit vague. somehow this extends a sublinear function instead of a functional. Also what is the norm of a sublinear functional. It is also quite weird that the Hahn Banach Separation Theorem as well as 'The theory of Hahn-Banach extensions' are used in the proof?",
+        "msc": [
+            "46A22"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the uniform boundedness principle and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "The uniform boundedness principle (also known as Banach-Steinhaus theorem) states that if a collection of linear operators T_i: X -> Y, where X and Y are Banach spaces, is pointwise bounded, meaning that for every x in X, the set {T_i(x)} is bounded in Y, then the set {T_i} is uniformly bounded, meaning that there exists a constant M such that ||T_i|| ≤ M for all i.\n\nMain mathematical results and tools used in the proof of the uniform boundedness principle include:\n\nBanach spaces: the theorem assumes that X and Y are Banach spaces, which provides the necessary structure for the analysis.\n\nLinearity of the operators: the uniform boundedness principle applies only to linear operators, so it is essential to understand the properties of linear operators in Banach spaces.\n\nBoundedness and norm: the concept of boundedness and the norm on a Banach space are used to define and measure the size of the sets {T_i(x)} and {T_i}.\n\nCompleteness and closedness: the notion of completeness and closedness in Banach spaces is used to prove the uniform boundedness of the set {T_i}.\n\nHahn-Banach theorem: this theorem, which states that every linear functional on a subspace of a Banach space can be extended to a larger space while preserving its norm, is used to prove the uniform boundedness principle.",
+        "rating": "3",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "The operators should be assumed to be continuous. Also Y does not have to be a Banach space. It is weird to require the Hahn Banach theorem for the proof, but not the Lemma of Baire.",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the open mapping theorem and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "The Open Mapping Theorem states that if a linear transformation between Banach spaces is surjective (i.e. its range is the entire codomain), then it must also be an open mapping (i.e. it takes open sets to open sets).\n\nMathematical results and tools used in the proof of the Open Mapping Theorem include:\n\nBanach space theory\nLinear functional analysis\nBounded linear operator theory\nThe Inverse Mapping Theorem\nThe Closed Graph Theorem\nThe Hahn-Banach Theorem",
+        "rating": "3",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "The statement is close to correct. The linear map should be continuous though. The inverse mapping theorem and the closed graph theorem are both equivalent to the open mapping theorem. Therefore it is technically possible to prove the open mapping theorem from them. This is why some points are awarded.",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the closed graph theorem and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "Closed Graph Theorem states that if a mapping between two topological vector spaces has a graph that is closed in their product space, then the mapping is continuous.\n\nMathematical results and tools used in its proof:\n\nBanach's theorem on bounded inverse linear transformations\nBaire's category theorem\nProperties of topological vector spaces\nConvergence in topological vector spaces\nContinuous linear transformations\nThe concept of a closed set in a topological space.",
+        "rating": "4",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "The mapping should be linear which is not stated. The related results could all be used in a proof.",
+        "msc": [
+            "46A30"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State Rolle's theorem and give a list of the main mathematical results and tools which are used in its proof.",
+        "output": "Rolle's Theorem states that if a function f is continuous on a closed interval [a, b] and differentiable on the open interval (a, b), and if f(a) = f(b), then there exists at least one c in the open interval (a, b) such that f'(c) = 0.\n\nMathematical results and tools used in the proof of Rolle's Theorem include:\n\nThe mean value theorem\nThe definition of the derivative and the concept of differentiability\nThe intermediate value theorem\nThe Bolzano-Weierstrass theorem\nThe definition of a continuous function and its properties\nThe limit of a function\nThe squeeze theorem\nThe intermediate value property of a continuous function\nThe monotonicity of a derivative and the first derivative test for extrema.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "The statement of the result is correct. However, a lot of unrelated results are stated and the essential 'extreme value theorem ' is omitted.",
+        "msc": [
+            "26A24"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the Theorem of Banach-Alaoglu and give a list of the main mathematical results and tools which are used in its proof.",
+        "output": "The Banach-Alaoglu theorem states that if X is a Banach space, then the closed unit ball in the dual space X* of X is compact with respect to the weak-* topology.\n\nSome mathematical results and tools used in the proof of Banach-Alaoglu theorem are:\n\nThe concept of a Banach space and its dual space.\n\nThe notion of weak-* topology and its properties.\n\nThe concept of compactness, including the sequential compactness.\n\nThe Hahn-Banach theorem which states that any linear functional defined on a subspace of a Banach space can be extended to the whole space while preserving its norm.\n\nThe principle of uniform boundedness which states that if a sequence of linear functionals is uniformly bounded, then it contains a weak-* convergent subsequence.\n\nZorn's lemma which states that any partially ordered set in which every chain has an upper bound has a maximal element.\n\nThe Alaoglu theorem, which states that the closed unit ball in a normed space is compact in the weak topology.",
+        "rating": "3",
+        "errorcodes": [
+            "e2",
+            "e5_3"
+        ],
+        "warningcodes": [],
+        "comment": "The Banach Alaoglu theorem does not necessarily need a Banach space, but other than that the statement is OK. Sequential compactness is not needed. The theorem of Tikhonov was not mentioned. Also the 'Alaoglu-theorem' does not seem to exist. ",
+        "msc": [
+            "46B50"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the Theorem of Picard-Lindelöf and give a list of the main mathematical results and tools which are used in its proof.",
+        "output": "The Picard-Lindelöf theorem is a result in the theory of ordinary differential equations. It states that, under certain conditions, a unique solution exists for the initial value problem of an ordinary differential equation (ODE).\n\nThe main mathematical results and tools used in the proof of the Picard-Lindelöf theorem are:\n\nBanach Fixed Point Theorem\nContraction Mapping Principle\nCauchy-Lipschitz condition\nLocal Lipschitz condition\nExistence and Uniqueness of Solutions for Initial Value Problems of ODEs\nGrönwall's Inequality\nThese results and tools are used to show that the solution to an ODE can be iteratively approximated and will converge to a unique solution.",
+        "rating": "2",
+        "errorcodes": [
+            "e1",
+            "e6"
+        ],
+        "warningcodes": [],
+        "comment": "The assumptions needed for Picard Lindelöf theorem are not stated. The Banach Fixed point theorem was correctly identified as a key component of the proof but is is also claimed that Existence and Uniqueness of Solutions for Initial Value Problems of ODEs is needed, which is circular logic",
+        "msc": [
+            "34A12"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the Bolzano–Weierstrass theorem and give a list of the main mathematical results and tools which are used in its proof.",
+        "output": "The Bolzano–Weierstrass theorem states that any bounded infinite set of real numbers has at least one limit point, which is a point that can be approached arbitrarily closely by elements of the set.\n\nThe following mathematical results and tools are commonly used in the proof of the Bolzano-Weierstrass theorem:\n\nArchimedean property of the real numbers\nCompleteness of the real numbers\nDefinition of limit point\nNested Interval property\nPrinciple of finite induction\nBolzano's Theorem on the number of sign changes in a sequence of bounded continuous functions.",
+        "rating": "4",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "The result is correct. It could certainly be proven from the mentioned tools. However, some of them are not necessary",
+        "msc": [
+            "40A05"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State Zorn's lemma and give a list of the main mathematical results and tools which are used in its proof.",
+        "output": "Zorn's lemma is a statement in set theory that states that any partially ordered set (poset) in which every chain (totally ordered subset) has an upper bound, contains at least one maximal element. In other words, any poset in which there is no 'biggest' element has a 'biggest' element.\n\nThe proof of Zorn's lemma uses the following mathematical tools:\n\nWell-ordering theorem: this states that every non-empty set can be well-ordered (i.e., can be assigned a total ordering such that every non-empty subset has a least element).\n\nAxiom of choice: this is a non-constructive principle that asserts the existence of certain objects without specifying how to construct them.\n\nOrdinal numbers: these are a type of number used to label the order type of well-ordered sets.\n\nTransfinite induction: this is a method of mathematical induction that is used to prove properties of well-ordered sets.\n\nMaximal principle: this states that if a partially ordered set contains no maximal element, then it can be extended to a larger partially ordered set.\n\nCompleteness axiom: this states that every non-empty set of real numbers that is bounded above has a least upper bound (i.e., a real number that is greater than or equal to every element of the set).",
+        "rating": "3",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "The interpretation of Zorns Lemma is self-contradictory. Not all related results are necessary for the proof. ",
+        "msc": [
+            "03E25"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the fundamental theorem of calculus and give a list of the main mathematical results and tools which are used in its proof.",
+        "output": "The Fundamental Theorem of Calculus states that differentiation and integration are inverse operations. Specifically, if a function f is continuous on the interval [a, b] and F(x) is its indefinite integral over that interval, then the derivative of F(x) is equal to f(x).\n\nThe main mathematical results and tools used in its proof include:\n\nThe mean value theorem for integrals\nRiemann sums and Riemann integrability\nThe monotonicity and boundedness of Riemann integrals\nThe limit concept and properties of limits\nThe intermediate value theorem\nThe definition and properties of continuous functions\nThe Extreme value theorem.",
+        "rating": "5",
+        "errorcodes": [
+            "e2"
+        ],
+        "warningcodes": [],
+        "comment": "The statement of the theorem is correct, and the mean value theorem for integrals was mentioned.",
+        "msc": [
+            "26A06"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State Minkowski's inequality and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "Minkowski's inequality states that for any two vectors u and v in a normed vector space, and for any p >= 1, the following holds:\n\n||u + v||p <= ||u||p + ||v||p\n\nThe main mathematical results and tools used in the proof of Minkowski's inequality include:\n\nTriangle inequality: ||u + v|| <= ||u|| + ||v||\nConvexity of the p-norm: ||tx + (1 - t)y||p <= t||x||p + (1 - t)||y||p for all 0 <= t <= 1\nHomogeneity of the p-norm: ||tx||p = |t| ||x||p for all x in the vector space and t in R\nThe monotonicity of the p-norm: ||x||p <= ||y||p if ||x - y|| <= 0\nThe Hölder inequality: (|x1||y1| + |x2||y2| + ... + |xn||yn|)^(1/p) <= (|x1|^p + |x2|^p + ... + |xn|^p)^(1/p)(|y1|^p + |y2|^p + ... + |yn|^p)^(1/q) where 1/p + 1/q = 1 and x, y are vectors in R^n.",
+        "rating": "5",
+        "errorcodes": [],
+        "warningcodes": [],
+        "comment": " ",
+        "msc": [
+            "26D15"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the Krein-Milman theorem and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "The Krein-Milman theorem states that every convex compact subset of a locally convex topological vector space is the closed convex hull of its extreme points.\n\nThe following mathematical results and tools are used in the proof of the Krein-Milman theorem:\n\nHahn-Banach theorem\nConvex analysis\nTopological vector spaces\nBanach-Alaoglu theorem\nThe concept of extreme points and their properties\nThe closed graph theorem.",
+        "rating": "4",
+        "errorcodes": [
+            "e5_3"
+        ],
+        "warningcodes": [],
+        "comment": "The statement is not completely correct. the set needs to be not empty. I do not think that we need Banach Alaoglu or the close graph theorem for the proof. However, the crucial Hahn Banach Theorem was mentioned.",
+        "msc": [
+            "46A03"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the dominated convergence theorem and give a list of the main mathematical results and tools which are used in its proof.",
+        "output": "Dominated Convergence Theorem: If a sequence of functions $(f_n)$ converges pointwise to a function $f$ and there exists a function $g$ that is integrable on a measure space $(X, mathcal{M}, mu)$ such that $|f_n(x)| leq g(x)$ for all $x in X$ and all $n in mathbb{N}$, then $int_{X} f_n \\to int_{X} f$ as $n \\to infty$.\n\nMathematical results and tools used in the proof:\n\nPointwise convergence of functions.\nIntegrability and convergence of sequences of functions.\nMonotone convergence theorem.\nFatou's lemma.\nThe bounded convergence theorem.",
+        "rating": "4",
+        "errorcodes": [
+            "e5_3"
+        ],
+        "warningcodes": [],
+        "comment": "Would have been nice to say that f_n need to be measurable. Fatou's Lemma was mentioned, which is good.",
+        "msc": [
+            "28A25"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the Plancherel theorem and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "Plancherel theorem states that the Fourier transform is an isometry, meaning it preserves the inner product structure of a function's space, from L^2 (square integrable functions) to L^2.\n\nMathematical results and tools used in its proof include:\n\nParseval's identity\nHolder's inequality\nRiemann-Lebesgue lemma\nFourier series representation of functions\nModulation and translation operators\nL^2 completeness and orthogonality\nContinuity and differentiability of the Fourier transform.",
+        "rating": "4",
+        "errorcodes": [
+            "e5_5"
+        ],
+        "warningcodes": [],
+        "comment": "Plancherel and Parseval seem to be the same thing in this context.",
+        "msc": [
+            "42B10"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the Fourier inversion theorem and give a list of the main mathematical results and tools which are used in its proof.",
+        "output": "The Fourier inversion theorem states that if a function f(t) is integrable and its Fourier transform F(w) is continuous, then f(t) can be recovered from its Fourier transform by the following formula:\n\nf(t) = (1/2π) ∫_{-∞}^∞ F(w)e^(iwt) dw\n\nMathematical results and tools used in the proof of the Fourier inversion theorem include:\n\nThe definition of the Fourier transform and its properties, including linearity and the scaling property.\n\nThe theory of complex analysis, including the theory of analytic functions and the residue theorem.\n\nThe theory of distributions, including the notion of tempered distributions and the duality between the space of test functions and distributions.\n\nThe theory of linear operators, including the spectral theorem and the theory of bounded linear operators on Hilbert spaces.\n\nThe theory of Lebesgue integration, including the concept of the Lebesgue integral and the fundamental theorem of calculus.\n\nThe theory of Hilbert spaces, including the concept of orthogonality and the notion of completeness.",
+        "rating": "4",
+        "errorcodes": [
+            "e2",
+            "e5_3"
+        ],
+        "warningcodes": [],
+        "comment": "The claimed theorems and results are useful for the proof. It needs to be assumed that F is integrable though. Continuity is not enough.",
+        "msc": [
+            "42A38"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the Riemann-Lebesgue Lemma and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "The Riemann-Lebesgue Lemma states that for a continuous, periodic function f(t) with period T, as t approaches infinity, the integral of the function f(t) multiplied by the exponential function e^(-2πi nt/T) approaches 0. In other words,\n\nlim_{t -> ∞} ∫_{-t}^{t} f(x)e^(-2πi nx/T) dx = 0\n\nfor all integers n.\n\nMathematical results and tools used in its proof include:\n\nContinuous functions\nPeriodic functions\nConvergence of integrals\nThe exponential function\nFourier series and the Fourier transform\nThe properties of complex numbers, particularly the exponential function and Euler's formula.",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "This is not the Riemann Lebesgue Lemma",
+        "msc": [
+            "42A38"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the Peano existence theorem and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "Peano existence theorem states that, given a set of initial conditions, a solution to a differential equation exists and is unique in a neighborhood of the initial conditions.\n\nThe following mathematical results and tools are commonly used in the proof of Peano existence theorem:\n\nBanach fixed-point theorem\nPicard-Lindelöf theorem\nCauchy-Lipschitz theorem\nContraction mapping theorem\nGrönwall's inequality\nThese theorems and results guarantee the existence and uniqueness of a solution in a neighborhood of the initial conditions, given that the differential equation satisfies certain conditions on the derivatives and the initial conditions.",
+        "rating": "2",
+        "errorcodes": [
+            "e3",
+            "e6"
+        ],
+        "warningcodes": [],
+        "comment": "The conditions are not mentioned. Also it is claimed that the stronger Picard Lindelöf theorem is necessary to proof the Peano Theorem.",
+        "msc": [
+            "34A12"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    },
+    {
+        "prompt": "State the Sobolev Embedding Theorem and give a list of the main mathematical results and tools which are used in its proof. ",
+        "output": "The Sobolev Embedding Theorem states that if f is an element of the Sobolev space W^1,p (where p is a fixed real number such that 1 < p < infinity), then f can be continuously embedded into the space of continuous functions, C^0.\n\nMathematical results and tools used in the proof of the Sobolev Embedding Theorem include:\n\nBanach-Alaoglu Theorem (compactness in the weak-* topology)\nRellich-Kondrachov Theorem (compact embedding of Sobolev spaces)\nHölder's Inequality\nLebesgue's Differentiation Theorem\nArzelà-Ascoli Theorem (equicontinuity and uniform boundedness)",
+        "rating": "2",
+        "errorcodes": [
+            "e3"
+        ],
+        "warningcodes": [],
+        "comment": "At best this is a very weak form of the embedding theorem. However, no dimension is given, so it may also be wrong. Moreover, not f is continuously embedded, but W^{k,p}.",
+        "msc": [
+            "46E35"
+        ],
+        "ref": "",
+        "confidence": "high",
+        "timestamp": "2023-02-02"
+    }
+]
