@@ -13,7 +13,7 @@ We refer to the paper for detailed information about the licence (TL;DR everythi
 
 ## Citation
 
-If you use dataset, please cite our paper:
+If you use our dataset, please cite our paper:
 
 ```text
 @article{frieder2023mathematical,
